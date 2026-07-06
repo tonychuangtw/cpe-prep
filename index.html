@@ -3,15 +3,41 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<meta name="theme-color" content="#0f1115">
+<meta name="theme-color" content="#0d0d10">
 <title>CPE 備考 — C2 Proficiency 練習</title>
+<script>
+/* apply saved theme before first paint to avoid flash */
+(function () {
+  try {
+    var t = localStorage.getItem("cpe_theme");
+    if (t) document.documentElement.setAttribute("data-theme", t);
+    var bgs = { ink: "#0d0d10", navy: "#0a1220", forest: "#0c1410",
+                paper: "#f4efe4", plum: "#16101a", celadon: "#0d1416" };
+    if (t && bgs[t]) {
+      var m = document.querySelector('meta[name="theme-color"]');
+      if (m) m.setAttribute("content", bgs[t]);
+    }
+  } catch (e) {}
+})();
+</script>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <header class="app-header">
-  <h1>CPE 備考</h1>
-  <span class="subtitle">Cambridge C2 Proficiency</span>
+  <span class="brand-mark" aria-hidden="true">C2</span>
+  <div class="brand-text">
+    <h1>CPE 備考</h1>
+    <span class="subtitle">Cambridge C2 Proficiency</span>
+  </div>
+  <button id="theme-btn" class="icon-btn" aria-label="選擇色系" title="選擇色系">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+      <path d="M12 21a9 9 0 1 1 9-9c0 2.5-1.5 3.5-3 3.5h-2a2.5 2.5 0 0 0-2 4c.5.7 0 1.5-2 1.5z"/>
+      <circle cx="7.5" cy="11.5" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="11" cy="7.5" r="1" fill="currentColor" stroke="none"/>
+      <circle cx="15.5" cy="9" r="1" fill="currentColor" stroke="none"/>
+    </svg>
+  </button>
 </header>
 
 <main id="main">
@@ -137,12 +163,28 @@
 </main>
 
 <nav class="tab-bar">
-  <button class="tab-btn active" data-tab="tab-uoe"><span class="tab-ico">✎</span>Use of English</button>
-  <button class="tab-btn" data-tab="tab-writing"><span class="tab-ico">✍</span>Writing</button>
-  <button class="tab-btn" data-tab="tab-speaking"><span class="tab-ico">🗣</span>Speaking</button>
-  <button class="tab-btn" data-tab="tab-vocab"><span class="tab-ico">🃏</span>字彙卡</button>
-  <button class="tab-btn" data-tab="tab-progress"><span class="tab-ico">📊</span>進度</button>
+  <button class="tab-btn active" data-tab="tab-uoe">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+    Use of English</button>
+  <button class="tab-btn" data-tab="tab-writing">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 3a2.83 2.83 0 0 1 4 4L7.5 20.5 2 22l1.5-5.5z"/></svg>
+    Writing</button>
+  <button class="tab-btn" data-tab="tab-speaking">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8z"/></svg>
+    Speaking</button>
+  <button class="tab-btn" data-tab="tab-vocab">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="15" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v13"/></svg>
+    字彙卡</button>
+  <button class="tab-btn" data-tab="tab-progress">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
+    進度</button>
 </nav>
+
+<div id="theme-backdrop" class="sheet-backdrop hidden"></div>
+<div id="theme-sheet" class="theme-sheet hidden" role="dialog" aria-label="選擇色系">
+  <h3>選擇色系</h3>
+  <div id="theme-grid" class="theme-grid"></div>
+</div>
 
 <script src="js/questions.js"></script>
 <script src="js/vocab.js"></script>

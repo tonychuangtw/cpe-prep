@@ -166,6 +166,10 @@ if (typeof document !== 'undefined') {
     var qBox = $("uoe-question");
     var aBox = $("uoe-answer-area");
     aBox.innerHTML = "";
+    /* retrigger entrance animation */
+    qBox.classList.remove("q-anim");
+    void qBox.offsetWidth;
+    qBox.classList.add("q-anim");
 
     if (part === "part1") {
       qBox.innerHTML = "<p>" + esc(q.text) + "</p>";
@@ -540,6 +544,77 @@ if (typeof document !== 'undefined') {
     renderProgress();
   }
 
+  /* ================= §8.5 色系主題 ================= */
+  var K_THEME = "cpe_theme";
+  var THEMES = [
+    { id: "ink",     name: "墨黑",   bg: "#0d0d10", accent: "#e0a458" },
+    { id: "navy",    name: "深海藍", bg: "#0a1220", accent: "#d6b25e" },
+    { id: "forest",  name: "森林綠", bg: "#0c1410", accent: "#d8c69a" },
+    { id: "paper",   name: "暖米白", bg: "#f4efe4", accent: "#8a5a26" },
+    { id: "plum",    name: "玫瑰紫", bg: "#16101a", accent: "#e08ba1" },
+    { id: "celadon", name: "青瓷",   bg: "#0d1416", accent: "#62c4b8" }
+  ];
+
+  function applyTheme(id) {
+    var theme = null;
+    for (var i = 0; i < THEMES.length; i++) {
+      if (THEMES[i].id === id) { theme = THEMES[i]; break; }
+    }
+    if (!theme) theme = THEMES[0];
+    if (theme.id === "ink") {
+      document.documentElement.removeAttribute("data-theme");
+    } else {
+      document.documentElement.setAttribute("data-theme", theme.id);
+    }
+    try { localStorage.setItem(K_THEME, theme.id); } catch (e) {}
+    var meta = document.querySelector('meta[name="theme-color"]');
+    if (meta) meta.setAttribute("content", theme.bg);
+  }
+
+  function currentTheme() {
+    try { return localStorage.getItem(K_THEME) || "ink"; } catch (e) { return "ink"; }
+  }
+
+  function initTheme() {
+    var btn = $("theme-btn"), sheet = $("theme-sheet"),
+        backdrop = $("theme-backdrop"), grid = $("theme-grid");
+    if (!btn || !sheet || !backdrop || !grid) return;
+
+    function closeSheet() {
+      sheet.classList.add("hidden");
+      backdrop.classList.add("hidden");
+    }
+    function renderSwatches() {
+      grid.innerHTML = "";
+      var cur = currentTheme();
+      THEMES.forEach(function (t) {
+        var b = document.createElement("button");
+        b.className = "theme-swatch" + (t.id === cur ? " selected" : "");
+        b.setAttribute("aria-label", t.name);
+        var dot = document.createElement("span");
+        dot.className = "theme-dot";
+        dot.style.background =
+          "linear-gradient(135deg, " + t.bg + " 55%, " + t.accent + " 55%)";
+        b.appendChild(dot);
+        b.appendChild(document.createTextNode(t.name));
+        b.addEventListener("click", function () {
+          applyTheme(t.id);
+          renderSwatches();
+        });
+        grid.appendChild(b);
+      });
+    }
+    btn.addEventListener("click", function () {
+      renderSwatches();
+      sheet.classList.remove("hidden");
+      backdrop.classList.remove("hidden");
+    });
+    backdrop.addEventListener("click", closeSheet);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") closeSheet();
+    });
+  }
+
   /* ================= §9 Init（防護式啟動） ================= */
   function safeInit(name, fn) {
     try { fn(); } catch (e) {
@@ -548,6 +623,7 @@ if (typeof document !== 'undefined') {
   }
 
   function boot() {
+    safeInit("theme", initTheme);
     safeInit("tabs", initTabs);
     safeInit("uoe", initUoe);
     safeInit("writing", initWriting);
