@@ -6,10 +6,26 @@ const qmod = require(path.join(__dirname, "..", "js", "questions.js"));
 const vmod = require(path.join(__dirname, "..", "js", "vocab.js"));
 const logic = require(path.join(__dirname, "..", "js", "app.js"));
 
-const QUESTIONS = qmod.QUESTIONS;
-const WRITING = qmod.WRITING;
-const SPEAKING = qmod.SPEAKING;
-const VOCAB = vmod.VOCAB;
+const fs = require("fs");
+let QUESTIONS = qmod.QUESTIONS;
+let WRITING = qmod.WRITING;
+let SPEAKING = qmod.SPEAKING;
+let VOCAB = vmod.VOCAB;
+
+/* ---------- merge extra banks ---------- */
+const banksDir = path.join(__dirname, "..", "js", "banks");
+const bankCounts = {};
+fs.readdirSync(banksDir).sort().forEach(f => {
+  const items = require(path.join(banksDir, f));
+  const m = f.match(/^(p[1-4])-w\d+\.js$/);
+  if (m) {
+    const key = m[1].replace("p", "part");
+    QUESTIONS[key] = QUESTIONS[key].concat(items);
+  } else if (f.startsWith("vocab-")) { VOCAB = VOCAB.concat(items); }
+  else if (f === "writing-x.js") { WRITING = WRITING.concat(items); }
+  else if (f === "speaking-x.js") { SPEAKING = SPEAKING.concat(items); }
+  bankCounts[f] = items.length;
+});
 
 let passed = 0, failed = 0;
 function check(name, cond) {
@@ -18,7 +34,7 @@ function check(name, cond) {
 }
 
 /* ---------- Part 1 ---------- */
-check("part1 has 12 items", QUESTIONS.part1.length === 12);
+check("part1 has >= 12 items", QUESTIONS.part1.length >= 12);
 QUESTIONS.part1.forEach((q, i) => {
   check(`part1[${i}] has 4 options`, Array.isArray(q.options) && q.options.length === 4);
   check(`part1[${i}] answer index valid`, Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4);
@@ -28,7 +44,7 @@ QUESTIONS.part1.forEach((q, i) => {
 });
 
 /* ---------- Part 2 ---------- */
-check("part2 has 12 items", QUESTIONS.part2.length === 12);
+check("part2 has >= 12 items", QUESTIONS.part2.length >= 12);
 QUESTIONS.part2.forEach((q, i) => {
   check(`part2[${i}] has answers`, Array.isArray(q.answers) && q.answers.length >= 1);
   check(`part2[${i}] answers are single words`, q.answers.every(a => a.trim().split(/\s+/).length === 1));
@@ -37,7 +53,7 @@ QUESTIONS.part2.forEach((q, i) => {
 });
 
 /* ---------- Part 3 ---------- */
-check("part3 has 12 items", QUESTIONS.part3.length === 12);
+check("part3 has >= 12 items", QUESTIONS.part3.length >= 12);
 QUESTIONS.part3.forEach((q, i) => {
   check(`part3[${i}] has stem in caps`, typeof q.stem === "string" && q.stem === q.stem.toUpperCase());
   check(`part3[${i}] has answers`, Array.isArray(q.answers) && q.answers.length >= 1);
@@ -47,7 +63,7 @@ QUESTIONS.part3.forEach((q, i) => {
 });
 
 /* ---------- Part 4 ---------- */
-check("part4 has 10 items", QUESTIONS.part4.length === 10);
+check("part4 has >= 10 items", QUESTIONS.part4.length >= 10);
 QUESTIONS.part4.forEach((q, i) => {
   check(`part4[${i}] has 1-4 accepted answers`, Array.isArray(q.answers) && q.answers.length >= 1 && q.answers.length <= 4);
   const kw = q.keyword.toLowerCase();
@@ -64,22 +80,22 @@ QUESTIONS.part4.forEach((q, i) => {
 });
 
 /* ---------- Writing & Speaking data ---------- */
-check("writing has 8 prompts", WRITING.length === 8);
-check("writing has 4 essays", WRITING.filter(w => w.part === 1).length === 4);
-check("writing has 4 part-2 tasks", WRITING.filter(w => w.part === 2).length === 4);
+check("writing has >= 8 prompts", WRITING.length >= 8);
+check("writing has >= 4 essays", WRITING.filter(w => w.part === 1).length >= 4);
+check("writing has >= 4 part-2 tasks", WRITING.filter(w => w.part === 2).length >= 4);
 WRITING.forEach((w, i) => {
   check(`writing[${i}] has task/checklist/model`,
     !!w.task && Array.isArray(w.checklist) && w.checklist.length === 4 && !!w.model);
   if (w.part === 1) check(`writing[${i}] essay has two input texts`, Array.isArray(w.texts) && w.texts.length === 2);
   check(`writing[${i}] id unique`, WRITING.filter(x => x.id === w.id).length === 1);
 });
-check("speaking has 10 prompts", SPEAKING.length === 10);
+check("speaking has >= 10 prompts", SPEAKING.length >= 10);
 SPEAKING.forEach((s, i) => {
   check(`speaking[${i}] has question + 3 bullets`, !!s.question && s.bullets.length === 3);
 });
 
 /* ---------- Vocab ---------- */
-check("vocab has 60 items", VOCAB.length === 60);
+check("vocab has >= 60 items", VOCAB.length >= 60);
 check("vocab fronts unique", new Set(VOCAB.map(v => v.front.toLowerCase())).size === VOCAB.length);
 VOCAB.forEach((v, i) => {
   check(`vocab[${i}] complete fields`,
@@ -130,6 +146,15 @@ const sh = logic.shuffle(orig);
 check("shuffle preserves elements", sh.slice().sort().join() === "1,2,3,4,5");
 check("shuffle does not mutate input", orig.join() === "1,2,3,4,5");
 
+/* ---------- cross-bank dedup ---------- */
+["part1", "part2", "part3", "part4"].forEach(p => {
+  const texts = QUESTIONS[p].map(q => (q.text || q.original).toLowerCase().replace(/\s+/g, " ").trim());
+  check(p + " question texts unique (" + texts.length + ")", new Set(texts).size === texts.length);
+});
+check("vocab fronts unique after merge", new Set(VOCAB.map(v => v.front.toLowerCase())).size === VOCAB.length);
+
 /* ---------- report ---------- */
+console.log("bank sizes:", JSON.stringify(bankCounts));
+console.log("totals: p1=" + QUESTIONS.part1.length + " p2=" + QUESTIONS.part2.length + " p3=" + QUESTIONS.part3.length + " p4=" + QUESTIONS.part4.length + " writing=" + WRITING.length + " speaking=" + SPEAKING.length + " vocab=" + VOCAB.length);
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);
