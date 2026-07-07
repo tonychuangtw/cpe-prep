@@ -392,22 +392,58 @@ button { font-family: inherit; }
   box-shadow: 0 0 0 3px var(--accent-soft);
 }
 
-#uoe-feedback {
-  border-radius: var(--radius); padding: 14px 16px; margin: 12px 0;
-  font-size: 0.95rem;
-  animation: fb-in 0.3s ease both;
+.skip-btn { width: 100%; margin-top: 2px; }
+
+/* ---- 模擬考結果 ---- */
+.verdict-text { font-size: 0.95rem; margin: 4px 0 10px; font-weight: 600; }
+.verdict-text.ok { color: var(--green); }
+.verdict-text.mid { color: var(--accent); }
+.verdict-text.bad { color: var(--red); }
+.part-subscores {
+  display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;
+  margin-top: 10px; font-weight: 400; font-size: 0.82rem; color: var(--text2);
 }
-@keyframes fb-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: none; }
+.part-subscores span {
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: 999px; padding: 3px 10px; font-variant-numeric: tabular-nums;
 }
-#uoe-feedback.ok { background: var(--green-soft); border: 1px solid var(--green); }
-#uoe-feedback.bad { background: var(--red-soft); border: 1px solid var(--red); }
-#uoe-feedback .verdict { font-weight: 700; font-size: 1.05rem; }
-#uoe-feedback.ok .verdict { color: var(--green); }
-#uoe-feedback.bad .verdict { color: var(--red); }
-#uoe-feedback .expl { color: var(--text2); margin-top: 6px; }
-#uoe-feedback .modelans { margin-top: 6px; }
+.review-part { margin: 20px 4px 8px; color: var(--accent); letter-spacing: 0.03em; }
+.review-item {
+  border-radius: var(--radius); padding: 14px 16px; margin: 10px 0;
+  font-size: 0.92rem;
+  background: linear-gradient(180deg, var(--surface-hi), var(--surface));
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--border-strong);
+}
+.review-item.ok { border-left-color: var(--green); }
+.review-item.bad { border-left-color: var(--red); }
+.review-item p { font-family: var(--font-serif); line-height: 1.7; margin: 8px 0; }
+.review-verdict { font-weight: 700; font-size: 0.95rem; display: flex; align-items: baseline; gap: 8px; }
+.review-item.ok .review-verdict { color: var(--green); }
+.review-item.bad .review-verdict { color: var(--red); }
+.review-verdict .pts { font-size: 0.78rem; color: var(--muted); font-weight: 400; }
+.review-ans { margin-top: 6px; }
+.review-ans strong { color: var(--text2); font-weight: 600; }
+.review-item .expl { color: var(--muted); margin-top: 6px; font-size: 0.86rem; }
+.review-item .kw { color: var(--accent); font-weight: 700; }
+.review-item .stem-word { color: var(--accent); font-weight: 700; letter-spacing: 1.5px; }
+.review-item .original { color: var(--muted); font-style: italic; }
+
+/* ---- 模擬考歷史（進度頁） ---- */
+.pg-mock-title { margin-top: 20px; }
+.mock-history { list-style: none; margin: 6px 0 0; padding: 0; }
+.mock-history li {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 2px; border-bottom: 1px solid var(--border);
+  font-size: 0.85rem;
+}
+.mock-history li:last-child { border-bottom: none; }
+.mh-date { color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.mh-label { flex: 1; color: var(--text2); }
+.mh-score { font-weight: 700; font-variant-numeric: tabular-nums; white-space: nowrap; }
+.mh-score.ok { color: var(--green); }
+.mh-score.mid { color: var(--accent); }
+.mh-score.bad { color: var(--red); }
 
 .big-score {
   font-size: 2.4rem; font-weight: 700; margin: 14px 0;

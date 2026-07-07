@@ -47,7 +47,8 @@
   <section id="tab-uoe" class="tab-panel active">
     <div id="uoe-picker">
       <h2>Use of English</h2>
-      <p class="hint">選擇練習模式（對應 Reading &amp; Use of English Part 1–4）</p>
+      <p class="hint">模擬考模式：每次抽真實考試題數（Part 1–3 各 8 題、Part 4 6 題），全部作答後交卷評分。</p>
+      <button id="uoe-full-mock" class="primary-btn">全卷模擬 · Part 1–4 一次考完</button>
       <div class="mode-grid">
         <button class="mode-btn" data-part="part1">
           <strong>Part 1</strong><span>Multiple-choice cloze<br>選擇題克漏字</span>
@@ -71,17 +72,17 @@
       </div>
       <div id="uoe-question" class="card"></div>
       <div id="uoe-answer-area"></div>
-      <div id="uoe-feedback" class="hidden"></div>
-      <button id="uoe-next" class="primary-btn hidden">下一題 →</button>
     </div>
 
     <div id="uoe-summary" class="hidden">
       <div class="card center">
-        <h2>本回合結果</h2>
+        <h2 id="uoe-summary-title">模擬考結果</h2>
         <p id="uoe-score" class="big-score"></p>
-        <button id="uoe-retry" class="primary-btn">重練</button>
+        <p id="uoe-verdict" class="verdict-text"></p>
+        <button id="uoe-retry" class="primary-btn">再考一回</button>
         <button id="uoe-home" class="ghost-btn">回模式選單</button>
       </div>
+      <div id="uoe-review"></div>
     </div>
   </section>
 

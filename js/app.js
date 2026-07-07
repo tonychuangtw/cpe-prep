@@ -168,15 +168,21 @@ if (typeof document !== 'undefined') {
     });
   }
 
-  /* ================= §4 Use of English quiz engine ================= */
+  /* ================= §4 Use of English 模擬考引擎 ================= */
   var PART_LABELS = {
     part1: "Part 1 · Multiple-choice cloze",
     part2: "Part 2 · Open cloze",
     part3: "Part 3 · Word formation",
     part4: "Part 4 · Key word transformations"
   };
+  /* 真實考試每個 part 的題數；P4 每題 2 分 */
+  var EXAM_SIZE = { part1: 8, part2: 8, part3: 8, part4: 6 };
+  var PART_POINTS = { part1: 1, part2: 1, part3: 1, part4: 2 };
+  var PARTS = ["part1", "part2", "part3", "part4"];
+  var K_MOCK = function () { return LEVEL + ".mock_history"; };
 
-  var quiz = { part: null, items: [], idx: 0, correct: 0 };
+  /* mode: 'single' = 單一 part；'full' = P1–P4 全卷 */
+  var quiz = { mode: "single", part: null, items: [], idx: 0, answers: [] };
 
   function recordResult(part, isCorrect) {
     var stats = loadJSON(K_STATS, {});
@@ -187,11 +193,30 @@ if (typeof document !== 'undefined') {
     saveJSON(K_STATS, stats);
   }
 
-  function startQuiz(part) {
+  function drawItems(part) {
+    return shuffle(QUESTIONS[part]).slice(0, EXAM_SIZE[part]).map(function (q) {
+      return { part: part, q: q };
+    });
+  }
+
+  function startMock(part) {
+    quiz.mode = "single";
     quiz.part = part;
-    quiz.items = shuffle(QUESTIONS[part]);
+    quiz.items = drawItems(part);
+    beginExam();
+  }
+
+  function startFullMock() {
+    quiz.mode = "full";
+    quiz.part = null;
+    quiz.items = [];
+    PARTS.forEach(function (p) { quiz.items = quiz.items.concat(drawItems(p)); });
+    beginExam();
+  }
+
+  function beginExam() {
     quiz.idx = 0;
-    quiz.correct = 0;
+    quiz.answers = [];
     $("uoe-picker").classList.add("hidden");
     $("uoe-summary").classList.add("hidden");
     $("uoe-quiz").classList.remove("hidden");
@@ -199,13 +224,10 @@ if (typeof document !== 'undefined') {
   }
 
   function renderQuestion() {
-    var q = quiz.items[quiz.idx];
-    var part = quiz.part;
+    var item = quiz.items[quiz.idx];
+    var q = item.q, part = item.part;
     $("uoe-progress").textContent = PART_LABELS[part].split("·")[0].trim() +
       "  第 " + (quiz.idx + 1) + " / " + quiz.items.length + " 題";
-    $("uoe-feedback").className = "hidden";
-    $("uoe-feedback").innerHTML = "";
-    $("uoe-next").classList.add("hidden");
 
     var qBox = $("uoe-question");
     var aBox = $("uoe-answer-area");
@@ -222,24 +244,25 @@ if (typeof document !== 'undefined') {
         var b = document.createElement("button");
         b.className = "option-btn";
         b.innerHTML = "<strong>" + letters[i] + "</strong>&nbsp; " + esc(opt);
-        b.addEventListener("click", function () { answerPart1(i, b); });
+        b.addEventListener("click", function () { submitAnswer(i); });
         aBox.appendChild(b);
       });
     } else if (part === "part2" || part === "part3") {
       var html = "<p>" + esc(q.text) + "</p>";
       if (part === "part3") html += '<p>提示字（改變詞形）：<span class="stem-word">' + esc(q.stem) + "</span></p>";
       qBox.innerHTML = html;
-      buildTypedInput(aBox, function (val) { answerTyped(val, q.answers, q.answers[0], q.explanation); });
+      buildTypedInput(aBox);
     } else { // part4
       qBox.innerHTML =
         '<p class="original">' + esc(q.original) + "</p>" +
         '<p>關鍵詞：<span class="kw">' + esc(q.keyword) + "</span>（必須使用，共 " + CFG.p4min + "–" + CFG.p4max + " 個字）</p>" +
         "<p>" + esc(q.gapped) + "</p>";
-      buildTypedInput(aBox, function (val) { answerTyped(val, q.answers, q.model, q.explanation); });
+      buildTypedInput(aBox);
     }
+    addSkipButton(aBox);
   }
 
-  function buildTypedInput(container, onSubmit) {
+  function buildTypedInput(container) {
     var input = document.createElement("input");
     input.type = "text";
     input.className = "answer-input";
@@ -254,7 +277,7 @@ if (typeof document !== 'undefined') {
       if (!input.value.trim()) return;
       input.disabled = true;
       btn.disabled = true;
-      onSubmit(input.value);
+      submitAnswer(input.value);
     };
     btn.addEventListener("click", submit);
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
@@ -263,56 +286,147 @@ if (typeof document !== 'undefined') {
     input.focus();
   }
 
-  function answerPart1(choice, btnEl) {
-    var q = quiz.items[quiz.idx];
-    var isCorrect = choice === q.answer;
-    var btns = document.querySelectorAll("#uoe-answer-area .option-btn");
-    btns.forEach(function (b, i) {
-      b.disabled = true;
-      if (i === q.answer) b.classList.add("correct");
-    });
-    if (!isCorrect) btnEl.classList.add("wrong");
-    showFeedback(isCorrect, q.options[q.answer], q.explanation);
+  function addSkipButton(container) {
+    var skip = document.createElement("button");
+    skip.className = "ghost-btn skip-btn";
+    skip.textContent = "跳過此題";
+    skip.addEventListener("click", function () { submitAnswer(null); });
+    container.appendChild(skip);
   }
 
-  function answerTyped(val, accepted, modelAns, explanation) {
-    var isCorrect = matchAnswer(val, accepted);
-    showFeedback(isCorrect, modelAns, explanation);
-  }
-
-  function showFeedback(isCorrect, modelAns, explanation) {
-    if (isCorrect) quiz.correct += 1;
-    recordResult(quiz.part, isCorrect);
-    var fb = $("uoe-feedback");
-    fb.className = isCorrect ? "ok" : "bad";
-    fb.innerHTML =
-      '<div class="verdict">' + (isCorrect ? "✓ 對" : "✗ 錯") + "</div>" +
-      '<div class="modelans"><strong>Answer:</strong> ' + esc(modelAns) + "</div>" +
-      '<div class="expl">' + esc(explanation) + "</div>";
-    $("uoe-next").classList.remove("hidden");
-    $("uoe-next").textContent = quiz.idx === quiz.items.length - 1 ? "看結果 →" : "下一題 →";
-  }
-
-  function nextQuestion() {
+  /* 考試中不給回饋：記錄作答後直接下一題，最後才評分 */
+  function submitAnswer(val) {
+    quiz.answers.push(val);
     quiz.idx += 1;
     if (quiz.idx >= quiz.items.length) {
-      $("uoe-quiz").classList.add("hidden");
-      $("uoe-summary").classList.remove("hidden");
-      var pct = Math.round(100 * quiz.correct / quiz.items.length);
-      $("uoe-score").textContent = quiz.correct + " / " + quiz.items.length + "（" + pct + "%）";
+      gradeExam();
     } else {
       renderQuestion();
     }
   }
 
+  function gradeItem(item, userAns) {
+    var q = item.q;
+    if (item.part === "part1") {
+      return typeof userAns === "number" && userAns === q.answer;
+    }
+    return userAns !== null && matchAnswer(userAns, q.answers);
+  }
+
+  function userAnsText(item, userAns) {
+    if (userAns === null || userAns === undefined) return "（未作答）";
+    if (item.part === "part1") {
+      return ["A", "B", "C", "D"][userAns] + ". " + item.q.options[userAns];
+    }
+    return String(userAns);
+  }
+
+  function correctAnsText(item) {
+    var q = item.q;
+    if (item.part === "part1") return ["A", "B", "C", "D"][q.answer] + ". " + q.options[q.answer];
+    if (item.part === "part4") return q.model;
+    return q.answers[0];
+  }
+
+  function verdictFor(pct) {
+    if (pct >= 75) return { cls: "ok", text: "✅ 通過 — 高於及格線，維持這個水準！" };
+    if (pct >= 60) return { cls: "mid", text: "🟡 邊緣通過 — 剛過及格線（約 60%），再加強弱項。" };
+    return { cls: "bad", text: "❌ 未達標 — 低於及格線，建議複習後再考一次。" };
+  }
+
+  function gradeExam() {
+    var score = 0, max = 0;
+    var byPart = {};
+    var reviewHtml = "";
+    var curPart = null;
+
+    quiz.items.forEach(function (item, i) {
+      var pts = PART_POINTS[item.part];
+      var isCorrect = gradeItem(item, quiz.answers[i]);
+      max += pts;
+      if (isCorrect) score += pts;
+      recordResult(item.part, isCorrect);
+      if (!byPart[item.part]) byPart[item.part] = { score: 0, max: 0 };
+      byPart[item.part].max += pts;
+      if (isCorrect) byPart[item.part].score += pts;
+
+      if (item.part !== curPart) {
+        curPart = item.part;
+        reviewHtml += '<h3 class="review-part">' + esc(PART_LABELS[curPart]) + "</h3>";
+      }
+      var q = item.q;
+      var stemHtml;
+      if (item.part === "part4") {
+        stemHtml = '<p class="original">' + esc(q.original) + "</p><p>" + esc(q.gapped) +
+          '　<span class="kw">[' + esc(q.keyword) + "]</span></p>";
+      } else {
+        stemHtml = "<p>" + esc(q.text) + "</p>";
+        if (item.part === "part3") stemHtml += '<p>提示字：<span class="stem-word">' + esc(q.stem) + "</span></p>";
+      }
+      reviewHtml +=
+        '<div class="review-item ' + (isCorrect ? "ok" : "bad") + '">' +
+        '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " 第 " + (i + 1) + " 題" +
+        (pts > 1 ? '<span class="pts">' + (isCorrect ? pts : 0) + "/" + pts + " 分</span>" : "") + "</div>" +
+        stemHtml +
+        '<div class="review-ans"><strong>你的答案：</strong>' + esc(userAnsText(item, quiz.answers[i])) + "</div>" +
+        '<div class="review-ans"><strong>正確答案：</strong>' + esc(correctAnsText(item)) + "</div>" +
+        '<div class="expl">' + esc(q.explanation) + "</div>" +
+        "</div>";
+    });
+
+    var pct = Math.round(100 * score / max);
+    var v = verdictFor(pct);
+
+    /* 全卷模式：加各 part 小計 */
+    var subHtml = "";
+    if (quiz.mode === "full") {
+      subHtml = '<div class="part-subscores">';
+      PARTS.forEach(function (p) {
+        var s = byPart[p];
+        if (s) subHtml += "<span>" + esc(PART_LABELS[p].split("·")[0].trim()) + " " + s.score + "/" + s.max + "</span>";
+      });
+      subHtml += "</div>";
+    }
+
+    $("uoe-quiz").classList.add("hidden");
+    $("uoe-summary").classList.remove("hidden");
+    $("uoe-summary-title").textContent = quiz.mode === "full"
+      ? "全卷模擬結果 (Use of English)"
+      : PART_LABELS[quiz.part] + " 模擬結果";
+    $("uoe-score").textContent = score + " / " + max + "（" + pct + "%）";
+    $("uoe-verdict").className = "verdict-text " + v.cls;
+    $("uoe-verdict").innerHTML = esc(v.text) + subHtml;
+    $("uoe-review").innerHTML = reviewHtml;
+    window.scrollTo(0, 0);
+
+    saveMockRecord(score, max, pct);
+  }
+
+  function saveMockRecord(score, max, pct) {
+    var hist = loadJSON(K_MOCK(), []);
+    hist.push({
+      date: Date.now(),
+      mode: quiz.mode,
+      part: quiz.part,
+      score: score, max: max, pct: pct
+    });
+    if (hist.length > 50) hist = hist.slice(hist.length - 50);
+    saveJSON(K_MOCK(), hist);
+  }
+
   function initUoe() {
     /* 只綁 UoE 選單的按鈕（級數選擇卡也用 .mode-btn，但沒有 data-part） */
     document.querySelectorAll("#uoe-picker .mode-btn[data-part]").forEach(function (b) {
-      b.addEventListener("click", function () { startQuiz(b.dataset.part); });
+      b.addEventListener("click", function () { startMock(b.dataset.part); });
     });
-    $("uoe-next").addEventListener("click", nextQuestion);
-    $("uoe-retry").addEventListener("click", function () { startQuiz(quiz.part); });
-    $("uoe-back").addEventListener("click", backToPicker);
+    $("uoe-full-mock").addEventListener("click", startFullMock);
+    $("uoe-retry").addEventListener("click", function () {
+      if (quiz.mode === "full") startFullMock(); else startMock(quiz.part);
+    });
+    $("uoe-back").addEventListener("click", function () {
+      if (quiz.idx > 0 && !confirm("尚未交卷，確定要放棄本次模擬考嗎？")) return;
+      backToPicker();
+    });
     $("uoe-home").addEventListener("click", backToPicker);
   }
   function backToPicker() {
@@ -561,6 +675,18 @@ if (typeof document !== 'undefined') {
           pct, pct >= 80);
       }
     });
+    var hist = loadJSON(K_MOCK(), []);
+    if (hist.length) {
+      html += '<h3 class="pg-mock-title">最近模擬考</h3><ul class="mock-history">';
+      hist.slice(-8).reverse().forEach(function (m) {
+        var label = m.mode === "full" ? "全卷" : (PART_LABELS[m.part] || m.part).split("·")[0].trim();
+        var cls = m.pct >= 75 ? "ok" : (m.pct >= 60 ? "mid" : "bad");
+        html += '<li><span class="mh-date">' + esc(fmtDate(m.date)) + "</span>" +
+          '<span class="mh-label">' + esc(label) + "</span>" +
+          '<span class="mh-score ' + cls + '">' + m.score + "/" + m.max + "（" + m.pct + "%）</span></li>";
+      });
+      html += "</ul>";
+    }
     $("pg-uoe").innerHTML = html;
 
     var st = getVocabState();
