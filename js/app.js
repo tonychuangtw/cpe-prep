@@ -104,9 +104,53 @@ if (typeof document !== 'undefined') {
     return String(s).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
   }
 
-  var K_STATS = "cpe_uoe_stats";
-  var K_VOCAB = "cpe_vocab_state";
-  var K_DRAFT = "cpe_draft_";   // + prompt id
+  /* ---- 級數相關狀態（CPEApp.init(level) 設定） ---- */
+  var LEVEL = "cpe";
+  var CFG = {           // 預設 = CPE；init 時會被 window.LEVELS[level] 覆蓋
+    timerMin: 45,
+    wordGuide: "",
+    p4min: 3, p4max: 8,
+    spSecs: 120, spLabel: ""
+  };
+  var K_STATS = "cpe.uoe_stats";
+  var K_VOCAB = "cpe.vocab_state";
+  var K_DRAFT = "cpe.draft_";   // + prompt id
+
+  function setLevel(level) {
+    LEVEL = level || "cpe";
+    var levels = (typeof window !== "undefined" && window.LEVELS) || {};
+    var cfg = levels[LEVEL];
+    if (cfg) CFG = cfg;
+    K_STATS = LEVEL + ".uoe_stats";
+    K_VOCAB = LEVEL + ".vocab_state";
+    K_DRAFT = LEVEL + ".draft_";
+    if (LEVEL === "cpe") migrateLegacyKeys();
+  }
+
+  /* 舊版未加級數前綴的 key（cpe_uoe_stats 等）一次性搬到 cpe.* */
+  function migrateLegacyKeys() {
+    try {
+      var map = { "cpe_uoe_stats": "cpe.uoe_stats", "cpe_vocab_state": "cpe.vocab_state" };
+      Object.keys(map).forEach(function (oldK) {
+        var v = localStorage.getItem(oldK);
+        if (v !== null && localStorage.getItem(map[oldK]) === null) {
+          localStorage.setItem(map[oldK], v);
+        }
+      });
+      var draftKeys = [];
+      for (var i = 0; i < localStorage.length; i++) {
+        var k = localStorage.key(i);
+        if (k && k.indexOf("cpe_draft_") === 0) draftKeys.push(k);
+      }
+      draftKeys.forEach(function (oldK) {
+        var newK = "cpe.draft_" + oldK.slice("cpe_draft_".length);
+        var v = localStorage.getItem(oldK);
+        if (v !== null && localStorage.getItem(newK) === null) {
+          localStorage.setItem(newK, v);
+        }
+      });
+    } catch (e) {}
+  }
 
   /* ================= §3 Tab navigation ================= */
   function initTabs() {
@@ -189,7 +233,7 @@ if (typeof document !== 'undefined') {
     } else { // part4
       qBox.innerHTML =
         '<p class="original">' + esc(q.original) + "</p>" +
-        '<p>關鍵詞：<span class="kw">' + esc(q.keyword) + "</span>（必須使用，共 3–8 個字）</p>" +
+        '<p>關鍵詞：<span class="kw">' + esc(q.keyword) + "</span>（必須使用，共 " + CFG.p4min + "–" + CFG.p4max + " 個字）</p>" +
         "<p>" + esc(q.gapped) + "</p>";
       buildTypedInput(aBox, function (val) { answerTyped(val, q.answers, q.model, q.explanation); });
     }
@@ -262,7 +306,8 @@ if (typeof document !== 'undefined') {
   }
 
   function initUoe() {
-    document.querySelectorAll(".mode-btn").forEach(function (b) {
+    /* 只綁 UoE 選單的按鈕（級數選擇卡也用 .mode-btn，但沒有 data-part） */
+    document.querySelectorAll("#uoe-picker .mode-btn[data-part]").forEach(function (b) {
       b.addEventListener("click", function () { startQuiz(b.dataset.part); });
     });
     $("uoe-next").addEventListener("click", nextQuestion);
@@ -303,13 +348,17 @@ if (typeof document !== 'undefined') {
   }
 
   function initWriting() {
+    // level-specific guidance
+    var guide = $("wr-guidance");
+    if (guide) guide.textContent = CFG.wordGuide || "";
     // timer
     var wrTimer = makeCountdown($("wr-timer"), function () { alert("時間到！"); });
     var minInput = $("wr-minutes");
+    minInput.value = CFG.timerMin;
     function resetWr() {
       wrTimer.pause();
       var m = parseInt(minInput.value, 10);
-      if (isNaN(m) || m < 1) m = 45;
+      if (isNaN(m) || m < 1) m = CFG.timerMin;
       wrTimer.set(m * 60);
     }
     resetWr();
@@ -372,10 +421,12 @@ if (typeof document !== 'undefined') {
 
   /* ================= §6 Speaking ================= */
   function initSpeaking() {
+    var hint = $("sp-mode-hint");
+    if (hint && CFG.spLabel) hint.textContent = CFG.spLabel;
     var spTimer = makeCountdown($("sp-timer"), function () {
       $("sp-phrases").classList.remove("hidden");
     });
-    spTimer.set(120);
+    spTimer.set(CFG.spSecs);
 
     $("sp-draw").addEventListener("click", function () {
       var p = SPEAKING[Math.floor(Math.random() * SPEAKING.length)];
@@ -387,10 +438,10 @@ if (typeof document !== 'undefined') {
       $("sp-timer-box").classList.remove("hidden");
       $("sp-phrases").classList.add("hidden");
       spTimer.pause();
-      spTimer.set(120);
+      spTimer.set(CFG.spSecs);
     });
     $("sp-start").addEventListener("click", function () { spTimer.start(); });
-    $("sp-reset").addEventListener("click", function () { spTimer.pause(); spTimer.set(120); });
+    $("sp-reset").addEventListener("click", function () { spTimer.pause(); spTimer.set(CFG.spSecs); });
 
     var ul = $("sp-phrase-list");
     SPEAKING_PHRASES.forEach(function (ph) {
@@ -528,14 +579,20 @@ if (typeof document !== 'undefined') {
 
   function initProgress() {
     $("pg-clear").addEventListener("click", function () {
-      if (!confirm("確定要清除所有練習紀錄、字彙進度與草稿嗎？此動作無法復原。")) return;
+      if (!confirm("確定要清除「本級數」的練習紀錄、字彙進度與草稿嗎？此動作無法復原。")) return;
       try {
         var keys = [];
         for (var i = 0; i < localStorage.length; i++) {
           var k = localStorage.key(i);
-          if (k && k.indexOf("cpe_") === 0) keys.push(k);
+          if (!k) continue;
+          if (k.indexOf(LEVEL + ".") === 0) keys.push(k);
+          /* CPE 也清掉舊版未加前綴的 key；主題 (cpe_theme) 與級數選擇 (cpe.level) 全域，保留 */
+          if (LEVEL === "cpe" && k.indexOf("cpe_") === 0 && k !== "cpe_theme") keys.push(k);
         }
-        keys.forEach(function (k) { localStorage.removeItem(k); });
+        keys.forEach(function (k) {
+          if (k === "cpe.level") return;
+          localStorage.removeItem(k);
+        });
       } catch (e) {}
       vocabQueue = [];
       renderProgress();
@@ -622,8 +679,11 @@ if (typeof document !== 'undefined') {
     }
   }
 
-  function boot() {
-    safeInit("theme", initTheme);
+  var booted = false;
+  function boot(level) {
+    if (booted) return;
+    booted = true;
+    safeInit("level", function () { setLevel(level); });
     safeInit("tabs", initTabs);
     safeInit("uoe", initUoe);
     safeInit("writing", initWriting);
@@ -632,10 +692,10 @@ if (typeof document !== 'undefined') {
     safeInit("progress", initProgress);
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", boot);
-  } else {
-    boot();
-  }
+  /* 主題為全域功能：不等選級數，載入即啟用（含級數選擇畫面）。 */
+  safeInit("theme", initTheme);
+
+  /* loader.js 載完該級數的資料檔後呼叫 CPEApp.init(level) */
+  window.CPEApp = { init: boot };
 })();
 }

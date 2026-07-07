@@ -25,11 +25,12 @@
 <body>
 
 <header class="app-header">
-  <span class="brand-mark" aria-hidden="true">C2</span>
+  <span class="brand-mark" id="level-badge" aria-hidden="true">C2</span>
   <div class="brand-text">
-    <h1>CPE 備考</h1>
-    <span class="subtitle">Cambridge C2 Proficiency</span>
+    <h1 id="app-title">CPE 備考</h1>
+    <span class="subtitle" id="app-subtitle">Cambridge C2 Proficiency</span>
   </div>
+  <button id="level-btn" class="icon-btn level-btn" aria-label="切換級數" title="切換級數">C2</button>
   <button id="theme-btn" class="icon-btn" aria-label="選擇色系" title="選擇色系">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M12 21a9 9 0 1 1 9-9c0 2.5-1.5 3.5-3 3.5h-2a2.5 2.5 0 0 0-2 4c.5.7 0 1.5-2 1.5z"/>
@@ -87,6 +88,7 @@
   <!-- ===== Tab 2: Writing ===== -->
   <section id="tab-writing" class="tab-panel">
     <h2>Writing</h2>
+    <p class="hint" id="wr-guidance"></p>
     <div class="card timer-card">
       <div class="timer-row">
         <label>分鐘：<input type="number" id="wr-minutes" value="45" min="1" max="120"></label>
@@ -105,7 +107,7 @@
   <section id="tab-speaking" class="tab-panel">
     <h2>Speaking</h2>
     <div class="card center">
-      <p class="hint">Part 3 Long turn — 抽一張題卡，講滿 2 分鐘</p>
+      <p class="hint" id="sp-mode-hint">Part 3 Long turn — 抽一張題卡，講滿 2 分鐘</p>
       <button id="sp-draw" class="primary-btn">抽一題</button>
     </div>
     <div id="sp-card" class="card hidden"></div>
@@ -180,43 +182,32 @@
     進度</button>
 </nav>
 
+<div id="level-select" class="level-select hidden" role="dialog" aria-label="選擇級數">
+  <div class="level-select-inner">
+    <h2>選擇備考級數</h2>
+    <p class="hint">三個級數的進度各自獨立儲存，可隨時切換。</p>
+    <div class="level-grid">
+      <button class="mode-btn level-card" data-level="fce">
+        <strong>B2 First</strong><span>FCE · 中高級<br>日常與半正式情境的紮實英文基礎</span>
+      </button>
+      <button class="mode-btn level-card" data-level="cae">
+        <strong>C1 Advanced</strong><span>CAE · 高級<br>學術與職場所需的流利精準英文</span>
+      </button>
+      <button class="mode-btn level-card" data-level="cpe">
+        <strong>C2 Proficiency</strong><span>CPE · 最高級<br>接近母語者的語感與修辭能力</span>
+      </button>
+    </div>
+    <button id="level-cancel" class="ghost-btn hidden">取消</button>
+  </div>
+</div>
+
 <div id="theme-backdrop" class="sheet-backdrop hidden"></div>
 <div id="theme-sheet" class="theme-sheet hidden" role="dialog" aria-label="選擇色系">
   <h3>選擇色系</h3>
   <div id="theme-grid" class="theme-grid"></div>
 </div>
 
-<script src="js/questions.js"></script>
-<script src="js/vocab.js"></script>
-<script src="js/banks/p1-w1.js"></script>
-<script src="js/banks/p1-w2.js"></script>
-<script src="js/banks/p1-w3.js"></script>
-<script src="js/banks/p1-w4.js"></script>
-<script src="js/banks/p1-w5.js"></script>
-<script src="js/banks/p2-w1.js"></script>
-<script src="js/banks/p2-w2.js"></script>
-<script src="js/banks/p2-w3.js"></script>
-<script src="js/banks/p2-w4.js"></script>
-<script src="js/banks/p2-w5.js"></script>
-<script src="js/banks/p3-w1.js"></script>
-<script src="js/banks/p3-w2.js"></script>
-<script src="js/banks/p3-w3.js"></script>
-<script src="js/banks/p3-w4.js"></script>
-<script src="js/banks/p3-w5.js"></script>
-<script src="js/banks/p4-w1.js"></script>
-<script src="js/banks/p4-w2.js"></script>
-<script src="js/banks/p4-w3.js"></script>
-<script src="js/banks/p4-w4.js"></script>
-<script src="js/banks/p4-w5.js"></script>
-<script src="js/banks/speaking-x.js"></script>
-<script src="js/banks/vocab-w1.js"></script>
-<script src="js/banks/vocab-w2.js"></script>
-<script src="js/banks/vocab-w3.js"></script>
-<script src="js/banks/vocab-w4.js"></script>
-<script src="js/banks/vocab-w5.js"></script>
-<script src="js/banks/vocab-w6.js"></script>
-<script src="js/banks/writing-x.js"></script>
-
 <script src="js/app.js"></script>
+<script src="js/loader.js"></script>
 </body>
 </html>
