@@ -635,6 +635,18 @@ input[type="number"]:focus {
 }
 .pg-bar-fill.green { background: var(--green); }
 
+/* ---- weakness dashboard ---- */
+.wk-predict {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap;
+  margin: 10px 0 14px; padding-bottom: 12px; border-bottom: 1px solid var(--border);
+}
+.wk-num { font-size: 2rem; font-weight: 700; }
+.wk-num.ok { color: var(--green); }
+.wk-num.mid { color: var(--accent); }
+.wk-num.bad { color: var(--red); }
+.wk-sub { color: var(--muted); font-size: 0.82rem; }
+.wk-advice { margin-top: 12px; }
+
 /* ---- theme sheet ---- */
 .sheet-backdrop {
   position: fixed; inset: 0; z-index: 30;

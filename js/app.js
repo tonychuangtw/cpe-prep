@@ -1580,6 +1580,108 @@ if (typeof document !== 'undefined') {
       "</div>";
   }
 
+  /* ---------- §8.1 弱點儀表板 ---------- */
+  var WK_AREAS = [
+    { id: "part1", stat: "part1", paper: "uoe", label: "UoE P1 · MC cloze",
+      hist: function (m) { return m.mode === "single" && m.part === "part1"; },
+      mb: function (e) { return e.kind === "uoe" && e.payload.part === "part1"; } },
+    { id: "part2", stat: "part2", paper: "uoe", label: "UoE P2 · Open cloze",
+      hist: function (m) { return m.mode === "single" && m.part === "part2"; },
+      mb: function (e) { return e.kind === "uoe" && e.payload.part === "part2"; } },
+    { id: "part3", stat: "part3", paper: "uoe", label: "UoE P3 · Word formation",
+      hist: function (m) { return m.mode === "single" && m.part === "part3"; },
+      mb: function (e) { return e.kind === "uoe" && e.payload.part === "part3"; } },
+    { id: "part4", stat: "part4", paper: "uoe", label: "UoE P4 · Key word transformations",
+      hist: function (m) { return m.mode === "single" && m.part === "part4"; },
+      mb: function (e) { return e.kind === "uoe" && e.payload.part === "part4"; } },
+    { id: "rmc", stat: "rmc", paper: "reading", label: "Reading · Multiple choice",
+      hist: function (m) { return m.mode === "reading" && m.part === "mc"; },
+      mb: function (e) { return e.kind === "rmc"; } },
+    { id: "rgap", stat: "rgap", paper: "reading", label: "Reading · Gapped text",
+      hist: function (m) { return m.mode === "reading" && m.part === "gap"; },
+      mb: function (e) { return e.kind === "rgap"; } },
+    { id: "rmatch", stat: "rmatch", paper: "reading", label: "Reading · Multiple matching",
+      hist: function (m) { return m.mode === "reading" && m.part === "match"; },
+      mb: function (e) { return e.kind === "rmatch"; } },
+    { id: "lis", stat: "lis", paper: "listening", label: "Listening",
+      hist: function (m) { return m.mode === "listening"; },
+      mb: function (e) { return e.kind === "lis"; } }
+  ];
+
+  function wkTrend(pcts) {
+    if (pcts.length < 4) return null;
+    var recent = pcts.slice(-2), earlier = pcts.slice(-4, -2);
+    var avg = function (a) { return a.reduce(function (x, y) { return x + y; }, 0) / a.length; };
+    var diff = avg(recent) - avg(earlier);
+    if (diff >= 5) return { arrow: "↑", cls: "ok", text: "improving" };
+    if (diff <= -5) return { arrow: "↓", cls: "bad", text: "declining" };
+    return { arrow: "→", cls: "mid", text: "steady" };
+  }
+
+  function renderWeakness() {
+    var el = $("pg-weakness");
+    if (!el) return;
+    var stats = loadJSON(K_STATS, {});
+    var hist = loadJSON(K_MOCK(), []);
+    var book = mbLoad();
+
+    var rows = [];
+    WK_AREAS.forEach(function (a) {
+      var s = stats[a.stat];
+      if (!s || !s.attempted) return;
+      var acc = Math.round(100 * s.correct / s.attempted);
+      var pcts = hist.filter(a.hist).map(function (m) { return m.pct; });
+      rows.push({
+        area: a, acc: acc, attempted: s.attempted,
+        trend: wkTrend(pcts),
+        recent: pcts.slice(-5),
+        mbCount: book.filter(a.mb).length
+      });
+    });
+
+    if (rows.length < 2) {
+      el.innerHTML = "<h3>Weakness dashboard</h3><p class='hint'>Complete a few mock exams across different task types and your weak spots will show up here.</p>";
+      return;
+    }
+
+    /* 預估總分：各 paper 取最近 5 次 mock 平均，再取有資料 paper 的平均 */
+    var papers = { uoe: [], reading: [], listening: [] };
+    hist.forEach(function (m) {
+      var paper = (m.mode === "reading") ? "reading" : (m.mode === "listening") ? "listening" : "uoe";
+      papers[paper].push(m.pct);
+    });
+    var paperAvgs = [];
+    Object.keys(papers).forEach(function (k) {
+      var p = papers[k].slice(-5);
+      if (p.length) paperAvgs.push(p.reduce(function (x, y) { return x + y; }, 0) / p.length);
+    });
+    var predicted = Math.round(paperAvgs.reduce(function (x, y) { return x + y; }, 0) / paperAvgs.length);
+    var passProb = Math.round(100 / (1 + Math.exp(-(predicted - 60) / 6)));
+    var v = verdictFor(predicted);
+
+    var html = "<h3>Weakness dashboard</h3>" +
+      '<div class="wk-predict"><span class="wk-num ' + v.cls + '">' + predicted + "%</span>" +
+      '<span class="wk-sub">estimated overall score · pass probability ~' + passProb + "%</span></div>";
+
+    rows.sort(function (a, b) { return a.acc - b.acc; });
+    rows.forEach(function (r, i) {
+      var t = r.trend;
+      var sub = r.attempted + " answered" +
+        (t ? " · " + t.text : "") +
+        (r.mbCount ? " · " + r.mbCount + " in mistake book" : "");
+      var label = (i === 0 && r.acc < 80 ? "⚠ " : "") + r.area.label +
+        (t ? " " + t.arrow : "");
+      html += barRow(label, sub, r.acc, r.acc >= 80);
+    });
+
+    var weakest = rows[0];
+    if (weakest.acc < 80) {
+      html += "<p class='hint wk-advice'>Focus suggestion: <strong>" + esc(weakest.area.label) +
+        "</strong> (" + weakest.acc + "% correct) — run a few targeted mocks and clear its mistake-book items.</p>";
+    }
+    el.innerHTML = html;
+  }
+
   function renderMistakeCard() {
     var el = $("pg-mistakes");
     if (!el) return;
@@ -1603,6 +1705,7 @@ if (typeof document !== 'undefined') {
 
   function renderProgress() {
     renderMistakeCard();
+    try { renderWeakness(); } catch (e) {}
     var stats = loadJSON(K_STATS, {});
     var html = "<h3>Use of English</h3>";
     ["part1", "part2", "part3", "part4"].forEach(function (p) {
