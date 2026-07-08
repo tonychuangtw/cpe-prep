@@ -348,6 +348,7 @@ if (typeof document !== 'undefined') {
       max += pts;
       if (isCorrect) score += pts;
       recordResult(item.part, isCorrect);
+      if (!isCorrect) { try { mbAdd("uoe", { part: item.part, q: item.q }); } catch (e) {} }
       if (!byPart[item.part]) byPart[item.part] = { score: 0, max: 0 };
       byPart[item.part].max += pts;
       if (isCorrect) byPart[item.part].score += pts;
@@ -810,6 +811,20 @@ if (typeof document !== 'undefined') {
       var isCorrect = rd.answers[j] === rdCorrectAnswer(j);
       if (isCorrect) score++;
       recordResult(statKey, isCorrect);
+      if (!isCorrect) {
+        try {
+          var s0 = rd.set;
+          if (rd.type === "mc") {
+            mbAdd("rmc", { title: s0.title, text: s0.text, q: s0.questions[j] });
+          } else if (rd.type === "gap") {
+            mbAdd("rgap", { title: s0.title, segments: s0.segments, options: s0.options,
+              gapCount: s0.answers.length, gapIndex: j, answer: s0.answers[j], explanation: s0.explanations[j] });
+          } else {
+            mbAdd("rmatch", { title: s0.title, sections: s0.sections, q: s0.questions[j].q,
+              answer: s0.questions[j].answer, explanation: s0.questions[j].explanation });
+          }
+        } catch (e) {}
+      }
       reviewHtml +=
         '<div class="review-item ' + (isCorrect ? "ok" : "bad") + '">' +
         '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " Question " + (j + 1) + "</div>" +
@@ -1007,6 +1022,9 @@ if (typeof document !== 'undefined') {
       var isCorrect = ls.answers[j] === qs[j].answer;
       if (isCorrect) score++;
       recordResult("lis", isCorrect);
+      if (!isCorrect) {
+        try { mbAdd("lis", { title: ls.set.title, kind: ls.set.kind, script: ls.set.script, q: qs[j] }); } catch (e) {}
+      }
       reviewHtml +=
         '<div class="review-item ' + (isCorrect ? "ok" : "bad") + '">' +
         '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " Question " + (j + 1) + "</div>" +
@@ -1123,6 +1141,219 @@ if (typeof document !== 'undefined') {
     $("ls-congrats-home").addEventListener("click", lsBackToPicker);
     /* Chrome 需要先觸發 getVoices 才會載入聲音清單 */
     if (window.speechSynthesis) speechSynthesis.getVoices();
+  }
+
+  /* ================= §4.9 長期錯題本 (Leitner spaced repetition) ================= */
+  var K_MB = function () { return LEVEL + ".mistake_book"; };
+  var MB_CAP = 200, MB_SESSION_CAP = 20;
+  var mbReviewedThisSession = {};
+
+  function mbLoad() { return loadJSON(K_MB(), []); }
+  function mbSave(book) { saveJSON(K_MB(), book); }
+
+  function mbKey(kind, payload) {
+    if (kind === "uoe") return "uoe|" + payload.part + "|" + (payload.q.text || payload.q.original || "");
+    if (kind === "rmc") return "rmc|" + payload.title + "|" + payload.q.q;
+    if (kind === "rgap") return "rgap|" + payload.title + "|" + payload.gapIndex;
+    if (kind === "rmatch") return "rmatch|" + payload.title + "|" + payload.q;
+    return "lis|" + payload.title + "|" + payload.q.q;
+  }
+
+  /* 答錯即收進錯題本；已存在則重設回盒1 */
+  function mbAdd(kind, payload) {
+    var book = mbLoad();
+    var key = mbKey(kind, payload);
+    var now = Date.now();
+    for (var i = 0; i < book.length; i++) {
+      if (book[i].key === key) {
+        book[i].box = 1;
+        book[i].last = now;
+        book[i].payload = payload;
+        mbSave(book);
+        return;
+      }
+    }
+    book.push({ key: key, kind: kind, payload: payload, box: 1, last: now, added: now });
+    if (book.length > MB_CAP) book = book.slice(book.length - MB_CAP);
+    mbSave(book);
+  }
+
+  function mbDueEntries() {
+    var now = Date.now();
+    return mbLoad().filter(function (e) { return leitnerIsDue(e, now); });
+  }
+
+  /* 每個 session 只依「第一次作答」升降盒；盒3 答對 → 畢業移除 */
+  function mbReview(key, isCorrect) {
+    if (mbReviewedThisSession[key]) return;
+    mbReviewedThisSession[key] = true;
+    var book = mbLoad();
+    for (var i = 0; i < book.length; i++) {
+      if (book[i].key !== key) continue;
+      if (isCorrect && book[i].box >= 3) {
+        book.splice(i, 1);
+      } else {
+        var st = leitnerReview(book[i], isCorrect, Date.now());
+        book[i].box = st.box;
+        book[i].last = st.last;
+      }
+      break;
+    }
+    mbSave(book);
+  }
+
+  function mbCorrectText(e) {
+    var p = e.payload;
+    if (e.kind === "uoe") return correctAnsText({ part: p.part, q: p.q });
+    if (e.kind === "rmc" || e.kind === "lis") return LETTERS[p.q.answer] + ". " + p.q.options[p.q.answer];
+    if (e.kind === "rgap") return LETTERS[p.answer] + ". " + p.options[p.answer];
+    return LETTERS[p.answer] + " (" + p.sections[p.answer].label + ")";
+  }
+
+  function mbExplText(e) {
+    var p = e.payload;
+    if (e.kind === "rgap" || e.kind === "rmatch") return p.explanation;
+    return p.q.explanation;
+  }
+
+  function mbStopAudio() {
+    try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {}
+  }
+
+  function mbReplay(p) {
+    if (!window.speechSynthesis) return;
+    speechSynthesis.cancel();
+    var queue = lsBuildQueue({ script: p.script, kind: p.kind }, 1);
+    var i = 0;
+    (function next() {
+      if (i >= queue.length) return;
+      var u = queue[i++];
+      u.onend = next;
+      u.onerror = next;
+      speechSynthesis.speak(u);
+    })();
+  }
+
+  function renderMbDrillItem(e, done) {
+    var area = $("mb-drill-area");
+    area.innerHTML = "";
+    var p = e.payload;
+
+    function answered(isCorrect, userText) {
+      mbStopAudio();
+      mbReview(e.key, isCorrect);
+      done(isCorrect, userText);
+    }
+
+    if (e.kind === "uoe") {
+      var qBox = document.createElement("div");
+      qBox.className = "card";
+      var aBox = document.createElement("div");
+      area.appendChild(qBox);
+      area.appendChild(aBox);
+      var item = { part: p.part, q: p.q };
+      renderUoeItemInto(item, qBox, aBox, function (val) {
+        answered(gradeItem(item, val), userAnsText(item, val));
+      });
+    } else if (e.kind === "rmc") {
+      var passage = document.createElement("div");
+      passage.className = "card rd-passage";
+      passage.innerHTML = "<h3>" + esc(p.title) + "</h3>" +
+        p.text.split(/\n+/).map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("");
+      area.appendChild(passage);
+      var card = document.createElement("div");
+      card.className = "card rd-q";
+      card.innerHTML = "<p>" + esc(p.q.q) + "</p>";
+      p.q.options.forEach(function (opt, oi) {
+        var b = document.createElement("button");
+        b.className = "option-btn";
+        b.innerHTML = "<strong>" + LETTERS[oi] + "</strong>&nbsp; " + esc(opt);
+        b.addEventListener("click", function () {
+          b.classList.add("selected");
+          answered(oi === p.q.answer, LETTERS[oi] + ". " + p.q.options[oi]);
+        });
+        card.appendChild(b);
+      });
+      area.appendChild(card);
+    } else if (e.kind === "rgap") {
+      var art = document.createElement("div");
+      art.className = "card rd-passage";
+      var html = "<h3>" + esc(p.title) + "</h3>";
+      p.segments.forEach(function (seg, i) {
+        html += "<p>" + esc(seg) + "</p>";
+        if (i < p.gapCount) html += '<p class="gap-slot' + (i === p.gapIndex ? " current" : "") + '">(' + (i + 1) + ") ____</p>";
+      });
+      art.innerHTML = html;
+      area.appendChild(art);
+
+      var optCard = document.createElement("div");
+      optCard.className = "card";
+      var ohtml = "<h3>Options (one is not needed)</h3>";
+      p.options.forEach(function (opt, oi) {
+        ohtml += '<p class="rd-opt"><strong>' + LETTERS[oi] + ".</strong> " + esc(opt) + "</p>";
+      });
+      optCard.innerHTML = ohtml;
+      area.appendChild(optCard);
+
+      var pickCard = document.createElement("div");
+      pickCard.className = "card";
+      pickCard.innerHTML = "<h3>Which option fills gap " + (p.gapIndex + 1) + "?</h3>";
+      pickCard.appendChild(letterRow(p.options.length, function (idx) {
+        answered(idx === p.answer, LETTERS[idx] + ". " + p.options[idx]);
+      }));
+      area.appendChild(pickCard);
+    } else if (e.kind === "rmatch") {
+      p.sections.forEach(function (sec) {
+        var sc = document.createElement("div");
+        sc.className = "card rd-passage";
+        sc.innerHTML = "<h3>" + esc(sec.label) + "</h3><p>" + esc(sec.text) + "</p>";
+        area.appendChild(sc);
+      });
+      var qCard = document.createElement("div");
+      qCard.innerHTML = "<h3>Which section mentions…</h3><p class='match-q'>" + esc(p.q) + "</p>";
+      qCard.className = "card";
+      qCard.appendChild(letterRow(p.sections.length, function (idx) {
+        answered(idx === p.answer, LETTERS[idx] + " (" + p.sections[idx].label + ")");
+      }));
+      area.appendChild(qCard);
+    } else { // lis
+      var player = document.createElement("div");
+      player.className = "card center";
+      var rp = document.createElement("button");
+      rp.className = "ghost-btn small";
+      rp.textContent = "🔊 Replay recording";
+      rp.addEventListener("click", function () { mbReplay(p); });
+      player.appendChild(rp);
+      area.appendChild(player);
+
+      var lcard = document.createElement("div");
+      lcard.className = "card rd-q";
+      lcard.innerHTML = "<p>" + esc(p.q.q) + "</p>";
+      p.q.options.forEach(function (opt, oi) {
+        var lb = document.createElement("button");
+        lb.className = "option-btn";
+        lb.innerHTML = "<strong>" + LETTERS[oi] + "</strong>&nbsp; " + esc(opt);
+        lb.addEventListener("click", function () {
+          lb.classList.add("selected");
+          answered(oi === p.q.answer, LETTERS[oi] + ". " + p.q.options[oi]);
+        });
+        lcard.appendChild(lb);
+      });
+      area.appendChild(lcard);
+    }
+  }
+
+  function startMbDrill() {
+    var due = mbDueEntries();
+    if (!due.length) return;
+    mbReviewedThisSession = {};
+    startDrillGeneric({
+      prefix: "mb",
+      items: shuffle(due).slice(0, MB_SESSION_CAP),
+      render: renderMbDrillItem,
+      correctText: mbCorrectText,
+      explText: mbExplText
+    });
   }
 
   /* ================= §5 Writing ================= */
@@ -1349,7 +1580,29 @@ if (typeof document !== 'undefined') {
       "</div>";
   }
 
+  function renderMistakeCard() {
+    var el = $("pg-mistakes");
+    if (!el) return;
+    var book = mbLoad();
+    var due = mbDueEntries();
+    if (!book.length) {
+      el.innerHTML = "<h3>Mistake book</h3><p class='hint'>No mistakes saved yet — wrong answers from mock exams are collected here for spaced review.</p>";
+      return;
+    }
+    var html = "<h3>Mistake book</h3><p>" + book.length + " item" + (book.length > 1 ? "s" : "") +
+      " in the book · " + due.length + " due for review</p>";
+    if (due.length) {
+      html += '<button id="mb-review-btn" class="primary-btn">Review now (' + Math.min(due.length, MB_SESSION_CAP) + ")</button>";
+    } else {
+      html += "<p class='hint'>Nothing due right now — answer correctly to graduate items out of the book.</p>";
+    }
+    el.innerHTML = html;
+    var rb = $("mb-review-btn");
+    if (rb) rb.addEventListener("click", startMbDrill);
+  }
+
   function renderProgress() {
+    renderMistakeCard();
     var stats = loadJSON(K_STATS, {});
     var html = "<h3>Use of English</h3>";
     ["part1", "part2", "part3", "part4"].forEach(function (p) {
@@ -1423,6 +1676,18 @@ if (typeof document !== 'undefined') {
   }
 
   function initProgress() {
+    $("mb-drill-quit").addEventListener("click", function () {
+      if (!confirm("Quit mistake review and go back to Progress?")) return;
+      mbStopAudio();
+      $("mb-drill").classList.add("hidden");
+      $("mb-summary").classList.remove("hidden");
+      renderProgress();
+    });
+    $("mb-congrats-home").addEventListener("click", function () {
+      $("mb-congrats").classList.add("hidden");
+      $("mb-summary").classList.remove("hidden");
+      renderProgress();
+    });
     $("pg-clear").addEventListener("click", function () {
       if (!confirm("Clear all practice records, vocabulary progress and drafts for this level? This cannot be undone.")) return;
       try {

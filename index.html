@@ -303,11 +303,32 @@
 
   <!-- ===== Tab 5: Progress ===== -->
   <section id="tab-progress" class="tab-panel">
-    <h2>Progress</h2>
-    <div id="pg-uoe" class="card"></div>
-    <div id="pg-vocab" class="card"></div>
-    <div class="card center">
-      <button id="pg-clear" class="danger-btn">Clear all data</button>
+    <div id="mb-summary">
+      <h2>Progress</h2>
+      <div id="pg-mistakes" class="card center"></div>
+      <div id="pg-uoe" class="card"></div>
+      <div id="pg-vocab" class="card"></div>
+      <div class="card center">
+        <button id="pg-clear" class="danger-btn">Clear all data</button>
+      </div>
+    </div>
+
+    <div id="mb-drill" class="hidden">
+      <div class="exam-top">
+        <button id="mb-drill-quit" class="ghost-btn">Quit</button>
+        <span id="mb-drill-progress" class="exam-progress"></span>
+      </div>
+      <div id="mb-drill-area"></div>
+      <div id="mb-drill-feedback"></div>
+    </div>
+
+    <div id="mb-congrats" class="hidden">
+      <div class="card congrats-card">
+        <div class="congrats-emoji">🎉</div>
+        <h2>Review complete!</h2>
+        <p id="mb-congrats-text"></p>
+        <button id="mb-congrats-home" class="primary-btn">Back to Progress</button>
+      </div>
     </div>
   </section>
 
