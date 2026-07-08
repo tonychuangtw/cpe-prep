@@ -443,6 +443,14 @@ button { font-family: inherit; }
 @keyframes pulse-gap { from { opacity: 1; } to { opacity: 0.55; } }
 .rd-q p { margin: 4px 0 10px; }
 
+/* ---- Listening ---- */
+.ls-rate-label { color: var(--muted); font-size: 0.85rem; display: inline-flex; align-items: center; gap: 6px; }
+.ls-rate-label select {
+  background: var(--surface2); color: var(--text);
+  border: 1px solid var(--border); border-radius: var(--radius-s);
+  padding: 6px 8px; font-size: 0.9rem;
+}
+
 /* ---- Mistake drill / congrats ---- */
 .congrats-card { padding-top: 34px; padding-bottom: 34px; }
 .congrats-emoji { font-size: 3.2rem; line-height: 1; margin-bottom: 12px; }

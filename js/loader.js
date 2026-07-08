@@ -49,7 +49,7 @@
     "reading-mc-w1.js", "reading-mc-w2.js",
     "reading-gap-w1.js", "reading-gap-w2.js",
     "reading-match-w1.js", "reading-match-w2.js",
-    /* listening-w*.js 先不載：尚無播放 UI，檔案只供未來 TTS 用 */
+    "listening-w1.js", "listening-w2.js",
     "speaking-x.js",
     "vocab-w1.js", "vocab-w2.js", "vocab-w3.js", "vocab-w4.js", "vocab-w5.js", "vocab-w6.js",
     "writing-x.js"

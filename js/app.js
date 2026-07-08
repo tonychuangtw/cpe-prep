@@ -162,6 +162,7 @@ if (typeof document !== 'undefined') {
         btn.classList.add("active");
         var panel = $(btn.dataset.tab);
         if (panel) panel.classList.add("active");
+        if (btn.dataset.tab !== "tab-listening") { try { lsStopAudio(); } catch (e) {} }
         if (btn.dataset.tab === "tab-progress") { try { renderProgress(); } catch (e) {} }
         if (btn.dataset.tab === "tab-vocab") { try { renderVocabStatus(); } catch (e) {} }
       });
@@ -864,6 +865,266 @@ if (typeof document !== 'undefined') {
     $("rd-congrats-home").addEventListener("click", rdBackToPicker);
   }
 
+  /* ================= §4.8 Listening 模擬考 ================= */
+  var LS_LABELS = { monologue: "Monologue", dialogue: "Dialogue" };
+  var ls = { set: null, answers: [], playsUsed: 0, playing: false, queue: [], drillMode: false };
+
+  function lsPool(kind) {
+    var L = window.LISTENING || [];
+    return L.filter(function (s) { return s.kind === kind; });
+  }
+
+  function lsVoices() {
+    var vs = (window.speechSynthesis ? speechSynthesis.getVoices() : [])
+      .filter(function (v) { return /^en(-|_)/i.test(v.lang) || v.lang === "en"; });
+    var gb = vs.filter(function (v) { return /GB|UK/i.test(v.lang + v.name); });
+    return { a: gb[0] || vs[0] || null, b: gb[1] || vs[1] || gb[0] || vs[0] || null };
+  }
+
+  /* 把 script 切成 utterance 清單；dialogue 依 "Name:" 行首交替兩個聲音 */
+  function lsBuildQueue(set, rate) {
+    var voices = lsVoices();
+    var speakers = {};
+    var order = 0;
+    return set.script.split(/\n+/).filter(Boolean).map(function (line) {
+      var m = set.kind === "dialogue" ? line.match(/^([A-Z][\w]*):\s*(.*)$/) : null;
+      var text = m ? m[2] : line;
+      var who = m ? m[1] : "_";
+      if (!(who in speakers)) speakers[who] = order++;
+      var u = new SpeechSynthesisUtterance(text);
+      u.rate = rate;
+      var second = speakers[who] % 2 === 1;
+      var v = second ? voices.b : voices.a;
+      if (v) u.voice = v;
+      if (second && voices.a === voices.b) u.pitch = 0.8;
+      return u;
+    });
+  }
+
+  function lsStopAudio() {
+    if (window.speechSynthesis) speechSynthesis.cancel();
+    ls.playing = false;
+    ls.queue = [];
+    var b = $("ls-play");
+    if (b) b.textContent = "▶ Play";
+    lsUpdatePlays();
+  }
+
+  function lsUpdatePlays() {
+    var left = 2 - ls.playsUsed;
+    $("ls-plays").textContent = ls.drillMode
+      ? "Practice mode — unlimited replays"
+      : (left > 0 ? "Plays remaining: " + left + " / 2" : "No plays left — answer from memory");
+    $("ls-play").disabled = ls.playing || (!ls.drillMode && left <= 0);
+  }
+
+  function lsPlay() {
+    if (!window.speechSynthesis) { alert("This browser does not support speech synthesis."); return; }
+    if (ls.playing) return;
+    var rate = parseFloat($("ls-rate").value) || 1;
+    ls.queue = lsBuildQueue(ls.set, rate);
+    ls.playing = true;
+    if (!ls.drillMode) ls.playsUsed++;
+    $("ls-play").textContent = "Playing…";
+    lsUpdatePlays();
+    var i = 0;
+    (function next() {
+      if (!ls.playing || i >= ls.queue.length) {
+        ls.playing = false;
+        $("ls-play").textContent = "▶ Play again";
+        lsUpdatePlays();
+        return;
+      }
+      var u = ls.queue[i++];
+      u.onend = next;
+      u.onerror = next;
+      speechSynthesis.speak(u);
+    })();
+  }
+  function startListening(kind) {
+    var pool = lsPool(kind);
+    if (!pool.length) { alert("The question bank for this task type hasn't loaded. Please try again later."); return; }
+    ls.set = pool[Math.floor(Math.random() * pool.length)];
+    ls.answers = [];
+    ls.playsUsed = 0;
+    ls.drillMode = false;
+    lsStopAudio();
+    $("ls-picker").classList.add("hidden");
+    $("ls-summary").classList.add("hidden");
+    $("ls-quiz").classList.remove("hidden");
+    $("ls-title").textContent = ls.set.title;
+    $("ls-play").textContent = "▶ Play";
+    renderListening();
+    lsUpdatePlays();
+    updateLsProgress();
+    window.scrollTo(0, 0);
+  }
+
+  function updateLsProgress() {
+    var n = ls.set.questions.length;
+    var done = 0;
+    for (var i = 0; i < n; i++) if (ls.answers[i] !== undefined && ls.answers[i] !== null) done++;
+    $("ls-progress").textContent = LS_LABELS[ls.set.kind] + "  Answered " + done + " / " + n;
+  }
+
+  function renderListening() {
+    var area = $("ls-area");
+    area.innerHTML = "";
+    ls.set.questions.forEach(function (q, qi) {
+      var card = document.createElement("div");
+      card.className = "card rd-q";
+      card.innerHTML = "<p><strong>" + (qi + 1) + ".</strong> " + esc(q.q) + "</p>";
+      q.options.forEach(function (opt, oi) {
+        var b = document.createElement("button");
+        b.className = "option-btn";
+        b.innerHTML = "<strong>" + LETTERS[oi] + "</strong>&nbsp; " + esc(opt);
+        b.addEventListener("click", function () {
+          card.querySelectorAll(".option-btn").forEach(function (x) { x.classList.remove("selected"); });
+          b.classList.add("selected");
+          ls.answers[qi] = oi;
+          updateLsProgress();
+        });
+        card.appendChild(b);
+      });
+      area.appendChild(card);
+    });
+  }
+
+  function lsAnswerText(qi, idx) {
+    if (idx === undefined || idx === null) return "(not answered)";
+    return LETTERS[idx] + ". " + ls.set.questions[qi].options[idx];
+  }
+
+  function gradeListening() {
+    var qs = ls.set.questions, n = qs.length;
+    var unanswered = 0;
+    for (var i = 0; i < n; i++) if (ls.answers[i] === undefined || ls.answers[i] === null) unanswered++;
+    if (unanswered > 0 && !confirm(unanswered + " question(s) still unanswered. Submit anyway?")) return;
+    lsStopAudio();
+
+    var score = 0, reviewHtml = "";
+    for (var j = 0; j < n; j++) {
+      var isCorrect = ls.answers[j] === qs[j].answer;
+      if (isCorrect) score++;
+      recordResult("lis", isCorrect);
+      reviewHtml +=
+        '<div class="review-item ' + (isCorrect ? "ok" : "bad") + '">' +
+        '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " Question " + (j + 1) + "</div>" +
+        "<p>" + esc(qs[j].q) + "</p>" +
+        '<div class="review-ans"><strong>Your answer: </strong>' + esc(lsAnswerText(j, ls.answers[j])) + "</div>" +
+        '<div class="review-ans"><strong>Correct answer: </strong>' + esc(lsAnswerText(j, qs[j].answer)) + "</div>" +
+        '<div class="expl">' + esc(qs[j].explanation) + "</div>" +
+        "</div>";
+    }
+    var pct = Math.round(100 * score / n);
+    var v = verdictFor(pct);
+    $("ls-quiz").classList.add("hidden");
+    $("ls-summary").classList.remove("hidden");
+    $("ls-summary-title").textContent = LS_LABELS[ls.set.kind] + " — Mock results";
+    $("ls-score").textContent = score + " / " + n + " (" + pct + "%)";
+    $("ls-verdict").className = "verdict-text " + v.cls;
+    $("ls-verdict").textContent = v.text;
+    $("ls-review").innerHTML = reviewHtml;
+
+    var wrongCount = n - score;
+    var db = $("ls-drill-btn");
+    db.classList.toggle("hidden", wrongCount === 0);
+    db.textContent = "Practice mistakes (" + wrongCount + ")";
+    window.scrollTo(0, 0);
+    saveMockRecord("listening", ls.set.kind, score, n, pct);
+  }
+
+  function startLsDrill() {
+    var wrong = [];
+    ls.set.questions.forEach(function (q, i) { if (ls.answers[i] !== q.answer) wrong.push(i); });
+    if (!wrong.length) return;
+    ls.drillMode = true;
+    startDrillGeneric({
+      prefix: "ls",
+      items: wrong,
+      render: renderLsDrillItem,
+      correctText: function (i) { return lsAnswerText(i, ls.set.questions[i].answer); },
+      explText: function (i) { return ls.set.questions[i].explanation; }
+    });
+  }
+
+  function renderLsDrillItem(qi, done) {
+    var area = $("ls-drill-area");
+    area.innerHTML = "";
+    var q = ls.set.questions[qi];
+    var player = document.createElement("div");
+    player.className = "card center";
+    var rp = document.createElement("button");
+    rp.className = "ghost-btn small";
+    rp.textContent = "🔊 Replay recording";
+    rp.addEventListener("click", function () { lsStopAudio(); lsDrillReplay(); });
+    player.appendChild(rp);
+    area.appendChild(player);
+
+    var card = document.createElement("div");
+    card.className = "card rd-q";
+    card.innerHTML = "<p><strong>" + (qi + 1) + ".</strong> " + esc(q.q) + "</p>";
+    q.options.forEach(function (opt, oi) {
+      var b = document.createElement("button");
+      b.className = "option-btn";
+      b.innerHTML = "<strong>" + LETTERS[oi] + "</strong>&nbsp; " + esc(opt);
+      b.addEventListener("click", function () {
+        lsStopAudio();
+        b.classList.add("selected");
+        done(oi === q.answer, lsAnswerText(qi, oi));
+      });
+      card.appendChild(b);
+    });
+    area.appendChild(card);
+  }
+
+  function lsDrillReplay() {
+    if (!window.speechSynthesis) return;
+    var queue = lsBuildQueue(ls.set, parseFloat($("ls-rate").value) || 1);
+    var i = 0;
+    (function next() {
+      if (i >= queue.length) return;
+      var u = queue[i++];
+      u.onend = next;
+      u.onerror = next;
+      speechSynthesis.speak(u);
+    })();
+  }
+
+  function lsBackToPicker() {
+    lsStopAudio();
+    $("ls-quiz").classList.add("hidden");
+    $("ls-summary").classList.add("hidden");
+    $("ls-drill").classList.add("hidden");
+    $("ls-congrats").classList.add("hidden");
+    $("ls-picker").classList.remove("hidden");
+  }
+
+  function initListening() {
+    document.querySelectorAll("#ls-picker .mode-btn[data-lkind]").forEach(function (b) {
+      b.addEventListener("click", function () { startListening(b.dataset.lkind); });
+    });
+    $("ls-play").addEventListener("click", lsPlay);
+    $("ls-stop").addEventListener("click", lsStopAudio);
+    $("ls-submit").addEventListener("click", gradeListening);
+    $("ls-retry").addEventListener("click", function () { startListening(ls.set.kind); });
+    $("ls-back").addEventListener("click", function () {
+      if (ls.answers.length > 0 && !confirm("You haven't submitted yet. Abandon this mock exam?")) return;
+      lsBackToPicker();
+    });
+    $("ls-home").addEventListener("click", lsBackToPicker);
+    $("ls-drill-btn").addEventListener("click", startLsDrill);
+    $("ls-drill-quit").addEventListener("click", function () {
+      if (!confirm("Quit mistake practice and go back to the results?")) return;
+      lsStopAudio();
+      $("ls-drill").classList.add("hidden");
+      $("ls-summary").classList.remove("hidden");
+    });
+    $("ls-congrats-home").addEventListener("click", lsBackToPicker);
+    /* Chrome 需要先觸發 getVoices 才會載入聲音清單 */
+    if (window.speechSynthesis) speechSynthesis.getVoices();
+  }
+
   /* ================= §5 Writing ================= */
   function makeCountdown(displayEl, onDone) {
     var remaining = 0, timerId = null;
@@ -1117,12 +1378,26 @@ if (typeof document !== 'undefined') {
       }
     });
 
+    html += "<h3 class='pg-mock-title'>Listening</h3>";
+    (function () {
+      var s = stats["lis"];
+      if (!s || !s.attempted) {
+        html += barRow("Listening comprehension", "Not practised yet", 0, false);
+      } else {
+        var lp = Math.round(100 * s.correct / s.attempted);
+        html += barRow("Listening comprehension",
+          s.attempted + " answered · " + lp + "% correct · last " + fmtDate(s.last),
+          lp, lp >= 80);
+      }
+    })();
+
     var hist = loadJSON(K_MOCK(), []);
     if (hist.length) {
       html += '<h3 class="pg-mock-title">Recent mock exams</h3><ul class="mock-history">';
       hist.slice(-8).reverse().forEach(function (m) {
         var label = m.mode === "full" ? "UoE full mock"
           : m.mode === "reading" ? "Reading · " + (RD_LABELS[m.part] || m.part).split("·")[0].trim()
+          : m.mode === "listening" ? "Listening · " + (LS_LABELS[m.part] || m.part)
           : (PART_LABELS[m.part] || m.part).split("·")[0].trim();
         var cls = m.pct >= 75 ? "ok" : (m.pct >= 60 ? "mid" : "bad");
         html += '<li><span class="mh-date">' + esc(fmtDate(m.date)) + "</span>" +
@@ -1257,6 +1532,7 @@ if (typeof document !== 'undefined') {
     safeInit("tabs", initTabs);
     safeInit("uoe", initUoe);
     safeInit("reading", initReading);
+    safeInit("listening", initListening);
     safeInit("writing", initWriting);
     safeInit("speaking", initSpeaking);
     safeInit("vocab", initVocab);
