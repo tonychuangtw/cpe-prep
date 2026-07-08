@@ -16,20 +16,25 @@ const LEVEL_SPECS = {
   fce: {
     p4min: 2, p4max: 5,
     min: { part1: 2, part2: 2, part3: 2, part4: 2, writing: 2, speaking: 2, vocab: 5 },
-    essayTexts: null // FCE Part 1 essay has no input texts
+    essayTexts: null, // FCE Part 1 essay has no input texts
+    reading: { gaps: 6, minMc: 12, minGap: 12, minMatch: 8, minLis: 12 }
   },
   cae: {
     p4min: 3, p4max: 6,
     min: { part1: 2, part2: 2, part3: 2, part4: 2, writing: 2, speaking: 2, vocab: 5 },
-    essayTexts: null // CAE essay uses notes, not two quoted texts
+    essayTexts: null, // CAE essay uses notes, not two quoted texts
+    reading: { gaps: 6, minMc: 12, minGap: 12, minMatch: 8, minLis: 12 }
   },
   cpe: {
     p4min: 3, p4max: 8,
     min: { part1: 12, part2: 12, part3: 12, part4: 10, writing: 8, speaking: 10, vocab: 60 },
     essayTexts: 2, // CPE Part 1 essay must have two input texts
-    extra: { minEssays: 4, minPart2Tasks: 4 }
+    extra: { minEssays: 4, minPart2Tasks: 4 },
+    reading: { gaps: 7, minMc: 12, minGap: 12, minMatch: 8, minLis: 12 }
   }
 };
+
+function wordCount(s) { return String(s || "").trim().split(/\s+/).length; }
 
 const totals = {};
 
@@ -54,16 +59,24 @@ Object.keys(LEVEL_SPECS).forEach(level => {
   ["p1", "p2", "p3", "p4"].forEach(p => { for (let w = 1; w <= 5; w++) expectedBanks.push(`${p}-w${w}.js`); });
   for (let w = 1; w <= 6; w++) expectedBanks.push(`vocab-w${w}.js`);
   expectedBanks.push("writing-x.js", "speaking-x.js");
+  ["reading-mc", "reading-gap", "reading-match", "listening"].forEach(p => {
+    for (let w = 1; w <= 2; w++) expectedBanks.push(`${p}-w${w}.js`);
+  });
   const bankFiles = fs.readdirSync(banksDir).sort();
   expectedBanks.forEach(f => check(L + "bank file exists: " + f, bankFiles.includes(f)));
 
+  const READING = { mc: [], gap: [], match: [] };
+  let LISTENING = [];
   bankFiles.forEach(f => {
     const items = require(path.join(banksDir, f));
     const m = f.match(/^(p[1-4])-w\d+\.js$/);
+    const r = f.match(/^reading-(mc|gap|match)-w\d+\.js$/);
     if (m) {
       const key = m[1].replace("p", "part");
       QUESTIONS[key] = QUESTIONS[key].concat(items);
-    } else if (f.startsWith("vocab-")) { VOCAB = VOCAB.concat(items); }
+    } else if (r) { READING[r[1]] = READING[r[1]].concat(items); }
+    else if (f.startsWith("listening-")) { LISTENING = LISTENING.concat(items); }
+    else if (f.startsWith("vocab-")) { VOCAB = VOCAB.concat(items); }
     else if (f === "writing-x.js") { WRITING = WRITING.concat(items); }
     else if (f === "speaking-x.js") { SPEAKING = SPEAKING.concat(items); }
     bankCounts[f] = items.length;
@@ -142,6 +155,69 @@ Object.keys(LEVEL_SPECS).forEach(level => {
       !!v.front && !!v.pos && !!v.def && !!v.example && !!v.zh);
   });
 
+  /* ---------- Reading P5-7 ---------- */
+  const R = spec.reading;
+
+  check(L + `reading mc has >= ${R.minMc} sets`, READING.mc.length >= R.minMc);
+  READING.mc.forEach((s, i) => {
+    check(L + `rmc[${i}] id/title/text`, !!s.id && !!s.title && typeof s.text === "string");
+    check(L + `rmc[${i}] text >= 250 words`, wordCount(s.text) >= 250);
+    check(L + `rmc[${i}] has 6 questions`, Array.isArray(s.questions) && s.questions.length === 6);
+    (s.questions || []).forEach((q, j) => {
+      check(L + `rmc[${i}].q[${j}] 4 unique options`, Array.isArray(q.options) && q.options.length === 4 && new Set(q.options).size === 4);
+      check(L + `rmc[${i}].q[${j}] answer valid`, Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4);
+      check(L + `rmc[${i}].q[${j}] explanation`, typeof q.explanation === "string" && q.explanation.length > 10);
+    });
+  });
+
+  check(L + `reading gap has >= ${R.minGap} sets`, READING.gap.length >= R.minGap);
+  READING.gap.forEach((s, i) => {
+    const n = R.gaps;
+    check(L + `rgap[${i}] id/title`, !!s.id && !!s.title);
+    check(L + `rgap[${i}] ${n + 1} segments`, Array.isArray(s.segments) && s.segments.length === n + 1);
+    check(L + `rgap[${i}] ${n + 1} options (incl. 1 distractor)`, Array.isArray(s.options) && s.options.length === n + 1);
+    check(L + `rgap[${i}] ${n} answers`, Array.isArray(s.answers) && s.answers.length === n);
+    check(L + `rgap[${i}] answers are distinct valid option indices`,
+      Array.isArray(s.answers) && new Set(s.answers).size === s.answers.length &&
+      s.answers.every(a => Number.isInteger(a) && a >= 0 && a <= n));
+    check(L + `rgap[${i}] ${n} explanations`, Array.isArray(s.explanations) && s.explanations.length === n &&
+      s.explanations.every(e => typeof e === "string" && e.length > 10));
+    check(L + `rgap[${i}] body >= 200 words`, wordCount((s.segments || []).join(" ")) >= 200);
+    check(L + `rgap[${i}] options unique`, Array.isArray(s.options) && new Set(s.options).size === s.options.length);
+  });
+
+  check(L + `reading match has >= ${R.minMatch} sets`, READING.match.length >= R.minMatch);
+  READING.match.forEach((s, i) => {
+    check(L + `rmatch[${i}] id/title`, !!s.id && !!s.title);
+    check(L + `rmatch[${i}] 4-6 sections`, Array.isArray(s.sections) && s.sections.length >= 4 && s.sections.length <= 6);
+    (s.sections || []).forEach((sec, j) => {
+      check(L + `rmatch[${i}].sec[${j}] label+text >= 50 words`, !!sec.label && wordCount(sec.text) >= 50);
+    });
+    check(L + `rmatch[${i}] 10 questions`, Array.isArray(s.questions) && s.questions.length === 10);
+    (s.questions || []).forEach((q, j) => {
+      check(L + `rmatch[${i}].q[${j}] answer valid section`, Number.isInteger(q.answer) && q.answer >= 0 && q.answer < (s.sections || []).length);
+      check(L + `rmatch[${i}].q[${j}] explanation`, typeof q.explanation === "string" && q.explanation.length > 10);
+    });
+  });
+
+  /* ---------- Listening (scripts for future TTS) ---------- */
+  check(L + `listening has >= ${R.minLis} sets`, LISTENING.length >= R.minLis);
+  LISTENING.forEach((s, i) => {
+    check(L + `lis[${i}] id/title/kind`, !!s.id && !!s.title && (s.kind === "monologue" || s.kind === "dialogue"));
+    check(L + `lis[${i}] script >= 180 words`, wordCount(s.script) >= 180);
+    check(L + `lis[${i}] 5 questions`, Array.isArray(s.questions) && s.questions.length === 5);
+    (s.questions || []).forEach((q, j) => {
+      check(L + `lis[${i}].q[${j}] 4 unique options`, Array.isArray(q.options) && q.options.length === 4 && new Set(q.options).size === 4);
+      check(L + `lis[${i}].q[${j}] answer valid`, Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 4);
+      check(L + `lis[${i}].q[${j}] explanation`, typeof q.explanation === "string" && q.explanation.length > 10);
+    });
+  });
+
+  /* reading/listening ids + titles unique per level */
+  const ridAll = [].concat(READING.mc, READING.gap, READING.match, LISTENING);
+  check(L + "reading/listening ids unique", new Set(ridAll.map(s => s.id)).size === ridAll.length);
+  check(L + "reading/listening titles unique", new Set(ridAll.map(s => (s.title || "").toLowerCase())).size === ridAll.length);
+
   /* every stored accepted answer must survive its own normalization (non-empty) */
   ["part2", "part3", "part4"].forEach(p => {
     QUESTIONS[p].forEach((q, i) => {
@@ -162,7 +238,9 @@ Object.keys(LEVEL_SPECS).forEach(level => {
   totals[level] = {
     p1: QUESTIONS.part1.length, p2: QUESTIONS.part2.length,
     p3: QUESTIONS.part3.length, p4: QUESTIONS.part4.length,
-    writing: WRITING.length, speaking: SPEAKING.length, vocab: VOCAB.length
+    writing: WRITING.length, speaking: SPEAKING.length, vocab: VOCAB.length,
+    rmc: READING.mc.length, rgap: READING.gap.length, rmatch: READING.match.length,
+    lis: LISTENING.length
   };
 });
 
@@ -203,7 +281,7 @@ check("shuffle does not mutate input", orig.join() === "1,2,3,4,5");
 /* ---------- report ---------- */
 Object.keys(totals).forEach(level => {
   const t = totals[level];
-  console.log(`[${level}] totals: p1=${t.p1} p2=${t.p2} p3=${t.p3} p4=${t.p4} writing=${t.writing} speaking=${t.speaking} vocab=${t.vocab}`);
+  console.log(`[${level}] totals: p1=${t.p1} p2=${t.p2} p3=${t.p3} p4=${t.p4} writing=${t.writing} speaking=${t.speaking} vocab=${t.vocab} rmc=${t.rmc} rgap=${t.rgap} rmatch=${t.rmatch} lis=${t.lis}`);
 });
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

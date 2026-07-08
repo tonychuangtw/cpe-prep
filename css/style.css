@@ -429,6 +429,38 @@ button { font-family: inherit; }
 .review-item .stem-word { color: var(--accent); font-weight: 700; letter-spacing: 1.5px; }
 .review-item .original { color: var(--muted); font-style: italic; }
 
+/* ---- Reading 模擬考 ---- */
+.rd-passage p { font-family: var(--font-serif); font-size: 1rem; line-height: 1.75; }
+.rd-passage .gap-slot {
+  color: var(--accent); font-weight: 700; font-family: var(--font-ui);
+  background: var(--accent-soft); border-radius: var(--radius-s);
+  padding: 6px 10px; display: inline-block;
+}
+.rd-q p { margin: 4px 0 10px; }
+.rd-opt { font-family: var(--font-serif); font-size: 0.94rem; line-height: 1.65; }
+.rd-opt strong { color: var(--accent); font-family: var(--font-ui); }
+.option-btn.selected { border-color: var(--accent); background: var(--accent-soft); }
+.letter-row { display: flex; flex-wrap: wrap; gap: 8px; }
+.letter-btn {
+  width: 44px; height: 44px; flex: none;
+  background: var(--surface2); border: 1px solid var(--border);
+  border-radius: var(--radius-s); color: var(--text);
+  font-family: var(--font-serif); font-size: 1rem; font-weight: 700;
+  cursor: pointer;
+  transition: transform 0.12s ease, border-color 0.15s ease, background 0.15s ease;
+}
+.letter-btn:active { transform: scale(0.94); }
+.letter-btn.selected { border-color: var(--accent); background: var(--accent-soft); color: var(--accent); }
+.gap-answer-row {
+  display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+  padding: 10px 0; border-bottom: 1px solid var(--border);
+}
+.gap-answer-row:last-child { border-bottom: none; }
+.gap-answer-label { flex: none; color: var(--text2); font-size: 0.9rem; white-space: nowrap; }
+.match-row { flex-direction: column; align-items: flex-start; gap: 8px; }
+.match-q { margin: 0; font-size: 0.92rem; }
+#rd-submit { margin-bottom: 20px; }
+
 /* ---- 模擬考歷史（進度頁） ---- */
 .pg-mock-title { margin-top: 20px; }
 .mock-history { list-style: none; margin: 6px 0 0; padding: 0; }
