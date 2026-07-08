@@ -14,7 +14,7 @@ var BANK = [
           "show that the writer found the conversation humiliating"
         ],
         answer: 1,
-        explanation: "文中說她像「已重複這句話一千次」般帶著疲憊的耐心，暗示大眾一再誤解拖延的本質，需要專家不斷重申；並非質疑作者或批評專家。"
+        explanation: "She speaks like \"someone who has repeated this a thousand times\", implying the public keeps misunderstanding procrastination and experts must endlessly restate the point; there is no doubt of the writer or criticism of experts."
       },
       {
         q: "What point does the writer make about the productivity industry in the second paragraph?",
@@ -25,7 +25,7 @@ var BANK = [
           "It has recently begun to incorporate research on emotions"
         ],
         answer: 0,
-        explanation: "作者說該產業建立在「拖延是時間管理問題」的前提上，而它「持續無法治好任何人」正好說明這個前提有誤（its persistent failure... should tell us something）。文中沒有說它蓄意欺騙或工具太複雜。"
+        explanation: "The industry is built on the premise that procrastination is a scheduling problem, and \"its persistent failure to cure anyone should tell us something\" - i.e. the failure discredits that premise. Nothing suggests deliberate deception or overly complex tools."
       },
       {
         q: "The writer uses the image of a loan in the third paragraph to emphasise that",
@@ -36,7 +36,7 @@ var BANK = [
           "stress accumulates at a predictable, steady rate"
         ],
         answer: 2,
-        explanation: "「a loan taken out against one's future self, and the interest rate is punishing」比喻眼前的解脫是向未來的自己借貸，且「利息」（後期壓力、健康、成績）極為沉重，強調代價不成比例。"
+        explanation: "The relief is \"a loan taken out against one's future self, and the interest rate is punishing\": immediate comfort is borrowed and repaid later in stress, health and grades at a disproportionately heavy cost."
       },
       {
         q: "What does the neuroimaging research mentioned by the writer suggest?",
@@ -47,7 +47,7 @@ var BANK = [
           "Procrastinators have measurably different brain structures"
         ],
         answer: 1,
-        explanation: "文中指出想像「明年的自己」時活化的腦區與想像「他人」時高度重疊，因此我們把未來的自己當成陌生人（He is barely us），才會樂於把工作丟給他。"
+        explanation: "The brain regions activated when thinking about ourselves next year overlap with those for thinking about other people, so we treat our future selves \"almost as strangers\" (\"He is barely us\") and happily dump work on them."
       },
       {
         q: "What is the writer's attitude towards the idea that delay can be productive?",
@@ -58,7 +58,7 @@ var BANK = [
           "Frustration that researchers cannot agree on the evidence"
         ],
         answer: 2,
-        explanation: "作者說「I am sympathetic to this view up to a point」表示有限度地認同，但區分「選擇讓問題沉澱」與「無法讓自己開始」，認為後者只是披著策略外衣，故是有所保留的接受。"
+        explanation: "\"I am sympathetic to this view up to a point\" signals qualified acceptance, but he distinguishes choosing to let a problem sit from being unable to start - the latter merely \"wears the costume\" of a choice, so his agreement comes with a reservation."
       },
       {
         q: "In the final paragraph, the writer suggests that no longer calling himself lazy matters because",
@@ -69,7 +69,7 @@ var BANK = [
           "it distinguishes him from genuinely lazy people"
         ],
         answer: 1,
-        explanation: "作者說懶惰是性格缺陷、只能等自己變成別人，而拖延是「有一種感覺需要管理」，感覺「會回應技巧」（respond to technique），即問題變成可用方法處理的事；他也明言自己並未因此變準時。"
+        explanation: "Laziness is a character flaw one can only wait to outgrow, whereas the procrastinator \"has a feeling to manage, and feelings... respond to technique\" - the problem becomes tractable by method. He admits he has not actually become prompt."
       }
     ]
   },
@@ -87,7 +87,7 @@ var BANK = [
           "why residents of Haleford lost interest in their environment"
         ],
         answer: 1,
-        explanation: "作者稱當時的溪流是「municipal plumbing」，工程師視都市河川為「problems of conveyance」，水排得越快越好，居民與生態完全不在考量內——重點在呈現那個時代的思維方式。"
+        explanation: "The brook was \"municipal plumbing\" and engineers saw urban rivers as \"problems of conveyance\" - the faster the water left, the better, with wildlife and residents not entering the calculations. The point is to illustrate that era's mindset."
       },
       {
         q: "Why does the writer feel it necessary to define 'rewilding' in the second paragraph?",
@@ -98,7 +98,7 @@ var BANK = [
           "Because the word has no accepted scientific meaning"
         ],
         answer: 0,
-        explanation: "文中說 rewilding「expands to fit whatever its user wishes to sell」，即這個詞已被濫用、可為任何行銷目的服務，所以作者要先精確界定；狼的例子只是釐清誤解，並非居民真的恐懼。"
+        explanation: "The writer says 'rewilding' \"expands to fit whatever its user wishes to sell\" - the term has been co-opted for promotion, hence the need for precision. The wolves remark merely clears up a misconception, not an actual local fear."
       },
       {
         q: "According to the writer, what was 'crucial' about the ecologists' approach?",
@@ -109,7 +109,7 @@ var BANK = [
           "Their withdrawal, allowing the river to shape itself again"
         ],
         answer: 3,
-        explanation: "文中明確說「and then, crucially, stepped back」，目標是創造讓河流「begin making decisions again」的條件，即人為退場、讓河流自主淤積、沖刷與氾濫，這才是關鍵。"
+        explanation: "The text says the ecologists \"then, crucially, stepped back\", aiming to create conditions under which the river could \"begin making decisions again\" - silting, scouring and flooding on its own. The withdrawal is what is flagged as crucial."
       },
       {
         q: "The phrase 'earns its keep' in the third paragraph refers to the project's ability to",
@@ -120,7 +120,7 @@ var BANK = [
           "repay the council through rising local tax revenue"
         ],
         answer: 1,
-        explanation: "「earns its keep in the eyes of the council's accountants」指防洪蓄水（四萬立方公尺）與降溫效益讓計畫在「預算委員會唯一可靠聽得懂的語言」中站得住腳，即以財務效益證明自身價值。"
+        explanation: "The project \"earns its keep in the eyes of the council's accountants\": flood storage (forty thousand cubic metres) and cooling build a case \"in the only language budget committees reliably understand\" - it justifies its cost to financial decision-makers."
       },
       {
         q: "Which reservation does the writer express about the project's success?",
@@ -131,7 +131,7 @@ var BANK = [
           "The council has abandoned its social housing commitments"
         ],
         answer: 2,
-        explanation: "作者指出多個城市已出現「restored waterways raise nearby property values and quietly price out the very residents who campaigned for them」的模式，而房仲櫥窗顯示壓力已在累積；議會目前仍承諾守住社會住宅，並未放棄。"
+        explanation: "The writer cites a documented pattern whereby \"restored waterways raise nearby property values and quietly price out the very residents who campaigned for them\", with estate agents' windows suggesting pressure is building. The council still defends its social housing, so it has not abandoned it."
       },
       {
         q: "In the final paragraph, the writer concedes to the cynics that",
@@ -142,7 +142,7 @@ var BANK = [
           "residents exaggerate what the restoration achieved"
         ],
         answer: 0,
-        explanation: "作者說懷疑者認為一隻上相的鳥證明不了什麼，「and ecologically they are right」——他承認就生態學而言對方是對的，但接著主張這個「故事」改變了居民對城市可能性的信念。"
+        explanation: "Cynics say one photogenic bird proves nothing, \"and ecologically they are right\" - the writer concedes the point on ecological grounds before arguing that the story nonetheless changes what residents believe their streets can become."
       }
     ]
   },
@@ -160,7 +160,7 @@ var BANK = [
           "Her rejection of the conventional narrative shape such events invite"
         ],
         answer: 3,
-        explanation: "評論者說多數運動回憶錄會把這事件當成「redemption arc」的核心創傷，但 Kalman 視之為「仍在盤點代價的解放」，正是「the refusal of that easy shape」讓本書高於同類作品。"
+        explanation: "Most sporting memoirs would treat the walkout as the wound of a \"redemption arc\", but Kalman treats it as \"a liberation whose cost she is still auditing\"; it is \"the refusal of that easy shape\" that lifts the book above its rivals."
       },
       {
         q: "The reviewer suggests that Kalman's portrayal of her father is effective because she",
@@ -171,7 +171,7 @@ var BANK = [
           "expresses her bitterness with unusual directness"
         ],
         answer: 0,
-        explanation: "文中說她的方法「colder and more effective. She simply describes」——記錄錯誤的筆記本、變成比賽的假期等，「The reader is left to do the condemning」，即由細節讓讀者自行譴責，而非她自己下判斷。"
+        explanation: "Her method is \"colder and more effective. She simply describes\" - the notebook of mistakes, the holidays that were tournaments - and \"The reader is left to do the condemning\": detail replaces explicit judgement."
       },
       {
         q: "What does the reviewer imply about most chess writing aimed at general readers?",
@@ -182,7 +182,7 @@ var BANK = [
           "It exaggerates the role of fear in top-level play"
         ],
         answer: 1,
-        explanation: "評論者指出一般向的西洋棋書寫「oscillate between mystification... and tedious technicality」，即在「天才與瘋狂」的神祕化與枯燥技術細節之間擺盪，而 Kalman 找到第三種語域。"
+        explanation: "The reviewer says chess writing for general audiences tends to \"oscillate between mystification, all genius and madness, and tedious technicality\" - swinging between romance and dull detail - whereas Kalman finds a third register."
       },
       {
         q: "By the game's 'beautiful alibi', Kalman means that chess",
@@ -193,7 +193,7 @@ var BANK = [
           "excused the physical damage that competition caused her"
         ],
         answer: 0,
-        explanation: "文中解釋：對如此艱鉅之事的全然投入「excused her, for years, from developing any other self」——下棋成了她多年來不必發展其他自我的漂亮藉口。"
+        explanation: "The text explains the alibi directly: total dedication to something so demanding \"excused her, for years, from developing any other self\" - chess was a respectable pretext for never building a wider identity."
       },
       {
         q: "What criticism does the reviewer make of the memoir's middle section?",
@@ -204,7 +204,7 @@ var BANK = [
           "It was clearly inserted at the insistence of an editor"
         ],
         answer: 2,
-        explanation: "評論者說這些章節「feel thinner」、她以前文不容許的速度匆匆帶過多年，並推測平凡生活抗拒她的描寫天賦，或她只有在棋盤附近才對自己最感興趣；更嚴格的編輯應再壓縮。"
+        explanation: "The reviewer says these chapters \"feel thinner\" and hurry through years at a pace the earlier chapters would never permit, speculating that ordinariness resists her gifts or that she is most interesting to herself near the board; a stricter editor would have cut more."
       },
       {
         q: "Why does the reviewer consider the title 'something better than a clever flourish'?",
@@ -215,7 +215,7 @@ var BANK = [
           "Because it foreshadows her triumphant comeback under a false name"
         ],
         answer: 1,
-        explanation: "Zugzwang 指「任何一步都使局面惡化但你被迫要動」的棋局；評論者說這正是「the book's whole argument」——離開與回歸其實是同一步棋，過去不會因你停止下棋就放過你。結局並非凱旋（could easily have collapsed into triumphalism. They do not）。"
+        explanation: "Zugzwang - a position where every move worsens things yet you must move - is called \"the book's whole argument\": walking away and going back were the same move, and the game does not release you when you stop playing. The ending is explicitly not triumphalist."
       }
     ]
   },
@@ -233,7 +233,7 @@ var BANK = [
           "explain why he abandoned wildlife photography"
         ],
         answer: 1,
-        explanation: "作者說「Between the image and its circumstances lies the whole uncomfortable territory this essay wants to walk」——得獎照片與其背後（誘餌、鳥最終死亡）的落差正是全文要探討的張力。他並未放棄攝影（末段仍在拍）。"
+        explanation: "\"Between the image and its circumstances lies the whole uncomfortable territory this essay wants to walk\" - the gap between the award-winning photo and the baiting that led to the owl's death introduces the essay's central tension. He has not abandoned photography (he still shoots in the final paragraph)."
       },
       {
         q: "In the second paragraph, the writer argues that the market for wildlife images",
@@ -244,7 +244,7 @@ var BANK = [
           "values rarity less than it once did"
         ],
         answer: 1,
-        explanation: "文中說市場獎勵「proximity, drama and rarity, and it pays no premium for restraint」，誘因「run quietly against the ethics」；同時他承認保育貢獻「not empty」，並非說已完全背棄初衷。"
+        explanation: "The market rewards \"proximity, drama and rarity, and it pays no premium for restraint\"; the incentives \"run quietly against the ethics\". He also concedes the conservation claim is \"not empty\", so it has not wholly abandoned that purpose."
       },
       {
         q: "The writer's examples of 'gardening' and playback calls are intended to show that",
@@ -255,7 +255,7 @@ var BANK = [
           "viewers are usually able to detect manipulation if they look closely"
         ],
         answer: 0,
-        explanation: "「None of this registers in the final frame」——修剪遮蔽雛鳥的枝條、播放叫聲消耗鳥的能量，這些干預都不會出現在成品中，照片「wearing the innocence of a lucky encounter」，代價由動物承擔而觀者看不見。"
+        explanation: "\"None of this registers in the final frame\": removing branches that shielded chicks and playback calls that drain birds' energy budgets are interventions invisible in the image, which arrives \"wearing the innocence of a lucky encounter\" while the animals bear the cost."
       },
       {
         q: "How does the writer respond to the objection that humans intervene in nature everywhere?",
@@ -266,7 +266,7 @@ var BANK = [
           "He grants it some force but argues photographers' claimed purpose raises their obligations"
         ],
         answer: 3,
-        explanation: "作者說「There is something in this, but as a defence it proves too much」，並指出攝影師是自願在場且宣稱有道德目的，「we are answerable to a higher standard」——既然在圖說中援引保育，就不能在野外撇清責任。他也坦言自己曾提出這種反駁，並非不屑。"
+        explanation: "\"There is something in this, but as a defence it proves too much\": he grants the objection some force, then argues that photographers are present by choice and claim a moral purpose, so \"we are answerable to a higher standard\". He admits having made the objection himself, so he does not dismiss it."
       },
       {
         q: "What point is the writer making with the phrase 'part of the demand curve' in the fifth paragraph?",
@@ -277,7 +277,7 @@ var BANK = [
           "Prices for intimate wildlife images have risen with social media"
         ],
         answer: 0,
-        explanation: "作者說每個不加思索分享「不可能地親密」照片的觀眾都是需求曲線的一部分，市場是對話而觀眾長期沉默；但他同時明言丟老鼠的人罪責大於欣賞照片的人，故非選項 B。"
+        explanation: "Every viewer who shares \"an impossibly intimate image without a second's curiosity about its making\" is part of the demand curve; markets are conversations conducted with one side silent. He also states that the person who throws the mouse holds more guilt than the admirer, ruling out option B."
       },
       {
         q: "Which best describes the writer's assessment of his own current practice in the final paragraph?",
@@ -288,7 +288,7 @@ var BANK = [
           "Resentful that galleries refuse to measure value properly"
         ],
         answer: 1,
-        explanation: "他承認作品集「the poorer for it in exactly the way galleries measure」（專業上有代價），但對貓頭鷹而言是否更好「is not for me to certify」——他誠實面對代價、卻不替自己的道德收益背書。"
+        explanation: "He admits his portfolio is \"the poorer for it in exactly the way galleries measure\" (a professional cost), but whether it is richer by any measure that matters to the owl \"is not for me to certify\" - honest about the price while withholding moral self-endorsement."
       }
     ]
   },
@@ -306,7 +306,7 @@ var BANK = [
           "To show that the executive misunderstood his own company"
         ],
         answer: 1,
-        explanation: "作者說這句話「sounds unarguable until you ask what it actually claims」，接著追問文化究竟住在哪裡、非正式機制關掉後會如何——目的是檢視一句動聽卻未被深究的話，而非指控蓄意欺騙。"
+        explanation: "The statement \"sounds unarguable until you ask what it actually claims\"; the writer then asks where culture actually lives and what happens when the informal machinery is switched off - probing an appealing but unexamined claim, not alleging deliberate deception."
       },
       {
         q: "The phrase 'attendance theatre' in the second paragraph refers to",
@@ -317,7 +317,7 @@ var BANK = [
           "meetings held mainly to entertain senior executives"
         ],
         answer: 0,
-        explanation: "文中舉例：被看見坐在位子上、對對的笑話發笑、等老闆走了才下班——這些是「passed for cohesion」的表演性出席，遠距工作剝除了這層假象（stripped this varnish off）。"
+        explanation: "The examples - being seen at your desk, laughing at the right jokes, staying until the boss left - are performances that merely \"passed for cohesion\"; remote work \"stripped this varnish off\", exposing them as simulated commitment."
       },
       {
         q: "According to the third paragraph, the main documented cost of remote work concerns",
@@ -328,7 +328,7 @@ var BANK = [
           "higher turnover among employees with long commutes"
         ],
         answer: 2,
-        explanation: "最有力的發現「concerns not productivity... but the transmission of tacit knowledge」：遠距新人達標卻「oddly unformed」；且回饋變少「not because seniors withheld it」，而是隨口糾正的無摩擦管道消失了。"
+        explanation: "The most robust finding \"concerns not productivity... but the transmission of tacit knowledge\": remote juniors meet objectives yet remain \"oddly unformed\", absorbing the company's judgement far more slowly than predecessors did by osmosis."
       },
       {
         q: "The engineers study is cited to demonstrate that",
@@ -339,7 +339,7 @@ var BANK = [
           "feedback is best delivered through structured review sessions"
         ],
         answer: 1,
-        explanation: "研究顯示遠距新人得到的程式碼回饋明顯較少，原因不是資深者吝於給予，而是「the glance over a shoulder, the muttered aside」這類非正式管道不復存在——文化其實是「ten thousand micro-interactions」。"
+        explanation: "Remote juniors received markedly less feedback \"not because seniors withheld it\" but because informal channels - \"the glance over a shoulder, the muttered aside\" - no longer existed; culture was \"ten thousand micro-interactions\", not individual goodwill."
       },
       {
         q: "Why, according to the writer, do the best firms reject the half-empty office model?",
@@ -350,7 +350,7 @@ var BANK = [
           "It concentrates in-person time where initiation happens"
         ],
         answer: 0,
-        explanation: "文中說半空辦公室「offers commuting's costs without density's benefits」，其存在只因讓管理層覺得有在做事；選項 D 描述的是這些公司採取的做法，不是拒絕該模式的理由。"
+        explanation: "The half-empty office \"offers commuting's costs without density's benefits\" and survives mainly because it lets leadership feel something is being done. Option D describes what the best firms do instead, not why they reject this model."
       },
       {
         q: "The writer's closing comparison of culture to a dialect implies that",
@@ -361,7 +361,7 @@ var BANK = [
           "culture is collectively and unconsciously sustained, and fades if newcomers stop acquiring it"
         ],
         answer: 3,
-        explanation: "方言是「spoken into existence daily by people who mostly did not notice」，會隨遷徙改變，「die when the young stop learning them」——文化由眾人無意識地共同維繫，新人不再習得便會消亡；這正好反駁高管把文化當成自有資產的想法。"
+        explanation: "A dialect is \"spoken into existence daily by people who mostly did not notice they were doing it\" and dialects \"die when the young stop learning them\" - culture is sustained collectively and unconsciously and fades if newcomers stop acquiring it, contradicting the executives' view of it as an owned asset."
       }
     ]
   },
@@ -379,7 +379,7 @@ var BANK = [
           "demonstrate that regional speakers were banned from broadcasting"
         ],
         answer: 0,
-        explanation: "祖母聽新聞時挺直背，吸收到的無言教訓是「the language of authority was not hers」；作者說這個影像提醒我們舊體制在「清晰與標準」的說詞底下實際教給人們什麼。"
+        explanation: "The grandmother absorbed, \"without anyone stating it\", the lesson that \"the language of authority was not hers\"; the writer calls the image a reminder of what the old settlement actually taught people beneath its talk of clarity and standards."
       },
       {
         q: "In the second paragraph, the writer characterises the dominance of Received Pronunciation as",
@@ -390,7 +390,7 @@ var BANK = [
           "a compromise between regional broadcasters and London"
         ],
         answer: 1,
-        explanation: "文中說該假設「never linguistically defensible」，它是「a social arrangement wearing a technical justification」——披著技術理由外衣的社會安排，每天連同新聞一起播送「誰的語言算數」的訊息。"
+        explanation: "The assumption was \"never linguistically defensible\"; it was \"a social arrangement wearing a technical justification\", broadcasting alongside the news a daily message about whose speech counted - a hierarchy disguised as a technical requirement."
       },
       {
         q: "What does the writer suggest is notable about the recent developments described in the third paragraph?",
@@ -401,7 +401,7 @@ var BANK = [
           "They are confined to comedy, drama and sport as before"
         ],
         answer: 0,
-        explanation: "作者說出現了「something more interesting than mere accent diversity」：方言的刻意復興，「not just the sounds of a region but its words and constructions」，例如蘇格蘭語新聞、保留 Geordie 方言的劇集。國際迴響是結果而非主因。"
+        explanation: "The writer notes \"something more interesting than mere accent diversity\": a deliberate revival of dialect, \"not just the sounds of a region but its words and constructions\" - the Scots bulletin, the retained Geordie script. International response is a result, not the driver."
       },
       {
         q: "How does the writer respond to the objection that dialect broadcasting excludes some listeners?",
@@ -412,7 +412,7 @@ var BANK = [
           "He claims modern audiences never struggle with unfamiliar dialects"
         ],
         answer: 2,
-        explanation: "作者明言批評者不全是勢利眼、自己也有些同情，但指出該論點「smuggles in an assumption」：調整的負擔永遠落在地方口音者身上；標準口音的播音同樣排除人，只是那些被排除者「不被計入」；且理解力可訓練（第一週最難）。"
+        explanation: "He grants the critics are not all snobs and has some sympathy, but says the argument \"smuggles in an assumption\" that the burden of adjustment falls forever on the regional speaker; standard-accent broadcasting \"also excluded\" people whose exclusion was not counted, and comprehension is trainable."
       },
       {
         q: "The writer's 'more troubling worry' is that dialect in broadcasting may",
@@ -423,7 +423,7 @@ var BANK = [
           "make trailers harder to understand than the programmes themselves"
         ],
         answer: 0,
-        explanation: "作者擔心方言淪為「costume」：預告片裡最濃、內容轉嚴肅就變淡的粗獷或溫暖符號；若地方口音永遠只是戲劇之聲而非六點新聞之聲，「the old hierarchy has not been dismantled, merely redecorated」。"
+        explanation: "He worries dialect may return as \"costume\": a signifier of grit or warmth \"worn thickest in trailers and thinned out when the content turns serious\". If regional speech is only ever the voice of drama, \"the old hierarchy has not been dismantled, merely redecorated\"."
       },
       {
         q: "What is the significance of the contrast between the nature documentary and the budget announcement in the fifth paragraph?",
@@ -434,7 +434,7 @@ var BANK = [
           "It proves that Geordie is the dialect best suited to broadcasting"
         ],
         answer: 1,
-        explanation: "「A Geordie voice narrating a nature documentary is pleasant; a Geordie voice announcing a budget is structural change」——檢驗復興的標準不是螢幕上有多少口音，而是它們「被允許佔據哪些語域」；宣布預算代表進入權威語境，才是結構性改變。"
+        explanation: "\"A Geordie voice narrating a nature documentary is pleasant; a Geordie voice announcing a budget is structural change\": the test is not how many accents appear but \"which registers they are permitted to occupy\" - entry into authoritative contexts marks genuine change."
       }
     ]
   }

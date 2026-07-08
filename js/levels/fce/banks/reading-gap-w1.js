@@ -23,12 +23,12 @@ var BANK = [
     ],
     answers: [1, 4, 6, 0, 5, 3],
     explanations: [
-      "句中的 however 與 that fear 直接呼應前文 I was secretly worried（擔心工作令人沮喪），表示轉折後恐懼消失，接著才有 staff were welcoming 的正面描述。",
-      "One of them 指前文剛餵食的 the dogs，並引出 Biscuit 這隻不肯吃飯的狗，後文 the manager explained that he had arrived 中的 he 正是指 Biscuit。",
-      "This patient approach 指前一段經理建議每週安靜坐在籠邊的耐心做法，paid off 則銜接後文 Biscuit 開始搖尾巴的成果。",
-      "Of course 與 not every task was so enjoyable 承接前文『最有成就感的部分』，轉折帶出後文洗碗、雨中清理等辛苦工作。",
-      "These lessons 總結前句 taught me something about patience and responsibility，too 表示影響延伸到收容所以外，銜接後文週六早起的新習慣。",
-      "that question 指前句朋友問 whether the shelter needs more helpers，後文 There is always room 正是對這個問題的固定回答。"
+      "The words 'however' and 'that fear' point back to 'I was secretly worried' in the previous sentence, and the vanished fear leads into the positive description of the welcoming staff.",
+      "'One of them' refers to 'the dogs' just fed, and the sentence introduces Biscuit, the antecedent of 'he' in the next paragraph ('he had arrived only a few days earlier').",
+      "'This patient approach' refers to the manager's suggestion of sitting quietly by the kennel each week, and 'paid off' leads into Biscuit wagging his tail.",
+      "'Of course, not every task was so enjoyable' contrasts with 'the most rewarding part' just before it and introduces the tiring cleaning and washing that follow.",
+      "'These lessons' sums up 'taught me something valuable about patience and responsibility', and 'too' extends the influence beyond the shelter, matching the new Saturday habit.",
+      "'That question' refers to friends asking whether the shelter needs more helpers; 'There is always room' in the next paragraph is the standing answer to it."
     ]
   },
   {
@@ -54,12 +54,12 @@ var BANK = [
     ],
     answers: [2, 0, 4, 6, 1, 5],
     explanations: [
-      "At the beginning 是時間開場語，呼應前文剛組隊、缺乏經驗的背景，並引出後文整個下午爭論設計、馬達燒壞等進度緩慢的細節。",
-      "that happen 指前句 half the team wanted to give up（想放棄），而句中的 Mr Odell 正是後文 He divided the work 中 He 的先行詞。",
-      "just as quickly 與前句 the arguments almost disappeared 形成平行比較，指機器人也同樣快速進步，銜接後文三月已能完成任務。",
-      "此句宣告比賽日到來，是時間推進的轉場，後文 Twenty-two schools gathered 描述的正是比賽當天的場面。",
-      "none of that 指前段機器看起來簡陋、雙手發抖等擔憂，once the round started 銜接後文 Sparky 零失誤完成所有任務的驚喜結果。",
-      "That result 指前句獲得第三名與獎盃的成績，lasting effect 引出後文四人選讀工程科系、學校資助兩隊的長遠影響。"
+      "'At the beginning' opens the timeline after the inexperienced team forms and introduces the slow progress described next: afternoons of arguing and a burned-out motor.",
+      "'That happen' refers to half the team wanting to give up, and Mr Odell in this sentence is the antecedent of 'He' in 'He divided the work'.",
+      "'Just as quickly' parallels the previous sentence about the arguments disappearing; the robot's improvement leads into what it could do by March.",
+      "This sentence marks the arrival of contest day, a time transition; 'Twenty-two schools gathered' then describes that day.",
+      "'None of that' refers to the intimidating rival machines and shaking hands just described, and 'once the round started' leads into Sparky's flawless run.",
+      "'That result' refers to finishing third with a trophy, and 'lasting effect' introduces the engineering courses and funded teams that follow."
     ]
   },
   {
@@ -85,12 +85,12 @@ var BANK = [
     ],
     answers: [3, 5, 1, 6, 4, 0],
     explanations: [
-      "change my mind 呼應前文『覺得搬家像世界末日』的心態，did nothing to change 引出後文公車稀少、網路斷線等持續抱怨的細節。",
-      "Then 表時間推進，something happened 預告轉折事件，正好銜接後文鄰居的馬闖進花園、因而認識 Ellie 的關鍵情節。",
-      "Through her 的 her 指前段剛認識的 Ellie，後文 She taught me to ride 中的 She 也延續同一指涉，說明鄉村生活的好處。",
-      "此句以 That is not to say...perfect 作讓步轉折，銜接後文仍想念電影院、冬天孤單等缺點的描述。",
-      "these frustrations 指前段列出的種種不便，On balance 與 outweigh 引出後文睡得更好、更健康等優點勝過缺點的總結。",
-      "Looking back 表示回顧全文心境轉變，opposed the move 呼應開頭的抗拒，並銜接結尾『如果搬回去我反而會反對』的今昔對比。"
+      "'Change my mind' echoes the narrator's feeling that the move was 'the end of the world', and 'did nothing to change' leads into the complaints about rare buses and failing internet.",
+      "'Then' moves time forward and 'something happened' previews the turning point: the escaped horse and the meeting with Ellie in the next paragraph.",
+      "'Through her' refers to Ellie, just introduced, and 'She taught me to ride' in the next paragraph continues the same reference.",
+      "'That is not to say that everything ... is perfect' is a concession that introduces the remaining drawbacks: missing the cinema and lonely, flooded winters.",
+      "'These frustrations' refers to the drawbacks just listed, and 'on balance' with 'outweigh' introduces the advantages that follow: better sleep, fitness and friendly neighbours.",
+      "'Looking back' reviews the whole change of heart; 'opposed the move' echoes the opening resistance and sets up the closing contrast about arguing to stay."
     ]
   },
   {
@@ -116,12 +116,12 @@ var BANK = [
     ],
     answers: [1, 5, 6, 2, 0, 3],
     explanations: [
-      "embarrassing start 承接前文答應參賽的決定，並預告後文第一次練跑不到兩公里就氣喘吁吁、被咖啡店客人圍觀的糗事。",
-      "Instead 與前句『差點刪掉訓練 app』形成對比，改為採用計畫；後文 It mixed short runs 的 It 指這個 beginner's plan。",
-      "Around this time 承接前文兩個月的訓練進度，equipment 一詞預告後文店員指出便宜跑鞋害膝蓋痛、換新鞋的裝備話題。",
-      "however 表轉折，more than my body 暗示考驗心理層面，銜接後文獨自跑三小時胡思亂想、找藉口賴床的心理掙扎。",
-      "Race day itself 標示時間跳到比賽當天，unlike anything I had imagined 引出後文萬人空巷、加油標語等超乎想像的場面。",
-      "The final stretch 與 a very different story 對比前句『前三十公里毫不費力』，銜接後文雙腿如石、落後目標二十分鐘的結局。"
+      "'An embarrassing start' follows the decision to sign up and previews the first run: less than two kilometres, gasping outside a cafe full of amused customers.",
+      "'Instead' contrasts with nearly deleting the training app in the previous sentence; 'It' in 'It mixed short runs' refers to this beginner's plan.",
+      "'Around this time' fits the two-month training point, and 'equipment' previews the shop assistant's advice that cheap shoes were causing the knee pain.",
+      "'However' marks a shift, and 'more than my body' points to the mental struggle that follows: too much time to think and excuses to stay in bed.",
+      "'Race day itself' moves the story to the event, and 'unlike anything I had imagined' introduces the crowds, funny signs and carrying atmosphere.",
+      "'The final stretch' and 'a very different story' contrast with the effortless first thirty kilometres, leading into legs turning to stone and finishing behind target."
     ]
   },
   {
@@ -147,12 +147,12 @@ var BANK = [
     ],
     answers: [2, 4, 0, 3, 6, 1],
     explanations: [
-      "that time 指前句 more than four hundred years ago 的漫長歷史，however 帶出轉折：市場原本與熟食無關，銜接後文只賣蔬果魚花。",
-      "These simple breakfasts 指前段 1950 年代攤販賣的熱茶與培根捲，popular with the general public 銜接後文上班族也來排隊。",
-      "this transformation 指前段業主把攤位改租給廚師的轉變，Not everyone welcomed 引出後文老攤商抗議、花販堵門的衝突。",
-      "the argument 指前段鬧到地方議會的爭端，1989 年大火承接時間軸，後文 The blaze 的定冠詞正回指這場火災。",
-      "In the end 標示爭端與火災的最終結局，food stalls saved the site 與前文『很多人以為不會重開』形成對比，銜接後文廚師募款修屋頂。",
-      "both eras 總結前文批發傳統與熟食新潮兩個時代，side by side 銜接結尾既能買蘋果又能吃餃子的今日景象。"
+      "'That time' refers to 'more than four hundred years ago', and 'however' introduces the contrast that the market had nothing to do with cooked food, leading into the fruit, fish and flowers.",
+      "'These simple breakfasts' refers to the hot tea and bacon rolls of the 1950s, and their popularity with the public leads into office workers joining the queues.",
+      "'This transformation' refers to the owners renting more space to cooks; 'not everyone welcomed' introduces the traders' complaints and the flower seller's protest.",
+      "'The argument' refers to the dispute that reached the council, and the 1989 fire continues the timeline; 'The blaze' with its definite article then refers back to this fire.",
+      "'In the end' resolves the dispute and fire, and 'the food stalls saved the site' contrasts with the assumption it would never reopen, leading into the cooks' fundraising campaign.",
+      "'Both eras' sums up the wholesale tradition and the cooked-food era, and 'side by side' matches the closing scene of buying apples and eating dumplings today."
     ]
   },
   {
@@ -178,12 +178,12 @@ var BANK = [
     ],
     answers: [4, 3, 5, 0, 6, 2],
     explanations: [
-      "That conversation 指前句 asked him to tell me about them 開啟的談話，lasted the entire afternoon 銜接後文他細數每張照片背後的故事。",
-      "此句承接前文『下定決心學攝影』，one strict condition 預告條件，後文 I was to leave my phone at home 正是該條件的具體內容。",
-      "it 指前段那條看似不合理的規定（只能用底片機），Slowly, though 表態度轉變，銜接後文因每張都花錢而學會仔細觀察。",
-      "weekly lessons 與 routine 呼應開頭學攝影的安排，後文 Each Sunday we would walk 正是這個每週固定流程的細節展開。",
-      "to put it kindly 委婉預告失敗經驗，銜接後文整捲模糊、拍到自己拇指、十二張人行道照片等出糗細節。",
-      "That small act of honesty 指前句爺爺默默拿出自己同樣糟糕的早期作品，taught me more 銜接結尾他對攝影與犯錯的體悟。"
+      "'That conversation' refers to asking Grandpa to talk about the prints, and 'lasted the entire afternoon' leads into his stories behind almost every picture.",
+      "This follows the decision to learn photography; 'one strict condition' previews the rule spelled out next: leave the phone at home and use the film camera.",
+      "'It' refers to the seemingly unreasonable film-camera rule; 'Slowly, though' marks the change of attitude, explained by having to look properly before each costly shot.",
+      "'Weekly lessons' and 'routine' set up the details that follow: a walk each Sunday, a single task, and developing the film together in the garage.",
+      "'To put it kindly' softens the admission of failure and previews the blurred rolls, thumb shots and twelve accidental pictures of the pavement.",
+      "'That small act of honesty' refers to Grandpa quietly showing his own equally poor first attempts, and 'taught me more' leads into his closing lesson about mistakes."
     ]
   }
 ];

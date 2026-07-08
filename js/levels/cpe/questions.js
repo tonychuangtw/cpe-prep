@@ -321,10 +321,10 @@ var WRITING = [
       "Constant connectivity is quietly eroding our ability to think deeply. Attention has become a commodity fought over by competing platforms, and sustained concentration — the very foundation of serious intellectual work — is becoming a rare skill. Efficiency has been bought at the price of depth."
     ],
     checklist: [
-      "Content：兩篇文本各抓出兩個重點並加以評論，加入自己的觀點",
-      "Communicative Achievement：正式 essay 語域，立場清楚、有說服力",
-      "Organisation：introduction → 兩文本討論 → 個人立場 → conclusion，銜接自然",
-      "Language：C2 詞彙與句型多樣（inversion、cleft、hedging），錯誤極少"
+      "Content: pick two key points from each text, comment on them, and add your own ideas",
+      "Communicative Achievement: formal essay register with a clear, persuasive stance",
+      "Organisation: introduction -> discussion of both texts -> own position -> conclusion, with natural linking",
+      "Language: varied C2 vocabulary and structures (inversion, cleft, hedging) with very few errors"
     ],
     model: "Model outline — Intro: frame the debate as efficiency vs depth. Para 2: summarise Text 1's claims (speed, democratised knowledge); concede their force but note the writer conflates access with understanding. Para 3: summarise Text 2 (attention as commodity, loss of concentration); argue this is the more far-reaching concern, though somewhat fatalistic. Para 4: own view — the tools are neutral; what matters is whether we cultivate habits that protect deep work. Conclusion: progress need not come at the price of depth, provided we use technology deliberately rather than being used by it."
   },
@@ -340,10 +340,10 @@ var WRITING = [
       "Romantic talk of free culture ignores an awkward truth: collections must be conserved, staff paid and buildings maintained. Where entry fees are abolished, the shortfall is met either by taxpayers, many of whom never set foot in a gallery, or by cuts that quietly degrade the institution itself."
     ],
     checklist: [
-      "Content：兩文本重點皆有摘要與評價，並提出可行的折衷方案",
-      "Communicative Achievement：語氣客觀、正式，論證平衡",
-      "Organisation：段落分工清楚，論點層層推進",
-      "Language：精準用詞（subsidise, footfall, earmark…），複雜句正確"
+      "Content: summarise and evaluate both texts' key points and propose a workable compromise",
+      "Communicative Achievement: objective, formal tone with a balanced argument",
+      "Organisation: clear paragraph roles; arguments build step by step",
+      "Language: precise vocabulary (subsidise, footfall, earmark...) and accurate complex sentences"
     ],
     model: "Model paragraph — While the first writer is right that admission charges deter exactly those visitors museums most need to reach, the argument rests on the questionable assumption that funding will simply materialise. The second text supplies the missing realism: conservation and staffing are not optional extras. A defensible middle course — free access to permanent collections, with charges reserved for special exhibitions — would preserve the principle of open culture without starving the institutions that embody it."
   },
@@ -359,10 +359,10 @@ var WRITING = [
       "Car-free zones are designed by and for the able-bodied urban professional. For the elderly, the disabled, tradespeople and families in outlying districts with threadbare public transport, the car is not a lifestyle choice but a lifeline. Restrictions imposed without alternatives simply punish the least mobile."
     ],
     checklist: [
-      "Content：摘要兩方論點（環境效益 vs 弱勢排除），評價其強弱",
-      "Communicative Achievement：essay 語域一致，展現批判思考",
-      "Organisation：對比結構清晰，轉折語自然（granted, that said…）",
-      "Language：主題詞彙（congestion, accessibility, retrofit…）運用得當"
+      "Content: summarise both sides (environmental gains vs exclusion of the vulnerable) and weigh their strengths",
+      "Communicative Achievement: consistent essay register showing critical thinking",
+      "Organisation: clear contrastive structure with natural transitions (granted, that said...)",
+      "Language: apt use of topic vocabulary (congestion, accessibility, retrofit...)"
     ],
     model: "Model outline — Intro: the debate is less about cars than about who cities are for. Para 2: Text 1 — environmental and commercial gains are well documented; strength: evidence-based. Para 3: Text 2 — equity objection is serious; restrictions without alternatives shift costs onto the vulnerable. Para 4: own view — sequencing matters: invest in transport and exemptions first, then restrict. Conclusion: the goal is not car-free cities but people-first cities."
   },
@@ -378,10 +378,10 @@ var WRITING = [
       "Something is lost when colleagues become tiles on a screen. Mentoring happens in corridors; trust is built over shared coffee, not scheduled calls. The young and the newly hired, deprived of these informal currents, are paying for the convenience of their senior colleagues."
     ],
     checklist: [
-      "Content：兩文本各兩個重點，並評估誰承擔遠端工作的成本",
-      "Communicative Achievement：正式且具說服力，避免口語化",
-      "Organisation：清楚的立場演進，結論呼應開頭",
-      "Language：collocations 精準（tacit knowledge, watercooler moments…）"
+      "Content: two key points from each text, assessing who bears the costs of remote work",
+      "Communicative Achievement: formal and persuasive, avoiding colloquialism",
+      "Organisation: clear development of position; conclusion echoes the opening",
+      "Language: precise collocations (tacit knowledge, watercooler moments...)"
     ],
     model: "Model paragraph — The second text's most telling point is distributional: flexibility is not enjoyed equally. Senior staff, their networks already built, harvest the benefits of remote work, while newcomers forfeit the apprenticeship that corridors and coffee breaks once provided. Any honest defence of remote work must therefore explain not merely that output is maintained, but how the informal transmission of skill and trust is to be replaced."
   },
@@ -393,10 +393,10 @@ var WRITING = [
     length: "280–320 words",
     task: "An arts magazine has invited readers to submit reviews of a book, film or exhibition that fundamentally changed the way they see the world. Describe the work, explain what perspective it challenged, and assess whether it deserves a wider audience. Write your review.",
     checklist: [
-      "Content：描述作品、說明改變了什麼觀點、評估其價值",
-      "Communicative Achievement：review 語域—生動、有個人聲音但不失評論性",
-      "Organisation：吸引人的開頭、有層次的評價、有力的結尾",
-      "Language：評論性詞彙（understated, self-indulgent, luminous…）"
+      "Content: describe the work, explain what perspective it changed, and assess its value",
+      "Communicative Achievement: review register — vivid and personal without losing critical edge",
+      "Organisation: engaging opening, layered evaluation, forceful ending",
+      "Language: critical vocabulary (understated, self-indulgent, luminous...)"
     ],
     model: "Model opening — I picked it up expecting to be lectured; I finished it unable to walk past a construction site without wondering whose hands had built it. Few books so thoroughly dismantle the reader's complacency while appearing to do nothing more than tell a story."
   },
@@ -408,10 +408,10 @@ var WRITING = [
     length: "280–320 words",
     task: "The principal of your college has asked you to write a report on the facilities and support currently available to international students. Your report should evaluate existing provision, identify the most significant shortcomings, and recommend improvements. Write your report.",
     checklist: [
-      "Content：評估現況、指出缺失、提出具體建議",
-      "Communicative Achievement：report 語域—客觀、非個人化、有標題分節",
-      "Organisation：Introduction / Findings / Recommendations 結構",
-      "Language：正式被動與名詞化（provision, uptake, be allocated…）"
+      "Content: evaluate current provision, identify shortcomings, and make concrete recommendations",
+      "Communicative Achievement: report register — objective, impersonal, with section headings",
+      "Organisation: Introduction / Findings / Recommendations structure",
+      "Language: formal passives and nominalisation (provision, uptake, be allocated...)"
     ],
     model: "Model outline — Introduction: purpose and sources (survey of 40 students, staff interviews). Current provision: orientation week praised; language support oversubscribed. Shortcomings: accommodation office closes before most arrivals; no term-time academic writing support. Recommendations: extend office hours during arrival fortnight; recruit peer mentors; ring-fence budget for a writing centre. Conclusion: modest, largely administrative changes would yield disproportionate gains."
   },
@@ -423,10 +423,10 @@ var WRITING = [
     length: "280–320 words",
     task: "A current-affairs magazine is running a series entitled 'Ideas we may have to abandon'. You decide to contribute an article on privacy. Discuss whether privacy can survive in a digitally connected world, and what, if anything, individuals should do about it. Write your article.",
     checklist: [
-      "Content：討論隱私是否已死、個人可以怎麼做",
-      "Communicative Achievement：article 語域—抓住讀者、可帶反問句與幽默",
-      "Organisation：鉤子開頭、論點推進、令人回味的結尾",
-      "Language：修辭手法（rhetorical questions, tricolon, irony）"
+      "Content: discuss whether privacy is dead and what individuals can do about it",
+      "Communicative Achievement: article register — grip the reader; rhetorical questions and humour welcome",
+      "Organisation: hook opening, developing argument, memorable ending",
+      "Language: rhetorical devices (rhetorical questions, tricolon, irony)"
     ],
     model: "Model opening — Somewhere, a server knows what time you woke up this morning. It knows before your family does. We surrendered this knowledge not at gunpoint but at the tap of an 'I agree' button — which raises an uncomfortable question: can something be dead if we keep cheerfully burying it ourselves?"
   },
@@ -438,10 +438,10 @@ var WRITING = [
     length: "280–320 words",
     task: "A national newspaper has published an article claiming that traditional crafts are economically irrelevant and that public funding for them should be withdrawn. You decide to write a letter to the editor responding to the article. Challenge the writer's arguments and make a case for the continued support of traditional crafts. Write your letter.",
     checklist: [
-      "Content：反駁原文論點、提出工藝的經濟與文化價值",
-      "Communicative Achievement：正式書信語域—有力但有禮",
-      "Organisation：開頭指明回應對象、逐點反駁、明確訴求收尾",
-      "Language：讓步與反駁句型（While it is true that…, the claim that… does not withstand scrutiny）"
+      "Content: rebut the article's arguments and make the economic and cultural case for crafts",
+      "Communicative Achievement: formal letter register — forceful but courteous",
+      "Organisation: identify what you are responding to, rebut point by point, and end with a clear appeal",
+      "Language: concession and rebuttal structures (While it is true that..., the claim that... does not withstand scrutiny)"
     ],
     model: "Model paragraph — Your correspondent measures the value of a craft by its quarterly turnover, a yardstick by which most orchestras, libraries and, indeed, newspapers would fare little better. What this accounting overlooks is that traditional skills, once lost, are not recoverable at any price: no subsidy, however generous, can resurrect a technique whose last practitioner has died."
   }

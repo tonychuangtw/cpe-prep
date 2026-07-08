@@ -25,13 +25,13 @@ var BANK = [
     ],
     answers: [3, 0, 6, 1, 7, 4, 2],
     explanations: [
-      "前段以「最早的地圖例證」收尾，空格需引出中世紀 mappae mundi 的具體例子；後段的 Such theological cartography 直接回指選項中「geography served doctrine」的神學製圖。",
-      "前段說後繼者「以其他中心取代」，選項以 The colonial survey made that substitution explicit 承接 substitution 一詞；後段 That imperial afterlife 回指殖民帝國的內容。",
-      "前段描寫掛在客廳的裝飾地圖，選項以 Ownership on this decorative scale 銜接 decorative；並引入 estate surveys，正好呼應後段開頭的 The estate map。",
-      "前段指出地產地圖的「翻譯並不無辜」，選項舉出村民焚毀測量儀器的圈地抗爭實例；後段 Resistance of this sort 直接回指這種抵抗行為。",
-      "前段以蘇格蘭高地與澳洲內陸的測量隊收尾，選項描述測量之後的圈地與驅逐，並以「無需紙張的空間系統」收尾，引出後段的 Those indigenous traditions。",
-      "後段開頭 Aboriginal Australian songlines are the most celebrated counter-example 中的 counter-example 呼應選項結尾「one convention among many」對地圖定義的質疑，且 song cycle 預告了 songlines。",
-      "前段說歌之路徑挑戰地圖定義，選項以 It is a definition now under pressure 承接 definition，並引入藍點與手機；後段 The satellite view 與 pinch and swipe 延續數位地圖意象。"
+      "The previous paragraph ends with the earliest surviving map examples, and the option supplies the medieval mappae mundi as the concrete case; the following \"Such theological cartography\" points back to the option's \"geography served doctrine.\"",
+      "The preceding text says successors \"substituted other centres,\" and the option picks up that word with \"The colonial survey made that substitution explicit\"; \"That imperial afterlife\" then refers back to its colonial content.",
+      "The previous paragraph describes decorative maps in parlours; the option links via \"Ownership on this decorative scale\" and introduces estate surveys, anticipating the next paragraph's opening \"The estate map.\"",
+      "The preceding text says the estate map's translation \"was rarely innocent\"; the option gives the enclosure protests where villagers burned surveying instruments, and \"Resistance of this sort\" in the next paragraph refers directly to this.",
+      "The previous paragraph ends with surveying parties in the Highlands and Australian interior; the option describes fences and evictions that followed and closes with spatial systems requiring no paper, setting up \"Those indigenous traditions.\"",
+      "The next paragraph opens with Aboriginal songlines as \"the most celebrated counter-example,\" echoing the option's closing claim that the map is \"one convention among many\"; \"song cycle\" also anticipates \"songlines.\"",
+      "The preceding text says songlines unsettle the definition of the map; the option continues with \"It is a definition now under pressure\" and introduces the phone's blue dot, which \"The satellite view\" and \"pinch and swipe\" then develop."
     ]
   },
   {
@@ -59,13 +59,13 @@ var BANK = [
     ],
     answers: [5, 2, 0, 7, 4, 1, 6],
     explanations: [
-      "前段以音樂廳製造寂靜收尾，選項描述指揮棒下協商出的 grand pause，具體化「寂靜是被營造的」；後段 That paradox 回指「靜默本身即事件」的悖論。",
-      "前段說作曲家像劇作家般安排休止，選項以古典時期的音樂笑話展示 theatrical instinct；後段 Haydn understood this comic potential 直接承接笑話與喜劇效果。",
-      "前段提到貝多芬晚期作品的深淵般停頓，選項以 Grosse Fuge 樂章為例延續 dread 氛圍；後段 Such expressive weight 回指這種表現重量。",
-      "前段指出實際的寂靜具彈性、依當晚氣氛而定，選項說錄音把停頓固定成僵死的長度；後段 The recording embalms 直接改述選項的 fixed forever。",
-      "前段預告「在一間不容許寂靜的房間開始探究」，選項描述 Cage 進入哈佛無響室聽見自己的血液；後段 What Cage took from that anechoic chamber 明確回指。",
-      "前段說懷疑者指出 Cage 論證迴避了一個 real distinction，選項正面陳述那個區分：作曲家保留的寂靜 vs 聽眾交出的注意力；末段 the truest silences 由此推進。",
-      "後段（第 7 段前文）說 their scepticism points to a real distinction，選項以 Their objection runs roughly as follows 承接 scepticism，並用貝多芬休止與車流噪音對比說明該區分。"
+      "The opening paragraph ends with the hall's engineered stillness; the option's grand pause negotiated under a raised baton makes silence concrete, and \"That paradox\" then refers back to silence as an event.",
+      "The preceding text says composers deployed rests with a dramatist's timing; the option shows this theatrical instinct through classical-era musical jokes, and \"Haydn understood this comic potential\" picks up the comedy directly.",
+      "The previous paragraph describes Beethoven's abyss-like pauses; the option continues the dread with the Grosse Fuge's broken-off phrases, and \"Such expressive weight\" refers back to it.",
+      "The preceding text says a performer's silence is elastic and shaped by the evening; the option says recording fixes a pause at one arbitrary length, which \"The recording embalms\" then paraphrases.",
+      "The previous paragraph promises an inquiry begun in a room designed to contain no silence; the option describes Cage in the Harvard anechoic chamber, and \"What Cage took from that anechoic chamber\" refers to it explicitly.",
+      "The preceding text says scepticism points to a real distinction that Cage elides; the option states that distinction directly, silence withheld by a composer versus silence surrendered by an audience, which the final paragraph then develops.",
+      "The previous paragraph mentions the sceptics; the option opens \"Their objection runs roughly as follows,\" picking up \"their scepticism,\" and contrasts a Beethoven rest with traffic noise to spell out the distinction."
     ]
   },
   {
@@ -93,13 +93,13 @@ var BANK = [
     ],
     answers: [1, 4, 7, 2, 0, 6, 3],
     explanations: [
-      "前段以「他盯著我看然後叫我掃地」收尾，選項解釋刨花是工具的自白、他檢查的是地板；後段「掃地就是教學」直接承接 reading shavings 的概念。",
-      "前段說閱讀刨花是他審核雙手的方式，選項延伸主題說磨刀是排練、磨石教手學耐心；後段 The sharpening was worse 順勢轉入磨刀場景。",
-      "前段描寫我在砥石前的挫敗，選項記錄他說「刀磨好時你能在裡面看見自己的錯誤」這句話；後段 That casual remark 明確回指這句 remark。",
-      "前段說日式刨刀用拉的、推翻二十年肌肉記憶，選項描述兩位學徒訕笑、Kenta 留下教我拉刨發力；後段 The kindness was real 回指這份幫助的善意。",
-      "前段說三年只稱讚四次，選項細數那四次都用 honest 一詞、記憶精確勝過婚禮；後段 that stinginess 回指稱讚的吝嗇。",
-      "前段以「過早的稱讚像上得太厚的漆封住瑕疵」作比，選項延續 finish/flaw 的隱喻：flattered young 的人四十歲才發現二十歲藏起的毛病；並銜接末段的告別語氣。",
-      "選項描述造訪老師傅的接榫大殿、無釘樑柱與葬禮般的沉默，呼應末段他過世與衣缽傳承的收束；且 his old teacher 延續師承主題，是第 7 空唯一連貫的段落。"
+      "The previous paragraph ends with being set to sweeping; the option explains that shavings are \"the tool's confession\" and that he inspected the floor, which the next paragraph's \"the sweeping was the instruction\" and \"reading shavings\" pick up.",
+      "The preceding text says reading shavings was how he audited his hands; the option extends this, sharpening as rehearsal and the stones teaching patience, leading naturally into \"The sharpening was worse.\"",
+      "The previous paragraph describes the narrator's failure at the waterstones; the option records his sentence about seeing your mistakes in a finished blade, and \"That casual remark\" refers straight back to it.",
+      "The preceding text says the pull stroke undid twenty years of muscle memory; the option has Kenta staying behind to teach the technique, and \"The kindness was real\" refers to that act of help.",
+      "The previous paragraph says he praised the narrator only four times in three years; the option recounts those four occasions and the word \"honest,\" and \"that stinginess\" refers back to the rationed praise.",
+      "The preceding text compares premature praise to a finish that seals in flaws; the option continues the metaphor, a man flattered young discovering in his forties what his twenties concealed, and leads into the valedictory final paragraph.",
+      "The option's visit to the old teacher's joinery hall, with its funeral-like silence, sustains the theme of lineage and prepares the final paragraph's account of his death and the inherited chisels."
     ]
   },
   {
@@ -127,13 +127,13 @@ var BANK = [
     ],
     answers: [6, 3, 1, 5, 2, 7, 0],
     explanations: [
-      "前段說眾人對鰻魚起源「錯得可笑」，選項列舉亞里斯多德的自然發生說與 Pliny 的磨擦說；後段 Aristotle's guess 直接回指選項首句。",
-      "前段說從未有人找到魚卵、精巢或幼鰻，選項寫年輕的 Freud 解剖四百條鰻魚遍尋睪丸不獲；後段「謎團終於破解」承接徒勞的搜尋史。",
-      "前段描述透明柳葉狀幼體在缸中變成幼鰻，選項以 That larval unmasking 回指，並引入 Schmidt 由幼體大小回溯源頭的計畫；後段 Schmidt's method 緊接其名。",
-      "前段以「指針最終指向馬尾藻海」收尾，選項說成鰻在故事與科學中都一去不返、只有幼體三年後回到歐洲；後段「我們的知識就停在這裡」承接產卵從未被目擊。",
-      "前段說無人見過野生鰻魚產卵、成鰻從未在繁殖場被捕獲，選項以 The blank has been costly 承接這個知識空白並引入族群崩潰；後段 Folklore filling the vacuum 再度呼應 blank。",
-      "前段講愛爾蘭與北歐的井鰻傳說，選項以 Other traditions went further 遞進，寫井鰻之死為凶兆、波羅的海溺亡漁夫化鰻；後段 The overland journeys 回頭處理前段的越野傳說。",
-      "前段說鰻魚確能濕夜越野、民間傳說「誠實」，選項以 Modern tracking has confirmed how honest the migration truly is 承接 honest 一詞並寫衛星追蹤與胃部溶解；末段 through Schmidt's trawl 收束全文。"
+      "The opening paragraph says the finest minds were comically wrong about eels; the option lists Aristotle's spontaneous generation and Pliny's abrasion theory, and \"Aristotle's guess\" in the next paragraph refers straight to the option's first sentence.",
+      "The preceding text says nobody had ever found eel eggs, milt, or young; the option describes young Freud dissecting four hundred eels in vain, and \"The mystery cracked, when it finally did\" follows on from that futile search.",
+      "The previous paragraph describes the transparent larva turning into an eel; the option opens \"That larval unmasking\" and introduces Schmidt's backwards-tracing plan, which \"Schmidt's method\" then continues by name.",
+      "The preceding text ends with the needle pointing at the Sargasso Sea; the option says adult eels make the crossing once and never return, and \"this is still where our knowledge stops\" then follows from spawning never being witnessed.",
+      "The previous paragraph says no one has seen eels spawn and adults are never caught at the breeding grounds; the option's \"The blank has been costly\" picks up that gap and adds population collapse, and \"filling the vacuum\" echoes \"blank.\"",
+      "The preceding text gives Irish and Scandinavian well-eel legends; the option escalates with \"Other traditions went further,\" eels as omens and drowned fishermen's souls, and \"The overland journeys\" then returns to the earlier legend.",
+      "The previous paragraph says eels really do cross fields and the folklore was \"honest\"; the option repeats that word, \"how honest, and how heroic, the migration truly is,\" and its satellite-tracking detail leads into the closing paragraph."
     ]
   },
   {
@@ -161,13 +161,13 @@ var BANK = [
     ],
     answers: [2, 7, 5, 0, 6, 3, 1],
     explanations: [
-      "前段以「每位家族檔案人都繼承這種曖昧」收尾，選項以 It is an ambiguity the law does surprisingly little to dispel 直接承接 ambiguity 並引入法律；後段 The lawyers 順接。",
-      "前段說一張紙可同時屬於兩個家族，選項以 Their disagreement 引出「書信屬於誰」的兩派之爭；後段 Archivists confront this split 回指這個分裂。",
-      "前段講檔案倫理的守則機制，選項以 Every code, however 讓步轉折，指出家書是寫給單一讀者的坦率；後段 The historians' rejoinder 回應選項中 ethicists 的立場。",
-      "前段說最大刪除倫理會切除官方檔案沒收的聲音，選項以 Both instincts collide most violently 收攏兩種本能，舉 Kafka 與 Larkin 的遺稿對照；後段回到祖母書信的具體考驗。",
-      "前段揭露鉛筆十字信封裡的身世秘密，選項以 Suddenly the seminar-room questions acquired teeth 承接抽象變具體，named casualty 呼應父親；後段「我什麼都沒做」順接原則的退縮。",
-      "前段以「刻意不方便的架子高度」收尾，選項以 The height was strategic in a second way 直接承接 height，寫父親視線以下的閱讀習慣；後段 Deferral 回指這種擱置。",
-      "末段說「以自己的筆跡留一張說明而不揭露的字條」，選項以 Notes of that kind 回指 note，並以「世代之間的小條約」呼應 handover 的收束意象。"
+      "The opening paragraph ends with the ambiguity every family archivist inherits; the option picks it up directly, \"It is an ambiguity the law does surprisingly little to dispel,\" and introduces the law, leading into \"The lawyers.\"",
+      "The preceding text says one sheet can be owned by two families; the option's \"Their disagreement\" frames the two camps on who letters are for, and \"Archivists confront this split\" refers back to that divide.",
+      "The previous paragraph describes archivists' ethical codes; the option turns with \"Every code, however,\" arguing family letters were written for a single reader, and \"The historians' rejoinder\" answers the ethicists' position in the option.",
+      "The preceding text says maximal deletion would amputate uncollected voices; the option gathers both instincts with the Kafka and Larkin cases of posthumous publication, before the text returns to the grandmother's letters.",
+      "The previous paragraph reveals the paternity secret in the cross-marked envelope; the option's \"Suddenly the seminar-room questions acquired teeth\" and \"named casualty\" make the abstraction personal, leading into \"I did nothing, elaborately.\"",
+      "The preceding text ends with the shelf's \"deliberately inconvenient\" height; the option continues \"The height was strategic in a second way,\" describing the father's eye-level reading, and \"Deferral\" then refers back to this postponement.",
+      "The final paragraph mentions a handwritten note that explains without disclosing; the option's \"Notes of that kind\" refers to it, and its \"small treaty\" between generations echoes the closing handover image."
     ]
   },
   {
@@ -195,13 +195,13 @@ var BANK = [
     ],
     answers: [4, 0, 3, 6, 1, 5, 7],
     explanations: [
-      "首段建立刮寫羊皮紙的隱喻，選項以 The metaphor is older than urban studies 承接並引 Freud 的羅馬意象；後段 London's street plan is the canonical exhibit 順勢舉出範例。",
-      "前段說產權線的墨比建築更深、Wren 的白紙自行復原，選項以 The failure was instructive 回指這次失敗並總結「沿舊線重建」；後段 What defeated Wren on paper 直接點名。",
-      "前段以「綽號比建築長壽」收尾，選項以 Toponymy offers the neatest proofs 舉無門之 Gate 街、失河之 Bridge 區；後段 Language may be the city's most durable stratum 承接地名主題。",
-      "前段說語言是最耐久的地層，選項以羅馬的 Theatre of Marcellus 與層層疊疊的教堂神殿把「疊寫」推到最字面；後段 Some cities have had their rewriting done for them, violently 以讓步轉入華沙。",
-      "前段說華沙戰後成為空白、波蘭人的抉擇是保存界大論戰，選項寫依 Canaletto 畫作精確重建老城並獲 UNESCO 列名；後段 The forgery 直接回指這場精心的偽造。",
-      "前段結論「城市之真在於使用而非磚石」，選項以 That lesson, that use outranks fabric 承接並翻出反面：原作也可能被掏空；後段 trades on exactly that suspicion 回指這個疑慮。",
-      "前段以 facadism 被譏為標本剝製收尾，選項以 Skin-deep preservation of that sort 回指立面主義，再遞進到「販賣抹除」的三十年建築壽命；末段 palimpsest as definition 完成收束。"
+      "The opening paragraph establishes the scraped-parchment metaphor; the option continues \"The metaphor is older than urban studies\" and cites Freud's Rome image, before \"London's street plan is the canonical exhibit\" supplies the example.",
+      "The preceding text says property lines were written in deeper ink and Wren's blank sheet reasserted itself; the option's \"The failure was instructive\" refers to that defeat, and \"What defeated Wren on paper\" names it directly.",
+      "The previous paragraph ends with nicknames outliving buildings; the option's \"Toponymy offers the neatest proofs\" gives Gate streets without gates, and \"Language may be the city's most durable stratum\" then continues the naming theme.",
+      "The preceding text says language is the most durable stratum; the option makes the overwriting literal with Rome's Theatre of Marcellus and layered churches, before \"Some cities have had their rewriting done for them, violently\" pivots to Warsaw.",
+      "The previous paragraph says postwar Warsaw was a blank and the Polish choice a great conservation argument; the option describes the Canaletto-based rebuilding listed by UNESCO, and \"The forgery\" refers straight back to it.",
+      "The preceding text concludes that a city's truth lies in its uses rather than fabric; the option picks this up, \"That lesson, that use outranks fabric,\" and inverts it, and \"trades on exactly that suspicion\" refers back to the doubt raised.",
+      "The previous paragraph ends with facadism mocked as taxidermy; the option's \"Skin-deep preservation of that sort\" refers to it and escalates to cities that monetise erasure, setting up the final paragraph's palimpsest-as-definition close."
     ]
   }
 ];

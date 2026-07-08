@@ -14,7 +14,7 @@ var BANK = [
           "Confident, because the interview seemed easy"
         ],
         answer: 0,
-        explanation: "文中寫道 my first reaction was reluctance，並解釋週六本該用來睡到中午、和朋友去公園，可見他起初不情願，因為工作會佔用他的休閒時間。"
+        explanation: "The writer says \"my first reaction was reluctance\" and explains that Saturdays were for lying in bed and meeting friends, showing he was unwilling because the job would take up his free time."
       },
       {
         q: "Why does the writer describe his first morning as \"a disaster\"?",
@@ -25,7 +25,7 @@ var BANK = [
           "He burned a whole tray of bread"
         ],
         answer: 1,
-        explanation: "第一天他打翻可頌、找錯錢、又貼錯無麩質麵包的標籤，文中列出一連串粗心錯誤，故答案是 he made a series of careless mistakes。"
+        explanation: "He dropped a tray of croissants, gave the wrong change, and mislabelled the gluten-free loaves - a string of careless errors, which is why the morning was \"a disaster\"."
       },
       {
         q: "What effect did Mrs Hartley's comment over tea have on the writer?",
@@ -36,7 +36,7 @@ var BANK = [
           "It made him doubt her judgement as a boss"
         ],
         answer: 2,
-        explanation: "文中明確說 That single sentence changed my attitude completely，她那句「犯第二次同樣的錯才算沒用」讓他態度徹底轉變，開始提早到班、仔細核對價格。"
+        explanation: "The text states directly that \"That single sentence changed my attitude completely\"; after her remark about mistakes, he began arriving early and double-checking prices."
       },
       {
         q: "The elderly couple shared one slice of cake because",
@@ -47,7 +47,7 @@ var BANK = [
           "they wanted to try several different cakes"
         ],
         answer: 1,
-        explanation: "文中說老夫妻 cheerfully admitted 醫生要他們 cut down on sugar，也就是醫囑要少吃糖，所以兩人共享一塊蛋糕，與金錢或存貨無關。"
+        explanation: "The couple \"cheerfully admitted\" that their doctor had told them to cut down on sugar - medical advice, not money or stock, explains the shared slice."
       },
       {
         q: "What does the phrase \"the sacrifice\" refer to in the text?",
@@ -58,7 +58,7 @@ var BANK = [
           "Missing his exam preparation"
         ],
         answer: 0,
-        explanation: "前一句提到朋友嘲笑他、且他錯過幾場生日聚會（missed a few birthday gatherings），the sacrifice 指的正是犧牲部分社交生活。"
+        explanation: "The previous sentence mentions his friends teasing him and that he \"did miss a few birthday gatherings\", so \"the sacrifice\" refers to giving up part of his social life."
       },
       {
         q: "What is the writer's main conclusion about the experience?",
@@ -69,7 +69,7 @@ var BANK = [
           "Bakery work is the best first job for a teenager"
         ],
         answer: 1,
-        explanation: "結尾說薪水早已花光，但在櫃檯養成的守時、細心與承認錯誤的習慣一直跟著他，可見他認為養成的習慣比金錢更有價值。"
+        explanation: "In the closing lines he says the money disappeared long ago, but the habits of punctuality, care and admitting errors \"have stayed with me through every job since\" - the habits outlasted the wages."
       }
     ]
   },
@@ -87,7 +87,7 @@ var BANK = [
           "City councils actively protect urban beehives"
         ],
         answer: 2,
-        explanation: "Priya 說花園、公園、窗台花箱甚至鐵道旁的野草 all adds up to a huge, varied menu，即城市植物種類多、食物來源豐富，故選 C。"
+        explanation: "Priya says gardens, parks, window boxes and even railway-line weeds \"all adds up to a huge, varied menu\" - the variety of city plants gives bees plenty of food."
       },
       {
         q: "How did Priya first become involved in beekeeping?",
@@ -98,7 +98,7 @@ var BANK = [
           "She read about it while researching cookery"
         ],
         answer: 1,
-        explanation: "文中說她原本想上的 cookery class 已額滿（fully booked），才報名養蜂週末課程，純屬偶然，故答案為 B。"
+        explanation: "She signed up for the beekeeping weekend \"simply because a cookery class she wanted was fully booked\" - she got into it by accident when her first choice was full."
       },
       {
         q: "What does Priya suggest about her first jar of honey?",
@@ -109,7 +109,7 @@ var BANK = [
           "It took much longer to produce than expected"
         ],
         answer: 0,
-        explanation: "她笑說算下來那可能是全國最貴的蜂蜜，但接著說 But that was never really the point，表示成本高低對她並不重要。"
+        explanation: "She jokes it was probably the most expensive honey in the country, then adds \"But that was never really the point\", showing the high cost did not matter to her."
       },
       {
         q: "Priya values her weekly visits to the hives mainly because they",
@@ -120,7 +120,7 @@ var BANK = [
           "help her meet other beekeepers regularly"
         ],
         answer: 2,
-        explanation: "她說那是每週唯一 genuinely can't think about emails 的時間，蜜蜂要求全神貫注，讓她徹底放下工作壓力，這正是她持續上頂樓的原因。"
+        explanation: "She says it is \"the only part of my week when I genuinely can't think about emails\" because the bees demand full attention - the hives give her a complete escape from work pressures."
       },
       {
         q: "What is Dr Webb's main point about urban beekeeping?",
@@ -131,7 +131,7 @@ var BANK = [
           "Urban hives should be banned near schools and cafés"
         ],
         answer: 0,
-        explanation: "Webb 博士說 A hive is livestock, not conservation，並指太多蜂箱會搶走野生授粉昆蟲的花蜜，重點是養蜜蜂不等於保育野生動物。"
+        explanation: "Dr Webb states \"A hive is livestock, not conservation\" and warns that crowded hives take nectar from wild pollinators - his point is that keeping honeybees is not the same as protecting wildlife."
       },
       {
         q: "In the final paragraph, what does Priya say she is \"really trying to sell\"?",
@@ -142,7 +142,7 @@ var BANK = [
           "Wildflower seeds for local gardens"
         ],
         answer: 1,
-        explanation: "她說顧客嚐到來自大街椴樹的蜂蜜後 suddenly see the city differently，接著說 That...is what I'm really trying to sell，可見她真正想推廣的是用新眼光看城市。"
+        explanation: "She says customers who taste the lime-blossom honey \"suddenly see the city differently\", and \"That... is what I'm really trying to sell\" - a fresh way of seeing the city, not just honey."
       }
     ]
   },
@@ -160,7 +160,7 @@ var BANK = [
           "He let the children choose the destination"
         ],
         answer: 0,
-        explanation: "文中說他不斷暗示要來場 proper adventure，到春天時 he had worn the rest of us down，即長時間磨到全家讓步，故選 A。"
+        explanation: "He kept dropping hints about \"a proper adventure\" until, by spring, \"he had worn the rest of us down\" - he gradually eroded the family's resistance."
       },
       {
         q: "What made Ellie stop complaining during the first two days?",
@@ -171,7 +171,7 @@ var BANK = [
           "The company of other young cyclists"
         ],
         answer: 1,
-        explanation: "文中說 Ellie 發現每個村莊都賣很棒的冰淇淋（excellent ice cream）之後就不再抱怨，故答案是 B。"
+        explanation: "Ellie \"stopped grumbling once she discovered that every village seemed to sell excellent ice cream\" - the ice cream ended her complaints."
       },
       {
         q: "Why did the father choose the left-hand track at the junction?",
@@ -182,7 +182,7 @@ var BANK = [
           "His wife persuaded him it was the better route"
         ],
         answer: 2,
-        explanation: "路標倒在草地上看不到指示，父親只 studied his map for about ten seconds 就宣布走左邊，還拒絕問路，可見他僅憑匆匆看了一眼地圖。"
+        explanation: "With the sign lying face-down, Dad \"studied his map for about ten seconds\" before announcing the left-hand track, refusing to ask directions - his choice rested on a very quick glance at the map."
       },
       {
         q: "The phrase \"the loud kind\" of silence suggests that the mother was",
@@ -193,7 +193,7 @@ var BANK = [
           "secretly amused by the situation"
         ],
         answer: 1,
-        explanation: "the loud kind of silence 是反諷說法：她一言不發，但每個家庭都認得這種沉默，代表明顯的不悅——生氣卻不說出口。"
+        explanation: "\"The loud kind\" of silence is an ironic phrase every family recognises: she said nothing, yet her displeasure was unmistakable - annoyed without speaking."
       },
       {
         q: "What did the family learn from the farmer?",
@@ -204,7 +204,7 @@ var BANK = [
           "A bus could take them back to the junction"
         ],
         answer: 1,
-        explanation: "透過農夫有限的英文與媽媽的德文片語書，他們得知 a landslide had closed the main cycle path，走「正確」路線的人反而全被困住。"
+        explanation: "Through the farmer's limited English and the phrasebook German, they learned \"a landslide had closed the main cycle path\" - everyone on the \"correct\" route was stuck behind it."
       },
       {
         q: "What does the mother believe the trip taught the family?",
@@ -215,7 +215,7 @@ var BANK = [
           "The best stories come from unplanned events"
         ],
         answer: 3,
-        explanation: "結尾媽媽說 the stories worth retelling are never the ones that go according to plan，即值得一講再講的故事都不是照計畫走的，故選 D。"
+        explanation: "The mother concludes that \"the stories worth retelling are never the ones that go according to plan\" - memorable stories come from unplanned events."
       }
     ]
   },
@@ -233,7 +233,7 @@ var BANK = [
           "His school did not offer music at all"
         ],
         answer: 1,
-        explanation: "文中說 money was short，且學校唯一的大提琴長期借給高兩屆的女生，故因家裡缺錢、又沒有琴可用，答案是 B。"
+        explanation: "The text says \"money was short\" and the school's only cello was permanently on loan to another pupil - his family could not afford lessons and no instrument was available."
       },
       {
         q: "What finally prompted Daniel to start lessons?",
@@ -244,7 +244,7 @@ var BANK = [
           "Being encouraged by a colleague who played the violin"
         ],
         answer: 0,
-        explanation: "他一邊鼓勵女兒說「犯錯才能學會」，一邊發現自己 did not apply a word of it to himself，當晚就搜尋成人課程，這就是起因。"
+        explanation: "While encouraging his daughter with phrases like \"mistakes are how you learn\", he \"realised he did not apply a word of it to himself\" - that same evening he searched for adult lessons."
       },
       {
         q: "For Daniel, the hardest part of his first lessons was",
@@ -255,7 +255,7 @@ var BANK = [
           "understanding his teacher's technical language"
         ],
         answer: 2,
-        explanation: "文中說 It was not the sore fingers...It was the strangeness of being a complete beginner again，職場上他是有答案的人，週二晚卻是初學者，故選 C。"
+        explanation: "The text says \"It was not the sore fingers... It was the strangeness of being a complete beginner again\" - at work he was the person with answers, but on Tuesday evenings he was a novice."
       },
       {
         q: "According to the text, what is the main disadvantage adult learners have?",
@@ -266,7 +266,7 @@ var BANK = [
           "They lack a clear reason for learning"
         ],
         answer: 1,
-        explanation: "研究段落指出成人其實學得有效率，但 they carry one heavy disadvantage: embarrassment，小孩不怕拉錯音、成人卻想躲起來練，故選 B。"
+        explanation: "The research paragraph says adults learn efficiently but \"carry one heavy disadvantage: embarrassment\" - children happily play wrong notes while adults hide away to practise."
       },
       {
         q: "What was the purpose of Iveta's \"catastrophe concerts\"?",
@@ -277,7 +277,7 @@ var BANK = [
           "To prepare students for professional exams"
         ],
         answer: 0,
-        explanation: "音樂會上 mistakes were not merely tolerated but celebrated，還頒獎給最優雅化解失誤的人，目的正是直接對付成人怕出錯的心理。"
+        explanation: "At the concerts \"mistakes were not merely tolerated but celebrated\", with a prize for the most graceful recovery - Iveta designed them to attack adults' fear of making errors."
       },
       {
         q: "In the final paragraph, what does Daniel mean by \"permission\"?",
@@ -288,7 +288,7 @@ var BANK = [
           "A certificate allowing adults to join orchestras"
         ],
         answer: 2,
-        explanation: "他說人們等待 the right age, the right time, enough talent，而這種許可只有自己能給，指的是心裡覺得「時機條件到了」的感覺，並非任何正式核准。"
+        explanation: "He says people wait for \"the right age, the right time, enough talent\" and that only you can issue that permission - it is the inner feeling that conditions are finally right, not any formal approval."
       }
     ]
   },
@@ -306,7 +306,7 @@ var BANK = [
           "It would be bought by a cinema chain"
         ],
         answer: 1,
-        explanation: "文中說各種計畫（超市、公寓）都失敗後，most people assumed the Regal would eventually be demolished，即多數人以為它終將被拆除。"
+        explanation: "After the supermarket and flats schemes fell through, \"most people assumed the Regal would eventually be demolished\" - they expected it to be knocked down."
       },
       {
         q: "What problem did Sofia describe at the bus stop?",
@@ -317,7 +317,7 @@ var BANK = [
           "The multiplex refused to show the films she liked"
         ],
         answer: 1,
-        explanation: "Sofia 抱怨看電影得花錢搭四十分鐘公車到城裡，而且末班車常在電影結束前開走，重點是交通不便、回家困難，故選 B。"
+        explanation: "Sofia complained that any film meant an expensive forty-minute bus ride and that \"half the time the last bus home left before the film ended\" - the cinema was hard to reach and hard to get home from."
       },
       {
         q: "What does Ken's comment about \"a castle\" show?",
@@ -328,7 +328,7 @@ var BANK = [
           "Ken felt the cinema had been grander than it really was"
         ],
         answer: 0,
-        explanation: "她「彷彿聽到鎮上曾有城堡」般看著他，這個比喻表示 Sofia 對小鎮曾有電影院一事感到難以置信，故選 A。"
+        explanation: "\"She looked at me as if I'd said we used to have a castle\" - the comparison shows Sofia found it almost unbelievable that the town had ever had its own cinema."
       },
       {
         q: "The town council agreed to buy the building because",
@@ -339,7 +339,7 @@ var BANK = [
           "the building was about to be sold to developers"
         ],
         answer: 2,
-        explanation: "文中說議會 impressed by a petition carrying more signatures than the town had households，連署數超過全鎮戶數，展現強大民意支持，才同意購入建物。"
+        explanation: "The council was \"impressed by a petition carrying more signatures than the town had households\" - it was this exceptional show of local support that led it to buy the building."
       },
       {
         q: "Why is the cinema's programming described as \"shrewder than anyone expected\"?",
@@ -350,7 +350,7 @@ var BANK = [
           "It copied a successful model from the city multiplex"
         ],
         answer: 0,
-        explanation: "週末放主流片、週間放另類影片、每月親子場的折衷方案 drawing different audiences who might otherwise never mix，吸引原本不會交集的不同觀眾群，故選 A。"
+        explanation: "The compromise of mainstream weekend titles, midweek alternative films and a baby-friendly matinee is described as \"drawing different audiences who might otherwise never mix\" - it attracts varied groups to the cinema."
       },
       {
         q: "According to the final paragraph, the Regal's greatest value to the town is",
@@ -361,7 +361,7 @@ var BANK = [
           "the jobs it offers to local volunteers"
         ],
         answer: 1,
-        explanation: "結尾強調其價值 cannot be counted at the box office：咖啡廳讓老少交流，小鎮獲得「拯救了自己一部分」的自信，故最大價值是凝聚力與信心。"
+        explanation: "The final paragraph says its value \"cannot be counted at the box office\": the cafe brings generations together and the town has gained \"the confidence that comes from having rescued a piece of itself\"."
       }
     ]
   },
@@ -379,7 +379,7 @@ var BANK = [
           "It impressed her host family"
         ],
         answer: 0,
-        explanation: "文中說她的自信 lasted approximately six hours（大約只維持六小時），這個幽默說法表示她的信心一到當地就迅速瓦解。"
+        explanation: "The text jokes that her confidence \"lasted approximately six hours\" - a humorous way of saying it collapsed almost as soon as she arrived."
       },
       {
         q: "What was the real problem with Lena's Japanese?",
@@ -390,7 +390,7 @@ var BANK = [
           "Her accent made it hard for people to understand her"
         ],
         answer: 1,
-        explanation: "她說自己會自我介紹、點餐、談嗜好，但 couldn't...understand a single word anyone actually said，即會講套語卻聽不懂真實對話。"
+        explanation: "She could introduce herself, order food and talk about hobbies, but \"couldn't... understand a single word anyone actually said\" - set phrases were fine, real speech was not."
       },
       {
         q: "Why did the misunderstanding about the pickled plums continue for two weeks?",
@@ -401,7 +401,7 @@ var BANK = [
           "Lena wanted to avoid offending the Tanaka daughters"
         ],
         answer: 0,
-        explanation: "文中說 We were both being so polite that neither of us could tell the other anything true，兩人都因客氣而不敢說真話，兩週後才坦白，故選 A。"
+        explanation: "Lena says \"We were both being so polite that neither of us could tell the other anything true\" - mutual politeness kept them from being honest, and it took two weeks for the truth to come out."
       },
       {
         q: "What does Lena describe as \"the lowest point\" of her stay?",
@@ -412,7 +412,7 @@ var BANK = [
           "Realising her classmates disliked her questions"
         ],
         answer: 2,
-        explanation: "第二週新鮮感消退後她獨自吃飯、無法融入多年老友的小圈子，她說 You can't really prepare for feeling invisible，被冷落的隱形感正是最低潮。"
+        explanation: "Once the novelty faded she ate alone, unable to break into long-established friendship groups; she says \"You can't really prepare for feeling invisible\" - being ignored was the lowest point."
       },
       {
         q: "Why does Lena call accepting Yui's invitation \"the smartest\" decision of her stay?",
@@ -423,7 +423,7 @@ var BANK = [
           "It won her a place in the district semi-final team"
         ],
         answer: 1,
-        explanation: "桌球社成了她的 doorway：隊友幫她糾正日文、教她課本沒有的俚語，還帶她參加週末活動，讓她打進友誼圈與日常語言，故選 B。"
+        explanation: "The table tennis club became her \"doorway\": teammates corrected her Japanese, taught her slang the textbooks ignored, and included her in weekend trips - it opened up friendships and everyday language."
       },
       {
         q: "What change in her diary does Lena think shows she had \"actually arrived\"?",
@@ -434,7 +434,7 @@ var BANK = [
           "She stopped writing in the diary altogether"
         ],
         answer: 2,
-        explanation: "她說 I stopped writing about Japan and started writing about Yui...，日記從記錄文化差異變成記錄身邊的人，代表她真正「住進」了那個地方。"
+        explanation: "She says \"I stopped writing about Japan and started writing about Yui...\" - the diary shifted from cultural differences to the people around her, which she sees as the sign she had truly arrived."
       }
     ]
   }

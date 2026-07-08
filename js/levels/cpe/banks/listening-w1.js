@@ -15,7 +15,7 @@ var BANK = [
           "He wanted to identify the person who had written it"
         ],
         answer: 1,
-        explanation: "他說吸引他的不是內容（'not at what it said'），而是筆跡本身：'You could tell things about this person'。選項A誤用大理花的細節。"
+        explanation: "He says what held him was 'not at what it said' but the hand itself: 'You could tell things about this person'. Option A misuses the dahlias detail."
       },
       {
         q: "What does the speaker admit about the 'usual lament' over handwriting?",
@@ -26,7 +26,7 @@ var BANK = [
           "He thinks schools are right to abandon cursive"
         ],
         answer: 0,
-        explanation: "他坦承自己在晚宴上重複過這種論調，'mostly to seem interesting'，即為了顯得有趣而非真心，對應選項A。"
+        explanation: "He admits trotting out the argument at dinner parties 'mostly to seem interesting' — repeated for effect rather than conviction, matching option A."
       },
       {
         q: "According to the speaker, the real value of handwriting lay in its...",
@@ -37,7 +37,7 @@ var BANK = [
           "decorative qualities such as elegant capitals"
         ],
         answer: 2,
-        explanation: "他說手寫的重點是'friction. The sheer slowness of it'，讓人下筆前思考。他明言易讀性不是重點（自己的字也難認），排除A。"
+        explanation: "He says handwriting's point was 'friction. The sheer slowness of it', which made writers think before committing ink. He explicitly rules out legibility (his own is illegible), eliminating A."
       },
       {
         q: "What is the speaker's point about the delete key?",
@@ -48,7 +48,7 @@ var BANK = [
           "It has made written fluency accessible to everyone"
         ],
         answer: 1,
-        explanation: "'The delete key is a great forgetter. Nothing survives of the sentence you almost sent'——刪除鍵抹去猶豫的痕跡，對比手寫留下的塗改'fossils of hesitation'。"
+        explanation: "'The delete key is a great forgetter. Nothing survives of the sentence you almost sent' — it erases the traces of hesitation, unlike handwriting's visible crossings-out, the 'fossils of hesitation'."
       },
       {
         q: "How does the speaker respond to 'handwriting nostalgists'?",
@@ -59,7 +59,7 @@ var BANK = [
           "He argues their position is snobbery with no merit whatsoever"
         ],
         answer: 2,
-        explanation: "他批評懷舊派暗示打字者思想淺薄是'snobbery dressed up as concern'，但仍提出'one modest claim'——毫不費力的表達會失去某種東西。屬部分認同。"
+        explanation: "He calls the nostalgists' implication that typists think shallowly 'snobbery dressed up as concern', yet still makes 'one modest claim' — effortless expression loses something. Partial agreement, matching C."
       }
     ]
   },
@@ -78,7 +78,7 @@ var BANK = [
           "He believes the water damage is worse than previously thought"
         ],
         answer: 2,
-        explanation: "Tomas說'my instinct is still minimal intervention'，但缺失的臉'reads as a wound'。他態度軟化但未放棄原則，A和B都過度延伸。"
+        explanation: "Tomas says 'my instinct is still minimal intervention', but the missing face 'reads as a wound'. He has softened without abandoning his principle; A and B overstate the shift."
       },
       {
         q: "What is Tomas's objection to using the eighteenth-century engraving?",
@@ -89,7 +89,7 @@ var BANK = [
           "It was made before the fresco suffered any losses"
         ],
         answer: 0,
-        explanation: "他說版畫作者'improved things as he copied'，依此重建等於把別人的幻想畫上牆——版畫不可靠因為經過美化，對應選項A。"
+        explanation: "He says the engraver 'improved things as he copied', so rebuilding from it would paint someone else's fantasy onto the wall — the engraving is unreliable because embellished, matching A."
       },
       {
         q: "Why does Tomas propose the tratteggio technique?",
@@ -100,7 +100,7 @@ var BANK = [
           "It can be removed more easily than conventional infill"
         ],
         answer: 1,
-        explanation: "'The eye is satisfied, the scholar isn't deceived'——細直線近看可辨、遠看協調，兼顧觀感與學術誠實，即選項B。"
+        explanation: "'The eye is satisfied, the scholar isn't deceived' — the fine vertical lines read coherently at a distance yet are visible up close, balancing appearance with scholarly honesty, i.e. option B."
       },
       {
         q: "What is Marta's criticism of tratteggio?",
@@ -111,7 +111,7 @@ var BANK = [
           "It has been discredited by recent conservation scholarship"
         ],
         answer: 2,
-        explanation: "她說從中殿根本看不到線條，這種'honesty'只對'the six people a year who bring a ladder'有效——批評其誠實性名不副實，非選項B所稱線條干擾。"
+        explanation: "She says nobody in the nave is close enough to see the lines, so its 'honesty' serves only 'the six people a year who bring a ladder' — the honesty claim is hollow, not that the lines distract (B)."
       },
       {
         q: "On what basis do the two conservators finally reach agreement?",
@@ -122,7 +122,7 @@ var BANK = [
           "They decide to leave the missing face untouched permanently"
         ],
         answer: 1,
-        explanation: "Marta提議做tratteggio並在樓下公開展示所有決策紀錄，Tomas以'Put the confession next to the crime. All right'接受，即透明化配套方案。"
+        explanation: "Marta offers tratteggio plus public documentation of every decision in the display downstairs; Tomas accepts with 'Put the confession next to the crime. All right' — agreement rests on the transparency package."
       }
     ]
   },
@@ -141,7 +141,7 @@ var BANK = [
           "Only polar regions of the ocean are genuinely noisy"
         ],
         answer: 0,
-        explanation: "她描述深海本來就是'a carnival'——鼓蝦、長鬚鯨、冰層呻吟，是地球上聲學最熱鬧的棲地之一。噪音問題是人為疊加，非選項B所指原本安靜。"
+        explanation: "She describes the deep sea as naturally 'a carnival' — snapping shrimp, fin whales, groaning ice — one of Earth's noisiest habitats. Human noise is added on top; the ocean was never quiet, ruling out B."
       },
       {
         q: "What point does Dr Ferran make about seismic surveys?",
@@ -152,7 +152,7 @@ var BANK = [
           "They mainly affect shallow coastal waters"
         ],
         answer: 1,
-        explanation: "她說'seismic surveys... are, pound for pound, far more violent'，像每十秒一次爆炸。選項C的倍增數據是講航運，屬經典錯置陷阱。"
+        explanation: "She says 'seismic surveys... are, pound for pound, far more violent', like a bomb every ten seconds. The doubling-per-decade figure in C refers to shipping — a classic misattribution trap."
       },
       {
         q: "According to Dr Ferran, what is the 'subtler harm' of ocean noise?",
@@ -163,7 +163,7 @@ var BANK = [
           "Noise damages the hearing organs of shrimp"
         ],
         answer: 2,
-        explanation: "她解釋masking：長鬚鯨原可聽到千里外的配偶，如今只剩十分之一，'The population just quietly fails to meet'——傷害在於通訊範圍縮減。"
+        explanation: "She explains masking: a fin whale that could hear a mate a thousand kilometres away now manages a tenth of that — 'The population just quietly fails to meet'. The harm is shrunken communication range."
       },
       {
         q: "What is Dr Ferran's attitude towards UN regulatory efforts?",
@@ -174,7 +174,7 @@ var BANK = [
           "She thinks regulation should focus on seismic surveys only"
         ],
         answer: 1,
-        explanation: "她說不想當'the researcher who sneers at every treaty'，但親歷三次流程都以'toothless instrument'告終——經驗性的懷疑，而非全盤否定（排除A）。"
+        explanation: "She doesn't want to be 'the researcher who sneers at every treaty', yet all three processes she has watched ended in a 'toothless instrument' — scepticism grounded in experience, not blanket dismissal (ruling out A)."
       },
       {
         q: "Why does Dr Ferran find noise pollution grounds for ambition rather than despair?",
@@ -185,7 +185,7 @@ var BANK = [
           "Shipowners have voluntarily halved their fleets' noise"
         ],
         answer: 2,
-        explanation: "'the moment you stop making it, it's gone. No clean-up, no residue'——噪音是有「關閉開關」的污染，所以應更有企圖心。A和D誇大了現況。"
+        explanation: "'the moment you stop making it, it's gone. No clean-up, no residue' — noise is the pollutant with an off switch, so we should be more ambitious. A and D exaggerate the current situation."
       }
     ]
   },
@@ -204,7 +204,7 @@ var BANK = [
           "By quoting a famous comedian's definition of timing"
         ],
         answer: 1,
-        explanation: "她先示範傳統的「搶答timing」段子，再自嘲這個笑話本身就靠timing，'if you have to explain that — well, I just did'——邊演邊拆解。"
+        explanation: "She first performs the traditional interrupt-with-'timing' gag, then notes the joke itself depends on timing — 'if you have to explain that — well, I just did' — performing and dissecting it at once."
       },
       {
         q: "What does the story about the word 'anyway' illustrate?",
@@ -215,7 +215,7 @@ var BANK = [
           "That conjunctions are inherently funnier than punchlines"
         ],
         answer: 0,
-        explanation: "有人靠一個連接詞加上漫長停頓贏得三分鐘笑聲，證明文字只佔三成、表演與停頓才是關鍵。B過度概括（她說的是有些好材料會死在台上）。"
+        explanation: "A performer got three minutes of laughter from one conjunction and a long pause, proving words are only about thirty percent — delivery and silence do the work. B overgeneralises (she said some good material dies on stage, not all)."
       },
       {
         q: "Why did the speaker rush her punchlines early in her career?",
@@ -226,7 +226,7 @@ var BANK = [
           "She believed faster delivery was more fashionable"
         ],
         answer: 1,
-        explanation: "'silence feels like the audience leaving you'——她害怕安靜，所以踐踏自己的笑點，花了六年才學會停頓本身就是表演。"
+        explanation: "'silence feels like the audience leaving you' — fear of the quiet made her trample her own punchlines; it took six years to learn the pause is itself the act."
       },
       {
         q: "What does the speaker mean by 'the pause is the act'?",
@@ -237,7 +237,7 @@ var BANK = [
           "Audiences prefer short acts with long intervals"
         ],
         answer: 2,
-        explanation: "她說'the waiting is the funny thing, and the line is the release valve'——等待製造喜劇張力，台詞只是釋放閥，對應選項C。"
+        explanation: "She says 'the waiting is the funny thing, and the line is the release valve' — the suspense creates the comedy and the line merely releases it, matching C."
       },
       {
         q: "According to the speaker, what makes timing impossible to fully rehearse?",
@@ -248,7 +248,7 @@ var BANK = [
           "Stage fright erases whatever was practised beforehand"
         ],
         answer: 1,
-        explanation: "'Every room breathes at a different tempo'——週二冷場與週六醉客節奏不同，必須在開場九十秒內把脈。D混淆了她關於恐懼使人加速的另一論點。"
+        explanation: "'Every room breathes at a different tempo' — a Tuesday crowd and a drunk Saturday show differ, so you must take the room's pulse in the first ninety seconds. D confuses this with her separate point about fear accelerating you."
       }
     ]
   },
@@ -267,7 +267,7 @@ var BANK = [
           "It suggests the memoir was secretly written by someone else"
         ],
         answer: 1,
-        explanation: "'She's so good that readers will take every word as gospel'——文筆越好，讀者越會全盤相信那些不可能逐字重現的1987年對話，這正是他的顧慮。"
+        explanation: "'She's so good that readers will take every word as gospel' — the better the prose, the more readers will believe conversations from 1987 that cannot have been reconstructed verbatim. That is exactly his worry."
       },
       {
         q: "How does Priya defend the memoir's reconstructed conversations?",
@@ -278,7 +278,7 @@ var BANK = [
           "She believes readers never question a memoir's details"
         ],
         answer: 1,
-        explanation: "她說回憶錄的契約是'this is how it lived in me'而非法庭紀錄，讀者理解此體裁慣例。C無中生有，D過度延伸她的說法。"
+        explanation: "She says the memoir's contract is 'this is how it lived in me', not a court transcript, and readers understand the genre's convention. C is invented; D overstates her claim."
       },
       {
         q: "What past event colours Daniel's caution?",
@@ -289,7 +289,7 @@ var BANK = [
           "A journalist who fabricated an interview with the author's sister"
         ],
         answer: 0,
-        explanation: "他提到上次出版社倚賴'the genre's contract'結果'spent eight months in the papers'，還有作者妹妹受訪——前車之鑑使他主張加註。"
+        explanation: "He recalls that the last time the house leaned on 'the genre's contract' it 'spent eight months in the papers', plus the sister's interview — that precedent drives his push for a note."
       },
       {
         q: "What is Priya's initial objection to an author's note?",
@@ -300,7 +300,7 @@ var BANK = [
           "Legal advisers have warned that notes create liability"
         ],
         answer: 2,
-        explanation: "她說註記等於在第一頁告訴讀者'don't quite trust her'，'it kneecaps the book before it starts'——先毀掉作品的可信度，對應選項C。"
+        explanation: "She says a note tells the reader 'don't quite trust her' on page one — 'it kneecaps the book before it starts', undermining trust from the outset, matching C."
       },
       {
         q: "On what terms does Priya eventually accept the note?",
@@ -311,7 +311,7 @@ var BANK = [
           "A note added only if the brother publicly disputes the book"
         ],
         answer: 1,
-        explanation: "她讓步但改造方案：'two lines, at the back, in her voice, and she approves every word'，並明確否決Daniel放在卷首的三頁版本（排除A）。"
+        explanation: "She concedes but reshapes the plan: 'two lines, at the back, in her voice, and she approves every word', explicitly rejecting Daniel's three-page version at the front (ruling out A)."
       }
     ]
   },
@@ -330,7 +330,7 @@ var BANK = [
           "Collectors, unlike investors, always lose money"
         ],
         answer: 1,
-        explanation: "他說這個區分'is going to do a lot of work'——之後論證貪婪說錯誤，正是因為真正的收藏家在市場高點也拒絕出售。"
+        explanation: "He says the distinction 'is going to do a lot of work' — his later refutation of the greed theory rests on true collectors refusing to sell even at the top of the market."
       },
       {
         q: "Why does the lecturer reject the 'sublimated greed' explanation?",
@@ -341,7 +341,7 @@ var BANK = [
           "It applies only to collectors of teapots"
         ],
         answer: 0,
-        explanation: "'it predicts exactly the wrong behaviour'——貪婪者會高點出售，收藏家卻寧可賣房也不賣藏品。他承認貪婪'never features'並非事實，排除C。"
+        explanation: "'it predicts exactly the wrong behaviour' — the greedy sell at the top, yet collectors have parted with their houses before their collections. He concedes greed sometimes features, ruling out C."
       },
       {
         q: "In the 'extended self' account, completing a series is best described as...",
@@ -352,7 +352,7 @@ var BANK = [
           "an attempt to recreate childhood notions of ownership"
         ],
         answer: 1,
-        explanation: "他說補齊系列'isn't acquisition, it's repair'，架上的空缺在現象學意義上被體驗為'a gap in the self'——修補自我的缺口。"
+        explanation: "He says completing a series 'isn't acquisition, it's repair' — the gap on the shelf is experienced, phenomenologically, as 'a gap in the self'; completion mends the self."
       },
       {
         q: "Why does the lecturer mention burgled collectors?",
@@ -363,7 +363,7 @@ var BANK = [
           "To prove that collections are poor financial investments"
         ],
         answer: 2,
-        explanation: "他說遭竊收藏家的文獻'reads like the literature on bereavement'——收藏是身分鷹架，失去它如同喪親，說明機制的黑暗面。"
+        explanation: "He says the literature on burgled collectors 'reads like the literature on bereavement' — since a collection scaffolds identity, its loss resembles losing a loved one, illustrating the mechanism's dark side."
       },
       {
         q: "What paradox does the lecturer leave the students with?",
@@ -374,7 +374,7 @@ var BANK = [
           "Collectors mourn objects more than they mourn people"
         ],
         answer: 0,
-        explanation: "結尾明言：'the collector's dream is completion, and completion, when it comes, is so often reported as grief'——完成即失落的悖論。C是對此的扭曲改寫。"
+        explanation: "The closing line states it: 'the collector's dream is completion, and completion, when it comes, is so often reported as grief' — the paradox that achieving the dream brings loss. C is a distorted rewrite of this."
       }
     ]
   }

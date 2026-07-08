@@ -24,12 +24,12 @@
     ],
     answers: [3, 5, 0, 6, 2, 4],
     explanations: [
-      "首段描述夜車服務逐一停駛的衰退趨勢，第二段開頭的\"That Austrian purchase\"需要前文先出現奧地利鐵路收購車廂的敘述；正確段落以 2016 年德國停辦臥鋪、車廂被奧地利小公司買下作結，銜接最緊密。",
-      "空格後寫\"Governments have noticed the shift in sentiment\"，前面必須先描述民意轉變；正確段落談 flygskam\"飛行羞恥\"擴散、旅客態度改變，正是 the shift in sentiment 所回指的內容。",
-      "前段講政府與歐盟的政策支持，後段開頭\"Those unforgiving sums\"需要前文出現具體的經濟數字論述；正確段落以\"Political enthusiasm, however, collides with awkward economics\"承接政治熱情並解釋臥鋪車的成本劣勢。",
-      "前段結尾抱怨軌道使用費侵蝕利潤，正確段落以\"an equally stubborn obstacle\"再舉一個同樣棘手的障礙（無廠商生產臥鋪車廂），其結尾\"等待多年\"也為下一段\"Not everyone is prepared to wait\"鋪路。",
-      "前段介紹 European Sleeper 用老舊車廂賭一把，正確段落開頭\"Early reviews suggest the bet is at least partly paying off\"的 the bet 直接回指該賭注，並以 vintage stock 呼應舊車廂。",
-      "前段指出夜車只適合特定距離區間，正確段落以\"Within that middle band\"回指該距離帶，並提出可搶占航空市占的城市配對，末句的 share 又被最終段\"Capturing that share\"承接，前後鏈完整。"
+      "The next segment opens with \"That Austrian purchase\", so the gap must first mention an Austrian railway buying carriages; the correct paragraph ends with Germany's 2016 sleeper shutdown and the Austrian purchase of the stock.",
+      "The following segment says \"Governments have noticed the shift in sentiment\", so the gap must describe changing public attitudes; the flygskam paragraph about flight shame spreading is exactly that shift.",
+      "The next segment opens \"Those unforgiving sums\", requiring a preceding economic argument; \"Political enthusiasm, however, collides with awkward economics\" picks up the previous segment's government support and explains sleeper cars' cost disadvantages.",
+      "The previous segment ends with complaints about track access charges; \"an equally stubborn obstacle\" adds a parallel problem (no factories building sleeping cars), and its multi-year waits set up the next segment's \"Not everyone is prepared to wait\".",
+      "The previous segment describes European Sleeper betting on vintage carriages; \"Early reviews suggest the bet is at least partly paying off\" refers straight back to that bet and echoes the old stock with \"vintage stock\".",
+      "The previous segment says night trains suit only certain distances; \"Within that middle band\" refers back to that range, and its closing mention of capturing air-traffic share is picked up by the final segment's \"Capturing that share\"."
     ]
   },
   {
@@ -55,12 +55,12 @@
     ],
     answers: [4, 1, 6, 5, 0, 2],
     explanations: [
-      "首段描述人脈決定錄取的舊文化，正確段落以\"Complaints about that culture eventually forced change\"回指該文化並引入遮幕制度，其中的 screen 也被下一段\"The screen's effects\"直接承接。",
-      "空格後開頭\"Even with such precautions\"需要前文列出具體防範措施；正確段落描述鋪地毯掩蓋高跟鞋聲、以編號取代姓名等做法，正是 such precautions 所指。",
-      "前段強調試奏只有六分鐘且可隨時中止，正確段落以\"The brevity is not mere ruthlessness\"回應該短暫時長，替評審立場辯護，其邏輯又被下一段\"Not everyone accepts that logic\"反駁，銜接鏈完整。",
-      "前段批評遮幕試奏測不出合奏能力，正確段落以\"Partly in response to such objections\"承接該批評，介紹拆除遮幕的試用期制度，末句 trial period 被下一段\"Trial periods, though\"直接接續。",
-      "空格後段落談 recordings 的缺點，前面必須先引入錄影繳件的做法；正確段落描述樂團開始接受 video submissions 做初選，正好提供 recordings 所回指的對象。",
-      "前段是質疑錄影的 Purists，正確段落以\"Both camps nevertheless agree on one thing\"總結正反雙方共識，強調程序必須取得團員信任，並自然引出末段對樂團錄取本質的結論。"
+      "The opening paragraph describes the old culture of connections deciding appointments; \"Complaints about that culture eventually forced change\" refers back to it and introduces the screen, which the next segment's \"The screen's effects\" picks up directly.",
+      "The following segment opens \"Even with such precautions\", so specific measures must come first; the paragraph about carpets muffling high heels and numbers replacing names supplies exactly those precautions.",
+      "The previous segment stresses that auditions last barely six minutes and can be cut short; \"The brevity is not mere ruthlessness\" defends that practice, and the defence is then challenged by the next segment's \"Not everyone accepts that logic\".",
+      "The previous segment criticises screened excerpts for missing ensemble qualities; \"Partly in response to such objections\" answers that criticism with unscreened final rounds and a trial period, which the next segment's \"Trial periods, though\" continues.",
+      "The following segment discusses the drawbacks of recordings, so the gap must first introduce them; the paragraph about ensembles accepting video submissions for preliminary rounds provides that antecedent.",
+      "The previous segment gives the purists' objections to recordings; \"Both camps nevertheless agree on one thing\" sums up the two sides' shared conviction about musicians' trust and leads into the closing reflection on orchestral hiring."
     ]
   },
   {
@@ -86,12 +86,12 @@
     ],
     answers: [2, 0, 5, 3, 6, 1],
     explanations: [
-      "首段末以\"the land is never sold\"點出核心概念，空格後的\"That separation of land from building\"需要前文先解釋土地與建物分離的運作方式；正確段落正是說明信託永久持有土地、只出售建物的模式。",
-      "空格後開頭\"From those origins\"需要前文交代起源；正確段落介紹 1960 年代喬治亞州民權運動者創立第一個社區土地信託的歷史，origins 即回指此。",
-      "前段描述信託在各國快速擴散，正確段落以\"Growth on that scale\"回指該擴散規模，並引入政府設立基金的作為，其中 public grant 又被下一段\"Public money, though\"承接。",
-      "前段憂慮信託因依賴官方補助而偏離社區控制，正確段落以\"Governance is meant to guard against precisely that drift\"回指該偏移風險，介紹三方分權的董事會結構，structure 再被下段\"Elegant as that structure looks\"接續。",
-      "前段結尾談志工長年苦撐，正確段落開頭\"a harder objection than volunteer fatigue\"直接對比志工疲乏，提出限制轉售利得剝奪置產財富的更強批評，該批評又被下段 Advocates 的回應承接。",
-      "前段是支持者的辯護（capped gain 仍優於永久租屋），正確段落以\"lends weight to that reply\"回指該回應，引用 2008 年法拍危機中信託屋主違約率極低的研究佐證。"
+      "The following segment opens with \"That separation of land from building\", so the gap must first explain how land and building are separated; the correct paragraph describes the trust owning the land permanently while selling only the homes.",
+      "The following segment opens \"From those origins\", so the gap must supply the origin story; the paragraph on the first trust founded in 1960s Georgia by civil-rights activists is what \"origins\" refers to.",
+      "The previous segment describes the movement's rapid international spread; \"Growth on that scale\" refers back to it and introduces government funds, whose \"public grant\" the next segment's \"Public money, though\" picks up.",
+      "The previous segment fears trusts drifting toward state priorities; \"Governance is meant to guard against precisely that drift\" answers that worry with the three-way board, and \"structure\" is continued by the next segment's \"Elegant as that structure looks\".",
+      "The previous segment ends with volunteers carrying trusts for years; \"a harder objection than volunteer fatigue\" contrasts directly with that fatigue, raising the capped-wealth criticism that the next segment's advocates then answer.",
+      "The previous segment is the advocates' reply that a capped gain beats perpetual renting; \"lends weight to that reply\" refers back to it, citing trust homeowners' low default rates in the 2008 foreclosure crisis."
     ]
   },
   {
@@ -117,12 +117,12 @@
     ],
     answers: [3, 5, 1, 6, 4, 0],
     explanations: [
-      "首段說錄音分析發現只有不到五分之一的笑聲跟笑話有關，正確段落以\"The overwhelming majority instead\"承接該統計，指出多數笑聲是社交訊號，其結論又被下段\"That social reading of laughter\"回指。",
-      "前段講笑的社交性質，空格後轉到\"Nor is the behaviour confined to our species\"談動物；正確段落先指出嬰兒三四個月大就會笑、早於幽默感形成，作為\"笑非源於笑話\"的另一證據，過渡自然。",
-      "前段末句提到 laughter's roots lie deep in mammalian play，正確段落以\"Tracing those roots\"直接回指，區分不自主與刻意兩種笑，其中 two kinds 正是下段\"tell the two apart\"的先行詞。",
-      "前段說聽者能輕易辨別真笑與假笑，正確段落以\"That detection ability\"回指該辨識能力，並延伸到青少年辨識力較弱的研究，話題再自然過渡到群體中的笑。",
-      "前段列舉共笑提高痛閾、促進自我揭露等好處，正確段落以\"The benefits have inevitably attracted therapeutic interest\"回指 the benefits，介紹醫院的笑療法，隨後被\"None of this means laughter is invariably benign\"轉折。",
-      "前段指出嘲笑可以是霸凌的武器，正確段落以\"That double edge\"回指笑既能凝聚也能傷人的雙面性，總結笑的演化功能是管理關係，並為末段喜劇演員的觀察鋪墊。"
+      "The opening paragraph says fewer than a fifth of recorded laughs followed a joke; \"The overwhelming majority instead\" continues that statistic, concluding laughter is a social signal, which the next segment's \"That social reading of laughter\" picks up.",
+      "The gap sits between laughter's social nature and \"Nor is the behaviour confined to our species\"; the paragraph on babies laughing months before understanding language adds another proof that laughter is not about jokes and bridges the two smoothly.",
+      "The previous segment ends with laughter's roots lying deep in mammalian play; \"Tracing those roots\" refers straight back to it and distinguishes two kinds of laugh, the antecedent for the next segment's \"tell the two apart\".",
+      "The previous segment says listeners easily distinguish real from posed laughter; \"That detection ability\" refers back to it and extends it with the study showing adolescents are worse at spotting posed laughs.",
+      "The previous segment lists pain thresholds and disclosure among shared laughter's benefits; \"The benefits have inevitably attracted therapeutic interest\" refers back to them, before the next segment's \"None of this means laughter is invariably benign\" turns the argument.",
+      "The previous segment shows mocking laughter used as a bullying weapon; \"That double edge\" refers back to laughter's power to bond and to wound, summing up its relationship-managing function and setting up the comedians' conclusion."
     ]
   },
   {
@@ -148,12 +148,12 @@
     ],
     answers: [1, 6, 3, 0, 2, 4],
     explanations: [
-      "首段以\"such abundance\"描述昔日牡蠣礁遍布，正確段落開頭\"That abundance proved fatally easy to harvest\"直接回指該豐饒，交代濫捕導致崩潰的過程，並引出下段\"The loss amounted to…\"。",
-      "前段列舉牡蠣礁過濾海水、庇護生物等生態功能，正確段落以\"Recognition of those services\"回指這些 ecosystem services，說明復育計畫因此遍地開花，其熱潮又被下段\"Enthusiasm, however\"承接。",
-      "前段指出幼蟲需要硬底質而海床已被刮空，正確段落以\"Restorers therefore begin by rebuilding the foundations\"順承該問題提出鋪設貝殼與石材的解法，末句 hatchery-reared oysters 又是下段\"those founding oysters\"的先行詞。",
-      "前段談運送牡蠣可能夾帶病害、需生物安全篩檢，正確段落以\"Disease looms over the effort in another form as well\"延伸疾病主題，介紹 Bonamia 寄生蟲，another form 的呼應使其無法放入他處。",
-      "前段報告復育床上出現天然繁殖的幼牡蠣，正確段落以\"Wildlife has been quick to move in around them\"的 them 回指 restored beds，補充物種數與漁獲回流的調查結果，再由\"Results of that kind\"總承。",
-      "前段把牡蠣礁復育比作重新造林，正確段落以\"The comparison is instructive in another way too\"延伸該比喻，強調時間尺度以數十年計，末句對耐心的暗示正好引出結尾段\"Patience, then\"。"
+      "The opening paragraph describes reefs of \"such abundance\"; \"That abundance proved fatally easy to harvest\" refers straight back to it, recounts the collapse, and leads into the next segment's \"The loss amounted to...\".",
+      "The previous segment lists the reef's filtering and sheltering functions; \"Recognition of those services\" refers back to those ecosystem services and explains the boom in projects, which the next segment's \"Enthusiasm, however\" continues.",
+      "The previous segment says larvae need hard surfaces that dredging removed; \"Restorers therefore begin by rebuilding the foundations\" answers that problem, and its hatchery-reared oysters are the antecedent of the next segment's \"those founding oysters\".",
+      "The previous segment covers biosecurity screening against transported pests; \"Disease looms over the effort in another form as well\" extends the disease theme with the Bonamia parasite, and \"another form\" only works in this position.",
+      "The previous segment reports juvenile oysters settling on restored beds; \"Wildlife has been quick to move in around them\" uses \"them\" to refer to those beds, adding species counts and returning fish, summed up by \"Results of that kind\".",
+      "The previous segment compares reef restoration to replanting a forest; \"The comparison is instructive in another way too\" extends that analogy to decades-long timescales, and its stress on patience leads into the final segment's \"Patience, then\"."
     ]
   },
   {
@@ -179,12 +179,12 @@
     ],
     answers: [2, 5, 0, 4, 6, 1],
     explanations: [
-      "空格後開頭\"Condensation is therefore\"的 therefore 需要前文先說明字數與停留時間的限制；正確段落列出每行約四十字元等算術式限制，正是壓縮台詞的原因。",
-      "前段說判斷哪些對白可刪是真功夫，正確段落以\"Some losses are more painful than others\"承接刪減話題，舉雙關語為最棘手的例子，並與下段髒話翻譯的 subtler dilemma 形成並列。",
-      "前段末提到 bilingual viewers 指控字幕審查，正確段落開頭\"Those bilingual viewers have become a force\"直接回指這群觀眾，說明串流與社群放大檢視，scrutiny 再被下段\"The scrutiny has intensified\"承接。",
-      "前段描述待遇停滯、人才流失造成的缺口，正確段落以\"Into that gap has stepped the machine\"回指 that gap，介紹機器翻譯進場，其產出品質問題又被下段 Practitioners 的反駁接續。",
-      "前段說從業者必須逐行對照影片檢查機器輸出，正確段落開頭\"The film itself, they insist\"的 they 回指 practitioners，主張字幕與影像、音樂互動是自動化的盲點，該論點再被下段\"That argument reached a mass audience\"承接。",
-      "前段講韓劇字幕在媒體上被逐行檢視引發論戰，正確段落以\"Veterans of the profession greeted the controversy\"回指該爭議，指出這是隱形行業罕見的能見度，visibility 一詞正好被末段\"Whether that visibility\"接續。"
+      "The following segment begins \"Condensation is therefore...\", so the gap must explain the constraints that make condensation necessary; the paragraph on the forty-character limit and reading time supplies that arithmetic.",
+      "The previous segment says deciding what can vanish is the real skill; \"Some losses are more painful than others\" continues the cutting theme with wordplay as the hardest case, paralleling the next segment's \"subtler dilemma\" of swearing.",
+      "The previous segment ends with bilingual viewers accusing subtitlers of censorship; \"Those bilingual viewers have become a force\" refers straight back to them, and its scrutiny is picked up by the next segment's \"The scrutiny has intensified\".",
+      "The previous segment describes stagnant pay and departing subtitlers; \"Into that gap has stepped the machine\" refers back to that gap, introducing machine translation, which the next segment's practitioners then push back against.",
+      "The previous segment says the subtitler must check every line against the film; \"The film itself, they insist\" uses \"they\" for those practitioners, arguing automation misses the interplay with image and music, which the next segment calls \"That argument\".",
+      "The previous segment describes the Korean drama's subtitles being dissected in the press; \"Veterans of the profession greeted the controversy\" refers back to that debate, and its \"visibility\" is continued by the final segment's \"Whether that visibility\"."
     ]
   }
 ];

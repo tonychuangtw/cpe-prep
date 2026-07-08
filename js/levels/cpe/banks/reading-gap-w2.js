@@ -26,13 +26,13 @@
       ],
       answers: [0, 5, 2, 7, 4, 3, 1],
       explanations: [
-        "段落以「Otzi」開頭，是「有機物質可近乎完美保存」的最著名具體範例，承接第一段關於冰川保存能力的概述。",
-        "「Some finds have rewritten established chronologies」呼應前段「各種材料的保存令人驚嘆」，並以挪威弓具體說明改寫年代表的案例，邏輯承接。",
-        "「Specialist conservators therefore work in refrigerated chambers」中的「therefore」直接呼應前段說明的熱脹與氧化雙重威脅，提出具體的保存處理方法。",
-        "「International coordination has, in some measure, addressed this problem」的「this problem」回指前段倫理糾紛和談判困境，提供跨國合作作為部分解方。",
-        "「Drone survey programmes have also identified zones」中的「also」連接前段已提及的無人機技術，進一步拓展其功能（識別「冰阱」），邏輯遞進。",
-        "「One partial solution」接續保存費用昂貴、資金匱乏的困境，提出冷藏庫存設施作為折衷辦法，語意緊密相連。",
-        "「Dendrochronology and radiocarbon dating」呼應前段提到各種測定技術，進一步討論其局限性與交叉驗證的必要，學術議題深化。"
+        "The Otzi paragraph supplies the most famous concrete example of near-perfect organic preservation, following directly from the opening paragraph's overview of glaciers as custodians.",
+        "\"Some finds have rewritten established chronologies\" follows the paragraph on the astonishing range of preserved materials, using the Norwegian bow stave as a concrete case of a revised timeline.",
+        "The \"therefore\" in \"Specialist conservators therefore work in refrigerated chambers\" answers the preceding paragraph's twin threats of ice-crystal rupture and oxidation with a concrete conservation method.",
+        "\"This problem\" in \"International coordination has, in some measure, addressed this problem\" refers back to the ethical disputes and stalled negotiations of the previous paragraph, offering partial resolution.",
+        "The \"also\" in \"Drone survey programmes have also identified zones\" links to the drones already mentioned in the previous paragraph and extends their role to locating \"ice traps.\"",
+        "\"One partial solution\" follows the paragraph on chronically precarious funding, offering cold-storage repositories as a stopgap while conservation money is sought.",
+        "The dating-techniques option deepens the closing discussion of measurable, dateable finds by examining the limits of radiocarbon methods and the need for cross-validation."
       ]
     }
     ,
@@ -61,13 +61,13 @@
       ],
       answers: [2, 0, 4, 1, 3, 5, 6],
       explanations: [
-        "「Charity shops and house-clearance sales」具體說明了供應鏈如何讓二手書商以接近零成本取得庫存，承接前段對供應鏈結構差異的分析。",
-        "「Rent is often the decisive variable」補充說明成本結構的第三項關鍵要素（租金），與前段庫存成本並列，完整勾勒出成本優勢的全貌。",
-        "「Staff knowledge is the other irreplaceable asset」中的「the other」呼應前段提到的個人化檔案系統，形成一組無形資產的並列陳述。",
-        "「The prediction proved spectacularly wrong」直接反駁前段「沒有實體店能抗衡演算法效率」的預測，段落開頭的「The prediction」回指清晰。",
-        "「This bifurcation has had tangible consequences」的「this bifurcation」回指前段剛描述的市場分化（functional vs. serendipitous），承接邏輯嚴密。",
-        "「The towns of Hay-on-Wye」以具體地名例子佐證前段所說書店社群角色被低估，從非正式文化中心延伸到旅遊目的地。",
-        "「Not all secondhand bookshop owners welcome this evolution」中的「this evolution」回指前段混合業態（咖啡廳＋活動空間）的演變，引出業界內部張力。"
+        "\"Charity shops and house-clearance sales\" spells out how the supply chain delivers stock at near-zero cost, continuing the previous paragraph's contrast between new-book and secondhand economics.",
+        "\"Rent is often the decisive variable\" adds the third element of the cost structure alongside near-zero stock costs, completing the picture of the trade's cost advantage.",
+        "\"The other\" in \"Staff knowledge is the other irreplaceable asset\" pairs with the personal filing systems of the previous paragraph, forming a matched set of intangible assets.",
+        "\"The prediction proved spectacularly wrong\" directly rebuts the previous paragraph's forecast that physical shops could not match algorithmic efficiency; \"The prediction\" refers back unambiguously.",
+        "\"This bifurcation\" in \"This bifurcation has had tangible consequences\" refers to the market split just described, functional demand online versus serendipitous browsing in person.",
+        "The Hay-on-Wye option supports the previous paragraph's underappreciated community role with concrete place examples, extending the informal cultural centre into a tourist destination.",
+        "\"This evolution\" in \"Not all secondhand bookshop owners welcome this evolution\" refers to the hybrid cafe-and-events model of the previous paragraph, introducing the trade's internal tension."
       ]
     }
     ,
@@ -96,16 +96,15 @@
       ],
       answers: [1, 0, 2, 3, 5, 6, 4],
       explanations: [
-        "「Early theoretical work... Art Winfree... Strogatz and Mirollo」提供耦合振盪模型的學術淵源，直接承接前段引入「coupled oscillators」數學模型的說明。",
-        "「The problem is complicated by the fact that different firefly species have evolved mutually incompatible flash codes」延伸前段對 P. carolinus 特定閃光模式的描述，說明物種特異性與訊號錯誤的代價。",
-        "「The stereo camera data revealed that synchrony does not sweep through the population from a single starting point」中的「The stereo camera data」回指前段「stereo infrared camera arrays」的研究工具，報告具體發現。",
-        "「A parallel line of research has examined the neurological basis」的「parallel」表示與前面追蹤飛行軌跡的研究並行，探討閃光的神經生物學機制，邏輯層次遞進。",
-        "「These applications include the design of more robust GPS-free timing systems」中的「these applications」回指前段提到的無線感測網路等工程應用，具體舉例。",
-        "「Researchers working in the Smokies have noted that synchrony... takes noticeably longer... when ambient temperatures drop」回應前段說「環境溫度會影響 phase-locking 速度」，提供具體機制說明。",
-        "「Tourism management has added another layer of complexity to conservation efforts」的「another layer」建立在前段已討論的光污染問題之上，引入旅遊管理作為第二重保育挑戰。"
+        "The Winfree, Strogatz and Mirollo option supplies the scholarly origins of the coupled-oscillator model that the previous paragraph has just introduced.",
+        "\"The problem is complicated by\" extends the previous paragraph's account of P. carolinus's distinctive flash pattern, explaining species-specific codes and the cost of a mistimed signal.",
+        "\"The stereo camera data\" refers back to the stereo infrared camera arrays of the previous paragraph, reporting the concrete finding of cluster coalescence.",
+        "The \"parallel\" in \"A parallel line of research has examined the neurological basis\" signals a second research strand running alongside the trajectory-tracking work just described.",
+        "\"These applications\" in \"These applications include the design of more robust GPS-free timing systems\" refers to the engineering uses, such as wireless sensor networks, named in the previous paragraph.",
+        "The temperature option answers the previous paragraph's claim that ambient temperature alters the speed of phase-locking, supplying the neurochemical mechanism.",
+        "The phrase about a further layer follows on from the mechanisms in the previous paragraph, so this option fits the final gap."
       ]
-    }
-    ,
+    },
     {
       id: "p-rgap2-04",
       title: "Rescuing the Image: The Restoration of Early Silent Cinema",
@@ -131,13 +130,13 @@
       ],
       answers: [1, 4, 3, 0, 5, 2, 6],
       explanations: [
-        "「The Dawson City find is the most celebrated of these accidents, but it is far from the only one」以「these accidents」回指前段「matter of accident」，並補充紐西蘭案例，擴展「偶然保存」的範疇。",
-        "「The chemical instability of nitrate was recognised almost from the beginning」承接前段硝酸鹽轉移到安全膠片的暗示，說明早期轉制的問題與損失。",
-        "「These algorithms are not infallible」中的「these algorithms」回指前段剛介紹的機器學習演算法，緊接說明其局限性與人工監督的必要。",
-        "「Projection speed alone illustrates the interpretive complexity」中「the interpretive complexity」回指前段提及的哲學性問題（呈現方式的詮釋困難），並以具體技術細節加以例證。",
-        "「Colour reconstruction has benefited from an unlikely source」承接前段對色調（tinting/toning）復原挑戰的描述，提供製造商目錄作為意外的解決資源。",
-        "「Music is perhaps the most contentious element of any restoration」呼應前段對現代藝術院線靜默呈現方式的批判，進一步聚焦音樂選擇這一最具爭議的詮釋決定。",
-        "「Some institutions have taken a deliberately interventionist approach to this challenge」的「this challenge」回指前段音樂詮釋爭議，描述機構如何以介入主義方式回應，並引出爭辯。"
+        "\"These accidents\" in \"the most celebrated of these accidents\" refers back to the previous paragraph's \"matter of accident,\" and the New Zealand cache extends the theme of survival by chance.",
+        "The option on nitrate's chemical instability follows the paragraph on hazardous nitrate handling, explaining early safety-film transfers and the losses they compounded.",
+        "\"These algorithms\" in \"These algorithms are not infallible\" refers directly to the machine-learning algorithms just introduced, qualifying them with their limits and the need for human oversight.",
+        "\"The interpretive complexity\" in the projection-speed option refers back to the philosophical questions of presentation raised in the previous paragraph, illustrating them with a concrete technical case.",
+        "\"Colour reconstruction has benefited from an unlikely source\" follows the paragraph on the tinting and toning challenge, offering manufacturers' trade catalogues as the unexpected solution.",
+        "\"Music is perhaps the most contentious element\" picks up the previous paragraph's critique of silent art-house presentation, narrowing to the most disputed interpretive decision: the score.",
+        "\"This challenge\" in \"a deliberately interventionist approach to this challenge\" refers back to the contentious question of musical accompaniment, describing how institutions respond and the debate that follows."
       ]
     }
     ,
@@ -166,13 +165,13 @@
       ],
       answers: [4, 5, 3, 2, 1, 0, 7],
       explanations: [
-        "「The etymology of boredom is itself instructive」以詞源學切入，說明「boredom」是現代詞彙，呼應前段 Pascal 作為「首位把無聊當哲學問題」的描述，提供歷史語言脈絡。",
-        "「Pascal's diagnosis was given a secular reformulation by Bertrand Russell」以「Pascal's diagnosis」直接回指前段帕斯卡論述，羅素的世俗重述延續同一主題並擴展論點。",
-        "「This account has been disputed by philosophers who argue that Schopenhauer's pessimism rests on a contestable premise」中「This account」回指前段叔本華的擺盪論，提出亞里斯多德式反駁，形成哲學辯論結構。",
-        "「Kierkegaard's solution to this impasse was the ethical life」中的「this impasse」回指前段描述的美學家策略的自我挫敗困境，提出倫理生活作為解方。",
-        "「The distinction matters because it implies that the cure for boredom is not... simply more stimulation」的「The distinction」回指前段海德格對三種無聊形式的區分，尤其是「深層無聊」與淺層無聊的不同應對方式。",
-        "「This neurological perspective aligns interestingly with research on creativity」的「This neurological perspective」回指前段神經科學研究（預設模式網路），並以創造力實驗進一步支持該觀點。",
-        "「Critics of Heidegger's account have questioned whether profound boredom... is genuinely common」直接回應前段海德格對深層無聊作為哲學揭示的主張，提出批評性質疑，邏輯上是辯證的反方。"
+        "The etymology option, noting that \"boredom\" is a nineteenth-century word, supplies historical-linguistic context for the opening claim that the experience only seems trivial, before Pascal's treatment begins.",
+        "\"Pascal's diagnosis\" refers back unambiguously to the previous paragraph's account of Pascal, and Russell's secular reformulation continues and extends the same argument.",
+        "\"This account\" refers back to Schopenhauer's oscillation between desire and boredom just described, and the Aristotelian objection sets up a philosophical rebuttal.",
+        "\"This impasse\" in \"Kierkegaard's solution to this impasse\" refers to the self-defeating strategy of the aesthete described in the previous paragraph, with the ethical life offered as the remedy.",
+        "\"The distinction\" refers back to Heidegger's three forms of boredom just introduced, drawing out why profound boredom demands a different response from the shallow forms.",
+        "\"This neurological perspective\" refers to the previous paragraph's brain-imaging findings on the default mode network, which the creativity research further supports.",
+        "\"Critics of Heidegger's account\" responds directly to the preceding paragraph's claim that profound boredom is a philosophical disclosure, supplying the dialectical counter-argument."
       ]
     }
     ,
@@ -201,13 +200,13 @@
       ],
       answers: [2, 0, 7, 1, 3, 6, 4],
       explanations: [
-        "「The computational demands of this geometry were, for most of the tradition's history, met by a single instrument: the sashigane」呼應前段「將幾何轉化為鋸切和鑿擊序列」的認知要求，介紹傳統計算工具。",
-        "「Several of these joint forms achieve structural effects that Western carpentry never developed」中「several of these joint forms」回指前段的「幾百種榫卯形式」，以 kigumi 為例說明獨特結構效果。",
-        "「The wood itself is a critical variable」承接前段學徒花費多年保養工具的精密要求，轉向材料本身（檜木）作為影響精密度的另一關鍵變數。",
-        "「This training philosophy reflects a deeper epistemology」的「This training philosophy」回指前段描述的嚴苛學徒訓練（研磨工具），揭示其背後的知識論——程序性而非命題性知識。",
-        "「This measured flexibility is not a structural weakness but a designed response」的「This measured flexibility」回指前段說明榫卯接頭允許微量位移的抗震性質，並以法隆寺佐證其工程優越性。",
-        "「Contemporary architects working outside the traditional temple context have been drawn to timber joinery」呼應前段現代與傳統並用的討論，說明榫卯原則在當代世俗建築中的延伸應用。",
-        "「Documentation began in earnest after the Second World War」呼應前段說明傳統如何延續到21世紀並非偶然，揭示主動文獻化的歷史起點和迫切性。"
+        "\"This geometry\" in the sashigane option refers back to the compound three-plane geometry the carpenter must carry in the head, introducing the traditional instrument that met those computational demands.",
+        "\"Several of these joint forms\" refers back to the several hundred distinct joint forms of the previous paragraph, with the kigumi as an example of a uniquely Japanese structural effect.",
+        "\"The wood itself is a critical variable\" follows the paragraph on blade condition and cutting precision, turning to hinoki cypress as the other material factor on which tight tolerances depend.",
+        "\"This training philosophy\" refers back to the austere apprenticeship of tool-sharpening just described, revealing its underlying epistemology of procedural rather than propositional knowledge.",
+        "\"This measured flexibility\" refers back to the controlled micro-movement at each joint described in the earthquake paragraph, with Horyuji cited as evidence of its engineering advantage.",
+        "The contemporary-architects option extends the previous paragraph's discussion of tradition alongside modern technology, showing the joinery principles migrating into secular present-day buildings.",
+        "\"Documentation began in earnest after the Second World War\" explains the previous paragraph's claim that the tradition's survival was not accidental, giving the historical trigger for deliberate recording."
       ]
     }
   ];

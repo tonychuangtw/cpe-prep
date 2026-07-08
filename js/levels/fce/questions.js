@@ -104,14 +104,14 @@ var WRITING = [
     id: "w1",
     part: 1,
     type: "Essay",
-    title: "Essay — 回收設施",
+    title: "Essay — Recycling facilities",
     length: "140–190 words",
     task: "In your English class you have been talking about the environment. Now your teacher has asked you to write an essay. 'Every town should provide more facilities for recycling. Do you agree?' Write about: 1. cost, 2. convenience, 3. (your own idea).",
     checklist: [
-      "Content：三個 note 都要寫到（含自己的想法），並回答題目問句",
-      "Communicative Achievement：essay 語域—中立正式、立場清楚",
-      "Organisation：introduction → 兩到三段論點 → conclusion，用連接詞銜接",
-      "Language：B2 句型（First of all, However, In my opinion…），錯誤不影響理解"
+      "Content: cover all three notes (including your own idea) and answer the essay question directly",
+      "Communicative Achievement: essay register - neutral and formal, with a clear position",
+      "Organisation: introduction, two or three argument paragraphs, conclusion, linked with connectors",
+      "Language: B2 structures (First of all, However, In my opinion...); errors should not impede understanding"
     ],
     model: "Model outline — Intro: recycling matters, but do towns do enough? Para 2 (cost): facilities are expensive, but cheaper than dealing with pollution later. Para 3 (convenience): people recycle more when bins are close to home. Para 4 (own idea): schools could teach children to use the facilities. Conclusion: I agree — more facilities would help everyone."
   },
@@ -123,10 +123,10 @@ var WRITING = [
     length: "140–190 words",
     task: "You see this announcement on an English-language website: 'Articles wanted! MY FAVOURITE PLACE — Where is it? Why is it special to you? Write us an article answering these questions. The best articles will appear on our website.' Write your article.",
     checklist: [
-      "Content：說出地點在哪、為何特別，兩個問題都回答",
-      "Communicative Achievement：article 語域—輕鬆、吸引讀者，可用問句開頭",
-      "Organisation：吸引人的標題與開頭、分段清楚、有結尾",
-      "Language：描寫性形容詞與感受表達（peaceful, breathtaking, feel at home…）"
+      "Content: say where the place is and why it is special - answer both questions",
+      "Communicative Achievement: article register - light and engaging; a question opening works well",
+      "Organisation: catchy title and opening, clear paragraphs, and a proper ending",
+      "Language: descriptive adjectives and feeling expressions (peaceful, breathtaking, feel at home...)"
     ],
     model: "Model opening — Have you ever found a place where all your worries disappear? For me, that place is my grandmother's kitchen by the sea, where the smell of fresh bread mixes with the sound of waves."
   }

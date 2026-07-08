@@ -15,7 +15,7 @@ var BANK = [
           "It had to be abandoned from the final design"
         ],
         answer: 1,
-        explanation: "他說花了十八個月爭論小寫 g，並說 'The g nearly finished me'（那個 g 差點把我搞垮），指的是漫長折磨，並非被稱讚或放棄。"
+        explanation: "He spent eighteen months arguing about the lowercase g and says 'The g nearly finished me' — a prolonged ordeal, not something praised or abandoned."
       },
       {
         q: "According to the speaker, designing newspaper type means...",
@@ -26,7 +26,7 @@ var BANK = [
           "avoiding curves because they reproduce badly"
         ],
         answer: 2,
-        explanation: "關鍵句是 'you're designing the letter plus the damage'——每個曲線都要預期會被印刷條件稍微毀損。選項A、B把印刷條件說成可改變的，與原意相反。"
+        explanation: "The key line is 'you're designing the letter plus the damage' — every curve must anticipate being slightly ruined by printing conditions. A and B treat those conditions as changeable, the opposite of his point."
       },
       {
         q: "How did the speaker initially react to the art director's advice?",
@@ -37,7 +37,7 @@ var BANK = [
           "With immediate agreement about the value of restraint"
         ],
         answer: 0,
-        explanation: "聽到「最好的報紙字體是沒人注意到的」之後他說 'My heart sank'，像被要求作沒人聽的音樂——是失望，後來才 'come round to it'（漸漸接受），故非立即同意。"
+        explanation: "On hearing the best newspaper typeface is one nobody notices, he says 'My heart sank' — like being told to compose music nobody would hear. Disappointment first; he only later 'come round to it', so not immediate agreement."
       },
       {
         q: "Why did the readers' letters after the unveiling please the speaker?",
@@ -48,7 +48,7 @@ var BANK = [
           "They demonstrated that nobody had perceived any change"
         ],
         answer: 1,
-        explanation: "讀者感覺報紙變了卻說不出哪裡變——'They'd sensed the change without seeing it'——字體在「注意力之下、感覺之上」運作，這正是他最自豪之處。選項D說完全沒人察覺，misrepresent 原意。"
+        explanation: "Readers felt the paper had changed but could not say how — 'They'd sensed the change without seeing it' — the type working 'below attention, but not below feeling', his proudest moment. D, claiming nobody noticed anything, misrepresents this."
       },
       {
         q: "What is the speaker's final attitude towards his anonymity?",
@@ -59,7 +59,7 @@ var BANK = [
           "Unqualified pride in a fairly rewarded achievement"
         ],
         answer: 2,
-        explanation: "他承認報酬不成比例、功勞歸編輯，但視匿名為一種 'authorship'，並說 'I've stopped minding. Mostly.'——大致釋懷但留一絲保留，故C最貼切。"
+        explanation: "He admits the fees don't reflect the labour and the credit goes to the editor, yet sees anonymity as a kind of 'authorship', saying 'I've stopped minding. Mostly.' — largely reconciled with a trace of reservation, so C fits best."
       }
     ]
   },
@@ -78,7 +78,7 @@ var BANK = [
           "Four hundred metres is too short a stretch to matter"
         ],
         answer: 1,
-        explanation: "她說每個把汽車移出主街的城鎮 footfall（人流）都上升，並強調只封四百公尺、不是全城禁車——選項A誇大成全面禁車，是干擾項。"
+        explanation: "She says every town that has taken cars off its main street has seen footfall rise, stressing only four hundred metres are affected, not the whole town — option A exaggerates this into a total ban."
       },
       {
         q: "What does Daniel imply by saying \"'every town' is doing a lot of work in that sentence\"?",
@@ -89,7 +89,7 @@ var BANK = [
           "Marta has overstated how many towns exist"
         ],
         answer: 0,
-        explanation: "他接著解釋：成功案例被寫成報告，失敗的悄悄拆掉護柱、沒人發表論文——即倖存者偏差，'every town' 這說法承載了站不住的概括。"
+        explanation: "He explains: successes get written up while failures quietly rip the bollards out and nobody publishes a paper — survivorship bias, so 'every town' carries an unsupportable generalisation."
       },
       {
         q: "Why does Daniel object to calling other towns 'comparable'?",
@@ -100,7 +100,7 @@ var BANK = [
           "They had housing density above the shops that this town lacks"
         ],
         answer: 3,
-        explanation: "他說那些城鎮 'had residential density right on top of the shops. Ours doesn't.'，而本地一半顧客從公車稀少的村莊開車來——可比性的問題在居住密度與交通依賴。"
+        explanation: "He says those towns 'had residential density right on top of the shops. Ours doesn't.', while half the local shoppers drive in from villages with scarce buses — comparability fails on housing density and car dependence."
       },
       {
         q: "What does Marta's reference to phasing achieve in the discussion?",
@@ -111,7 +111,7 @@ var BANK = [
           "It proposes bollards be installed the following Monday"
         ],
         answer: 1,
-        explanation: "她反駁「先拆停車再修公車」的指控：方案是分階段的——公車先行、停車移到邊緣、最後才封街（'Buses first... then closure'），直接回應 Daniel 的疑慮。"
+        explanation: "She rebuts the charge of removing parking before fixing buses: the scheme is phased — 'Buses first... then closure', with parking consolidated at the edges — directly answering Daniel's worry."
       },
       {
         q: "By the end, Daniel's position is best described as...",
@@ -122,7 +122,7 @@ var BANK = [
           "indifference now that the technical issues are resolved"
         ],
         answer: 2,
-        explanation: "他承認 Marta 說得對——'Do it properly or not at all'——他反對的是半途而廢（政治上只做便宜的第一階段），而非行人化本身，主持人也稱之為 convergence。"
+        explanation: "He concedes Marta's point — 'Do it properly or not at all' — objecting to half measures (councils stopping after the cheap first phase), not to pedestrianisation itself; the presenter calls it convergence."
       }
     ]
   },
@@ -141,7 +141,7 @@ var BANK = [
           "As a misunderstanding about publishing economics"
         ],
         answer: 1,
-        explanation: "她說人們同情地歪著頭，'as though I'd been invalided out'——彷彿她是因傷退役、詩是療養（convalescence）。她理解這種假設但不同意。"
+        explanation: "She says people ask with a sympathetic head-tilt, 'as though I'd been invalided out' — as if poetry were convalescence after injury. She understands the assumption but rejects it."
       },
       {
         q: "Why does the poet claim poems are 'the harder assignment'?",
@@ -152,7 +152,7 @@ var BANK = [
           "Poems must be filed from more dangerous locations"
         ],
         answer: 0,
-        explanation: "原句：'A dispatch has a deadline and a word count to hide behind. A poem has nowhere to hide at all.'——新聞稿有格式可躲，詩無處可躲。"
+        explanation: "Her words: 'A dispatch has a deadline and a word count to hide behind. A poem has nowhere to hide at all.' — journalism offers formal shelter; poetry offers none."
       },
       {
         q: "What does the poet mean by the 'sediment' that built up?",
@@ -163,7 +163,7 @@ var BANK = [
           "Resentment towards editors who cut her stories"
         ],
         answer: 2,
-        explanation: "她說新聞在結構上被禁止回答「站在那裡是什麼感覺」，沉積下來的是 'everything true that wasn't reportable'——真實但無法報導的東西，詩是在打撈它。"
+        explanation: "News is structurally forbidden from saying what it felt like to stand there; the sediment is 'everything true that wasn't reportable' — real experiences the conventions could not carry, which the poems now dredge."
       },
       {
         q: "How does the poet respond to the charge that her poems avoid the battlefield?",
@@ -174,7 +174,7 @@ var BANK = [
           "She blames critics for expecting quiet, kitchen imagery"
         ],
         answer: 1,
-        explanation: "她對 'avoiding' 一詞不以為然：'The kettle poem is a war poem; it's just wearing an apron.'——戰爭跟著人回家，寫瓦礫反而是迎合期待、較不誠實的選擇。選項C反用 rubble 一詞。"
+        explanation: "She bristles at 'avoiding': 'The kettle poem is a war poem; it's just wearing an apron.' War follows you home; writing rubble would be the easier, more dishonest choice that panders to expectation. C twists her use of 'rubble'."
       },
       {
         q: "What is the poet's attitude towards missing the adrenaline of reporting?",
@@ -185,7 +185,7 @@ var BANK = [
           "She believes it made her a more reliable reporter"
         ],
         answer: 2,
-        explanation: "她先否認又自我修正——'or, all right, I do, but I don't trust the missing'——承認想念腎上腺素，但不信任這種渴望，因為它讓同事送命。"
+        explanation: "She denies it, then corrects herself — 'or, all right, I do, but I don't trust the missing' — admitting the craving for adrenaline while distrusting it, since it cost colleagues their lives."
       }
     ]
   },
@@ -204,7 +204,7 @@ var BANK = [
           "To argue that red and white wine taste identical"
         ],
         answer: 1,
-        explanation: "她說坦承這件事能 'disarm the room'——拆穿迷思時不是高高在上地嘲笑，而是 'down in the hole with everyone else'，證明專家同樣會受騙。"
+        explanation: "She says the confession 'disarms the room' — when she punctures myths she is not sneering from above but 'down in the hole with everyone else', showing experts are fooled too."
       },
       {
         q: "What does research on blind tastings suggest about ordinary drinkers?",
@@ -215,7 +215,7 @@ var BANK = [
           "They prefer expensive wines once acclimatised to them"
         ],
         answer: 2,
-        explanation: "原文：盲測中一般飲用者對貴酒 'essentially no preference'，甚至 'a faint tilt the other way'——選項D把她對風格的推測解釋扭曲成結論。"
+        explanation: "In blind conditions ordinary drinkers show 'essentially no preference' for expensive bottles, even 'a faint tilt the other way'. Option D twists her speculative point about style acclimatisation into a conclusion."
       },
       {
         q: "What clarification does the speaker insist on regarding expensive wine?",
@@ -226,7 +226,7 @@ var BANK = [
           "The liquid alone accounts for the greater enjoyment"
         ],
         answer: 0,
-        explanation: "她特別說 'this is where people misquote me'：貴酒不是騙局，知道價格會真實提升愉悅（腦造影顯示愉悅區更活躍），只是愉悅並非只來自酒液本身。"
+        explanation: "She warns 'this is where people misquote me': expensive wine is not a con — knowing the price genuinely heightens pleasure (brain imaging shows the pleasure regions light up more); it just doesn't come from the liquid alone."
       },
       {
         q: "What is the speaker's considered view of elaborate tasting notes?",
@@ -237,7 +237,7 @@ var BANK = [
           "They fail as measurement but work as training in attention"
         ],
         answer: 3,
-        explanation: "她說品飲筆記作為客觀測量毫無用處（同一評論家一年後幾乎寫不出重疊的描述），但作為專注的訓練 'genuinely useful'——'a ladder, not a photograph'。"
+        explanation: "Tasting notes are hopeless as objective measurement (the same critic barely repeats them a year later) but 'genuinely useful' as a discipline for paying attention — 'a ladder, not a photograph'."
       },
       {
         q: "Which practice would the speaker most readily abolish?",
@@ -248,7 +248,7 @@ var BANK = [
           "Serving expensive wine on special occasions"
         ],
         answer: 0,
-        explanation: "她說真正想 'put the torch to' 的是聞軟木塞的儀式——軟木塞幾乎不提供看一眼酒本身得不到的資訊，它只是餐廳的戲劇效果。其餘選項她反而視為體驗的一部分。"
+        explanation: "What she would 'put the torch to' is the cork-sniffing ritual — the cork tells you almost nothing a glance at the wine won't; it survives as restaurant theatre. The other options she treats as part of the experience."
       }
     ]
   },
@@ -267,7 +267,7 @@ var BANK = [
           "He denies the ship dates from the fourteenth century"
         ],
         answer: 1,
-        explanation: "他一開口就說 'the headlines have galloped ahead of us'，之後更指出「改寫歷史」一詞出自新聞辦公室而非他本人——刻意與媒體渲染保持距離。"
+        explanation: "He opens with 'the headlines have galloped ahead of us' and later notes the 'rewriting history' phrase came from a press office, not from him — deliberately distancing himself from the hype."
       },
       {
         q: "What is the core of Professor Lindqvist's objection?",
@@ -278,7 +278,7 @@ var BANK = [
           "The hull could not have been built in the Mediterranean"
         ],
         answer: 2,
-        explanation: "她明說 'my quarrel isn't with the fieldwork'，而在 'the leap from objects to voyages'：船會轉手、重建，異國貨物只證明物品移動過，不證明誰、以一次航程運來。選項A正好與她的話相反。"
+        explanation: "She states 'my quarrel isn't with the fieldwork' but with 'the leap from objects to voyages': ships change hands and get rebuilt, so exotic cargo proves objects moved, not who moved them or in one journey. A contradicts her words."
       },
       {
         q: "What image does Lindqvist use to describe ships?",
@@ -289,7 +289,7 @@ var BANK = [
           "Quarries carrying stones across the sea"
         ],
         answer: 0,
-        explanation: "原句 'Ships are floating jumble sales'——船像流動的舊貨市集，在一個海域建造、多次轉賣，最後沉在建造者想像不到的地方。"
+        explanation: "Her phrase is 'Ships are floating jumble sales' — built in one sea, sold and resold, sinking somewhere their builders never imagined."
       },
       {
         q: "Which piece of evidence does Lindqvist concede she cannot dismiss?",
@@ -300,7 +300,7 @@ var BANK = [
           "The ballast stones matching particular quarries"
         ],
         answer: 3,
-        explanation: "她說 'The ballast I'll grant you. That's the one piece I can't easily explain away'，且自初步報告以來一直令她耿耿於懷——唯一讓她讓步的是壓艙石。"
+        explanation: "She says 'The ballast I'll grant you. That's the one piece I can't easily explain away', adding it has been niggling at her since the preliminary report — the ballast stones are her one concession."
       },
       {
         q: "On what point do the two archaeologists fully agree at the end?",
@@ -311,7 +311,7 @@ var BANK = [
           "That anomalies should be left uninvestigated"
         ],
         answer: 1,
-        explanation: "Lindqvist 指出無聊的解釋拿不到經費、聳動的才有紀錄片，這種壓力 'bends judgement, mine included'；Osei 回應 'On that, no argument at all'——雙方唯一完全一致的是經費文化扭曲判斷。"
+        explanation: "Lindqvist notes a boring explanation gets no funding while a sensational one gets a documentary, and that pressure 'bends judgement, mine included'; Osei replies 'On that, no argument at all' — their one point of full agreement."
       }
     ]
   },
@@ -330,7 +330,7 @@ var BANK = [
           "He avoids conversations where they might occur"
         ],
         answer: 0,
-        explanation: "他說沉默出現時 'somebody panics. Usually me, if I'm honest.'——坦承自己通常就是那個慌張補話的人，這自嘲為後面的主張鋪路。"
+        explanation: "When silence opens up, 'somebody panics. Usually me, if I'm honest.' — he admits he is usually the one who rushes to fill it, self-deprecation that sets up his argument."
       },
       {
         q: "What point does the speaker make with the phrase 'awkward pause'?",
@@ -341,7 +341,7 @@ var BANK = [
           "Awkwardness can be cured by discussing the weather"
         ],
         answer: 1,
-        explanation: "他說 'gives the game away'——「尷尬的停頓」這說法本身洩露了我們把沉默當故障的預設，而這種不適是 'learned'（習得的），非普世皆然。"
+        explanation: "He says the phrase 'gives the game away' — 'awkward pause' itself betrays our assumption that silence is a malfunction, a discomfort that is 'learned', not universal."
       },
       {
         q: "Why does the speaker mention his Finnish friend?",
@@ -352,7 +352,7 @@ var BANK = [
           "To explain why he once had to call a taxi"
         ],
         answer: 2,
-        explanation: "他說在北歐某些地方，朋友間共享的沉默 'more or less is the visit'——沉默本身就是相聚；芬蘭朋友四分鐘不說話其實 'having a lovely time'。叫計程車只是他當時的誤會。"
+        explanation: "In parts of the Nordic countries a shared silence between friends 'more or less is the visit' — the silence is the companionship; the Finnish friend sitting wordless for four minutes was 'having a lovely time'. The taxi was just his misreading."
       },
       {
         q: "What does the speaker find 'suspiciously commercial' about our fear of silence?",
@@ -363,7 +363,7 @@ var BANK = [
           "The habit of paying for conversation classes"
         ],
         answer: 0,
-        explanation: "他說「沉默＝我們已耗盡話題」的邏輯像把對話當成 'a market stall that must never look empty' 的市場攤位——這種商業式思維才是可疑之處。"
+        explanation: "The logic that silence means we've run out treats conversation as 'a market stall that must never look empty' — that commercial framing is what he finds suspicious."
       },
       {
         q: "How does the speaker qualify his defence of silence near the end?",
@@ -374,7 +374,7 @@ var BANK = [
           "He distinguishes excluding silences from ones that relieve social duty"
         ],
         answer: 3,
-        explanation: "他公平地承認有傷人的沉默——賭氣、冷凍餐桌、以不答作答——'weaponised quiet is still a weapon'；禮儀在於分辨「把人拒於門外的沉默」與「讓人卸下表演義務的沉默」。"
+        explanation: "He fairly concedes some silences wound — the sulk, the frozen dinner table, the withheld answer — 'weaponised quiet is still a weapon'; the etiquette is to distinguish silence that shuts a person out from silence that lets them off duty."
       }
     ]
   }

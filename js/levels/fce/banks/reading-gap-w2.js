@@ -23,12 +23,12 @@ var BANK = [
     ],
     answers: [3, 5, 0, 6, 2, 4],
     explanations: [
-      "此句承接前文 Mrs Patel 提出清掃的點子（agreed 呼應該提議），而 spreading the word 正引出後文設計海報、發傳單的具體行動。",
-      "The response 指前句發出去的傳單所得到的回應，however 與前文『預期大家會忽略』形成轉折，銜接後文一週內三十二戶報名的驚喜結果。",
-      "前文一切籌備順利（分區地圖、免費借工具），此句指出唯一無法掌控的是天氣，後文 Sure enough 開頭的大雨正好呼應這個伏筆。",
-      "Once we started 承接前文九點群眾冒雨集合，指出開工後雨已不重要，銜接後文各隊分區清掃、垃圾袋越堆越多的過程。",
-      "By early afternoon 是時間推進語，the transformation 總結上午的清掃成果，後文描寫公園無碎玻璃、路牌煥然一新，正是這個轉變的細節。",
-      "though 與 not the tidiness itself 承接前文慶祝街道變乾淨的場面，暗示還有更棒的收穫，後文 It was the fact that... 正是揭曉答案。"
+      "'Agreed' responds to Mrs Patel's clean-up idea, and 'spreading the word' introduces the posters and leaflets described next.",
+      "'The response' refers to the leaflets just delivered, and 'however' contrasts with expecting most people to ignore them, leading into thirty-two households signing up.",
+      "After the smooth preparations (map, free tools), this names the weather as the one thing beyond control; 'Sure enough' and the heavy rain pick up the hint.",
+      "'Once we started' follows the crowd gathering at nine despite the rain, and the rain no longer mattering leads into the teams spreading out and the growing pile of bags.",
+      "'By early afternoon' advances the time, and 'the transformation' is detailed next: the park without glass and the scrubbed street signs.",
+      "'Though' and 'not the tidiness itself' follow the celebration and hint at a better reward; 'It was the fact that...' then reveals it: neighbours exchanging numbers."
     ]
   },
   {
@@ -54,12 +54,12 @@ var BANK = [
     ],
     answers: [3, 0, 6, 4, 1, 5],
     explanations: [
-      "此句總括評價旅程開頭非常順利，後文列車準點、車掌親切等細節正是 could hardly have been easier 的具體說明。",
-      "that confidence 直接指前句 My confidence grew 的信心，however 帶出轉折，後文法蘭克福車站列車取消的驚嚇正是信心受考驗的內容。",
-      "Instead 與前句『考慮打電話請父母接我回家』形成對比，改為到詢問處排隊，後文 The woman behind the counter 正是詢問處的職員。",
-      "Her words 指前句職員說『每年夏天有成千上萬青少年完成這段旅程』的鼓勵，後文順利找到車、開始享受旅程證明這番話正是我所需要的。",
-      "此句以 well past midnight 推進時間並宣告抵達維也納，後文姑姑在車站大鐘下等候正是到站後的場景。",
-      "Looking back 表示回顧全程，grateful that things went wrong 承接前文向姑姑描述波折，並引出後文『一路順利反而學不到東西』的反思。"
+      "This sums up how smoothly the trip began; the punctual departure and friendly conductor that follow illustrate 'could hardly have been easier'.",
+      "'That confidence' refers directly to 'My confidence grew' in the previous sentence, and 'however' introduces the test: the cancelled connection in Frankfurt.",
+      "'Instead' contrasts with considering phoning the parents to come home; joining the queue introduces 'The woman behind the counter' who follows.",
+      "'Her words' refers to the clerk's reassurance that thousands of teenagers manage the journey every summer; finding the Munich train easily proves they were exactly what was needed.",
+      "'Well past midnight' moves time forward and announces the arrival in Vienna; the aunt waiting under the station clock is the arrival scene.",
+      "'Looking back' reviews the whole trip, and being 'grateful that things went wrong' leads into the reflection that a perfect journey would have taught nothing."
     ]
   },
   {
@@ -85,12 +85,12 @@ var BANK = [
     ],
     answers: [2, 5, 1, 6, 4, 0],
     explanations: [
-      "此句承接前文『決定改變現狀』，指出找學習場所比想像中困難，後文列舉網路課程不是給幼童就是給銀髮族，正是困難的具體內容。",
-      "At the first session 承接前句海報上青少年初學班的資訊，描述第一堂課緊張到快撐不住，後文站在淺水區發抖正是緊張的表現。",
-      "He 指前句能看穿我心思的教練 Danny，承諾沒有人會被嘲笑；後文 That promise 直接回指這個承諾，銜接緊密。",
-      "Progress after that 中的 that 指前段三週內學會仰漂的起步成果，slow but steady 概括後文每週五都有新突破的漸進過程。",
-      "however 與前文十二月游完整趟自由式的成功形成轉折，One challenge 預告仍有難關，後文揭曉那就是一直令我害怕的深水區。",
-      "These days 把時間拉回現在，呼應前段二月終於在深水區踩水成功，並銜接後文如今每週訓練兩次、報名接力賽的自信狀態。"
+      "This follows the decision to change the situation and states that finding somewhere to learn was harder than expected; the courses for small children or over-sixties illustrate the difficulty.",
+      "'At the first session' follows the poster about the teenage beginners' group, and nerves nearly winning matches shivering at the shallow end and wanting to leave.",
+      "'He' refers to Danny, who 'seemed to read my mind'; 'That promise' in the next paragraph refers directly back to his promise that nobody would be laughed at.",
+      "'After that' refers to floating on the back within three weeks, and 'slow but steady' summarises the weekly breakthroughs described next.",
+      "'However' contrasts with the front-crawl success in December, and 'one challenge still lay ahead' previews the deep end, revealed in the next paragraph.",
+      "'These days' returns to the present after the deep-end triumph in February and leads into training twice a week and signing up for the relay race."
     ]
   },
   {
@@ -116,12 +116,12 @@ var BANK = [
     ],
     answers: [1, 3, 5, 0, 6, 2],
     explanations: [
-      "she 與 it 分別指前文的曾祖母 Rosa 和那份食譜，guarded it fiercely 引出後文鄰居出錢購買也被拒絕的家族傳說。",
-      "That tradition 指前句 Rosa 在女兒婚禮早晨傳授食譜的做法，後文外婆婚前一週傳給母親、母親在我十八歲生日傳給我，正是傳統的延續。",
-      "此句承接前文『鉛筆筆記只說了一半』，指出真正的祕訣從未寫下，後文徒手壓碎番茄、只朝同一方向攪拌等正是那些不成文的祕訣。",
-      "doing it alone 呼應前文母親示範每個步驟之後換我獨自嘗試，not a great success 引出後文大蒜燒焦、味道全毀的失敗經過。",
-      "that thought 指前句『母親和 Rosa 的女兒們大概也犯過同樣錯誤』的想法，後文『每個燒焦的鍋子把我和一長串緊張的廚師連在一起』正是這份釋懷。",
-      "此句由具體的醬汁成功轉入抒情總結，more than food 引出後文『貫穿一世紀婚禮與廚房的線』的比喻，銜接結尾的傳承心願。"
+      "'She' and 'it' refer to Rosa and the recipe from the opening paragraph, and 'guarded it fiercely' introduces the legend of neighbours offering money and being refused.",
+      "'That tradition' refers to Rosa teaching the recipe on her daughter's wedding morning; the handovers to the mother and then to the narrator continue it.",
+      "This follows 'the pencil notes told only half the story'; the unwritten secrets are then listed: crushing tomatoes by hand, stirring one way, tearing the basil.",
+      "'Doing it alone' follows the mother demonstrating every step, and 'not a great success' previews the burnt garlic and the smoky-tasting sauce.",
+      "'That thought' refers to the mother and probably Rosa's daughters having made the same mistake; feeling connected to 'a long line of nervous cooks' is the resulting comfort.",
+      "This shifts from the successful sauce to reflection; 'more than food' introduces the metaphor of a thread running through a century of weddings and kitchens."
     ]
   },
   {
@@ -147,12 +147,12 @@ var BANK = [
     ],
     answers: [2, 4, 0, 6, 1, 3],
     explanations: [
-      "The reality 與前文『交易看似簡單、免費看表演』形成對比，more demanding 引出後文清晨六點搬運瓶裝水、手臂痠痛的辛苦實況。",
-      "however 承接前文的疲累（照理該抱怨），our team leader 則是後文 Maria 的先行介紹，說明在她身邊根本無法抱怨。",
-      "also 表示除了辛勞之外還有意外的福利，後文後台咖啡館與排隊巧遇最愛樂團鼓手，正是 unexpected privileges 的實例。",
-      "so glamorous 呼應前文鼓手簽名致謝的風光時刻，of course 帶出轉折，後文暴風雨壓垮帳篷、淋雨兩小時正是不光鮮的一面。",
-      "此句以最後一個樂團結束標示週末尾聲，expected nothing but relief 與後文 Instead, I felt oddly proud 形成明確的預期落空對照。",
-      "a decision about next summer 承接前文兩人對音樂節的驕傲與認同，後文開放報名當天就送出申請表，正是那個決定的內容。"
+      "'The reality' contrasts with the deal that 'seemed simple', and 'more demanding' introduces the 6 a.m. shift hauling water crates across a muddy field.",
+      "'However' follows the aching arms, which would justify complaining, and 'our team leader' introduces Maria, described in the next paragraph.",
+      "'Also' adds something beyond the hard work; the backstage cafe and meeting the drummer illustrate the 'unexpected privileges'.",
+      "'So glamorous' refers to the drummer signing the pass and saying thanks, and 'of course' introduces the storm and the two soaking hours that follow.",
+      "The last band finishing marks the end of the weekend, and expecting 'nothing but relief' sets up the clear contrast with 'Instead, I felt oddly proud'.",
+      "'A decision about next summer' follows the pride both cousins felt; sending in the application forms the day bookings opened is that decision."
     ]
   },
   {
@@ -178,12 +178,12 @@ var BANK = [
     ],
     answers: [3, 1, 6, 5, 0, 2],
     explanations: [
-      "The dog they introduced us to 承接前文抵達收容中心，the athletes I had imagined 呼應開頭電視上的賽狗形象，後文描述 Fern 瘦弱緊張正是反差所在。",
-      "That lack of experience 指前句 Fern 從未住過一般房子的背景，surprising problems 引出後文不會上樓梯、對烤箱倒影吠叫等狀況。",
-      "此句的 Patience...would matter more than anything 是收容中心的提醒，後文 So we let Fern explore one room at a time 正是實踐耐心的做法。",
-      "The change 指前段『膽小的 Fern 逐漸消失』的轉變，about two months 給出時間點，後文她主動跳上沙發睡在我腿上正是轉變的證明。",
-      "she 延續前文的 Fern，how little exercise 預告出人意料的事實，後文『灰狗是睡覺冠軍、每天散步兩次就滿足』正是解答。",
-      "Watching her run 承接前句 Fern 在公園飛奔、路人駐足的畫面，the frightened dog she once was 則呼應後文 The trembling animal from the kennel 的今昔對比。"
+      "'The dog they introduced us to' follows the arrival at the rescue centre, and 'the athletes I had imagined' echoes the TV racing image, contrasting with thin, nervous Fern.",
+      "'That lack of experience' refers to Fern never having lived in an ordinary house, and 'surprising problems' introduces the stairs, the oven reflection and the vacuum cleaner.",
+      "The rescue centre's warning that patience 'would matter more than anything' is put into practice next: 'So we let Fern explore one room at a time'.",
+      "'The change' refers to the frightened creature beginning to disappear, and 'about two months' gives the timing; climbing onto the sofa uninvited is the proof.",
+      "'She' continues to refer to Fern, and 'how little exercise' previews the surprising fact that greyhounds doze twenty hours a day and need only two short walks.",
+      "'Watching her run' follows the morning sprint in the park with strangers watching, and 'the frightened dog she once was' sets up the contrast with 'the trembling animal from the kennel'."
     ]
   }
 ];

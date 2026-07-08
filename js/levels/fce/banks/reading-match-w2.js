@@ -23,16 +23,16 @@
         }
       ],
       questions: [
-        { q: "Which person had to wake up extremely early for work?", answer: 0, explanation: "A 提到每天清晨五點半就要起床送報，即使冬天也一樣。" },
-        { q: "Which person still works in the same industry today?", answer: 1, explanation: "B 說十五年後的今天仍在餐飲服務業工作，現在是餐廳經理。" },
-        { q: "Which person received no payment at the beginning?", answer: 3, explanation: "D 提到頭幾個月叔叔完全沒付薪水，說他是在學做生意。" },
-        { q: "Which person found the work itself extremely boring?", answer: 2, explanation: "C 直言上架工作非常無聊，只是無止盡地搬罐頭和麥片。" },
-        { q: "Which person made a lasting friendship through the job?", answer: 2, explanation: "C 在超市認識了 Sam，至今仍是最好的朋友。" },
-        { q: "Which person was saving their earnings for a particular item?", answer: 0, explanation: "A 說每一分錢都存起來買新腳踏車，八個月後如願買到。" },
-        { q: "Which person made an embarrassing mistake in front of customers?", answer: 1, explanation: "B 第一個週末就在遊客面前打翻整盤飲料，尷尬到想消失。" },
-        { q: "Which person says the job improved their maths skills?", answer: 3, explanation: "D 提到整天心算價錢，大幅增進了他的心算能力。" },
-        { q: "Which person left the job in order to focus on their studies?", answer: 2, explanation: "C 做了一年後辭職，為了專心準備學校的期末考試。" },
-        { q: "Which person believes the job taught them punctuality?", answer: 0, explanation: "A 說送報工作讓她學會準時的重要，這習慣一直保持至今。" }
+        { q: "Which person had to wake up extremely early for work?", answer: 0, explanation: "In A, Marta had to get up at half past five every morning to deliver newspapers, even in winter." },
+        { q: "Which person still works in the same industry today?", answer: 1, explanation: "In B, Daniel says that fifteen years later he still works in hospitality, now managing a busy restaurant." },
+        { q: "Which person received no payment at the beginning?", answer: 3, explanation: "In D, Tomas's uncle paid him nothing for the first couple of months, saying he was learning the trade." },
+        { q: "Which person found the work itself extremely boring?", answer: 2, explanation: "In C, Priya calls the shelf-stacking 'incredibly dull, just endless boxes of tins and cereal'." },
+        { q: "Which person made a lasting friendship through the job?", answer: 2, explanation: "In C, Priya met Sam, who worked in the next aisle and 'is still my best friend today'." },
+        { q: "Which person was saving their earnings for a particular item?", answer: 0, explanation: "In A, Marta was saving every penny for a new bicycle and finally bought it after eight months." },
+        { q: "Which person made an embarrassing mistake in front of customers?", answer: 1, explanation: "In B, Daniel dropped a whole tray of drinks in front of a table of tourists on his first weekend." },
+        { q: "Which person says the job improved their maths skills?", answer: 3, explanation: "In D, adding up prices in his head all day 'really sharpened my mental arithmetic'." },
+        { q: "Which person left the job in order to focus on their studies?", answer: 2, explanation: "In C, Priya gave up the job after a year to concentrate fully on her final school exams." },
+        { q: "Which person believes the job taught them punctuality?", answer: 0, explanation: "In A, Marta says the job taught her 'the importance of always being on time', a habit that has stayed with her." }
       ]
     },
     {
@@ -57,16 +57,16 @@
         }
       ],
       questions: [
-        { q: "Which reviewer complains about the cost of admission?", answer: 1, explanation: "B 抱怨門票價格高得嚇人，與內容不成比例。" },
-        { q: "Which museum allows visitors to create something of their own?", answer: 0, explanation: "A 提到工作坊可以自己設計泡麵口味與配料並親手封裝。" },
-        { q: "Which reviewer recommends reserving a place before visiting?", answer: 2, explanation: "C 強烈建議提前上網預約，因為導覽好幾天前就會售完。" },
-        { q: "Which reviewer mentions waiting a long time to get in?", answer: 3, explanation: "D 說週末要在門外排隊至少四十五分鐘才能進場。" },
-        { q: "Which museum is described as ideal for families with children?", answer: 0, explanation: "A 明確說這裡非常適合帶小孩的家庭，孩子玩了一個多小時。" },
-        { q: "Which reviewer found the exhibits very funny?", answer: 1, explanation: "B 說失敗發明的展品真的很好笑，讓他多次大笑出聲。" },
-        { q: "Which museum can only be seen with a guide?", answer: 2, explanation: "C 提到只能參加九十分鐘的導覽行程，不能自由參觀。" },
-        { q: "Which reviewer praises the items on sale at the museum?", answer: 3, explanation: "D 稱讚禮品店很棒，賣可以帶回家組裝的迷你模型。" },
-        { q: "Which reviewer warns about a bad smell?", answer: 2, explanation: "C 提醒下水道某些路段有明顯的難聞氣味。" },
-        { q: "Which reviewer says the museum is smaller than expected?", answer: 1, explanation: "B 說博物館比網站照片看起來小得多，只有三個小展間。" }
+        { q: "Which reviewer complains about the cost of admission?", answer: 1, explanation: "In B, the ticket price is 'shockingly high for what you get'." },
+        { q: "Which museum allows visitors to create something of their own?", answer: 0, explanation: "In A, a workshop lets visitors design their own cup of noodles, choosing flavour and toppings and sealing the package themselves." },
+        { q: "Which reviewer recommends reserving a place before visiting?", answer: 2, explanation: "In C, the reviewer strongly advises booking online well in advance because tours sell out days ahead." },
+        { q: "Which reviewer mentions waiting a long time to get in?", answer: 3, explanation: "In D, visitors should expect to queue outside for at least forty-five minutes at weekends." },
+        { q: "Which museum is described as ideal for families with children?", answer: 0, explanation: "In A, the reviewer says the place is 'perfect for families with young kids'; the children were absorbed for over an hour." },
+        { q: "Which reviewer found the exhibits very funny?", answer: 1, explanation: "In B, the exhibits are 'genuinely hilarious' and made the reviewer laugh out loud several times." },
+        { q: "Which museum can only be seen with a guide?", answer: 2, explanation: "In C, the sewer museum can only be visited as part of a ninety-minute guided tour." },
+        { q: "Which reviewer praises the items on sale at the museum?", answer: 3, explanation: "In D, the gift shop is 'superb', selling miniature kits you can assemble at home." },
+        { q: "Which reviewer warns about a bad smell?", answer: 2, explanation: "In C, there is 'a distinctly unpleasant smell in certain sections' of the tunnels." },
+        { q: "Which reviewer says the museum is smaller than expected?", answer: 1, explanation: "In B, the museum is 'far smaller than the website photographs suggest', with only three modest rooms." }
       ]
     },
     {
@@ -91,16 +91,16 @@
         }
       ],
       questions: [
-        { q: "Which person now earns more than in their previous career?", answer: 1, explanation: "B 說現在的薪水明顯比當老師時高出許多。" },
-        { q: "Which person changed careers because of a health problem?", answer: 0, explanation: "A 在四十五歲時因嚴重的健康警訊，醫生直言壓力正在摧毀他。" },
-        { q: "Which person fulfilled an ambition they had had since childhood?", answer: 3, explanation: "D 說從小就夢想寫小說，四十四歲終於辭職完成作品。" },
-        { q: "Which person invested all their savings in the new venture?", answer: 2, explanation: "C 把畢生積蓄全投入烤箱、店面租約和裝修。" },
-        { q: "Which person was afraid of being older than their colleagues?", answer: 1, explanation: "B 最大的恐懼是成為辦公室裡年紀最大的人，被年輕畢業生包圍。" },
-        { q: "Which person works longer hours now than before?", answer: 2, explanation: "C 說現在工時比在律師事務所時更長，清晨四點就開工。" },
-        { q: "Which person retrained at a local college?", answer: 0, explanation: "A 到當地學院重新受訓，成為專業園藝師。" },
-        { q: "Which person depended on their partner's income?", answer: 3, explanation: "D 說收入很不穩定，全靠丈夫穩定的薪水和鼓勵撐過頭幾年。" },
-        { q: "Which person receives help from family members in their business?", answer: 2, explanation: "C 提到太太和女兒週末會到店裡櫃檯幫忙。" },
-        { q: "Which person accepts lower pay in return for greater happiness?", answer: 0, explanation: "A 承認收入比以前少很多，但從未如此快樂，健康也改善了。" }
+        { q: "Which person now earns more than in their previous career?", answer: 1, explanation: "In B, Angela's salary is 'now considerably higher than it ever was in teaching'." },
+        { q: "Which person changed careers because of a health problem?", answer: 0, explanation: "In A, a serious health scare at forty-five forced Robert to rethink; his doctor said the stress was destroying him." },
+        { q: "Which person fulfilled an ambition they had had since childhood?", answer: 3, explanation: "In D, Sofia had dreamed of writing novels since she was a little girl and finally resigned at forty-four to do it." },
+        { q: "Which person invested all their savings in the new venture?", answer: 2, explanation: "In C, Marcus put his entire life savings into the ovens, the shop lease and the renovation." },
+        { q: "Which person was afraid of being older than their colleagues?", answer: 1, explanation: "In B, Angela's biggest fear was being the oldest person in the office, surrounded by graduates half her age." },
+        { q: "Which person works longer hours now than before?", answer: 2, explanation: "In C, Marcus works far longer hours than he ever did at the law firm, starting at four in the morning." },
+        { q: "Which person retrained at a local college?", answer: 0, explanation: "In A, Robert enrolled at his local college to retrain as a professional gardener." },
+        { q: "Which person depended on their partner's income?", answer: 3, explanation: "In D, Sofia's income is unpredictable and she could never have managed without her husband's steady salary." },
+        { q: "Which person receives help from family members in their business?", answer: 2, explanation: "In C, Marcus's wife and daughter help behind the counter at weekends." },
+        { q: "Which person accepts lower pay in return for greater happiness?", answer: 0, explanation: "In A, Robert earns far less than before but has 'never been happier', and his blood pressure has improved." }
       ]
     },
     {
@@ -125,16 +125,16 @@
         }
       ],
       questions: [
-        { q: "Which person learned recipes that were never written down?", answer: 0, explanation: "A 說祖母沒有食譜書，所有食譜只存在她腦中，從未寫下來。" },
-        { q: "Which person accidentally set off an alarm while cooking?", answer: 1, explanation: "B 提到燒焦平底鍋，煙霧警報器大響，連鄰居都來敲門。" },
-        { q: "Which person met their future husband or wife while learning?", answer: 2, explanation: "C 說在隔壁料理台切洋蔥的男士後來成了她的丈夫。" },
-        { q: "Which person was taught by a member of their family?", answer: 0, explanation: "A 的廚藝全部來自祖母，從六歲起就站在她身旁學習。" },
-        { q: "Which person learned to cook while in foreign countries?", answer: 3, explanation: "D 在東南亞旅行一年期間學會做菜。" },
-        { q: "Which person found the lessons more expensive than advertised?", answer: 2, explanation: "C 抱怨加上食材費後，課程比廣告寫的貴很多。" },
-        { q: "Which person regularly cooks for the people they live with?", answer: 1, explanation: "B 說現在幾乎每晚為三位室友做晚餐，他們還常點他的咖哩。" },
-        { q: "Which person bought ingredients at local markets?", answer: 3, explanation: "D 每天早上到當地市場買蔬菜、香料和魚。" },
-        { q: "Which person taught themselves using online videos?", answer: 1, explanation: "B 完全靠網路影片自學，不斷暫停和倒帶練習。" },
-        { q: "Which person had difficulty understanding another language?", answer: 3, explanation: "D 幾乎不會當地語言，只能比手畫腳，還曾誤買一公斤辣椒。" }
+        { q: "Which person learned recipes that were never written down?", answer: 0, explanation: "In A, the grandmother's recipes 'existed only in her head and were never written down anywhere'." },
+        { q: "Which person accidentally set off an alarm while cooking?", answer: 1, explanation: "In B, Jake burned a frying pan so badly that the smoke alarm went off and the neighbours knocked on the door." },
+        { q: "Which person met their future husband or wife while learning?", answer: 2, explanation: "In C, the man chopping onions at the next station 'is now my husband'." },
+        { q: "Which person was taught by a member of their family?", answer: 0, explanation: "In A, Elena learned everything from her grandmother, standing on a stool beside her from the age of six." },
+        { q: "Which person learned to cook while in foreign countries?", answer: 3, explanation: "In D, Liam picked up everything during a year of travelling through Southeast Asia." },
+        { q: "Which person found the lessons more expensive than advertised?", answer: 2, explanation: "In C, the classes cost far more than the advertisement had suggested once ingredients were added." },
+        { q: "Which person regularly cooks for the people they live with?", answer: 1, explanation: "In B, Jake now cooks dinner for his three flatmates almost every night, and they request his curry regularly." },
+        { q: "Which person bought ingredients at local markets?", answer: 3, explanation: "In D, Liam visited the local markets every morning to buy vegetables, spices and fish." },
+        { q: "Which person taught themselves using online videos?", answer: 1, explanation: "In B, Jake taught himself entirely through internet videos, pausing and rewinding a thousand times." },
+        { q: "Which person had difficulty understanding another language?", answer: 3, explanation: "In D, Liam barely spoke a word of the languages, pointed and smiled, and once bought a kilo of chillies instead of peppers." }
       ]
     }
   ];

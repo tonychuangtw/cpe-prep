@@ -23,12 +23,12 @@ var BANK = [
     ],
     answers: [5, 3, 6, 4, 0, 2],
     explanations: [
-      "首段末提到「torrents of data」，第二段開頭的「That mismatch between data and staff」需要先有一段說明資料量與人力落差，故選描述望遠鏡每晚產生 TB 級資料而天文學家人數未增的段落。",
-      "空格後的段落以「Sceptics predicted…」回應外界質疑，前面必須是描述 Galaxy Zoo 上線後大眾反應的段落；「The response astonished its founders」正好承接 launched in 2007 的敘述。",
-      "前段說集體判讀比單一專家可靠，選項中「Verified accuracy of this kind」以 this kind 回指該可靠性，並延伸到期刊與經費機構態度轉變，銜接最緊密。",
-      "前段提出「機器學習是否讓志工失去必要性」的疑問，正確段落以「the enthusiasts asking that question」直接回指該疑問並舉出志工發現異常恆星的反例。",
-      "空格後寫「Discoveries of that kind」，需要前面先出現具體發現案例；正確段落描述志工在影像中發現綠色斑塊、進而確認新類型天體，提供了 that kind 所指的實例。",
-      "前段講參與者對科學方法理解加深，正確段落以「That educational payoff」回指此教育效益，並延伸到大學將計畫納入教學，語意鏈完整。"
+      "The first paragraph ends with \"torrents of data\", and the next segment opens with \"That mismatch between data and staff\", so the gap needs the paragraph describing terabytes of nightly images versus a barely growing number of astronomers.",
+      "The following segment begins \"Sceptics predicted...\", responding to public reaction, so the gap needs the paragraph about the launch's reception; \"The response astonished its founders\" follows directly from Galaxy Zoo's 2007 launch.",
+      "The previous segment says aggregated volunteer judgements beat a single expert; \"Verified accuracy of this kind\" points back to that reliability and extends it to journals and grant agencies changing their attitudes.",
+      "The previous segment asks whether machine learning makes volunteers unnecessary; the correct paragraph's \"the enthusiasts asking that question\" refers straight back to it and offers the strange dimming star as a counterexample.",
+      "The next segment opens with \"Discoveries of that kind\", so a concrete discovery must come first; the paragraph about the volunteer's green blob leading to a new class of object supplies exactly that example.",
+      "The previous segment says participation deepens volunteers' grasp of scientific method; \"That educational payoff\" refers back to this benefit and extends it to universities crediting the work in teaching."
     ]
   },
   {
@@ -54,12 +54,12 @@ var BANK = [
     ],
     answers: [6, 2, 4, 1, 3, 5],
     explanations: [
-      "首段末提到分析師預期二手市場將超越快時尚，第二段開頭「Those projections rest on…」的 projections 需先有具體數字預測；正確段落給出千億美元估值與投資人態度。",
-      "空格後段落說「Price is only part of the explanation」，暗示前文剛解釋過與價格、便利相關的成長原因；疫情期間清衣櫃變現的段落正好提供該解釋。",
-      "後文「That reputational halo」需要前面出現關於名聲、地位的敘述；正確段落講 vintage 稀有品成為新的身分象徵並彰顯環保意識，halo 即回指此。",
-      "前段說精品品牌轉而支持自家轉售市場，正確段落以「The corporate embrace goes further」承接企業層面的行動，進一步談品牌為二手流通而改變設計。",
-      "前段提出「二手購買是否真的取代新品」的疑問，後段又說「The evidence on that point is uncomfortably mixed」；正確段落介紹 rebound effect，呼應後文對消費行為的討論並以「Behaviour of that kind」銜接前一段落實例——置於此處者需承接疑問並鋪陳矛盾證據。",
-      "前段描述消費者把衣櫃當作流動庫存、更隨意購新，正確段落以慈善商店受擠壓、捐贈品質下降延續「轉售平台改變流向」的論證，銜接至結論段對市場利弊的總結。"
+      "The opening paragraph says analysts expect resale to overtake fast fashion, and the next segment starts \"Those projections rest on...\", so the gap needs concrete figures; the correct paragraph supplies the hundred-billion-dollar valuation and investor enthusiasm.",
+      "The following segment says \"Price is only part of the explanation\", implying the previous text explained price- and convenience-driven growth; the pandemic wardrobe clear-out paragraph provides exactly that account.",
+      "The next segment's \"That reputational halo\" requires a preceding discussion of status; the correct paragraph describes rare vintage finds conferring distinction and signalling thrift and environmental awareness.",
+      "The previous segment says luxury houses now back their own resale markets; \"The corporate embrace goes further than resale schemes\" continues that corporate thread, moving on to design changes made for future owners.",
+      "The previous segment asks whether second-hand purchases actually replace new ones, and the next says \"The evidence on that point is uncomfortably mixed\"; the rebound-effect paragraph, opening with \"Behaviour of that kind\", bridges the question and the mixed evidence.",
+      "The previous segment describes consumers treating wardrobes as rotating inventories; the charity-shop paragraph continues the argument about resale platforms redirecting clothing flows and leads naturally into the concluding verdict."
     ]
   },
   {
@@ -85,12 +85,12 @@ var BANK = [
     ],
     answers: [1, 4, 5, 0, 3, 6],
     explanations: [
-      "首段末提到她的祖父也是守塔人，空格後的「Those childhood summers」需要前文先描述童年暑假；正確段落講祖父任職與她在守塔人小屋度假的往事。",
-      "前段說她起初並不歡迎這個轉變、以為燈塔被永久棄置，正確段落以「Then, a decade later, came the notice」承接時間線，說明她如何應徵成為管理員，銜接後文「the arrangement」。",
-      "前段列舉她帶領夏季遊客導覽等職務，正確段落以「It is the guiding that has expanded most」直接回指 guiding 一職的擴張，並帶出每季一萬二千名遊客。",
-      "前段說遊客總問「燈自動運轉，要她何用」，正確段落「Machines monitor…but they do not notice」正是她被磨練成信條的回答，回應該提問。",
-      "前段描述風暴夜她發現燈滅並啟動備用電源的事蹟，正確段落以「reached the same conclusion, commending her intervention」回指該事件，說明當局因此保障職位經費。",
-      "結尾段談接班與傳承，前一空格需承接紀錄片與大眾關注的脈絡；正確段落講她起初抗拒攝製團隊、後被導演的實幹打動，呼應前文 documentaries 並自然過渡到她對後繼者的思考。"
+      "The first paragraph ends by mentioning her grandfather among the keepers, and the next segment opens with \"Those childhood summers\"; the correct paragraph supplies his 1960s service and her school holidays in the keepers' cottages.",
+      "The previous segment says she assumed the lighthouse had been abandoned for good; \"Then, a decade later, came the notice\" continues the timeline, explaining how she applied and won the post, which the next segment calls \"the arrangement\".",
+      "The previous segment lists her duties, including shepherding summer visitors; \"It is the guiding that has expanded most\" picks up that duty directly and introduces the twelve thousand visitors a season.",
+      "The previous segment says visitors ask what she is for when the light runs itself; \"Machines monitor... but they do not notice\" is precisely her polished creed answering that question.",
+      "The previous segment recounts the storm night when she spotted the failed beam; \"reached the same conclusion, commending her intervention\" refers back to that event and explains the decade of guaranteed funding.",
+      "The final segment turns to succession, so this gap must carry forward the documentary theme; the paragraph about her initial resistance to the filmmakers picks up the earlier mention of documentaries and leads into her thoughts on handing over."
     ]
   },
   {
@@ -116,12 +116,12 @@ var BANK = [
     ],
     answers: [1, 4, 2, 3, 6, 5],
     explanations: [
-      "前段介紹人體幾乎每個細胞都有晝夜節律時鐘，正確段落以「sets that clock against the timetable」回指 that clock，說明夜班如何與之衝突，後文「that internal conflict」亦承接於此。",
-      "前段列出心血管疾病等慢性風險，正確段落以「The effects are not confined to slow-developing disease」承接並補充通勤車禍與醫療失誤等即時危害，銜接後文「Statistics of that magnitude」。",
-      "前段描述雇主的照明與排班對策，正確段落以「Such adjustments help at the margins」回指這些措施並指出其局限，符合論證步驟。此處置於雇主段之後最通順——實際上本空格承接排班討論並過渡到個人層面。",
-      "前段講夜班疲勞與工安事故的公共安全問題，正確段落把干擾延伸到家庭與社交生活，以「The disruption extends beyond the body」承接健康議題並拓寬影響範圍。",
-      "前段描述 Jansen 戴墨鏡、遮光等個人策略，正確段落以「Personal tactics of that kind」直接回指這些做法並補充實驗支持。",
-      "結尾段開頭「Until such approaches mature」需要前文提出尚未成熟的新方法；正確段落介紹調整時鐘的藥物試驗與穿戴式感測器，正是 such approaches 所指。"
+      "The previous segment introduces the circadian clock in almost every cell; the correct paragraph's \"sets that clock against the timetable\" refers back to it and explains the clash night work creates, which the next segment calls \"that internal conflict\".",
+      "The previous segment lists chronic risks like cardiovascular disease; \"The effects are not confined to slow-developing disease\" continues that thread with immediate harms such as commute accidents and clinical errors, feeding the next segment's \"Statistics of that magnitude\".",
+      "The previous segment describes employers' lighting and roster countermeasures; \"Such adjustments help at the margins\" refers back to those measures and notes their limits, bridging to the individual-level tactics that follow.",
+      "The previous segment covers public-safety consequences of night-shift fatigue; \"The disruption extends beyond the body\" widens the scope from health to family and social life, fitting the argument's progression.",
+      "The previous segment describes Jansen's dark glasses and blackout routines; \"Personal tactics of that kind\" refers directly back to those habits and adds their experimental support.",
+      "The final segment opens \"Until such approaches mature\", so the gap must introduce immature new methods; the paragraph on clock-shifting drugs and wearable sensors is exactly what \"such approaches\" refers to."
     ]
   },
   {
@@ -147,12 +147,12 @@ var BANK = [
     ],
     answers: [1, 5, 3, 0, 2, 6],
     explanations: [
-      "前段講志工發現原始工程圖、證明建築設計更具開創性，正確段落以「That revelation transformed the building's prospects」回指該發現，說明拆除令暫停、信託成立，呼應首段的 reprieve。",
-      "前段末提到經費來源包含「an unexpected bequest」，正確段落以「The bequest carried a condition」直接承接該遺贈，並說明附帶條件。",
-      "前段說必須把整棟建築拆解成零件，正確段落描述九千件鐵構件逐一編號、評估、重鑄，正是該拆解工程的具體內容，並為後文的玻璃難題鋪路。",
-      "前段提出安全玻璃與維多利亞波紋質感難以兼得的兩難，正確段落以「offered a resolution」提出特殊窯製工法的解方，直接回應該 dilemma。",
-      "前段說園藝師面臨「在古蹟裡種什麼」的難題且無法照原樣重建，正確段落以「Their solution was to treat the planting itself as an interpretation」回應，Their 指涉 horticulturists。",
-      "結尾段總結「all these compromises」，此空格需承接鐵件清點的後續效益；正確段落以「That painstaking inventory」回指編目工程，帶出工藝傳承課程，補完修復的長遠影響。"
+      "The previous segment describes the volunteer's discovery of the original drawings; \"That revelation transformed the building's prospects\" refers back to it and explains the suspended demolition and new trust, echoing the opening's \"reprieve\".",
+      "The previous segment ends by mentioning \"an unexpected bequest\" among the funding sources; \"The bequest carried a condition\" picks up that bequest directly and explains the donor's stipulation.",
+      "The previous segment says the answer required dismantling the whole building into components; the paragraph numbering and recasting the nine thousand iron parts describes exactly that work and sets up the glass dilemma that follows.",
+      "The previous segment poses the dilemma of safety codes versus the Victorian glass's rippling quality; the paragraph beginning \"A specialist manufacturer in the end offered a resolution\" answers that dilemma directly.",
+      "The previous segment says the horticulturists faced a planting puzzle with no possibility of a replica; \"Their solution was to treat the planting itself as an interpretation\" responds to it, with \"Their\" referring to the horticulturists.",
+      "The closing segment sums up \"all these compromises\", and this gap needs the follow-on benefit of the iron survey; \"That painstaking inventory\" refers back to the cataloguing and adds the heritage-craft training it produced."
     ]
   },
   {
@@ -178,12 +178,12 @@ var BANK = [
     ],
     answers: [0, 1, 6, 3, 5, 4],
     explanations: [
-      "首段末稱 emoji 具有慣例、方言甚至初步文法，正確段落以「Evidence for such conventions keeps accumulating」回指 such conventions，並以語料庫研究佐證排列順序的規律。",
-      "前段說 emoji 承擔語氣、表情、手勢的功能，正確段落以「The comparison with gesture is more than a metaphor」承接該類比，並用腦造影實驗深化論點。",
-      "前段指出 emoji 多置於句尾、如同笑聲與語調，正確段落以「That parallel with speech」回指此對應關係，補充眼動與臉部肌肉研究。",
-      "前段提到有人宣稱 emoji 是新興世界語、並稱這是古老的夢想，正確段落以「an echo of earlier failures in that ambition」回指該野心，舉十七世紀世界文字方案失敗為證，銜接後文的 scepticism。",
-      "後文「Divergence of this kind」需要前面累積多種歧義實例；正確段落補充平台設計差異使同一表情在不同裝置呈現不同語氣，延續合十、蔬果 emoji 的歧義討論。",
-      "前段說分歧是活語言的正常特徵，正確段落以「By the same token」順承該邏輯，預測 emoji 會像俚語一樣汰換，並自然導向結尾段的總結。"
+      "The opening paragraph credits emoji with conventions, dialects and a rudimentary grammar; \"Evidence for such conventions keeps accumulating\" refers back to \"such conventions\" and supports them with corpus studies of ordering preferences.",
+      "The previous segment says emoji do the work of tone, facial expression and gesture; \"The comparison with gesture is more than a metaphor\" continues that analogy and deepens it with brain-imaging evidence.",
+      "The previous segment notes emoji cluster at message ends just as speech deposits laughter and intonation; \"That parallel with speech\" refers back to this correspondence and adds the eye-movement and facial-muscle studies.",
+      "The previous segment mentions the old dream of a universal pictorial language; \"an echo of earlier failures in that ambition\" refers to that dream, citing seventeenth-century schemes and setting up the scepticism the next segment confirms.",
+      "The next segment's \"Divergence of this kind\" needs an accumulation of ambiguity examples; the platform-design paragraph extends the folded-hands and fruit-emoji cases with faces that look different on different devices.",
+      "The previous segment says divergence is normal for living communication systems; \"By the same token\" follows that logic, predicting emoji will fall out of fashion like slang, and leads into the concluding verdict."
     ]
   }
 ];

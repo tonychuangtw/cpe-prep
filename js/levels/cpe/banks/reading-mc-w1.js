@@ -14,7 +14,7 @@ var BANK = [
           "the emotions ruins provoke are exaggerated for social effect"
         ],
         answer: 1,
-        explanation: "第一段指出「No medieval mason ever saw his abbey roofless」，廢墟是人與風化「合作」的產物，並非過去實際造出的東西，故崇拜它如同崇拜贗品（forgery）。其他選項文中未提及。"
+        explanation: "The paragraph notes that \"No medieval mason ever saw his abbey roofless\": the ruin is a collaboration between builders and weather, an artefact \"the past never made,\" so admiring it is admiring a forgery. The other options are not mentioned."
       },
       {
         q: "The writer's attitude towards the eighteenth-century builders of sham ruins is best described as",
@@ -25,7 +25,7 @@ var BANK = [
           "envy of the leisure and wealth that made such follies possible"
         ],
         answer: 2,
-        explanation: "第二段說多數評論者嘲笑這些假廢墟，但作者「would rather read them as an honest admission」——他欣賞其坦率承認人們要的是感受而非資訊，屬有保留的敬意。"
+        explanation: "While most commentators snigger at the follies, the writer \"would rather read them as an honest admission\" that what we want from ruins is sensation, not information — a qualified respect for their frankness."
       },
       {
         q: "What contradiction does the writer identify in modern conservation practice?",
@@ -36,7 +36,7 @@ var BANK = [
           "It values documentation of ruins above the physical fabric itself"
         ],
         answer: 0,
-        explanation: "第三段結尾：「We say we are preserving the past; what we are preserving is a particular, rather recent, taste in melancholy」——保存的其實是近代對「憂鬱感」的品味，而非過去本身。"
+        explanation: "The paragraph ends: \"We say we are preserving the past; what we are preserving is a particular, rather recent, taste in melancholy\" — conservation claims to protect history but actually fixes a modern taste in decay."
       },
       {
         q: "According to the fourth paragraph, ruins appeal to us partly because they",
@@ -47,7 +47,7 @@ var BANK = [
           "prove that architecture can outlive its original function"
         ],
         answer: 2,
-        explanation: "第四段：完整建築「insists on its function」，而廢墟「merely suggests」，我們用想像填補缺失的樓層並因此感到得意（flattered by the tenancy），即廢墟開放給觀者想像。"
+        explanation: "An intact building \"insists on its function,\" whereas the ruin \"merely suggests\"; we \"furnish the missing floors with our own imaginings\" — the ruin makes no demands and invites the spectator's imagination."
       },
       {
         q: "The sentence 'the moralists are right, and it makes no difference' suggests that the writer",
@@ -58,7 +58,7 @@ var BANK = [
           "expects public opinion eventually to silence such objections"
         ],
         answer: 1,
-        explanation: "第五段作者承認道德家「是對的」（我們應為毀壞感到遺憾），但「it makes no difference」——那份不由自主的平靜依然存在。這是承認道德立場卻指出感受不因此改變。"
+        explanation: "The writer concedes the moralists are right that we ought to regret the destruction, yet \"it makes no difference\": the involuntary serenity persists anyway. He grants the ethical point while admitting the feeling survives it."
       },
       {
         q: "In the final paragraph, the writer responds to the claim that modern buildings cannot ruin well by",
@@ -69,7 +69,7 @@ var BANK = [
           "insisting that shopping centres already possess a certain melancholy charm"
         ],
         answer: 0,
-        explanation: "末段指出十八世紀也曾如此貶低自己的磚造排屋，但如今它們「moulder very handsomely」；「Ruin-worthiness is conferred retrospectively」——由後人及其感性追認，非建築師能指定。"
+        explanation: "The writer notes the eighteenth century said the same of its own brick terraces, which now \"moulder very handsomely,\" and states that \"Ruin-worthiness is conferred retrospectively\" — by survivors' sensibility, not by architects."
       }
     ]
   },
@@ -87,7 +87,7 @@ var BANK = [
           "her suspicion that French readers would find the novel pretentious"
         ],
         answer: 1,
-        explanation: "第一段「I did not recognise the woman who had written the book」，法文版的她更機智、更篤定，句子俐落如做工精良的抽屜——是對更自信版本的自己感到陌生，而非惱怒或安心。"
+        explanation: "She says \"I did not recognise the woman who had written the book\": the French version is wittier and more certain, her sentences clicking like well-made drawers. This is estrangement from a more assured self, not irritation or relief."
       },
       {
         q: "The comparison to 'a woman being congratulated on a cake her neighbour baked' expresses the writer's",
@@ -98,7 +98,7 @@ var BANK = [
           "conviction that literary prizes are awarded largely at random"
         ],
         answer: 2,
-        explanation: "第二段說巴黎書評讚美她的「dry precision」，但她自認只有「damp approximation」，那份精準是 Claudine 擰出來的；領獎如同被稱讚鄰居烤的蛋糕——為不屬於自己的優點受褒而不安。"
+        explanation: "Paris reviewers praised her \"dry precision,\" but she claims only a \"damp approximation\" that Claudine \"wrung out and pressed.\" Accepting the prize felt like being congratulated on a neighbour's cake — discomfort at credit for qualities not her own."
       },
       {
         q: "Why does the writer reject the conclusion that the French novel is 'simply Claudine's'?",
@@ -109,7 +109,7 @@ var BANK = [
           "Because the book's structure and characteristic evasions remain her own design"
         ],
         answer: 3,
-        explanation: "第三段：「The book's evasions are mine; its architecture of withheld information... none of that is Claudine's invention. She built a new house, but to my plans」——結構與手法仍出自作者的設計。"
+        explanation: "She writes: \"The book's evasions are mine; its architecture of withheld information... none of that is Claudine's invention. She built a new house, but to my plans\" — the structure and characteristic devices remain the author's design."
       },
       {
         q: "The metaphor of a voice 'checking its passport at every border' refers to the writer's fear that",
@@ -120,7 +120,7 @@ var BANK = [
           "translators censor culturally specific material without consulting her"
         ],
         answer: 0,
-        explanation: "第四段描述她開始「pre-translate myself」，剔除無法跨語言的雙關與典故；「cleaner」的文風可能是聲音在每個邊界自我審查的結果——即預期翻譯正悄悄磨平她的風格。"
+        explanation: "She describes beginning to \"pre-translate myself,\" weeding out untranslatable puns and references; the \"cleaner\" prose may be what a voice sounds like when self-censoring at every border — anticipating translation is flattening her style."
       },
       {
         q: "What is the significance of the German translator's 'load-bearing ambiguities'?",
@@ -131,7 +131,7 @@ var BANK = [
           "They persuaded the writer to remove all ambiguity from future drafts"
         ],
         answer: 1,
-        explanation: "第五段：十一處雙義中她只意識到四處，「The other seven had been operating in the dark, holding up floors I did not know I had built」——譯者的逐字重建揭露了她自己都不知道的結構。"
+        explanation: "Of eleven ambiguities she was aware of only four; \"The other seven had been operating in the dark, holding up floors I did not know I had built.\" The translator's word-by-word rebuilding exposed structural features unknown even to the author."
       },
       {
         q: "The writer's final answer to the question of what is lost in translation — 'mostly illusions' — implies that",
@@ -142,7 +142,7 @@ var BANK = [
           "translation dispels comforting fictions about the fixity and finality of a text"
         ],
         answer: 3,
-        explanation: "末段點名兩個被戳破的幻覺：聲音是「bone rather than cartilage」、書在出版時就「finished」。翻譯失去的是這些安慰性的錯覺，存留的是句子所環繞的核心。"
+        explanation: "The final paragraph names the punctured illusions: that the voice is \"bone rather than cartilage\" and that a book is \"finished\" at publication. What translation destroys are these comforting fictions; what survives is the thing the sentence was circling."
       }
     ]
   },
@@ -160,7 +160,7 @@ var BANK = [
           "had already been fully explained by economists"
         ],
         answer: 0,
-        explanation: "首段開頭：「A queue looks like the absence of drama, which is precisely why sociologists took so long to notice it」——正因看似毫無戲劇性，才長期被忽略。"
+        explanation: "The opening sentence states it directly: \"A queue looks like the absence of drama, which is precisely why sociologists took so long to notice it\" — its apparent uneventfulness made it seem to offer nothing to analyse."
       },
       {
         q: "According to the second paragraph, the fairness of the queue is 'narrow' because it",
@@ -171,7 +171,7 @@ var BANK = [
           "can easily be counterfeited by determined free-riders"
         ],
         answer: 2,
-        explanation: "第二段：「First-come-first-served is indifferent to need, desert, and urgency alike」，外科醫生與觀光客等得一樣久。排隊只認「時間的犧牲」，不問需求與應得，故公平是狹義的。"
+        explanation: "The paragraph says \"First-come-first-served is indifferent to need, desert, and urgency alike\" — surgeon and sightseer wait identically. The queue honours only visible sacrifice of time, ignoring how urgent or deserving each claim is."
       },
       {
         q: "The phrase 'its sublimation into semaphore' (third paragraph) refers to the way",
@@ -182,7 +182,7 @@ var BANK = [
           "physical gaps in a queue are gradually closed as it advances"
         ],
         answer: 1,
-        explanation: "第三段列舉挪動身體、誇張的嘆氣、恰到好處的瞪視——「Order is not the absence of aggression but its sublimation into semaphore」，敵意被昇華成信號語言，即以非暴力暗號執法。"
+        explanation: "The paragraph lists repositioned bodies, audible sighs and calibrated stares: \"Order is not the absence of aggression but its sublimation into semaphore\" — hostility is converted into coded, non-violent signals of enforcement."
       },
       {
         q: "How does the writer respond to the economist's claim that fury at queue-jumpers is irrational?",
@@ -193,7 +193,7 @@ var BANK = [
           "By contending that the true injury is to status and the social compact, not to time"
         ],
         answer: 3,
-        explanation: "第四段：「the ledger is measuring the wrong asset... The queue-jumper's real expropriation is not of time but of standing」——插隊者宣告契約不約束他，怒火是秩序的免疫反應，非四十秒的損失。"
+        explanation: "The writer argues \"the ledger is measuring the wrong asset... The queue-jumper's real expropriation is not of time but of standing\": the jumper declares the compact binds others but not him, so the rage defends the social order, not forty seconds."
       },
       {
         q: "In discussing paper tickets and boarding groups, the writer implies that these systems",
@@ -204,7 +204,7 @@ var BANK = [
           "were introduced primarily to protect customers from confrontation"
         ],
         answer: 0,
-        explanation: "第五段：「all preserve sequence while abolishing the scene」，行政上有所得，但舊式排隊那種「身體力行的公民操練」可能因此流失——保留邏輯、取消場景。"
+        explanation: "These systems \"all preserve sequence while abolishing the scene\": something administrative is gained, but the old queue's bodily, civic rehearsal that others' claims are as real as one's own may be lost."
       },
       {
         q: "The final paragraph presents the solidarity of delayed queuers as",
@@ -215,7 +215,7 @@ var BANK = [
           "an irrational response that undermines the queue's discipline"
         ],
         answer: 1,
-        explanation: "末段稱其為「a fleeting public... which dissolves without residue」，並總結「If that is not society in miniature, it is at least society's rough sketch」——短暫卻是社會的縮影／草圖。"
+        explanation: "The paragraph calls it \"a fleeting public... which dissolves without residue\" and concludes: \"If that is not society in miniature, it is at least society's rough sketch\" — a temporary community modelling society in embryo."
       }
     ]
   },
@@ -233,7 +233,7 @@ var BANK = [
           "travel and tourism metaphors dominate modern political speech"
         ],
         answer: 2,
-        explanation: "首段：「That the homeland is imaginary is not a flaw in the product. It is the product」，因為「Real pasts have archives, and archives... answer back」——虛構性正是賣點，真實過去會被檔案反駁。"
+        explanation: "The text says: \"That the homeland is imaginary is not a flaw in the product. It is the product,\" because \"Real pasts have archives,\" and archives \"answer back\" — the fictional golden age is useful precisely because it cannot be refuted."
       },
       {
         q: "The image of 'memory with the invoice torn off' (second paragraph) characterises nostalgia as",
@@ -244,7 +244,7 @@ var BANK = [
           "the deliberate destruction of official historical records"
         ],
         answer: 0,
-        explanation: "第二段：懷舊政客「curates」黃金年代，把記憶的溫暖與其代價（高稅率、審查、種族隔離等）及被排除者切割，「offering the warmth alone, unpriced」——撕掉帳單的記憶。"
+        explanation: "The politician \"curates\" the golden age, detaching the warmth of memory from the tax rates, deference, censorship and colour bar that produced it, \"offering the warmth alone, unpriced\" — recollection stripped of its costs and exclusions."
       },
       {
         q: "According to the third paragraph, the slogan 'Make things as they were' is politically powerful partly because it",
@@ -255,7 +255,7 @@ var BANK = [
           "sounds like a policy while remaining impossible to test or falsify"
         ],
         answer: 3,
-        explanation: "第三段：「it supplies a programme without the inconvenience of a plan... committing its author to nothing checkable, since the referent... floats free of any date」——有政策的文法形式，卻無可查核之處。"
+        explanation: "The slogan \"supplies a programme without the inconvenience of a plan,\" committing its author \"to nothing checkable, since the referent... floats free of any date\" — it has the grammatical form of a policy but cannot be tested or falsified."
       },
       {
         q: "Why does the writer consider the 'standard liberal rejoinder' almost useless?",
@@ -266,7 +266,7 @@ var BANK = [
           "Because voters no longer trust any argument supported by footnotes"
         ],
         answer: 1,
-        explanation: "第四段：「It mistakes the genre」，選民談的其實是「her own dignity in 2026, translated into the past tense」；用統計回應等於再次宣告她的證詞不被受理。準確但文不對題。"
+        explanation: "The rejoinder \"mistakes the genre\": the voter is really claiming \"her own dignity in 2026, translated into the past tense.\" Answering with statistics tells her again that her testimony is inadmissible — accurate but beside the point."
       },
       {
         q: "The distinction the writer draws between memory and nostalgia turns on whether the past is",
@@ -277,7 +277,7 @@ var BANK = [
           "recorded in official archives or transmitted orally"
         ],
         answer: 2,
-        explanation: "第五段：記憶是「answerable — to evidence, to other people's memories, to the parts of the story that shame us」，而懷舊是「memory that has fired its auditors」；傳統可批評，黃金年代只能崇拜。"
+        explanation: "Memory is \"answerable — to evidence, to other people's memories, to the parts of the story that shame us,\" while nostalgia is \"memory that has fired its auditors\": traditions can be criticised, a golden age can only be worshipped or betrayed."
       },
       {
         q: "In the final paragraph, the writer argues that the gravest harm of nostalgic politics is that it",
@@ -288,7 +288,7 @@ var BANK = [
           "extinguishes a society's willingness to imagine an unprecedented future"
         ],
         answer: 3,
-        explanation: "末段：「The deepest damage... is done not to our picture of the past but to our capacity for the future」，其更嚴重的缺陷是「unambitious」——讓人民放棄想像，甘於模仿祖輩並稱之為偉大。"
+        explanation: "The writer states: \"The deepest damage... is done not to our picture of the past but to our capacity for the future.\" Nostalgic politics is above all \"unambitious,\" asking a people to impersonate their grandparents instead of imagining something unprecedented."
       }
     ]
   },
@@ -306,7 +306,7 @@ var BANK = [
           "the estuary belongs legally to neither the river authority nor the sea"
         ],
         answer: 2,
-        explanation: "首段：「An estuary is not a line between river and sea but a negotiation between them, conducted twice daily... no settlement ever reached」——它是永無定論的協商，非界線；界線一詞出自「乾地上」的視角。"
+        explanation: "The writer says \"An estuary is not a line between river and sea but a negotiation between them, conducted twice daily... no settlement ever reached\" — a fixed line is imposed on a continual, unresolved exchange, a word coined \"from dry land.\""
       },
       {
         q: "The phrase 'a fortune that dresses badly' (second paragraph) conveys the idea that the estuary",
@@ -317,7 +317,7 @@ var BANK = [
           "attracts wealthy visitors who fail to appreciate it"
         ],
         answer: 0,
-        explanation: "第二段：訪客看到的是「absence」，但泥灘其實「richer, acre for acre, than the wheatfield」，其生產力「conducted in private, an inch below the shine」——巨富卻衣著寒酸，即豐饒藏於不起眼外表下。"
+        explanation: "Visitors see only \"absence,\" yet the mud is \"richer, acre for acre, than the wheatfield,\" its productivity \"conducted in private, an inch below the shine\" — extraordinary biological wealth hidden behind an unimpressive appearance."
       },
       {
         q: "In recounting the incident with the dog, the writer's response to the owner's remark is best described as",
@@ -328,7 +328,7 @@ var BANK = [
           "amusement at the birds' exaggerated reaction to a harmless animal"
         ],
         answer: 1,
-        explanation: "第三段：作者表面承認「They did」（鳥確實又落地了），但隨即指出每次驚飛都是「a withdrawal from an account already overdrawn」，帳在北極結清、無人查核——沉默的異議，基於飼主看不見的後果。"
+        explanation: "He outwardly concedes \"They did\" (the birds landed again) but adds that each unplanned flight is \"a withdrawal from an account already overdrawn,\" settled in the Arctic \"out of sight\" — unspoken dissent based on consequences the owner cannot see."
       },
       {
         q: "Why does the writer recite the 'utilitarian catechism' at planning consultations?",
@@ -339,7 +339,7 @@ var BANK = [
           "Because the villagers become hostile when ecology is mentioned"
         ],
         answer: 0,
-        explanation: "第四段：他列舉消波、固碳等效益，「the utilitarian catechism one recites because it is what committees can hear」；真正想說的（欣賞海的「paperwork」）「there is no agenda item for it」。"
+        explanation: "He recites the marsh's wave, carbon and nitrogen benefits — \"the utilitarian catechism one recites because it is what committees can hear\"; what he really thinks (admiring the sea's \"paperwork\") has \"no agenda item for it.\""
       },
       {
         q: "The writer finds living by the tide table 'restful' because the tide",
@@ -350,7 +350,7 @@ var BANK = [
           "represents an authority wholly indifferent to human persuasion"
         ],
         answer: 3,
-        explanation: "第五段：潮汐是「an authority that cannot be lobbied」，「Twice a day, something vast declines to consult me」——一種不受遊說、不容商量的權威，反而令他感到安放與釋然。"
+        explanation: "The tide is \"an authority that cannot be lobbied\": \"Twice a day, something vast declines to consult me.\" It is precisely this indifference to human persuasion that the writer finds restful."
       },
       {
         q: "The closing sentence — 'It is a schedule, and I am on it, briefly, along with everything else' — signals that the writer has come to",
@@ -361,7 +361,7 @@ var BANK = [
           "treat the estuary primarily as material for literary symbolism"
         ],
         answer: 1,
-        explanation: "末段：年輕的自己會把足跡被抹去寫成傷感，「I have kept better notes since I stopped keeping score」；並明言「not a metaphor. It is a schedule」——不再計較、坦然接受自己短暫列於其中。"
+        explanation: "A younger self would have found the erased footprints melancholy; instead he says \"I have kept better notes since I stopped keeping score\" and insists the estuary is \"not a metaphor. It is a schedule\" — accepting his brief place in its order without sadness."
       }
     ]
   },
@@ -379,7 +379,7 @@ var BANK = [
           "argue that all professional expertise is ultimately inexplicable"
         ],
         answer: 1,
-        explanation: "首段以火場指揮官為例證明直覺「is real」（研究者重建後發現是對線索的無意識解讀），但隨即轉折：「fashion is where the trouble starts」——先立其真，再論其條件與限制。"
+        explanation: "The story shows the commander's intuition was real — an unconscious reading of nameable cues — but the paragraph pivots with \"fashion is where the trouble starts\": genuine intuition is established first so its strict conditions can then be examined."
       },
       {
         q: "According to the second paragraph, which condition for trustworthy intuition is 'most often forgotten'?",
@@ -390,7 +390,7 @@ var BANK = [
           "That the practitioner must have unusually long professional experience"
         ],
         answer: 2,
-        explanation: "第二段明言「the clause most often forgotten — where practice has been accompanied by feedback that is swift and unambiguous」——最常被遺忘的是「即時且明確的回饋」這一條件。"
+        explanation: "The paragraph states it explicitly: \"the clause most often forgotten — where practice has been accompanied by feedback that is swift and unambiguous\" — prompt, clear feedback on results is the neglected condition."
       },
       {
         q: "The phrase 'a fluent, worthless oracle' (third paragraph) refers to",
@@ -401,7 +401,7 @@ var BANK = [
           "the monitors that lag behind the experienced nurse's assessment"
         ],
         answer: 0,
-        explanation: "第三段：「the interviewer who 'just knows' within ninety seconds which candidate will flourish is consulting a fluent, worthless oracle」——指面試官流暢卻毫無價值的直覺神諭。"
+        explanation: "The text says \"the interviewer who 'just knows' within ninety seconds which candidate will flourish is consulting a fluent, worthless oracle\" — the phrase names the interviewer's confident but unreliable snap judgement."
       },
       {
         q: "By 'compressed autobiography' (third paragraph), the writer means that in irregular domains intuition amounts to",
@@ -412,7 +412,7 @@ var BANK = [
           "personal bias disguised as distilled professional experience"
         ],
         answer: 3,
-        explanation: "第三段結尾將其定義為「prejudice wearing experience's uniform, and drawing its salary」——並非壓縮的專業，而是穿著經驗制服、支領其薪水的偏見，即偽裝成經驗的個人成見。"
+        explanation: "The paragraph glosses the phrase itself: intuition in such settings \"is not compressed expertise. It is compressed autobiography — prejudice wearing experience's uniform, and drawing its salary\" — personal bias disguised as distilled experience."
       },
       {
         q: "The remark that one can have 'the same year twenty times' makes the point that",
@@ -423,7 +423,7 @@ var BANK = [
           "memory of early career years distorts an expert's self-assessment"
         ],
         answer: 1,
-        explanation: "第四段：熟悉帶來的流暢「mimics」真技能的流暢，「the bad interviewer is not better, merely faster, her errors upholstered in confidence」——重複二十次同一年，只長信心不長本事。"
+        explanation: "Mere familiarity \"mimics\" calibrated skill: \"the bad interviewer is not better, merely faster, her errors upholstered in confidence.\" Repeating the same year twenty times builds confidence without competence."
       },
       {
         q: "The writer's final position on the question 'should we trust intuition?' is that it",
@@ -434,7 +434,7 @@ var BANK = [
           "should be left to each profession to decide by internal consensus"
         ],
         answer: 0,
-        explanation: "末段：「The question... is, in the end, badly posed. It invites us to audit a feeling, when what can actually be audited is an environment」——該問的是那份篤定「在哪裡、以何種品管製造」。內省恰是偵測不到此缺陷的工具，故 C 錯。"
+        explanation: "The final paragraph states: \"The question... is, in the end, badly posed. It invites us to audit a feeling, when what can actually be audited is an environment.\" Introspection is \"precisely the instrument that cannot detect this fault,\" ruling out the introspection option."
       }
     ]
   }

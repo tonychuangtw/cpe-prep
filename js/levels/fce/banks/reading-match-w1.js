@@ -22,16 +22,16 @@ var BANK = [
       }
     ],
     questions: [
-      { q: "Which person deliberately moved house in order to improve their journey to work?", answer: 3, explanation: "D 段 Leo 說他放棄郊區便宜公寓，改租離辦公室走路二十分鐘的住處，「purely to escape the daily bus ride」，是刻意搬家改善通勤。" },
-      { q: "Which person experienced a physical benefit they had not been expecting?", answer: 0, explanation: "A 段 Marta 說沒人告訴她會變多強壯，「I'm fitter now than I've ever been, which was never part of the plan」，健康好處是意料之外。" },
-      { q: "Which person has part of their travel costs paid by their employer?", answer: 1, explanation: "B 段 Daniel 提到公司透過綠色通勤方案負擔三分之一的季票費用（my company pays a third of it）。" },
-      { q: "Which person feels guilty about the effect their commute has on the environment?", answer: 2, explanation: "C 段 Priya 說「What bothers me is the pollution I'm responsible for. I feel genuinely bad every time I fill the tank」，明確表達環境罪惡感。" },
-      { q: "Which person tries to avoid travelling when their form of transport is at its busiest?", answer: 1, explanation: "B 段 Daniel 討厭尖峰擠滿人的車廂，並說「Whenever possible I take an earlier, emptier service」，刻意避開最擁擠時段。" },
-      { q: "Which person felt nervous when they first started commuting this way?", answer: 0, explanation: "A 段 Marta 說起初「I was terrified of the traffic on the main road」，還會繞遠路避開，符合一開始緊張的描述。" },
-      { q: "Which person says they have no realistic alternative to their current way of travelling?", answer: 2, explanation: "C 段 Priya 住在偏遠村莊，每天只有一班公車且時間不合，「I really have no choice but to drive」，別無選擇。" },
-      { q: "Which person misses the social side of the way they used to travel?", answer: 3, explanation: "D 段 Leo 說唯一遺憾是失去和同事在公車上的閒聊，「those silly conversations ... were more valuable than I realised」。" },
-      { q: "Which person uses the journey to get some of their job done before arriving?", answer: 1, explanation: "B 段 Daniel 在火車上回信、準備會議，「arrive with half my morning tasks already done」，把通勤當工作時間。" },
-      { q: "Which person finds the equipment their commute requires irritating?", answer: 0, explanation: "A 段 Marta 抱怨雨天要穿脫防水衣物、鞋套和手套，「takes forever and never stops being annoying」，對裝備感到厭煩。" }
+      { q: "Which person deliberately moved house in order to improve their journey to work?", answer: 3, explanation: "In D, Leo gave up his cheap flat and rented one twenty minutes' walk from the office 'purely to escape the daily bus ride'." },
+      { q: "Which person experienced a physical benefit they had not been expecting?", answer: 0, explanation: "In A, Marta says nobody told her how much stronger she would feel: 'I'm fitter now than I've ever been, which was never part of the plan'." },
+      { q: "Which person has part of their travel costs paid by their employer?", answer: 1, explanation: "In B, Daniel's company pays a third of his season ticket as part of a green travel scheme." },
+      { q: "Which person feels guilty about the effect their commute has on the environment?", answer: 2, explanation: "In C, Priya says 'What bothers me is the pollution I'm responsible for. I feel genuinely bad every time I fill the tank'." },
+      { q: "Which person tries to avoid travelling when their form of transport is at its busiest?", answer: 1, explanation: "In B, Daniel hates the packed rush-hour carriages and says 'Whenever possible I take an earlier, emptier service'." },
+      { q: "Which person felt nervous when they first started commuting this way?", answer: 0, explanation: "In A, Marta was 'terrified of the traffic on the main road' at first and planned long detours to avoid it." },
+      { q: "Which person says they have no realistic alternative to their current way of travelling?", answer: 2, explanation: "In C, Priya lives in a remote village with one badly timed bus a day: 'I really have no choice but to drive'." },
+      { q: "Which person misses the social side of the way they used to travel?", answer: 3, explanation: "In D, Leo's only regret is losing the bus chats with colleagues: 'those silly conversations ... were more valuable than I realised'." },
+      { q: "Which person uses the journey to get some of their job done before arriving?", answer: 1, explanation: "In B, Daniel answers emails and prepares meeting notes on the train, arriving 'with half my morning tasks already done'." },
+      { q: "Which person finds the equipment their commute requires irritating?", answer: 0, explanation: "In A, Marta complains that pulling on and peeling off waterproof clothing 'takes forever and never stops being annoying'." }
     ]
   },
   {
@@ -60,16 +60,16 @@ var BANK = [
       }
     ],
     questions: [
-      { q: "Which reviewer says a special pass for visitors turned out to be good value?", answer: 2, explanation: "C 段瓦倫西亞的評論提到購買 official visitor card 涵蓋交通和博物館，「saved us more than forty euros」，通行證非常划算。" },
-      { q: "Which reviewer warns readers to protect their belongings?", answer: 4, explanation: "E 段那不勒斯提醒「keep your phone and wallet somewhere secure」，並提到同伴差點被搶包，是防竊警告。" },
-      { q: "Which reviewer was caught out by the weather?", answer: 1, explanation: "B 段克拉科夫的作者說沒人警告十月氣溫驟降，只好第二天早上買毛帽和手套，顯示被天氣嚇到。" },
-      { q: "Which reviewer recommends a trip to a site outside the city itself?", answer: 4, explanation: "E 段建議搭便宜火車去龐貝古城一日遊（catching the cheap local train out to the ruins of Pompeii），是城外景點。" },
-      { q: "Which reviewer found the city physically tiring to explore?", answer: 0, explanation: "A 段波多提到城市建在陡峭山丘上，爬了兩天樓梯和石板坡後「my legs were genuinely aching」，遊覽很耗體力。" },
-      { q: "Which reviewer was emotionally affected by learning about the city's past?", answer: 1, explanation: "B 段作者參觀戰爭歷史博物館後「I left in tears」，被城市的歷史深深觸動。" },
-      { q: "Which reviewer particularly enjoyed how few other tourists there were?", answer: 3, explanation: "D 段里加的評論說新藝術建築區幾乎只有他們，「wandering without being surrounded by tour groups felt like a luxury」。" },
-      { q: "Which reviewer liked being able to combine sightseeing with time by the sea?", answer: 2, explanation: "C 段說瓦倫西亞是「two holidays in one」：早上看建築、下午躺在沙灘，城市觀光加海邊兼得。" },
-      { q: "Which reviewer found that some attractions were closed at the time of their visit?", answer: 3, explanation: "D 段提到二月造訪時，數間博物館和露天民俗園區「were shut for the season」，部分景點沒開。" },
-      { q: "Which reviewer says their accommodation was remarkably cheap?", answer: 0, explanation: "A 段稱他們的河畔民宿是「the cheapest decent room I have ever booked anywhere in Europe」，住宿便宜得驚人。" }
+      { q: "Which reviewer says a special pass for visitors turned out to be good value?", answer: 2, explanation: "In C, the official visitor card covered all buses, metro trips and several museums and 'saved us more than forty euros'." },
+      { q: "Which reviewer warns readers to protect their belongings?", answer: 4, explanation: "In E, the reviewer says to 'keep your phone and wallet somewhere secure' after a group member nearly lost her bag to a passing scooter." },
+      { q: "Which reviewer was caught out by the weather?", answer: 1, explanation: "In B, nobody had warned the writer how sharply temperatures drop in October, so they had to buy a woolly hat and gloves." },
+      { q: "Which reviewer recommends a trip to a site outside the city itself?", answer: 4, explanation: "In E, the best decision was catching the cheap local train out to the ruins of Pompeii for a day." },
+      { q: "Which reviewer found the city physically tiring to explore?", answer: 0, explanation: "In A, Porto's steep hills and endless staircases left the writer's legs 'genuinely aching' after two days." },
+      { q: "Which reviewer was emotionally affected by learning about the city's past?", answer: 1, explanation: "In B, the writer 'left in tears' after visiting the museum dedicated to the city's wartime history." },
+      { q: "Which reviewer particularly enjoyed how few other tourists there were?", answer: 3, explanation: "In D, wandering the art nouveau district 'without being surrounded by tour groups felt like a luxury'." },
+      { q: "Which reviewer liked being able to combine sightseeing with time by the sea?", answer: 2, explanation: "In C, Valencia offers 'two holidays in one': the arts and science complex in the morning and a sandy beach in the afternoon." },
+      { q: "Which reviewer found that some attractions were closed at the time of their visit?", answer: 3, explanation: "In D, several museums and the open-air ethnographic park 'were shut for the season' during the February visit." },
+      { q: "Which reviewer says their accommodation was remarkably cheap?", answer: 0, explanation: "In A, the riverside guesthouse was 'the cheapest decent room I have ever booked anywhere in Europe'." }
     ]
   },
   {
@@ -94,16 +94,16 @@ var BANK = [
       }
     ],
     questions: [
-      { q: "Whose business began without any planning at all?", answer: 2, explanation: "C 段 Nadia 說生意「began completely by accident」，鄰居看到她拍自家狗的照片後主動付費請她拍，完全是意外開始。" },
-      { q: "Who found it difficult to decide how much to charge?", answer: 0, explanation: "A 段 Amelia 說最難的一課是訂價（The hardest lesson was working out prices），起初只算材料忘了工時，幾乎沒賺。" },
-      { q: "Who is required to save a fixed proportion of what they earn?", answer: 0, explanation: "A 段提到父母的規定：「half of everything I earn goes straight into a savings account」，必須存下一半收入。" },
-      { q: "Who spends their profits on improving their equipment?", answer: 2, explanation: "C 段 Nadia 說每一鎊都投回事業，已從二手相機升級到專業鏡頭和燈光設備，獲利用於添購器材。" },
-      { q: "Who intends to turn the business into their full-time job?", answer: 3, explanation: "D 段 Tom 說畢業後要開正式車行，已和銀行談貸款，「it's the start of my career」，打算全職經營。" },
-      { q: "Who was taught their skill by a member of their family?", answer: 3, explanation: "D 段 Tom 說修車知識全來自祖父（Everything I know about bikes comes from my grandfather），從八歲就在工作棚幫忙。" },
-      { q: "Whose income varies greatly from one month to the next?", answer: 1, explanation: "B 段 Josh 說收入「all over the place」，有時一個月五個客戶、有時幾乎沒有，收入起伏很大。" },
-      { q: "Who follows a fixed timetable to make sure schoolwork comes first?", answer: 1, explanation: "B 段 Josh 因父母擔心課業而制定嚴格週計畫，先排功課和複習，剪輯只能利用空檔，成績因此未受影響。" },
-      { q: "Whose customers are mostly people organising celebrations?", answer: 0, explanation: "A 段 Amelia 說大多數訂單來自辦派對的家庭（families organising parties），生日和受洗蛋糕是主要客源。" },
-      { q: "Who provides a service to other people doing the same hobby?", answer: 1, explanation: "B 段 Josh 為其他年輕遊戲創作者剪輯影片（a small editing service for creators），服務對象是同好。" }
+      { q: "Whose business began without any planning at all?", answer: 2, explanation: "In C, Nadia's business 'began completely by accident' when a neighbour admired her dog photos and insisted on paying her." },
+      { q: "Who found it difficult to decide how much to charge?", answer: 0, explanation: "In A, Amelia says 'The hardest lesson was working out prices'; she counted only ingredients, forgot her hours, and barely broke even." },
+      { q: "Who is required to save a fixed proportion of what they earn?", answer: 0, explanation: "In A, Amelia's parents made a firm rule that 'half of everything I earn goes straight into a savings account'." },
+      { q: "Who spends their profits on improving their equipment?", answer: 2, explanation: "In C, Nadia puts every pound back into the business and has upgraded from a second-hand camera to a proper lens and lighting kit." },
+      { q: "Who intends to turn the business into their full-time job?", answer: 3, explanation: "In D, Tom plans to open a proper workshop after school and has talked to the bank about a loan: 'it's the start of my career'." },
+      { q: "Who was taught their skill by a member of their family?", answer: 3, explanation: "In D, 'Everything I know about bikes comes from my grandfather', who let Tom help in his shed from the age of eight." },
+      { q: "Whose income varies greatly from one month to the next?", answer: 1, explanation: "In B, Josh's earnings are 'all over the place': five clients one month, almost none the next." },
+      { q: "Who follows a fixed timetable to make sure schoolwork comes first?", answer: 1, explanation: "In B, Josh built a strict weekly plan blocking out homework and revision first, with editing only in the gaps." },
+      { q: "Whose customers are mostly people organising celebrations?", answer: 0, explanation: "In A, most of Amelia's orders come from 'families organising parties', with birthday and christening cakes as the core work." },
+      { q: "Who provides a service to other people doing the same hobby?", answer: 1, explanation: "In B, Josh runs an editing service for other gaming creators who lack the time or skills to edit their own footage." }
     ]
   },
   {
@@ -132,16 +132,16 @@ var BANK = [
       }
     ],
     questions: [
-      { q: "Who only came to appreciate the teacher a long time after leaving school?", answer: 0, explanation: "A 段 Grace 說多年後考會計師考試才明白老師給她的訓練，「the gratitude came a decade too late」，感激來得很晚。" },
-      { q: "Whose choice of career was a direct result of the teacher's influence?", answer: 1, explanation: "B 段 Sam 說自己現在是職業演員，能「draw a straight line from his words ... to the job I do today」，職業直接源自老師。" },
-      { q: "Who regrets never thanking the teacher?", answer: 2, explanation: "C 段 Ines 說老師突然退休，她在考試忙亂中沒回去道謝，「I still feel a sting of regret about that」。" },
-      { q: "Who was given extra support during a difficult period in their family life?", answer: 3, explanation: "D 段 Kofi 在父母離婚、成績崩盤時，Miss Hartley 每週兩次留下來幫他補課，在家庭困難期給予協助。" },
-      { q: "Who is still in touch with the teacher today?", answer: 3, explanation: "D 段 Kofi 說十五年後「we still write to each other every Christmas」，至今仍與老師保持聯絡。" },
-      { q: "Whose teacher organised an educational visit to another country?", answer: 4, explanation: "E 段 Madame Roche 花一整年安排到法國家鄉的交換旅行（arranging an exchange trip），是出國參訪。" },
-      { q: "Who says the teacher's lessons felt more like entertainment than work?", answer: 2, explanation: "C 段 Ines 描述化學課有爆炸和汽水瓶火箭，「it never felt like study; it felt like play」，上課像玩樂。" },
-      { q: "Who was frightened of the teacher to begin with?", answer: 0, explanation: "A 段 Grace 說第一學期「I was scared stiff of her」，老師挑一下眉毛全班就安靜，起初非常害怕。" },
-      { q: "Whose teacher spotted a talent the writer didn't know they had?", answer: 1, explanation: "B 段老師說 Sam 有喜劇天分，而 Sam 自己都不相信（no one, least of all me, suspected I could perform），是被發掘的才能。" },
-      { q: "Who admits that the teacher's normal lessons were not actually very good?", answer: 4, explanation: "E 段 Lily 坦言「Madame Roche was not a brilliant classroom teacher」，文法解釋令人困惑、考試混亂，課堂教學不佳。" }
+      { q: "Who only came to appreciate the teacher a long time after leaving school?", answer: 0, explanation: "In A, Grace only understood Mrs Okafor's gift years later during her accountancy exams: 'the gratitude came a decade too late'." },
+      { q: "Whose choice of career was a direct result of the teacher's influence?", answer: 1, explanation: "In B, Sam is now a professional actor and can 'draw a straight line from his words ... to the job I do today'." },
+      { q: "Who regrets never thanking the teacher?", answer: 2, explanation: "In C, Ines never went back to thank Mr Silva after his sudden retirement: 'I still feel a sting of regret about that'." },
+      { q: "Who was given extra support during a difficult period in their family life?", answer: 3, explanation: "In D, while Kofi's parents were divorcing, Miss Hartley stayed behind twice a week to help him catch up." },
+      { q: "Who is still in touch with the teacher today?", answer: 3, explanation: "In D, fifteen years on, Kofi and Miss Hartley 'still write to each other every Christmas'." },
+      { q: "Whose teacher organised an educational visit to another country?", answer: 4, explanation: "In E, Madame Roche spent a whole year arranging an exchange trip to her home town in France." },
+      { q: "Who says the teacher's lessons felt more like entertainment than work?", answer: 2, explanation: "In C, the chemistry lessons with explosions and a lemonade-bottle rocket 'never felt like study; it felt like play'." },
+      { q: "Who was frightened of the teacher to begin with?", answer: 0, explanation: "In A, Grace admits that 'for the first term I was scared stiff of her', with a lifted eyebrow silencing the class." },
+      { q: "Whose teacher spotted a talent the writer didn't know they had?", answer: 1, explanation: "In B, Mr Delaney said Sam had a gift for comedy when 'no one, least of all me, suspected I could perform'." },
+      { q: "Who admits that the teacher's normal lessons were not actually very good?", answer: 4, explanation: "In E, Lily concedes 'Madame Roche was not a brilliant classroom teacher', with baffling grammar explanations and disorganised tests." }
     ]
   }
 ];

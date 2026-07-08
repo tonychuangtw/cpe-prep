@@ -27,16 +27,16 @@
         }
       ],
       questions: [
-        { q: "In which section does the writer openly admit to a deliberate, declared form of inaccuracy?", answer: 0, explanation: "A 段作者提出 scrupulous infidelity 的概念，表示自己會偏離原文，但會誠實告知讀者偏離之處，等於公開承認一種刻意且宣告過的不精確。" },
-        { q: "In which section does the writer describe a delayed appreciation of advice that once seemed oppressive?", answer: 1, explanation: "B 段作者當年覺得編輯的要求專橫（tyrannical），多年後才理解其用意，屬於事後才領悟的教誨。" },
-        { q: "In which section does the writer suggest that professional detachment conceals an unspoken emotional investment?", answer: 2, explanation: "C 段指出同行輕描淡寫地談論換下一個案子，但作者認為這種沉默掩蓋了譯者對作品投入的深厚情感。" },
-        { q: "In which section does the writer use an analogy with a manual trade to expose hypocrisy about payment?", answer: 3, explanation: "D 段以水管工為喻：沒有人會用浪漫化職業使命的方式來合理化低薪，藉此揭露出版界對譯者報酬的虛偽。" },
-        { q: "In which section does the writer argue that a current technological limitation is permanent rather than provisional?", answer: 4, explanation: "E 段作者押注機器對言外之意的失聰是結構性缺陷（structural），而非暫時的工程問題。" },
-        { q: "In which section does the writer compare the end result of translation to a work of visual art?", answer: 0, explanation: "A 段將譯文比作肖像畫（portrait）而非鏡子，指出它會美化、扭曲，並透露譯者本人的痕跡。" },
-        { q: "In which section does the writer warn that imitating a source language's structures produces incoherence rather than authenticity?", answer: 1, explanation: "B 段主張照搬原文的節奏與句法只會產生噪音（noise），像海關申報單一樣生硬，真正值得保留的異質性在思想層面。" },
-        { q: "In which section does the writer imply that readers are unaware of the translator's hidden presence in the text?", answer: 2, explanation: "C 段用走私（smuggle）與違禁品（contraband）的比喻，指譯者夾帶進作品的自我幾乎不會被讀者察覺。" },
-        { q: "In which section does the writer explain a decision to allow students to discover a lesson through their own experiment?", answer: 4, explanation: "E 段作者不再急著糾正學生，而是讓他們親自把文本餵給軟體，觀察反諷如何被沖洗殆盡，自行得出結論。" },
-        { q: "In which section does the writer justify remaining in the profession as resistance to cultural isolation?", answer: 3, explanation: "D 段作者坦言自己堅持下去不是出於聖人情操，而是因為文學若封閉於國界之內形同慢性窒息。" }
+        { q: "In which section does the writer openly admit to a deliberate, declared form of inaccuracy?", answer: 0, explanation: "A offers \"a scrupulous infidelity: I will lie to you, but I will tell you where the lies are\" — a deliberate, openly declared form of inaccuracy." },
+        { q: "In which section does the writer describe a delayed appreciation of advice that once seemed oppressive?", answer: 1, explanation: "B found the editor's rule \"tyrannical\" at the time and only \"years later did I grasp her point\" — a delayed appreciation of advice that once seemed oppressive." },
+        { q: "In which section does the writer suggest that professional detachment conceals an unspoken emotional investment?", answer: 2, explanation: "C notes colleagues speak briskly of moving on \"as though the intimacy were merely contractual,\" a silence that hides how much of themselves translators invest in the work." },
+        { q: "In which section does the writer use an analogy with a manual trade to expose hypocrisy about payment?", answer: 3, explanation: "D uses the plumber analogy — \"no one romanticises the plumber's calling in order to justify paying him badly\" — to expose the hypocrisy of pious rhetoric covering low fees." },
+        { q: "In which section does the writer argue that a current technological limitation is permanent rather than provisional?", answer: 4, explanation: "E wagers that the machine's deafness to implication \"is not a temporary engineering shortfall but a structural one\" — a permanent, not provisional, limitation." },
+        { q: "In which section does the writer compare the end result of translation to a work of visual art?", answer: 0, explanation: "A compares the finished version to \"a portrait\" rather than a mirror — a work of visual art that flatters, distorts, and confesses more about the painter than the sitter." },
+        { q: "In which section does the writer warn that imitating a source language's structures produces incoherence rather than authenticity?", answer: 1, explanation: "B argues that transcribing another language's rhythms \"produces not strangeness but noise,\" reading \"like a customs declaration\" — the foreignness worth keeping lies in the thought." },
+        { q: "In which section does the writer imply that readers are unaware of the translator's hidden presence in the text?", answer: 2, explanation: "C's imagery of smuggling and \"contraband\" implies the self the translator slips into the work is never meant to be detected by the reader." },
+        { q: "In which section does the writer explain a decision to allow students to discover a lesson through their own experiment?", answer: 4, explanation: "E no longer rushes to correct students, instead letting them feed Machado de Assis into the software and watch the irony get rinsed away — learning by their own experiment." },
+        { q: "In which section does the writer justify remaining in the profession as resistance to cultural isolation?", answer: 3, explanation: "D persists \"not out of saintliness but because the alternative, a literature sealed inside its borders, strikes me as a slow suffocation\" — staying on as resistance to cultural isolation." }
       ]
     },
     {
@@ -69,16 +69,16 @@
         }
       ],
       questions: [
-        { q: "In which section does the historian describe a community whose success accelerated its own extinction?", answer: 0, explanation: "A 段的和諧會社群因獨身制而無後代，財富累積越多，成員卻同步老去，可謂繁榮致死（prospered itself to death）。" },
-        { q: "In which section does the historian attribute a community's collapse to mundane practical deficiencies rather than flawed ideals?", answer: 1, explanation: "B 段指出失敗原因不是理想太高，而是排水設施太差，並主張要多看水管帳單而非招募說明書。" },
-        { q: "In which section does the historian challenge the very criteria by which these communities are judged unsuccessful?", answer: 2, explanation: "C 段質疑失敗這個分類本身，主張應像評價大學看畢業生一樣，以社群解散後的深遠影響來衡量成就。" },
-        { q: "In which section does the historian identify succession as the structural weakness of charismatic communities?", answer: 3, explanation: "D 段指出建立在個人魅力上的社群無法繼承領袖權威，魅力不像財產可以傳承，只能被爭奪。" },
-        { q: "In which section does the historian recount abandoning an initially mocking stance towards the subject?", answer: 4, explanation: "E 段作者自述原本帶著揭穿者的訕笑（settled smirk）研究此題，讀了織工日記後反諷無處立足，態度徹底轉變。" },
-        { q: "In which section does the historian argue that domestic inequality shortened the lifespan of radical experiments?", answer: 5, explanation: "F 段以比較研究指出，真正重新分配家務勞動的社群平均存續時間長一倍，失敗常出在誰洗碗這個盲點。" },
-        { q: "In which section does the historian defend founders against the charge of irrationality by appealing to their beliefs?", answer: 0, explanation: "A 段作者認為創始者早已預見人口算術的結局仍執意前行，斥其非理性的史家只是拒絕認真看待其神學。" },
-        { q: "In which section does the historian note that official records systematically omitted certain members' labour?", answer: 5, explanation: "F 段提到會議紀錄記載男性辯論廢除貨幣，而做飯的女性卻未被記入（unminuted），凸顯檔案的系統性缺漏。" },
-        { q: "In which section does the historian emphasise that community members assessed their situation more clear-sightedly than outsiders?", answer: 4, explanation: "E 段指出這些人不是受騙者，多數成員比批評者更誠實地計算實驗的代價，仍選擇留下。" },
-        { q: "In which section does the historian trace a community's ideas into later mainstream politics?", answer: 2, explanation: "C 段提到會堂裡演練過的論辯，數十年後重現於全國性立法之中，顯示烏托邦思想流入主流政治。" }
+        { q: "In which section does the historian describe a community whose success accelerated its own extinction?", answer: 0, explanation: "A's Harmonist settlement \"prospered itself to death\": celibacy meant no new generation, so the community aged in lockstep even as its wealth grew." },
+        { q: "In which section does the historian attribute a community's collapse to mundane practical deficiencies rather than flawed ideals?", answer: 1, explanation: "B says the experiment failed \"not because the ideals were too lofty but because the drains were too poor,\" preferring plumbing invoices to the prospectus." },
+        { q: "In which section does the historian challenge the very criteria by which these communities are judged unsuccessful?", answer: 2, explanation: "C challenges \"the category of failure\" itself, arguing that if a university is judged by its graduates rather than its buildings, utopias deserve the same courtesy." },
+        { q: "In which section does the historian identify succession as the structural weakness of charismatic communities?", answer: 3, explanation: "D concludes that communities built on \"a single luminous biography\" discover charisma \"cannot be inherited, only fought over\" — succession is the structural weakness." },
+        { q: "In which section does the historian recount abandoning an initially mocking stance towards the subject?", answer: 4, explanation: "E \"came to this subject as a debunker\" with \"a settled smirk\"; the weaver's diary left the irony \"nowhere to stand,\" curing the mocking stance." },
+        { q: "In which section does the historian argue that domestic inequality shortened the lifespan of radical experiments?", answer: 5, explanation: "F's comparative data show communes that genuinely redistributed domestic labour lasted on average twice as long — the failure was often over \"who was washing the dishes.\"" },
+        { q: "In which section does the historian defend founders against the charge of irrationality by appealing to their beliefs?", answer: 0, explanation: "A notes the founders \"foresaw this arithmetic perfectly well and proceeded anyway\"; historians who call this irrational have \"simply declined to take the theology seriously.\"" },
+        { q: "In which section does the historian note that official records systematically omitted certain members' labour?", answer: 5, explanation: "F records men debating the abolition of money in the minutes \"while women, unminuted, cooked for sixty\" — the official record systematically omitted their labour." },
+        { q: "In which section does the historian emphasise that community members assessed their situation more clear-sightedly than outsiders?", answer: 4, explanation: "E insists \"These people were not dupes; most could tabulate the experiment's costs more honestly than their critics\" — members saw their situation more clearly than outsiders." },
+        { q: "In which section does the historian trace a community's ideas into later mainstream politics?", answer: 2, explanation: "C notes that the arguments rehearsed in the commune's assembly hall \"resurfaced, decades later, in national legislation\" — utopian ideas flowing into mainstream politics." }
       ]
     },
     {
@@ -103,16 +103,16 @@
         }
       ],
       questions: [
-        { q: "In which section does the writer personify sleeplessness as a critical companion?", answer: 0, explanation: "A 段把失眠擬人化為坐在對面的第二個自我，一位比白天的編輯更坦率、更不留情的對話者。" },
-        { q: "In which section does the writer retrospectively dismiss the creative value once attributed to sleepless nights?", answer: 1, explanation: "B 段作者康復後回顧，發現當年神話化為洞見熔爐的不眠夜，其實只是披著深刻外衣的循環恐懼。" },
-        { q: "In which section does the writer frame insomnia as an inheritance rather than an illness?", answer: 2, explanation: "C 段將失眠理解為沿母系傳下的傳家物（heirloom）與守夜，而非醫療手冊所說的睡眠障礙。" },
-        { q: "In which section does the writer criticise the commercial exploitation of wakefulness?", answer: 3, explanation: "D 段列舉失眠回憶錄、歌單、精品檯燈等現象，批評市場把不眠之夜變成可販售的內容。" },
-        { q: "In which section does the writer acknowledge complicity in the very trend being criticised?", answer: 3, explanation: "D 段作者自承這篇文章本身也在將深夜時光變現（this one included），甚至發現自己失眠時已在為日後寫作旁白。" },
-        { q: "In which section does the writer concede that work produced during the night is worthless while its judgments are reliable?", answer: 0, explanation: "A 段說凌晨寫下的段落不堪使用，是凌晨四點的方言，但那位對話者下的評斷（verdicts）卻是準確的。" },
-        { q: "In which section does the writer describe a family's tacit acceptance of nocturnal behaviour?", answer: 2, explanation: "C 段提到祖母夜夜在走廊踱步，全家把腳步聲當作天氣看待：會被提起，卻從不被質問。" },
-        { q: "In which section does the writer question the reliability of most accounts of the condition?", answer: 1, explanation: "B 段指出失眠文學幾乎全由患者書寫，如同讓船難生還者撰寫海洋學，因此自己要提出少數派報告。" },
-        { q: "In which section does the writer discover that genuine productivity occurred at a different time of day?", answer: 1, explanation: "B 段作者發現治療恢復睡眠後，真正的寫作一直發生在被歸還的早晨，而非黑夜。" },
-        { q: "In which section does the writer lament the loss of one of the last unmeasured stretches of time?", answer: 3, explanation: "D 段哀嘆不眠之夜原是少數未被殖民的領土，沒有會議也沒有績效指標，如今其私密性已被出售。" }
+        { q: "In which section does the writer personify sleeplessness as a critical companion?", answer: 0, explanation: "A personifies sleeplessness as \"a second self\" taking \"the chair opposite\" — an interlocutor \"more candid than the daytime editor, less merciful.\"" },
+        { q: "In which section does the writer retrospectively dismiss the creative value once attributed to sleepless nights?", answer: 1, explanation: "B, having recovered, finds the nights once \"mythologised as a crucible of insight\" were really \"circular dread dressed in the costume of profundity.\"" },
+        { q: "In which section does the writer frame insomnia as an inheritance rather than an illness?", answer: 2, explanation: "C reframes what pamphlets call a sleep disorder as \"an heirloom, a vigil handed down the maternal line\" — an inheritance rather than an illness." },
+        { q: "In which section does the writer criticise the commercial exploitation of wakefulness?", answer: 3, explanation: "D lists insomnia memoirs, playlists, and boutique lamps, criticising a market that has turned the wakeful night \"into content.\"" },
+        { q: "In which section does the writer acknowledge complicity in the very trend being criticised?", answer: 3, explanation: "D concedes complicity with \"this one included\" — the essay itself monetises the small hours — and catches the writer \"narrating the experience for future use.\"" },
+        { q: "In which section does the writer concede that work produced during the night is worthless while its judgments are reliable?", answer: 0, explanation: "A calls the paragraphs written at night \"unusable, being written in the dialect of four in the morning,\" yet \"the verdicts are sound.\"" },
+        { q: "In which section does the writer describe a family's tacit acceptance of nocturnal behaviour?", answer: 2, explanation: "C describes the grandmother's nightly pacing being treated \"as weather: remarked upon, never questioned\" — the family's tacit acceptance." },
+        { q: "In which section does the writer question the reliability of most accounts of the condition?", answer: 1, explanation: "B observes the literature of insomnia is written by its sufferers, \"like letting shipwreck survivors write the oceanography,\" and files \"a minority report\" against it." },
+        { q: "In which section does the writer discover that genuine productivity occurred at a different time of day?", answer: 1, explanation: "B finds that once treatment restored sleep, \"the mornings were where the actual writing had been happening all along\" — not the night." },
+        { q: "In which section does the writer lament the loss of one of the last unmeasured stretches of time?", answer: 3, explanation: "D laments that the wakeful night was \"one of the few uncolonised territories left, a stretch of time with no meetings and no metrics,\" whose privacy \"has been sold.\"" }
       ]
     },
     {
@@ -141,16 +141,16 @@
         }
       ],
       questions: [
-        { q: "In which section does the musician compare improvising to legal argument?", answer: 0, explanation: "A 段以法理學（jurisprudence）為喻：每個樂句都是呈堂證據，下一句必須回應前一句，否則便不連貫。" },
-        { q: "In which section does the musician claim that their tradition never treated improvisation as a distinct concept?", answer: 1, explanation: "B 段指出成長的傳統中根本沒有即興這個詞，只有演奏，變化像口音一樣自然發生在意識層之下。" },
-        { q: "In which section does the musician credit a physical setback with revealing an artistic truth?", answer: 2, explanation: "C 段作者手部受傷後被迫離開慣性路徑，才發現所謂自發性其實是庫存，傷害反而讓他聽見自己的侷限。" },
-        { q: "In which section does the musician argue that ensemble playing is more about listening than self-expression?", answer: 3, explanation: "D 段說舞台上自己主要是在稽核（auditing）其他樂手，調整聲部去支撐鼓手或為歌者留白，而非表達自我。" },
-        { q: "In which section does the musician describe technology mirroring their habits so faithfully that it provokes deviation?", answer: 4, explanation: "E 段的軟體以孝順般的精準預測作者的慣性，搶先奏出他正要演奏的內容，迫使他出於自尊改弦更張。" },
-        { q: "In which section does the musician correlate memorable self-regard with inferior performances?", answer: 3, explanation: "D 段提到事後清楚記得自己表現精彩的那些夜晚，在錄音裡反而是最弱的，而超越性的夜晚往往記不得自己彈了什麼。" },
-        { q: "In which section does the musician dismiss a mystical explanation in favour of an everyday one?", answer: 1, explanation: "B 段說裝飾音的選擇無法回答，不是因為過程神祕，而是因為它像走過自家廚房一樣屬於日常（domestic）。" },
-        { q: "In which section does the musician define the art form as public self-correction?", answer: 4, explanation: "E 段結尾給出定義：即興是一個人當眾發現自己原本的打算是錯的所發出的聲音。" },
-        { q: "In which section does the musician express distrust of performers who mistake lack of notation for lack of accountability?", answer: 0, explanation: "A 段明言不信任那些把沒有樂譜當成沒有後果的樂手，真正的即興是受自己三十秒前所言約束的藝術。" },
-        { q: "In which section does the musician admit that supposed spontaneity was largely pre-fabricated material?", answer: 2, explanation: "C 段承認過去所稱的自發性實為倉庫裡取出、略施粉飾重組的現成樂句（licks），受傷鎖住倉庫後真相畢露。" }
+        { q: "In which section does the musician compare improvising to legal argument?", answer: 0, explanation: "A likens improvisation to \"jurisprudence\": every phrase \"enters into evidence\" and the next \"must answer it or be ruled incoherent\" — a legal-argument analogy." },
+        { q: "In which section does the musician claim that their tradition never treated improvisation as a distinct concept?", answer: 1, explanation: "B says \"no one used the word improvisation at all; there was simply playing,\" with variation happening \"the way an accent happens, below the level of decision.\"" },
+        { q: "In which section does the musician credit a physical setback with revealing an artistic truth?", answer: 2, explanation: "C credits the hand injury with a service no teacher had managed: forced off habitual pathways, the musician heard the limitations — and limitation \"is the only genuine engine of style.\"" },
+        { q: "In which section does the musician argue that ensemble playing is more about listening than self-expression?", answer: 3, explanation: "D says \"I am not principally expressing myself, I am auditing everyone else,\" adjusting the part to shore up the drummer or leave air for the singer." },
+        { q: "In which section does the musician describe technology mirroring their habits so faithfully that it provokes deviation?", answer: 4, explanation: "E's software \"anticipates my habits with filial accuracy; it plays what I was about to play, which forces me, out of sheer pride, to play something else.\"" },
+        { q: "In which section does the musician correlate memorable self-regard with inferior performances?", answer: 3, explanation: "D notes the nights of remembering \"my own brilliance in detail were, on the recordings, the weakest,\" while the transcendent nights left no memory of what was personally played." },
+        { q: "In which section does the musician dismiss a mystical explanation in favour of an everyday one?", answer: 1, explanation: "B says the question of choosing an ornament is unanswerable \"not because the process is mystical but because it is domestic\" — like walking across one's own kitchen." },
+        { q: "In which section does the musician define the art form as public self-correction?", answer: 4, explanation: "E ends with the definition: improvisation is \"the sound of a person discovering, in public, that they were wrong about what they were going to do\" — public self-correction." },
+        { q: "In which section does the musician express distrust of performers who mistake lack of notation for lack of accountability?", answer: 0, explanation: "A distrusts \"the ones who treat the absence of a score as the absence of consequence\" — real improvisation is being bound by what you said thirty seconds ago." },
+        { q: "In which section does the musician admit that supposed spontaneity was largely pre-fabricated material?", answer: 2, explanation: "C admits that what had been called spontaneity \"was actually inventory, licks retrieved from a warehouse and reassembled with cosmetic changes\" — exposed once the injury locked the warehouse." }
       ]
     }
   ];

@@ -15,7 +15,7 @@ var BANK = [
           "show that people ignore advice from experts"
         ],
         "answer": 0,
-        "explanation": "作者用擬人化的幽默筆法（app 對著空無一人的虛空發出「哀怨的通知」）描寫新決心崩潰後的典型景象，與健身房會員卡積灰並列。文中並未批評科技公司或否定數位工具本身。"
+        "explanation": "The personified app sending \"plaintive notifications into the void\" is a gently humorous image of what a collapsed resolution looks like, paired with the dusty gym membership. The writer neither criticises tech companies nor dismisses digital tools."
       },
       {
         "q": "What point does the writer make about the transfer of control to the basal ganglia in the second paragraph?",
@@ -26,7 +26,7 @@ var BANK = [
           "It can be prevented by keeping the prefrontal cortex active"
         ],
         "answer": 1,
-        "explanation": "文中稱這種委派是「a triumph of efficiency」（效率的勝利），但系統「indifferent to whether the routines... serve our declared goals or quietly sabotage them」，即機制本身有益，卻不管自動化的行為是否符合我們的目標。"
+        "explanation": "The delegation is called \"a triumph of efficiency\", yet the system is \"indifferent to whether the routines it automates serve our declared goals or quietly sabotage them\" - beneficial in itself but blind to our aims."
       },
       {
         "q": "The writer describes the two bursts of neural activity as 'quotation marks' to convey that",
@@ -37,7 +37,7 @@ var BANK = [
           "the start and end of the maze are the most rewarding stages"
         ],
         "answer": 2,
-        "explanation": "引號比喻對應前文的 chunk：神經活動只在序列開頭與結尾出現，「bracketing the sequence」，中間「largely opaque」，表示整段行為被打包成一個單位，過程中幾乎沒有意識監控。"
+        "explanation": "The metaphor echoes the earlier \"chunk\": activity collapses to bursts at the start and end, \"bracketing the sequence\", with the middle \"largely opaque\" - the behaviour is packaged as a unit with little conscious monitoring inside."
       },
       {
         "q": "The writer mentions driving to the office on a Saturday in order to",
@@ -48,7 +48,7 @@ var BANK = [
           "offer an everyday human parallel to the rats' persistence after reward devaluation"
         ],
         "answer": 3,
-        "explanation": "老鼠在獎賞貶值後仍照跑迷宮，說明習慣與結果脫鉤；週六仍開車往辦公室是人類版的同一現象——線索觸發整套行為，即使目的（上班）已不存在。這是類比而非質疑老鼠實驗。"
+        "explanation": "The rats kept running the maze after the reward was devalued, and \"Anyone who has driven halfway to the office on a Saturday will recognise the phenomenon\" - a human parallel to a habit detached from its purpose, offered as analogy, not doubt."
       },
       {
         "q": "According to the fifth paragraph, why does 'trying harder' often fail to change a habit?",
@@ -59,7 +59,7 @@ var BANK = [
           "Environmental cues are impossible to identify in daily life"
         ],
         "answer": 0,
-        "explanation": "文中說意志力運作於前額葉系統，「but a mature habit no longer resides there」，像對聽不懂的機器喊指令。失敗原因是施力對象錯誤，而非動機不足、皮質退化或線索無法辨認。"
+        "explanation": "Effortful control operates in the prefrontal system, \"but a mature habit no longer resides there\" - like shouting at a machine in a language it does not speak. The effort is aimed at the wrong system, not undermined by weak motivation or cortical decline."
       },
       {
         "q": "In the final paragraph, the writer's main purpose is to",
@@ -70,7 +70,7 @@ var BANK = [
           "summarise the disagreements among neuroscientists about habits"
         ],
         "answer": 1,
-        "explanation": "結尾明言「None of this licenses fatalism」並要求「a change of self-description」：失敗者「has not revealed a defect of character; they have run a poorly designed experiment」。重點是重新定義失敗並重新設計條件，而非宿命論或叫人搬家。"
+        "explanation": "The ending insists \"None of this licenses fatalism\" and demands \"a change of self-description\": the failed resolver \"has not revealed a defect of character; they have run a poorly designed experiment\". The purpose is reframing, not fatalism or advice to move house."
       }
     ]
   },
@@ -88,7 +88,7 @@ var BANK = [
           "It makes travellers pause and admire its craftsmanship."
         ],
         "answer": 1,
-        "explanation": "第一段指出標示的最高讚美是 \"how invisible it remains while doing its work\"，乘客順利到達登機門而不覺得迷路，代表設計成功地不被注意。故選 B。"
+        "explanation": "Paragraph one says signage is judged by \"how invisible it remains while doing its work\": when a traveller reaches the gate without feeling lost, the design has succeeded by passing unnoticed. So B."
       },
       {
         "q": "Why does the writer describe airports as a hostile environment for communication?",
@@ -99,7 +99,7 @@ var BANK = [
           "Loud announcements drown out any visual messaging."
         ],
         "answer": 0,
-        "explanation": "第二段提到乘客 \"anxious, sleep-deprived and burdened with luggage\"、常用第二或第三語言，導致 \"cognitive bandwidth... shrinks dramatically\"，即認知能力下降使溝通困難。故選 A。"
+        "explanation": "Paragraph two describes passengers as \"anxious, sleep-deprived and burdened with luggage\", often navigating in a second or third language, so \"cognitive bandwidth... shrinks dramatically\" - reduced capacity to process information. So A."
       },
       {
         "q": "What does the term \"progressive disclosure\" refer to in the text?",
@@ -110,7 +110,7 @@ var BANK = [
           "Increasing the size of lettering as passengers approach the gate."
         ],
         "answer": 2,
-        "explanation": "第三段說明 \"A sign at a decision point tells passengers only what they need to know at that moment; everything else is deferred to the next sign\"，即分段揭露資訊。故選 C。"
+        "explanation": "Paragraph three explains that \"A sign at a decision point tells passengers only what they need to know at that moment; everything else is deferred to the next sign\" - information is rationed step by step. So C."
       },
       {
         "q": "What point is made by the comparison to \"captioning a film that was shot out of focus\"?",
@@ -121,7 +121,7 @@ var BANK = [
           "Signs cannot fix the problems of a poorly designed building."
         ],
         "answer": 3,
-        "explanation": "第四段指出 \"even the most disciplined signage cannot compensate for a badly organised building\"，替失焦的電影上字幕比喻在混亂建築上補標示是徒勞。故選 D。"
+        "explanation": "Paragraph four states that \"even the most disciplined signage cannot compensate for a badly organised building\"; captioning an out-of-focus film conveys the futility of retrofitting signs onto a confusing layout. So D."
       },
       {
         "q": "How is the tension between retail revenue and passenger needs usually resolved?",
@@ -132,7 +132,7 @@ var BANK = [
           "Designers always prioritise the operator's balance sheet."
         ],
         "answer": 1,
-        "explanation": "第五段說妥協方式是 \"meandering is tolerated before security... but never between security and the gate\"，即安檢前可繞路、安檢後必須直達。故選 B。"
+        "explanation": "Paragraph five says the usual compromise is that \"meandering is tolerated before security... but never between security and the gate\" - indirect routes are allowed only pre-security. So B."
       },
       {
         "q": "What is the veteran designers' view of digital navigation technology?",
@@ -143,7 +143,7 @@ var BANK = [
           "It is too expensive for most airports to adopt."
         ],
         "answer": 2,
-        "explanation": "末段資深設計師對「標示消失」的預測持懷疑態度，認為未來是 \"a layered one, in which digital tools personalise the journey while the fixed system underneath guarantees that nobody is stranded\"，即數位工具與固定標示並存互補。故選 C。"
+        "explanation": "Veteran designers are sceptical of predictions that signs will disappear; the likelier future is \"a layered one, in which digital tools personalise the journey while the fixed system underneath guarantees that nobody is stranded\" - complement, not replacement. So C."
       }
     ]
   },
@@ -161,7 +161,7 @@ var BANK = [
           "Deutsche Bahn was expanding its sleeper network."
         ],
         "answer": 1,
-        "explanation": "首段描述廉航搶走市場、高鐵壓縮版圖、營運者 \"quietly withdrawing services\"，德鐵 2016 年更放棄整個臥鋪網絡，夜車正走向衰亡。故選 B。"
+        "explanation": "The opening describes budget airlines gutting the market, high-speed rail shrinking the daytime map, and operators \"quietly withdrawing services\", with Deutsche Bahn abandoning its sleeper network in 2016 - night trains were in decline. So B."
       },
       {
         "q": "What role did the concept of flygskam play in the revival?",
@@ -172,7 +172,7 @@ var BANK = [
           "It was a marketing slogan invented by Nightjet."
         ],
         "answer": 0,
-        "explanation": "第二段指出 flygskam（飛行羞恥）帶來 \"a cohort of passengers willing to trade a two-hour flight for a fourteen-hour journey\"，成為夜車復興的意外助力。故選 A。"
+        "explanation": "Paragraph two says flygskam (flight shame) brought \"a cohort of passengers willing to trade a two-hour flight for a fourteen-hour journey\" - an unexpected ally supplying environmentally motivated travellers. So A."
       },
       {
         "q": "Which of the following is NOT mentioned as an economic obstacle facing night trains?",
@@ -183,7 +183,7 @@ var BANK = [
           "Passengers refuse to pay more than airline ticket prices."
         ],
         "answer": 3,
-        "explanation": "第三段提到臥鋪車載客少成本高、跨國技術標準使新車認證費時、過境軌道使用費層層疊加，但並未提到乘客拒付高於機票的價格。故選 D。"
+        "explanation": "Paragraph three mentions sleeper carriages carrying fewer passengers at higher cost, varied national standards delaying new carriages, and track access charges stacking up across borders - but never says passengers refuse to pay more than airfares. So D."
       },
       {
         "q": "What do advocates identify as the fundamental unfairness in the market?",
@@ -194,7 +194,7 @@ var BANK = [
           "Railways are exempt from environmental regulations."
         ],
         "answer": 1,
-        "explanation": "第四段指出 \"Aviation fuel for international flights remains untaxed... while railways pay energy taxes and access charges at every turn\"，支持者認為問題在不公平的競爭環境。故選 B。"
+        "explanation": "Paragraph four states that \"Aviation fuel for international flights remains untaxed... while railways pay energy taxes and access charges at every turn\" - advocates blame an uneven playing field. So B."
       },
       {
         "q": "How are operators adapting the passenger experience for the new clientele?",
@@ -205,7 +205,7 @@ var BANK = [
           "By replacing sleeper cars with ordinary seated carriages."
         ],
         "answer": 2,
-        "explanation": "第五段說新客群要隱私、wifi 與像樣的早餐，新設計包括 \"capsule-style pods for solo travellers, lockable compartments... interiors that borrow more from boutique hotels\"。故選 C。"
+        "explanation": "Paragraph five says the new clientele wants privacy, wifi and a decent breakfast; new designs feature \"capsule-style pods for solo travellers, lockable compartments... interiors that borrow more from boutique hotels\". So C."
       },
       {
         "q": "What is the writer's conclusion about the future of night trains?",
@@ -216,7 +216,7 @@ var BANK = [
           "Subsidies will certainly keep the services running indefinitely."
         ],
         "answer": 0,
-        "explanation": "末段明言 \"Whether the revival endures will depend less on sentiment than on spreadsheets\"，需求真實但能否承受無補貼的價格仍未證實，關鍵在財務可行性。故選 A。"
+        "explanation": "The final paragraph states \"Whether the revival endures will depend less on sentiment than on spreadsheets\": demand is real, but surviving unsubsidised prices is unproven - financial viability is decisive. So A."
       }
     ]
   },
@@ -234,7 +234,7 @@ var BANK = [
           "Between curators who collect and trustees who spend."
         ],
         "answer": 1,
-        "explanation": "首段先描述大眾想像博物館是 \"a vault\" 永久保存一切，隨即指出現實是多數藏品堆在昂貴的恆溫庫房中，\"The reality is messier\"。故選 B。"
+        "explanation": "The opening contrasts the public image of a museum as \"a vault\" where objects remain forever with the messier reality: most holdings sit in climate-controlled storage \"that costs money every hour of every day\". So B."
       },
       {
         "q": "Why is the deaccessioning process surrounded by elaborate safeguards?",
@@ -245,7 +245,7 @@ var BANK = [
           "Because commercial auction houses demand extensive paperwork."
         ],
         "answer": 0,
-        "explanation": "第二段說明藏品屬 \"public trust\"，出售會引起 \"a suspicion that curators are betraying that trust\"，因此業界以層層程序保障。故選 A。"
+        "explanation": "Paragraph two explains collections are held in \"public trust\", so disposal \"invites a suspicion that curators are betraying that trust\", and the profession has responded with elaborate safeguards. So A."
       },
       {
         "q": "Which of the following is given as a legitimate ground for deaccessioning?",
@@ -256,7 +256,7 @@ var BANK = [
           "The object is too expensive to insure."
         ],
         "answer": 2,
-        "explanation": "第三段列舉正當理由：重複件、無法修復的損壞，以及 \"it may fall outside the institution's stated mission\"，並舉當代設計博物館中的維多利亞標本為例。故選 C。"
+        "explanation": "Paragraph three lists legitimate grounds - duplicates, irreparable deterioration, and that \"it may fall outside the institution's stated mission\", illustrated by Victorian taxidermy in a contemporary design museum. So C."
       },
       {
         "q": "According to the traditional consensus, how may proceeds from sales be used?",
@@ -267,7 +267,7 @@ var BANK = [
           "Only to acquire new works or directly care for the collection."
         ],
         "answer": 3,
-        "explanation": "第四段指出英美專業共識是收益 \"may be spent only on acquiring new works or... on the direct care of the collection\"，用於營運赤字、薪資或修屋頂被視為大忌。故選 D。"
+        "explanation": "Paragraph four says the Anglo-American consensus is that proceeds \"may be spent only on acquiring new works or... on the direct care of the collection\"; using them for deficits, salaries or the roof is \"a cardinal sin\". So D."
       },
       {
         "q": "What argument did critics of the strict rule make during the pandemic?",
@@ -278,7 +278,7 @@ var BANK = [
           "Selling art is acceptable only if prices are historically high."
         ],
         "answer": 0,
-        "explanation": "第五段引述批評者：危機揭露虛偽，\"a museum that lets staff go while sitting on billions in stored, unseen art has made a moral choice\"。故選 A。"
+        "explanation": "Paragraph five quotes the critics: the crisis exposed a hypocrisy, since \"a museum that lets staff go while sitting on billions in stored, unseen art has made a moral choice, whether or not it admits it\". So A."
       },
       {
         "q": "What view does the writer present in the final paragraph?",
@@ -289,7 +289,7 @@ var BANK = [
           "Future generations should not be burdened with conservation duties."
         ],
         "answer": 1,
-        "explanation": "末段指出 \"thoughtful deaccessioning is not the opposite of stewardship but a component of it\"，讓博物館能真正照顧所保留的藏品；真正的醜聞是當初收藏得太隨便。故選 B。"
+        "explanation": "The final paragraph argues that \"thoughtful deaccessioning is not the opposite of stewardship but a component of it\", ensuring a museum can genuinely care for what it keeps; the real scandal was casual over-acquisition. So B."
       }
     ]
   },
@@ -307,7 +307,7 @@ var BANK = [
           "It has become a branch of economics concerned with pricing."
         ],
         "answer": 2,
-        "explanation": "首段說明排隊理論原是應用數學分支，後來 \"has acquired a psychological wing\"，關注等待的感受而非實際長度。數學並未被拋棄，是新增心理面向。故選 C。"
+        "explanation": "Paragraph one says queueing theory began as applied mathematics and \"has acquired a psychological wing\" devoted to how long waits feel. Mathematics was not abandoned; a psychological branch was added. So C."
       },
       {
         "q": "Why can a sign announcing a thirty-minute wait reduce complaints?",
@@ -318,7 +318,7 @@ var BANK = [
           "Because the sign shortens the actual waiting time."
         ],
         "answer": 0,
-        "explanation": "第二段指出 \"Uncertain waits feel longer than known, finite ones\"，所以告示牌即使不改變實際等待時間也能減少抱怨。故選 A。"
+        "explanation": "Paragraph two states that \"Uncertain waits feel longer than known, finite ones\", which is why the sign reduces complaints \"even when the wait itself is unchanged\". So A."
       },
       {
         "q": "What did the New York field experiments reveal about queue enforcement?",
@@ -329,7 +329,7 @@ var BANK = [
           "People at the front of the queue always confronted intruders."
         ],
         "answer": 1,
-        "explanation": "第三段描述實驗發現插隊者約半數被質疑，且 \"the burden of enforcement fell overwhelmingly on the person standing immediately behind the point of intrusion\"。故選 B。"
+        "explanation": "The experiments found intruders were challenged in about half of cases, and \"the burden of enforcement fell overwhelmingly on the person standing immediately behind the point of intrusion\" - a single delegated sentry. So B."
       },
       {
         "q": "What point does the writer make about the British single-file queue?",
@@ -340,7 +340,7 @@ var BANK = [
           "It is a learned convention rooted in wartime rationing."
         ],
         "answer": 3,
-        "explanation": "第四段指出英式單列排隊是 \"a learned convention\"，歷史學家追溯其定型至 \"wartime rationing, not an instinct\"，並非普世本能。故選 D。"
+        "explanation": "Paragraph four calls the British single file \"a learned convention\" whose entrenchment historians trace to \"wartime rationing, not an instinct\" - not a universal impulse. So D."
       },
       {
         "q": "What asymmetry do studies of paid queue-jumping identify?",
@@ -351,7 +351,7 @@ var BANK = [
           "Hospitals allow queue-jumping while airports forbid it."
         ],
         "answer": 0,
-        "explanation": "第四段末指出奇特的不對稱：\"people resent those who buy their way forward less than they resent the institution that sold the privilege\"，即人們更怨恨販售特權的機構。故選 A。"
+        "explanation": "The text notes a curious asymmetry: \"people resent those who buy their way forward less than they resent the institution that sold the privilege\" - the seller draws more resentment than the buyer. So A."
       },
       {
         "q": "Why do banks and airports favour the serpentine single-line system?",
@@ -362,7 +362,7 @@ var BANK = [
           "It requires fewer staff to manage than other systems."
         ],
         "answer": 1,
-        "explanation": "第五段說蛇形單線平均未必更快，\"but it eliminates the special misery of watching an adjacent lane move quicker\"，也就是消除 queue rage 的來源。故選 B。"
+        "explanation": "Paragraph five says the serpentine line is often no faster on average, \"but it eliminates the special misery of watching an adjacent lane move quicker\" - the source of queue rage. So B."
       }
     ]
   },
@@ -380,7 +380,7 @@ var BANK = [
           "Photographs of the sky have become less accurate."
         ],
         "answer": 2,
-        "explanation": "首段指出改變的不是星星本身而是 \"our diminishing ability to see them\"，人工光害使城市孩子只能在照片中看到銀河。故選 C。"
+        "explanation": "Paragraph one says what has changed is not the stars but \"our diminishing ability to see them\"; artificial light means city children encounter the Milky Way in photographs rather than overhead. So C."
       },
       {
         "q": "Why do satellite measurements underestimate the growth of light pollution?",
@@ -391,7 +391,7 @@ var BANK = [
           "They were switched off when LEDs were introduced."
         ],
         "answer": 1,
-        "explanation": "第二段說明主要衛星儀器 \"cannot detect much of the blue light emitted by modern LED street lamps\"，因此城市換裝 LED 後衛星數據低估了天空變亮的程度。故選 B。"
+        "explanation": "Paragraph two explains the principal satellite instruments \"cannot detect much of the blue light emitted by modern LED street lamps\", so after cities switched to LEDs, satellite data understated the brightening. So B."
       },
       {
         "q": "How do projects like Globe at Night overcome the crudeness of individual reports?",
@@ -402,7 +402,7 @@ var BANK = [
           "By accumulating tens of thousands of reports so that noise cancels out."
         ],
         "answer": 3,
-        "explanation": "第三段承認單一回報粗糙，但 \"when tens of thousands of reports accumulate across years and continents, the noise cancels and a signal emerges\"，靠大量數據抵銷誤差。故選 D。"
+        "explanation": "Paragraph three concedes each report is crude, but \"when tens of thousands of reports accumulate across years and continents, the noise cancels and a signal emerges\" - volume offsets individual error. So D."
       },
       {
         "q": "How did the projects respond to sceptics who doubted untrained observers?",
@@ -413,7 +413,7 @@ var BANK = [
           "By replacing volunteers with automated cameras."
         ],
         "answer": 0,
-        "explanation": "第四段說計畫 \"answered with methodology rather than indignation\"：回報與已知天況交叉比對、統計模型處理觀察者差異，並以手持測光儀驗證。故選 A。"
+        "explanation": "Paragraph four says the projects \"answered with methodology rather than indignation\": reports are cross-checked against known sky conditions, models account for observer variability, and results are validated with handheld sky-brightness meters. So A."
       },
       {
         "q": "In what way is light pollution unlike most environmental problems, according to the text?",
@@ -424,7 +424,7 @@ var BANK = [
           "It cannot be measured by any existing instrument."
         ],
         "answer": 2,
-        "explanation": "第五段指出 \"Unlike most environmental problems, however, light pollution is instantly reversible; switch off a lamp and the darkness returns\"，這使數據特別有推動力。故選 C。"
+        "explanation": "Paragraph five states that \"Unlike most environmental problems, however, light pollution is instantly reversible; switch off a lamp and the darkness returns\", which makes the data unusually powerful. So C."
       },
       {
         "q": "What does the writer identify as the most subtle effect of these projects?",
@@ -435,7 +435,7 @@ var BANK = [
           "They discourage children from studying astronomy."
         ],
         "answer": 1,
-        "explanation": "末段稱最微妙的影響在志工本身：參與者從 \"donating a data point\" 開始，最後 \"changing their own lighting, lobbying their councils and teaching neighbours the constellations\"。故選 B。"
+        "explanation": "The final paragraph calls the subtlest effect the one on volunteers themselves: they begin by \"donating a data point\" and end by \"changing their own lighting, lobbying their councils and teaching neighbours the constellations\". So B."
       }
     ]
   }

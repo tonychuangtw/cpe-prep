@@ -14,7 +14,7 @@ var BANK = [
           "Her best friend persuaded her to do it"
         ],
         answer: 0,
-        explanation: "文中說她自願是因為 nobody else put their hand up quickly enough，也就是沒有人比她更快舉手，並非老師指派或朋友勸說。"
+        explanation: "The writer volunteered \"mostly because nobody else put their hand up quickly enough\" - no one else offered first; she was not chosen by the teacher or persuaded by a friend."
       },
       {
         q: "What surprised the writer about the early stages of organising the sale?",
@@ -25,7 +25,7 @@ var BANK = [
           "How little support the teachers offered"
         ],
         answer: 1,
-        explanation: "她原以為只是擺張桌子賣杯子蛋糕，實際上卻面對 a mountain of paperwork：衛生表格、成分清單、使用禮堂許可，令她始料未及。"
+        explanation: "She had imagined a simple table of cupcakes but instead faced \"a mountain of paperwork\": hygiene forms, ingredient lists and written permission to use the hall."
       },
       {
         q: "Priya convinced the writer not to cancel by reminding her that",
@@ -36,7 +36,7 @@ var BANK = [
           "the car park could be cleared in time"
         ],
         answer: 2,
-        explanation: "Priya 指出已募集近兩百件點心、大家也通知了家人要來，讓所有人失望不如將活動移到室內，重點是不能辜負眾人期待。"
+        explanation: "Priya pointed out that nearly two hundred items had been promised and people had already told their families to come - moving indoors was better than \"letting everyone down\"."
       },
       {
         q: "Why does the writer describe the donation system as \"a stroke of genius\"?",
@@ -47,7 +47,7 @@ var BANK = [
           "It was the only system the school would permit"
         ],
         answer: 1,
-        explanation: "自由樂捐讓一位老先生為一片檸檬蛋糕付了二十英鎊，類似情況整個早上不斷發生，最後募得金額超過目標三倍，可見樂捐制帶來遠高於定價的收入。"
+        explanation: "The donation system led an elderly gentleman to pay twenty pounds for one slice of lemon cake, and \"moments like that happened all morning\" - people gave far more than fixed prices would have brought in."
       },
       {
         q: "What does the text suggest about Mr Fenwick's reaction to his shortbread selling out?",
@@ -58,7 +58,7 @@ var BANK = [
           "He was indifferent to the result"
         ],
         answer: 1,
-        explanation: "文中說他的酥餅九點前售完，to his badly hidden satisfaction，意即他掩飾不住的滿意——嘴上不說但其實很得意。"
+        explanation: "The shortbread sold out \"to his badly hidden satisfaction\" - he tried to conceal his pleasure but could not, meaning he was secretly delighted."
       },
       {
         q: "What is the writer's main conclusion in the final paragraph?",
@@ -69,7 +69,7 @@ var BANK = [
           "Schools should hold fundraising events more often"
         ],
         answer: 2,
-        explanation: "結尾說人們來義賣不是真的為了蛋糕，而是因為捐款伴隨著紙盤、聊天和「大家站在同一邊」的感覺，重點在社群的凝聚感。"
+        explanation: "The writer concludes that people do not really come for the cakes but because giving comes with \"a paper plate, a chat, and the sense that everyone around you is quietly on the same side\" - a shared sense of community."
       }
     ]
   },
@@ -87,7 +87,7 @@ var BANK = [
           "Excited to spend time with her uncle"
         ],
         answer: 1,
-        explanation: "文中說她 less than thrilled，並 assumed they had exaggerated to wind me up，認為表哥表姊們把海豚的事講得太誇張來捉弄她，態度是懷疑的。"
+        explanation: "The writer was \"less than thrilled\" and \"assumed they had exaggerated to wind me up\" - she suspected her cousins had overstated the dolphin stories to tease her."
       },
       {
         q: "What did Dan mean by saying \"the sea rewards patience, not enthusiasm\"?",
@@ -98,7 +98,7 @@ var BANK = [
           "Excitement frightens the animals away"
         ],
         answer: 1,
-        explanation: "這句話是賞鯨第一守則：大海回報的是耐心而非熱情。接著第一個小時果然什麼都沒有，印證了必須耐心等待才能看到動物。"
+        explanation: "Dan offers this as the first rule of wildlife watching, and the empty first hour proves the point: the sea shows its animals to those prepared to wait, not to those who are merely keen."
       },
       {
         q: "When the dolphins appeared, the writer",
@@ -109,7 +109,7 @@ var BANK = [
           "remained calm like her uncle"
         ],
         answer: 0,
-        explanation: "文中寫 I found myself shouting like a small child，她像小孩一樣忍不住大叫，情緒完全失控地興奮，與 Dan 的微笑形成對比。"
+        explanation: "The writer says \"I found myself shouting like a small child\" - she reacted with uncontrolled excitement, in contrast to Dan's calm smile."
       },
       {
         q: "Why did the ferry slow down halfway across?",
@@ -120,7 +120,7 @@ var BANK = [
           "Passengers had asked for a better view"
         ],
         answer: 2,
-        explanation: "Dan 解釋船長發現前方有小鬚鯨，公司政策是減速改道而非直接穿越，所以渡輪放慢速度是為了避免打擾鯨魚。"
+        explanation: "Dan explains that the captain had spotted a minke whale and that company policy was \"to reduce speed and alter course rather than push through\" - the ferry slowed to avoid disturbing the whale."
       },
       {
         q: "What does Dan's remark \"We're guests out here\" reveal about his attitude?",
@@ -131,7 +131,7 @@ var BANK = [
           "He is embarrassed by the ferry company's policy"
         ],
         answer: 0,
-        explanation: "他說鯨魚早在時刻表印出來之前就使用這片海域，表示人類只是海上的客人，動物的權利優先於人的行程安排。"
+        explanation: "He adds that \"the whale was using this water long before anyone printed a timetable\" - humans are only visitors at sea, and the animals' claim comes before human schedules."
       },
       {
         q: "What impressed the writer most about her uncle by the end of the trip?",
@@ -142,7 +142,7 @@ var BANK = [
           "His long-term contribution to scientific research"
         ],
         answer: 3,
-        explanation: "結尾提到 Dan 多年填寫數千筆目擊紀錄供研究機構追蹤海洋暖化影響，作者感嘆這位十六歲離校的舅舅對海洋生物學的貢獻可能勝過許多有學位的人。"
+        explanation: "The writer is struck that Dan has submitted thousands of sighting records used to track how warming seas shift the animals, reflecting that her uncle \"has probably contributed more to marine biology than most people with degrees\"."
       }
     ]
   },
@@ -160,7 +160,7 @@ var BANK = [
           "It was popular locally despite its size"
         ],
         answer: 1,
-        explanation: "文中描述排練場地是漏風的教堂禮堂、鋼琴有三個啞鍵、戲服放在主席樓梯下的行李箱、觀眾少到一輛小巴就能載完，處處顯示規模小、設備差、觀眾稀少。"
+        explanation: "The opening details - a draughty hall, a piano with three silent keys, costumes in suitcases, and an audience that \"could have travelled home together in a single minibus\" - all show a small, poorly equipped club with few spectators."
       },
       {
         q: "What did Gloria mean by saying a club that never risked anything \"was already finished\"?",
@@ -171,7 +171,7 @@ var BANK = [
           "Older members were preventing necessary change"
         ],
         answer: 2,
-        explanation: "她的意思是從不冒險的劇團其實早已走向終點，只是自己還沒察覺；這是回應 Bernard 對失敗會毀掉劇團的警告，主張不冒險本身就是慢性死亡。"
+        explanation: "Answering Bernard's warning that a flop would finish the club, Gloria argues that a club taking no risks is already dying - \"it just hadn't noticed yet\"; refusing all risk means slow decline."
       },
       {
         q: "According to the writer, being stage manager mainly involved",
@@ -182,7 +182,7 @@ var BANK = [
           "training the teenage recruits"
         ],
         answer: 0,
-        explanation: "文中說她很快發現舞台監督意味著 being responsible for everything nobody else wanted to do，從找煙霧機到向農夫借乾草捆都是她的事。"
+        explanation: "The writer discovered the role meant \"being responsible for everything nobody else wanted to do\", from sourcing a smoke machine to borrowing hay bales from a farmer."
       },
       {
         q: "The discovery of Bernard repairing the throne suggests that he",
@@ -193,7 +193,7 @@ var BANK = [
           "had become emotionally invested in the show despite his doubts"
         ],
         answer: 3,
-        explanation: "被稱為 prophet of doom 的 Bernard 被發現帶著 deep contentment 的表情默默修王座，顯示這位原本最悲觀的人其實已投入感情、樂在其中。"
+        explanation: "Bernard, the club's \"prophet of doom\", is found quietly mending the throne with \"an expression of deep contentment\" - the show's fiercest sceptic had become emotionally invested in it."
       },
       {
         q: "How did Fatima respond when asked to replace the leading lady?",
@@ -204,7 +204,7 @@ var BANK = [
           "She suggested postponing the performance"
         ],
         answer: 1,
-        explanation: "Fatima 臉色發白、深吸一口氣，但說她花四個月學這個角色不是為了看演出被取消——雖然害怕，卻下定決心接下主角。"
+        explanation: "Fatima \"went pale, took a long breath\" but said she had not spent four months learning the part to watch the show cancelled - frightened, yet determined to step in."
       },
       {
         q: "Which statement best sums up the message of the final paragraph?",
@@ -215,7 +215,7 @@ var BANK = [
           "Good publicity matters more than good performances"
         ],
         answer: 2,
-        explanation: "結尾說小小的獲利不是重點，真正的收穫是劇團重新找回存在的意義；Gloria 的話點題：劇場不在於避開災難，而在於發現閃避災難時你成為了誰。"
+        explanation: "The writer says \"the real profit was harder to count: a club that had rediscovered why it existed\", and Gloria adds that theatre is about who you become while dodging disaster - facing risk together mattered more than the money."
       }
     ]
   },
@@ -233,7 +233,7 @@ var BANK = [
           "To explain why he refused to help her"
         ],
         answer: 1,
-        explanation: "父親被烤馬鈴薯噎到的細節，加上奶奶把遙控器叫 zapper、退掉智慧型手機等描寫，都在強調她報名程式課這件事有多出人意料。"
+        explanation: "The father choking on his roast potato, together with details like Rose calling the remote \"the zapper\" and returning a smartphone, emphasises how unexpected her announcement was."
       },
       {
         q: "Rose decided to learn coding herself because",
@@ -244,7 +244,7 @@ var BANK = [
           "her old employer asked her to return to work"
         ],
         answer: 2,
-        explanation: "文中說地方史社團需要有人建網站，徵求志工時 everyone had looked at their shoes（大家都低頭看鞋），沒人自願，Rose 便決定自己學著做。"
+        explanation: "When the history group asked for volunteers to build the website, \"everyone had looked at their shoes\" - since no one else offered, Rose decided to learn to build it herself."
       },
       {
         q: "What does Rose's complaint about the machine giving up \"if a comma sneezes\" express?",
@@ -255,7 +255,7 @@ var BANK = [
           "Her suspicion that the course materials contained mistakes"
         ],
         answer: 0,
-        explanation: "她因少一個冒號程式就不能跑而氣得打電話，抱怨以前文件放錯抽屜人還找得到，電腦卻連逗號打噴嚏都會罷工——表達對程式錙銖必較的挫折感。"
+        explanation: "She rang up furious because a missing colon stopped the program running, contrasting this with paper filing where a misplaced document could still be found - the remark expresses her frustration at how unforgiving code is about tiny errors."
       },
       {
         q: "Why did Rose prefer her notebook to searching online?",
@@ -266,7 +266,7 @@ var BANK = [
           "Writing things down helped her truly absorb what she learned"
         ],
         answer: 3,
-        explanation: "她說 writing things down was how she made knowledge her own，親手記錄才能把知識變成自己的，而且筆記本不像網路會自相矛盾。"
+        explanation: "Rose replied that \"writing things down was how she made knowledge her own\", and that her notebook, unlike the internet, never contradicted itself."
       },
       {
         q: "In what way did Rose's background prove to be an advantage?",
@@ -277,7 +277,7 @@ var BANK = [
           "Her handwriting made her notes easy to mark"
         ],
         answer: 1,
-        explanation: "文中說她三十年的文件編目經驗給了她許多年輕程式設計師欠缺的結構與命名直覺，導師甚至拿她的資料夾組織當全班範例。"
+        explanation: "Her \"decades of cataloguing had given her an instinct for structure and naming that many young programmers lack\" - her tutor even used her folder organisation as an example for the class."
       },
       {
         q: "What did Rose say the experience had reminded her of?",
@@ -288,7 +288,7 @@ var BANK = [
           "That websites are best kept simple and practical"
         ],
         answer: 2,
-        explanation: "被問到寫程式是否讓她重返青春時，她說不是，而是提醒了她自己從未失去能力，她真正退休告別的只有「被低估」這件事。"
+        explanation: "Asked if coding made her feel young again, she said no: it reminded her \"that she had never actually stopped being capable, and that the only thing she had ever really retired from was being underestimated\"."
       }
     ]
   },
@@ -306,7 +306,7 @@ var BANK = [
           "It was the only summer job advertised in town"
         ],
         answer: 1,
-        explanation: "文中坦言他既不特別喜歡人也不喜歡早起，但九月的音樂製作課需要錢，加上小賣亭離家只要騎車十分鐘，所以才去應徵。"
+        explanation: "The writer admits he liked neither people nor early mornings, but \"needed money for a music production course starting in September, and the kiosk was a ten-minute cycle from home\"."
       },
       {
         q: "According to Marina, why did she hire the writer?",
@@ -317,7 +317,7 @@ var BANK = [
           "He seemed unlikely to argue with rude customers"
         ],
         answer: 0,
-        explanation: "Marina 說三個問題裡只有第三題重要——看到獨自哭泣的孩子怎麼辦，他回答先幫孩子再顧收銀機，這正是她錄用他的原因。"
+        explanation: "Marina said only the third question mattered, and his answer - \"find them help first and worry about the till second\" - was why she hired him: he put the child's safety before the money."
       },
       {
         q: "Why did the writer grow fond of the early-morning customers?",
@@ -328,7 +328,7 @@ var BANK = [
           "They helped him prepare the kiosk for opening"
         ],
         answer: 2,
-        explanation: "清晨的遛狗客和冬泳客話少，只要茶夠濃、少聊天，文中說他喜歡他們正是因為 they expected nothing of me but competence，只要求把事做好。"
+        explanation: "The dog walkers and swimmers were \"people of few words\", and he grew fond of them \"precisely because they expected nothing of me but competence\" - all they wanted was the job done well."
       },
       {
         q: "What does \"kiosk arithmetic\" refer to in the text?",
@@ -339,7 +339,7 @@ var BANK = [
           "Adding up the cost of wasted ice cream"
         ],
         answer: 1,
-        explanation: "文中描述他學會一邊接單、一邊做另一份、同時心算第三位客人的找零，Marina 把這種同時處理多筆交易的心算稱為 kiosk arithmetic。"
+        explanation: "He learned \"to take one order while making another and calculating change for a third\" - Marina's name for juggling several orders and payments in his head at once."
       },
       {
         q: "How did the writer's view of the regulars' conversations change over the summer?",
@@ -350,7 +350,7 @@ var BANK = [
           "He started charging extra for taking up his time"
         ],
         answer: 0,
-        explanation: "起初他覺得這些談話妨礙工作，後來漸漸明白對某些常客而言他是一天中唯一說話的對象，the tea was partly an excuse——買茶有一部分只是藉口。"
+        explanation: "At first he found the conversations an interruption, but gradually understood that for some regulars he was \"the only person they would speak to all day, and that the tea was partly an excuse\"."
       },
       {
         q: "What did Marina's decision to pay him for the storm week show about her?",
@@ -361,7 +361,7 @@ var BANK = [
           "She wanted him to work extra hours in return"
         ],
         answer: 2,
-        explanation: "風暴封閉海灘那週她照樣付薪，並說 You don't punish the crew for the weather，顯示她認為員工不該為無法控制的天氣承擔損失。"
+        explanation: "She paid him for the storm-closed week anyway, saying \"You don't punish the crew for the weather\" - staff should not lose out over things beyond their control."
       }
     ]
   },
@@ -379,7 +379,7 @@ var BANK = [
           "A neighbour suggested it as a school project"
         ],
         answer: 1,
-        explanation: "文中說 Sam 去撿足球時發現船尾還隱約看得到 Kingfisher 的船名，他們才去問 Latimer 先生船的來歷，進而促成修復的約定。"
+        explanation: "Sam discovered the name Kingfisher still faintly visible on the stern \"while retrieving a football\", which prompted them to ask Mr Latimer about the boat and led to the restoration deal."
       },
       {
         q: "Why had Mr Latimer never restored the boat himself?",
@@ -390,7 +390,7 @@ var BANK = [
           "He could not afford the necessary materials"
         ],
         answer: 0,
-        explanation: "文中說他一直想修這艘船，但 his knees were no longer up to kneeling on concrete for hours，膝蓋已無法承受長時間跪在水泥地上工作。"
+        explanation: "He had always meant to restore it, but \"his knees were no longer up to kneeling on concrete for hours\" - he could no longer manage the physical demands of the work."
       },
       {
         q: "What point was Mr Latimer making when he said speed \"was how you turned a repair into a ruin\"?",
@@ -401,7 +401,7 @@ var BANK = [
           "The boat needed to dry out before any work began"
         ],
         answer: 2,
-        explanation: "Dev 提議借電動砂磨機加快進度時，他回答船等了四十年不差幾個月；貪快只會把修復變成毀壞，強調傳統工法需要耐心。"
+        explanation: "When Dev suggested an electric sander, Mr Latimer replied the boat had waited forty years and could wait a few more months - rushing the job would destroy the boat rather than save it."
       },
       {
         q: "What surprised people about Dev during the project?",
@@ -412,7 +412,7 @@ var BANK = [
           "He showed sustained concentration that contradicted his reputation"
         ],
         answer: 3,
-        explanation: "老師們曾認定 Dev 無法專心，但他能開心地花兩小時修整一道曲線，連他媽媽來看了一下午都說幾乎認不得自己的兒子。"
+        explanation: "Teachers had labelled Dev as someone who couldn't concentrate, yet he would \"happily spend two hours fairing a single curve\" - even his mum said she barely recognised him."
       },
       {
         q: "How did Mr Latimer respond to Sam's suggestion of using modern filler?",
@@ -423,7 +423,7 @@ var BANK = [
           "He offered to pay for proper materials himself"
         ],
         answer: 2,
-        explanation: "他當晚什麼也沒說，隔週拿出父親蒸木材的照片，輕聲問他們想造出一艘怎樣的船——不責罵、不命令，而是用照片和提問讓他們自己選擇正確的做法。"
+        explanation: "He said nothing that evening; the next week he showed a photograph of his father steaming timber and \"quietly asked us what kind of boat we wanted to be able to say we had made\" - letting the boys reach the right decision themselves."
       },
       {
         q: "What does the writer mean by the final sentence, \"Some things you restore turn out, quietly, to restore you back\"?",
@@ -434,7 +434,7 @@ var BANK = [
           "The boat would need further repairs in future"
         ],
         answer: 1,
-        explanation: "整篇文章鋪陳修船過程帶來的改變：專注、耐心、對工藝的尊重與 Dev 的轉變，結尾點出修復舊物的同時，這件事也悄悄「修復」了他們自己。"
+        explanation: "The whole account shows the project giving the boys focus, patience and respect for craft (notably Dev's transformation), so the final line means that repairing the boat quietly changed and improved the boys themselves."
       }
     ]
   }

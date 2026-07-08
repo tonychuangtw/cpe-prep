@@ -14,7 +14,7 @@ var BANK = [
           "wartime conditions made reliable attribution of paintings impossible"
         ],
         answer: 1,
-        explanation: "第一段指出「the painting did not change. Not one molecule of pigment rearranged itself」，但它一夜之間從傑作變成證物——物件不變而評價劇變，這正是作者要建立的實驗前提。其餘選項非開頭案例的重點。"
+        explanation: "The paragraph stresses that \"the painting did not change. Not one molecule of pigment rearranged itself,\" yet overnight it went from masterpiece to evidence — a radical change in reception without any change in the object, the premise of the writer's \"experiment.\""
       },
       {
         q: "By describing aesthetic experience as 'biographical tourism' (paragraph 2), the writer suggests that viewers",
@@ -25,7 +25,7 @@ var BANK = [
           "value paintings mainly for the historical events they depict"
         ],
         answer: 0,
-        explanation: "第二段說失去的是「a story...the thrill of proximity to genius」，人們「visit」畫作如同掃墓——重點是與天才生平的親近感，而非作品本身，故選第一項。第四項混淆「畫中描繪的歷史」與「畫家生平」。"
+        explanation: "What vanished was \"a story\" and \"the thrill of proximity to genius\"; we \"visit\" paintings \"the way one visits a grave.\" The draw is contact with a famous life, not the work itself. The last option confuses depicted history with the artist's biography."
       },
       {
         q: "What point does the writer make about the 'standard defence' in paragraph 3?",
@@ -36,7 +36,7 @@ var BANK = [
           "It explains why museum labels are deliberately misleading to visitors"
         ],
         answer: 2,
-        explanation: "第三段承認該辯護「is true」，但指出「the argument now values the painting as a document rather than as an object of delight」——論證悄悄把價值從美感移到文獻，這才是作者的批評。作者並未說它被駁倒或全無資訊。"
+        explanation: "The writer concedes the defence \"is true\" but observes that \"the argument now values the painting as a document rather than as an object of delight\" — it quietly shifts the ground from aesthetic to documentary value. He never says it is refuted or empty of information."
       },
       {
         q: "The irony the writer identifies in the art market's authentication machinery is that",
@@ -47,7 +47,7 @@ var BANK = [
           "scarcity is created by forgers rather than by the market itself"
         ],
         answer: 2,
-        explanation: "第四段：「if the eye cannot tell, then whatever the eye receives — the beauty, in short — is demonstrably present in both objects」。檢測越精密，越等於承認肉眼可見的美在真品與贗品中同樣存在，我們付錢買的是看不見的東西。"
+        explanation: "The text argues: \"if the eye cannot tell, then whatever the eye receives — the beauty, in short — is demonstrably present in both objects.\" The more sophisticated the tests, the more the market concedes that visible beauty exists equally in the fake; \"We pay the premium precisely for what we cannot see.\""
       },
       {
         q: "Why does the writer reject the view of the forger as a 'great debunker'?",
@@ -58,7 +58,7 @@ var BANK = [
           "Genuine debunking requires publishing evidence rather than concealing it"
         ],
         answer: 1,
-        explanation: "第五段：「His entire livelihood depends on the superstition he is supposed to be exploding」——若世界真的不在乎歸屬，偽造者將會餓死；他是「corrupt priest」而非異端。此即拒絕「揭穿者」說法的理由。"
+        explanation: "The paragraph says \"His entire livelihood depends on the superstition he is supposed to be exploding\": in a world indifferent to attribution the forger would starve. He is \"less a heretic than a corrupt priest,\" which is why the debunker label fails."
       },
       {
         q: "In the final paragraph, the writer concludes that our fundamental error is",
@@ -69,7 +69,7 @@ var BANK = [
           "using a single word for two quite different appetites that art satisfies"
         ],
         answer: 3,
-        explanation: "末段明言藝術同時滿足「the appetite of the eye」與「the appetite for communion with the dead」，而我們的錯誤是「our insistence on calling both of them by the same name」——把兩種慾望混用同一個名字。"
+        explanation: "The conclusion is that art answers both \"the appetite of the eye\" and \"the appetite for communion with the dead,\" and that our mistake is \"our insistence on calling both of them by the same name\" — one word for two different appetites."
       }
     ]
   },
@@ -87,7 +87,7 @@ var BANK = [
           "It is the first such claim to be supported by publishing statistics"
         ],
         answer: 1,
-        explanation: "第一段：「The claim this time is not that difficult novels have stopped being written — they haven't — but that the ecosystem which once metabolised them has quietly collapsed」。重點在支撐生態系（書評人、出版社、讀者）的崩解，而非作品供給。"
+        explanation: "The paragraph says: \"The claim this time is not that difficult novels have stopped being written — they haven't — but that the ecosystem which once metabolised them has quietly collapsed.\" The distinctive point concerns the supporting culture of reviewers, imprints and readers, not the supply of novels."
       },
       {
         q: "The image of the reader as a 'quality inspector' (paragraph 2) serves to",
@@ -98,7 +98,7 @@ var BANK = [
           "suggest that mid-century critics were more rigorous than modern ones"
         ],
         answer: 2,
-        explanation: "第二段說有些晦澀小說只是爛書，「their obscurity a fog machine concealing an empty stage」，把書丟開的讀者「was not a philistine; she was a quality inspector」——作者為這種淘汰辯護，而非嘲笑讀者。"
+        explanation: "Some hermetic novels were simply bad, \"their obscurity a fog machine concealing an empty stage,\" and the reader who threw one aside \"was not a philistine; she was a quality inspector\" — the image defends rejecting emptiness dressed as depth."
       },
       {
         q: "In paragraph 3, the writer argues that in the best difficult novels, difficulty is",
@@ -109,7 +109,7 @@ var BANK = [
           "inseparable from the resistant nature of the experiences depicted"
         ],
         answer: 3,
-        explanation: "第三段指出某些經驗「their essential property is that they resist」，把它們寫得容易就變成別的東西；「Difficulty...is not an obstacle...It is the meaning, wearing its working clothes」——難度與題材的抗拒性不可分。"
+        explanation: "Certain experiences' \"essential property is that they resist\"; a novel that made them easy \"would be an account of something else.\" Difficulty \"is not an obstacle... It is the meaning, wearing its working clothes\" — inseparable from the resistant subject matter."
       },
       {
         q: "What does the writer identify as the real cause of the difficult novel's decline?",
@@ -120,7 +120,7 @@ var BANK = [
           "the disappearance of universities willing to teach demanding texts"
         ],
         answer: 0,
-        explanation: "第四段：「the enemy here is not stupidity...but the metering of time」，且「Publishers have not conspired...they have merely read the same spreadsheets」。作者明確排除讀者變笨與出版社陰謀，歸因於注意力經濟。"
+        explanation: "The paragraph states \"the enemy here is not stupidity... but the metering of time\" and that \"Publishers have not conspired... they have merely read the same spreadsheets.\" The writer explicitly rules out dumber readers and conspiracy, blaming the economics of attention."
       },
       {
         q: "The writer's objection to current 'rescue efforts' is that they",
@@ -131,7 +131,7 @@ var BANK = [
           "encourage students to read difficult novels for the wrong examinations"
         ],
         answer: 1,
-        explanation: "第五段以瀕危蠑螈與動物園為喻：「It was meant to be a predator...A predator on a subsidy is a zoo exhibit」。難懂小說本應是伏擊語言的掠食者，被保護供養便失其本性，故救援反而使其難堪。"
+        explanation: "Using the endangered-newt and zoo imagery, the writer says the difficult novel \"was meant to be a predator... A predator on a subsidy is a zoo exhibit\" — treating an aggressive, ambushing force as a fragile specimen misses its point."
       },
       {
         q: "The writer ultimately declines to write the difficult novel's elegy because",
@@ -142,7 +142,7 @@ var BANK = [
           "universities can be relied upon to preserve it indefinitely"
         ],
         answer: 2,
-        explanation: "末段：「When frictionless prose becomes the water everyone swims in, friction becomes exotic again — not homework but contraband」。順滑文體的獨霸反而讓「阻力」重新變得稀奇迷人，年輕讀者已視之為門禁絨繩而非高牆。"
+        explanation: "The final paragraph argues: \"When frictionless prose becomes the water everyone swims in, friction becomes exotic again — not homework but contraband.\" The very dominance of smooth prose may revive the appeal of difficulty, as young readers treating it like a velvet rope already show."
       }
     ]
   },
@@ -160,7 +160,7 @@ var BANK = [
           "creates an obligation the recipient can never legally escape"
         ],
         answer: 1,
-        explanation: "第一段結尾：「Something is being purchased, and we have not been shown the bill」——警覺來自察覺對方在暗中購買某物而帳單未明。第三選項貌似合理，但文中將警覺直接歸因於未明示的交易，而非親疏誤判。"
+        explanation: "The paragraph ends: \"Something is being purchased, and we have not been shown the bill\" — the alarm comes from sensing an unstated attempt to buy something. The misjudged-closeness option is plausible but the text attributes the alarm directly to the hidden transaction."
       },
       {
         q: "According to paragraph 2, the common view of potlatch and kula as 'primitive economics' is mistaken because these societies",
@@ -171,7 +171,7 @@ var BANK = [
           "built their social order on what markets are inherently unable to provide"
         ],
         answer: 3,
-        explanation: "第二段：「these societies had not failed to invent the market; they had organised their entire social order around what the market cannot do」。他們並非不懂市場，而是圍繞市場做不到的事（建立持續關係）組織社會。"
+        explanation: "The paragraph states: \"these societies had not failed to invent the market; they had organised their entire social order around what the market cannot do\" — sustaining relationships, which markets by design terminate."
       },
       {
         q: "The writer contrasts sales and gifts principally in terms of",
@@ -182,7 +182,7 @@ var BANK = [
           "whether the parties involved are strangers or family members"
         ],
         answer: 0,
-        explanation: "第二段核心對比：「A sale ends a relationship...A gift begins one, or renews one, because the unsettled debt is a promise of future contact」。買賣結清即兩不相欠，禮物則以未清之債延續關係。"
+        explanation: "The central contrast is: \"A sale ends a relationship... A gift begins one, or renews one, because the unsettled debt is a promise of future contact.\" A sale leaves the parties owing nothing; a gift's unsettled debt continues the bond."
       },
       {
         q: "In the example of paying one's mother for Sunday lunch, the offer of money is offensive because it",
@@ -193,7 +193,7 @@ var BANK = [
           "reveals that the son regards family meals as commercial services"
         ],
         answer: 2,
-        explanation: "第三段：「you have attempted a settlement, converting a bond into a transaction and implying you wish to owe her nothing — which she correctly hears as wishing to be quit of her」。付錢等於想結清關係、擺脫她，故令人齒冷。"
+        explanation: "The text explains: \"you have attempted a settlement, converting a bond into a transaction and implying you wish to owe her nothing — which she correctly hears as wishing to be quit of her.\" Paying signals a desire to close the account and end the bond."
       },
       {
         q: "The writer regards the ritual insincerities of giving ('it's nothing', 'you shouldn't have') as",
@@ -204,7 +204,7 @@ var BANK = [
           "a modern corruption of originally sincere expressions of thanks"
         ],
         answer: 1,
-        explanation: "第四段：這些謊言是「compulsory」且「load-bearing」（承重的），「Sincerity here would not be a moral improvement; it would be a demolition」——禮物的約束力必須被全體否認才能運作，如同貨幣不能被要求兌現黃金。"
+        explanation: "Both lies are \"compulsory\" and the hypocrisy is \"load-bearing\": \"Sincerity here would not be a moral improvement; it would be a demolition.\" The gift binds only if its coercive character is denied by all, like a currency no one asks to redeem for gold."
       },
       {
         q: "In the final paragraph, the writer argues that Mauss's analysis, properly understood,",
@@ -215,7 +215,7 @@ var BANK = [
           "reverses the cynical reading: transactions are a stripped-down special case of gifts"
         ],
         answer: 3,
-        explanation: "末段：「Mauss did not show that gifts are secretly transactions; he showed that transactions are an impoverished, late, special case of gifts」。分析方向與犬儒解讀相反——帳本是人情的建築結構，非其揭穿。"
+        explanation: "The final paragraph says: \"Mauss did not show that gifts are secretly transactions; he showed that transactions are an impoverished, late, special case of gifts.\" The analysis runs opposite to the cynical reading — the ledger is warmth's architecture, not its debunking."
       }
     ]
   },
@@ -233,7 +233,7 @@ var BANK = [
           "sentimentalising a profession the papers had previously ridiculed"
         ],
         answer: 2,
-        explanation: "第一段：「the newspapers reached...for the word 'romantic' and...'inevitable', and between them the two words did all the work of thinking」——兩個現成字眼代替了真正的思考，此為作者的批評所在。"
+        explanation: "The writer says the papers reached for \"romantic\" and \"inevitable,\" \"and between them the two words did all the work of thinking\" — two ready-made words stood in for genuine reflection."
       },
       {
         q: "The writer contrasts keepers with switchboard operators and lamplighters in order to show that",
@@ -244,7 +244,7 @@ var BANK = [
           "public grief is reserved for jobs that were genuinely dangerous"
         ],
         answer: 0,
-        explanation: "第一段指出無人為接線生或點燈人哀悼，「The keeper's obsolescence was received as a wound to the national imagination」——對比突顯守塔人消逝引發的想像創傷是獨特的，值得追問其原因。"
+        explanation: "Nobody mourned switchboard operators or lamplighters, whereas \"The keeper's obsolescence was received as a wound to the national imagination\" — the contrast shows the keeper's disappearance uniquely wounded the collective imagination."
       },
       {
         q: "In paragraph 2, the phrase 'leaving the men behind as its memorial' suggests that by the end the keepers were",
@@ -255,7 +255,7 @@ var BANK = [
           "commemorated with plaques at the lighthouses they had served"
         ],
         answer: 1,
-        explanation: "第二段：「Trinity House did not sack the keepers so much as admit, decades late, that the job had already left, leaving the men behind as its memorial」——工作早已離去，留下的人成為該工作的活紀念碑，僅存儀式性職務。"
+        explanation: "The text says Trinity House merely admitted, \"decades late, that the job had already left, leaving the men behind as its memorial\": the keepers stayed on as living relics of a vanished job, their duties reduced to \"ceremonial supervision.\""
       },
       {
         q: "According to paragraph 3, the ledger 'concluded it did not exist' because presence",
@@ -266,7 +266,7 @@ var BANK = [
           "is a real and valued good that resists quantification in accounts"
         ],
         answer: 3,
-        explanation: "第三段：「Presence of this kind is real, is valued, and is almost impossible to enter in a ledger, which is why the ledger concluded it did not exist」。帳本無法登錄「有人在看守」這項價值，於是視之為不存在。"
+        explanation: "The paragraph states: \"Presence of this kind is real, is valued, and is almost impossible to enter in a ledger, which is why the ledger concluded it did not exist\" — a genuine good that resists quantification was therefore treated as nonexistent."
       },
       {
         q: "The writer describes obsolescence as 'the most efficient purifier of labour' to make the point that",
@@ -277,7 +277,7 @@ var BANK = [
           "workers in obsolete trades were purified of their earlier grievances"
         ],
         answer: 2,
-        explanation: "第四段：「It removes the wages, the boredom, the damp, the union — and leaves the silhouette」。過時把工資、無聊、潮濕、工會全數濾除，只留下可供裱框的剪影——真實勞動被淨化成聖像，語帶反諷。"
+        explanation: "The point is ironic: \"It removes the wages, the boredom, the damp, the union — and leaves the silhouette.\" Once the job disappears, its costly human realities are filtered out, leaving only an idealised image we can afford in any quantity."
       },
       {
         q: "In the final paragraph, the writer argues that automated systems cannot 'keep watch' because",
@@ -288,7 +288,7 @@ var BANK = [
           "call centres and algorithms are too widely distributed to coordinate"
         ],
         answer: 1,
-        explanation: "末段：「not because their attention fails, but because nothing is staked on it...It was the staking of a life on the watching that we found beautiful」——機器守光極佳，但無人以生命押注於看守，故只有資料而無守望。"
+        explanation: "The machines fail \"not because their attention fails, but because nothing is staked on it... It was the staking of a life on the watching that we found beautiful.\" Without a life wagered on the vigil, vigilance is merely data."
       }
     ]
   },
@@ -306,7 +306,7 @@ var BANK = [
           "question whether Newton deserved his reputation for genius"
         ],
         answer: 1,
-        explanation: "第一段明言不論刺意是否存在，「the episode makes a serviceable emblem for my subject...not the humility of scientists but their rhetoric of humility」及其「quietly immodest uses」——謙遜言辭可有不謙遜的用途。作者對是否蓄意保留態度，故第一項過強。"
+        explanation: "Whether or not the barb was intended, \"the episode makes a serviceable emblem for my subject... not the humility of scientists but their rhetoric of humility\" and its \"quietly immodest uses.\" The writer stays agnostic on Newton's intent, so the insult option is too strong."
       },
       {
         q: "The writer's description of Nobel lectures suggests that the laureates' attributions of success to luck and mentors are",
@@ -317,7 +317,7 @@ var BANK = [
           "calculated attempts to deceive the audience about their careers"
         ],
         answer: 0,
-        explanation: "第二段：致謝的程度與「the audience's certainty that ambition of a rather ferocious kind was involved」成反比，且「None of this is dishonest, exactly. It is politeness raised to the level of epistemology」——是眾人心照不宣的儀式，非欺騙亦非全然誠實。"
+        explanation: "The attributions rise \"in inverse proportion to the audience's certainty that ambition of a rather ferocious kind was involved,\" and \"None of this is dishonest, exactly. It is politeness raised to the level of epistemology\" — a convention everyone present sees through."
       },
       {
         q: "According to paragraph 3, the ritual deletion of the self from scientific writing functions to",
@@ -328,7 +328,7 @@ var BANK = [
           "make scientific papers easier for non-specialists to read"
         ],
         answer: 2,
-        explanation: "第三段：「the scientist rehearses the ideal that nature, not reputation, should settle disputes」，並強調「a result that only its discoverer can obtain is not a result but an anecdote」——去我化儀式演練的是可重複性理想。"
+        explanation: "By deleting the self, \"the scientist rehearses the ideal that nature, not reputation, should settle disputes,\" for \"a result that only its discoverer can obtain is not a result but an anecdote\" — the ritual enacts the ideal of person-independent results."
       },
       {
         q: "What 'strange inversion' does the writer identify in paragraph 4?",
@@ -339,7 +339,7 @@ var BANK = [
           "An admission of fallibility, made public, functions as a credential of trustworthiness"
         ],
         answer: 3,
-        explanation: "第四段：「the confession of fallibility becomes a credential, the very mark that distinguishes the scientist from the charlatan」——「我們可能錯」在公共場域反轉為最有說服力的信任廣告，此即怪異倒置。"
+        explanation: "In public, \"the confession of fallibility becomes a credential, the very mark that distinguishes the scientist from the charlatan\" — saying \"we could be wrong\" inverts into the profession's most persuasive advertisement of trustworthiness."
       },
       {
         q: "The writer regards scientists who coarsen their public speech into confident slogans as",
@@ -350,7 +350,7 @@ var BANK = [
           "victims of media training imposed by their institutions"
         ],
         answer: 1,
-        explanation: "第五段：「I understand the temptation and think it a slow-acting poison: the authority being spent in those slogans was accumulated...precisely by the refusal to speak that way」——可以理解但視為慢性毒藥，正在花掉靠拒絕如此說話才累積的權威。"
+        explanation: "The writer says: \"I understand the temptation and think it a slow-acting poison: the authority being spent in those slogans was accumulated... precisely by the refusal to speak that way\" — understandable, but spending capital built by the opposite practice."
       },
       {
         q: "The uniform analogy in the final paragraph is used to argue that scientific modesty",
@@ -361,7 +361,7 @@ var BANK = [
           "proves that individual scientists are genuinely humble in character"
         ],
         answer: 2,
-        explanation: "末段：「It is a uniform — and the argument for uniforms was never that soldiers are identical, but that the office should outrank the man」。謙遜非靈魂之窗而是制服：職分高於個人，與科學家私下是否虛榮無關。"
+        explanation: "The text says: \"It is a uniform — and the argument for uniforms was never that soldiers are identical, but that the office should outrank the man.\" Modesty is an institutional convention, not a window into souls that are \"as vain as anyone's.\""
       }
     ]
   },
@@ -379,7 +379,7 @@ var BANK = [
           "demonstrating that common sense is superior to philosophical argument"
         ],
         answer: 2,
-        explanation: "第一段：「Diogenes was not refuting the argument; no argument was offered...some problems are not to be answered but outwalked」——他以身體行動拒絕問題設定的框架，並非駁斥，也非常識勝利（作者正是反對這種通俗解讀）。"
+        explanation: "The paragraph says: \"Diogenes was not refuting the argument; no argument was offered... some problems are not to be answered but outwalked\" — he declined the problem's terms through bodily action. The common-sense-triumph reading is exactly what the writer rejects."
       },
       {
         q: "The writer's objection to physiological explanations of the walking–thinking link is that they",
@@ -390,7 +390,7 @@ var BANK = [
           "were invented by scientists who rarely walk themselves"
         ],
         answer: 1,
-        explanation: "第二段：「Cycling irrigates the cortex just as generously, yet no one proposes solvitur pedalando; the treadmill supplies identical exertion and is...where thoughts go to die」——生理解釋「explains too little」，無法說明騎車與跑步機為何無效。"
+        explanation: "The explanation \"explains too little\": \"Cycling irrigates the cortex just as generously, yet no one proposes solvitur pedalando; the treadmill supplies identical exertion and is... where thoughts go to die\" — physiology cannot explain why these fail."
       },
       {
         q: "In paragraph 3, the image of the 'doorkeeper of consciousness' is used to suggest that walking aids thought by",
@@ -401,7 +401,7 @@ var BANK = [
           "supplying vivid scenery that becomes the direct subject of new ideas"
         ],
         answer: 0,
-        explanation: "第三段：瑣碎風景佔住「the mind's restless outer office」，於是「the doorkeeper of consciousness stops vetting the traffic within, and the interior conversation is left profitably unsupervised」——守門人被引開，內在對話才不受監管。故最佳想法「so seldom concern what is actually before his eyes」，第四項相反。"
+        explanation: "Trivial scenery occupies \"the mind's restless outer office,\" so \"the doorkeeper of consciousness stops vetting the traffic within, and the interior conversation is left profitably unsupervised.\" The best ideas \"so seldom concern what is actually before his eyes,\" which rules out the scenery-as-subject option."
       },
       {
         q: "Why, according to the writer, does the practice fail 'the moment it becomes purposeful'?",
@@ -412,7 +412,7 @@ var BANK = [
           "Conscious effort exhausts the chemical benefits of mild exertion"
         ],
         answer: 0,
-        explanation: "第三段：「Set out to solve the problem and you have brought the office with you; the walk has become a meeting. The gift arrives only when it is not applied for」——刻意求解等於把辦公室（監管的注意力）帶上路，禮物只在不申請時到來。"
+        explanation: "The text says: \"Set out to solve the problem and you have brought the office with you; the walk has become a meeting. The gift arrives only when it is not applied for\" — deliberate problem-solving reinstates the supervising attention the walk was meant to suspend."
       },
       {
         q: "What concession does the writer make in the fifth paragraph?",
@@ -423,7 +423,7 @@ var BANK = [
           "that celebrating walking as thought is a luxury unavailable to those who must walk"
         ],
         answer: 3,
-        explanation: "第五段承認行走文學沾染「borrowed grandeur」與自滿，並指出「To walk for thought is a luxury exactly as large as the option of not walking」——對被迫步行者（如走在路肩的通勤者）而言，步行非頓悟而是不得已，此即讓步。"
+        explanation: "The writer concedes the \"borrowed grandeur\" and self-congratulation of walking literature: \"To walk for thought is a luxury exactly as large as the option of not walking.\" For the commuter on the hard shoulder, walking is transport of last resort, not epiphany."
       },
       {
         q: "The writer's final, 'modest' reading of solvitur ambulando is that walking",
@@ -434,7 +434,7 @@ var BANK = [
           "solved Zeno's paradox in a way mathematicians later confirmed"
         ],
         answer: 1,
-        explanation: "末段：「What the walk dissolves is not the problem but the knot in the person holding it...You return with the difficulty intact and yourself rearranged」。散步解開的是人身上的結而非難題本身——芝諾悖論在散步後仍讓數學家忙了兩千年。"
+        explanation: "The final paragraph states: \"What the walk dissolves is not the problem but the knot in the person holding it... You return with the difficulty intact and yourself rearranged.\" Zeno's paradox survived the stroll and occupied mathematicians for two millennia."
       }
     ]
   }

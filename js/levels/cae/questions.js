@@ -104,14 +104,14 @@ var WRITING = [
     id: "w1",
     part: 1,
     type: "Essay",
-    title: "Essay — 鼓勵民眾使用大眾運輸",
+    title: "Essay — Encouraging Public Transport Use",
     length: "220–260 words",
     task: "Your class has attended a panel discussion on how local authorities could encourage people to use public transport. You have made the notes below — methods: lower fares / more frequent services / restricting private cars. Some opinions expressed: 'Cheap tickets attract passengers.' 'Nobody waits 40 minutes for a bus.' 'Punishing drivers is unpopular.' Write an essay discussing TWO of the methods. You should explain which method is more effective, giving reasons in support of your answer.",
     checklist: [
-      "Content：只選兩個方法深入討論，並明確說出哪個較有效",
-      "Communicative Achievement：essay 語域—客觀正式，意見有理由支撐",
-      "Organisation：introduction → 方法一 → 方法二 → 比較與結論",
-      "Language：C1 句型（concession, conditionals, hedging），詞彙準確多樣"
+      "Content: Discuss only two methods in depth and state clearly which is more effective",
+      "Communicative Achievement: Essay register - objective and formal; opinions supported by reasons",
+      "Organisation: introduction, method one, method two, comparison and conclusion",
+      "Language: C1 structures (concession, conditionals, hedging); accurate, varied vocabulary"
     ],
     model: "Model outline — Intro: congestion is a policy problem; two levers considered. Para 2 (fares): lower fares remove a real barrier, but subsidies strain budgets and may not shift habitual drivers. Para 3 (frequency): reliability changes behaviour more durably — people plan around a service they can trust. Conclusion: frequency is the more effective method, since price cuts on an unreliable service persuade nobody."
   },
@@ -119,14 +119,14 @@ var WRITING = [
     id: "w2",
     part: 2,
     type: "Proposal",
-    title: "Proposal — 校園閒置空間再利用",
+    title: "Proposal — Repurposing Unused Campus Space",
     length: "220–260 words",
     task: "The director of your college has invited students to send in proposals for how an unused room on campus could be turned into a facility that benefits students. Your proposal should explain what facility you suggest, how it would benefit students, and why it deserves funding. Write your proposal.",
     checklist: [
-      "Content：說明設施內容、對學生的益處、值得投資的理由",
-      "Communicative Achievement：proposal 語域—正式、有說服力、對未來提出建議",
-      "Organisation：有標題分節（Introduction / Proposal / Benefits / Conclusion）",
-      "Language：建議與預測句型（would enable, is likely to, I recommend that…）"
+      "Content: Describe the facility, its benefits for students, and why it is worth the investment",
+      "Communicative Achievement: Proposal register - formal, persuasive, making recommendations for the future",
+      "Organisation: Headed sections (Introduction / Proposal / Benefits / Conclusion)",
+      "Language: Recommendation and prediction structures (would enable, is likely to, I recommend that...)"
     ],
     model: "Model outline — Introduction: purpose of proposal. Proposed facility: a quiet study lounge with bookable group pods. Benefits: exam-period overcrowding in the library relieved; commuting students gain a base between classes. Funding case: low conversion cost, existing furniture reusable. Conclusion: modest investment, immediate and visible benefit — I strongly recommend approval."
   }
