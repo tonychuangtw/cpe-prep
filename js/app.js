@@ -855,8 +855,7 @@ if (typeof document !== 'undefined') {
       '<div class="vb-boxtag">盒 ' + box + "</div>";
     $("vb-back").innerHTML =
       '<div class="def"><strong>Definition:</strong> ' + esc(c.def) + "</div>" +
-      '<div class="ex">' + esc(c.example) + "</div>" +
-      '<div class="zh">' + esc(c.zh) + "</div>";
+      '<div class="ex">' + esc(c.example) + "</div>";
   }
 
   function reviewVocab(known) {
