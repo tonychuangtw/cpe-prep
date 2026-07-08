@@ -227,7 +227,7 @@ if (typeof document !== 'undefined') {
     var item = quiz.items[quiz.idx];
     var q = item.q, part = item.part;
     $("uoe-progress").textContent = PART_LABELS[part].split("·")[0].trim() +
-      "  第 " + (quiz.idx + 1) + " / " + quiz.items.length + " 題";
+      "  Question " + (quiz.idx + 1) + " / " + quiz.items.length;
 
     var qBox = $("uoe-question");
     var aBox = $("uoe-answer-area");
@@ -249,13 +249,13 @@ if (typeof document !== 'undefined') {
       });
     } else if (part === "part2" || part === "part3") {
       var html = "<p>" + esc(q.text) + "</p>";
-      if (part === "part3") html += '<p>提示字（改變詞形）：<span class="stem-word">' + esc(q.stem) + "</span></p>";
+      if (part === "part3") html += '<p>Stem word (change the form): <span class="stem-word">' + esc(q.stem) + "</span></p>";
       qBox.innerHTML = html;
       buildTypedInput(aBox);
     } else { // part4
       qBox.innerHTML =
         '<p class="original">' + esc(q.original) + "</p>" +
-        '<p>關鍵詞：<span class="kw">' + esc(q.keyword) + "</span>（必須使用，共 " + CFG.p4min + "–" + CFG.p4max + " 個字）</p>" +
+        '<p>Key word: <span class="kw">' + esc(q.keyword) + "</span> (must be used; " + CFG.p4min + "–" + CFG.p4max + " words in total)</p>" +
         "<p>" + esc(q.gapped) + "</p>";
       buildTypedInput(aBox);
     }
@@ -269,10 +269,10 @@ if (typeof document !== 'undefined') {
     input.autocapitalize = "off";
     input.autocomplete = "off";
     input.spellcheck = false;
-    input.placeholder = "輸入答案…";
+    input.placeholder = "Type your answer…";
     var btn = document.createElement("button");
     btn.className = "primary-btn";
-    btn.textContent = "送出";
+    btn.textContent = "Submit";
     var submit = function () {
       if (!input.value.trim()) return;
       input.disabled = true;
@@ -289,7 +289,7 @@ if (typeof document !== 'undefined') {
   function addSkipButton(container) {
     var skip = document.createElement("button");
     skip.className = "ghost-btn skip-btn";
-    skip.textContent = "跳過此題";
+    skip.textContent = "Skip this question";
     skip.addEventListener("click", function () { submitAnswer(null); });
     container.appendChild(skip);
   }
@@ -314,7 +314,7 @@ if (typeof document !== 'undefined') {
   }
 
   function userAnsText(item, userAns) {
-    if (userAns === null || userAns === undefined) return "（未作答）";
+    if (userAns === null || userAns === undefined) return "(not answered)";
     if (item.part === "part1") {
       return ["A", "B", "C", "D"][userAns] + ". " + item.q.options[userAns];
     }
@@ -329,9 +329,9 @@ if (typeof document !== 'undefined') {
   }
 
   function verdictFor(pct) {
-    if (pct >= 75) return { cls: "ok", text: "✅ 通過 — 高於及格線，維持這個水準！" };
-    if (pct >= 60) return { cls: "mid", text: "🟡 邊緣通過 — 剛過及格線（約 60%），再加強弱項。" };
-    return { cls: "bad", text: "❌ 未達標 — 低於及格線，建議複習後再考一次。" };
+    if (pct >= 75) return { cls: "ok", text: "✅ Pass — above the pass mark. Keep it up!" };
+    if (pct >= 60) return { cls: "mid", text: "🟡 Borderline pass — just over the pass mark (~60%). Work on your weak spots." };
+    return { cls: "bad", text: "❌ Below pass mark — review the material and try again." };
   }
 
   function gradeExam() {
@@ -358,18 +358,18 @@ if (typeof document !== 'undefined') {
       var stemHtml;
       if (item.part === "part4") {
         stemHtml = '<p class="original">' + esc(q.original) + "</p><p>" + esc(q.gapped) +
-          '　<span class="kw">[' + esc(q.keyword) + "]</span></p>";
+          ' <span class="kw">[' + esc(q.keyword) + "]</span></p>";
       } else {
         stemHtml = "<p>" + esc(q.text) + "</p>";
-        if (item.part === "part3") stemHtml += '<p>提示字：<span class="stem-word">' + esc(q.stem) + "</span></p>";
+        if (item.part === "part3") stemHtml += '<p>Stem word: <span class="stem-word">' + esc(q.stem) + "</span></p>";
       }
       reviewHtml +=
         '<div class="review-item ' + (isCorrect ? "ok" : "bad") + '">' +
-        '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " 第 " + (i + 1) + " 題" +
-        (pts > 1 ? '<span class="pts">' + (isCorrect ? pts : 0) + "/" + pts + " 分</span>" : "") + "</div>" +
+        '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " Question " + (i + 1) +
+        (pts > 1 ? '<span class="pts">' + (isCorrect ? pts : 0) + "/" + pts + " pts</span>" : "") + "</div>" +
         stemHtml +
-        '<div class="review-ans"><strong>你的答案：</strong>' + esc(userAnsText(item, quiz.answers[i])) + "</div>" +
-        '<div class="review-ans"><strong>正確答案：</strong>' + esc(correctAnsText(item)) + "</div>" +
+        '<div class="review-ans"><strong>Your answer: </strong>' + esc(userAnsText(item, quiz.answers[i])) + "</div>" +
+        '<div class="review-ans"><strong>Correct answer: </strong>' + esc(correctAnsText(item)) + "</div>" +
         '<div class="expl">' + esc(q.explanation) + "</div>" +
         "</div>";
     });
@@ -391,9 +391,9 @@ if (typeof document !== 'undefined') {
     $("uoe-quiz").classList.add("hidden");
     $("uoe-summary").classList.remove("hidden");
     $("uoe-summary-title").textContent = quiz.mode === "full"
-      ? "全卷模擬結果 (Use of English)"
-      : PART_LABELS[quiz.part] + " 模擬結果";
-    $("uoe-score").textContent = score + " / " + max + "（" + pct + "%）";
+      ? "Full mock results (Use of English)"
+      : PART_LABELS[quiz.part] + " — Mock results";
+    $("uoe-score").textContent = score + " / " + max + " (" + pct + "%)";
     $("uoe-verdict").className = "verdict-text " + v.cls;
     $("uoe-verdict").innerHTML = esc(v.text) + subHtml;
     $("uoe-review").innerHTML = reviewHtml;
@@ -424,7 +424,7 @@ if (typeof document !== 'undefined') {
       if (quiz.mode === "full") startFullMock(); else startMock(quiz.part);
     });
     $("uoe-back").addEventListener("click", function () {
-      if (quiz.idx > 0 && !confirm("尚未交卷，確定要放棄本次模擬考嗎？")) return;
+      if (quiz.idx > 0 && !confirm("You haven't submitted yet. Abandon this mock exam?")) return;
       backToPicker();
     });
     $("uoe-home").addEventListener("click", backToPicker);
@@ -437,9 +437,9 @@ if (typeof document !== 'undefined') {
 
   /* ================= §4.5 Reading 模擬考 ================= */
   var RD_LABELS = {
-    mc: "篇章選擇 · Multiple choice",
-    gap: "段落還原 · Gapped text",
-    match: "配對閱讀 · Multiple matching"
+    mc: "Multiple choice",
+    gap: "Gapped text",
+    match: "Multiple matching"
   };
   var LETTERS = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
@@ -457,7 +457,7 @@ if (typeof document !== 'undefined') {
 
   function startReading(type) {
     var pool = rdPool(type);
-    if (!pool.length) { alert("此題型的題庫尚未載入，請稍後再試。"); return; }
+    if (!pool.length) { alert("The question bank for this task type hasn't loaded. Please try again later."); return; }
     rd.type = type;
     rd.set = pool[Math.floor(Math.random() * pool.length)];
     rd.answers = [];
@@ -473,7 +473,7 @@ if (typeof document !== 'undefined') {
     var n = rdCount(rd.type);
     var done = 0;
     for (var i = 0; i < n; i++) if (rd.answers[i] !== undefined && rd.answers[i] !== null) done++;
-    $("rd-progress").textContent = RD_LABELS[rd.type].split("·")[0].trim() + "  已作答 " + done + " / " + n;
+    $("rd-progress").textContent = RD_LABELS[rd.type].split("·")[0].trim() + "  Answered " + done + " / " + n;
   }
 
   /* 一列字母按鈕（單選 toggle），onPick(idx) */
@@ -535,14 +535,14 @@ if (typeof document !== 'undefined') {
       var html = "";
       s.segments.forEach(function (seg, i) {
         html += "<p>" + esc(seg) + "</p>";
-        if (i < n) html += '<p class="gap-slot">（' + (i + 1) + "）＿＿＿＿</p>";
+        if (i < n) html += '<p class="gap-slot">(' + (i + 1) + ") ____</p>";
       });
       art.innerHTML = html;
       area.appendChild(art);
 
       var optCard = document.createElement("div");
       optCard.className = "card";
-      var ohtml = "<h3>選項（其中一個用不到）</h3>";
+      var ohtml = "<h3>Options (one is not needed)</h3>";
       s.options.forEach(function (opt, oi) {
         ohtml += '<p class="rd-opt"><strong>' + LETTERS[oi] + ".</strong> " + esc(opt) + "</p>";
       });
@@ -551,14 +551,14 @@ if (typeof document !== 'undefined') {
 
       var pickCard = document.createElement("div");
       pickCard.className = "card";
-      pickCard.innerHTML = "<h3>作答</h3>";
+      pickCard.innerHTML = "<h3>Your answers</h3>";
       for (var gi = 0; gi < n; gi++) {
         (function (g) {
           var row = document.createElement("div");
           row.className = "gap-answer-row";
           var lab = document.createElement("span");
           lab.className = "gap-answer-label";
-          lab.textContent = "第 " + (g + 1) + " 格";
+          lab.textContent = "Gap " + (g + 1);
           row.appendChild(lab);
           row.appendChild(letterRow(s.options.length, function (idx) {
             rd.answers[g] = idx;
@@ -577,7 +577,7 @@ if (typeof document !== 'undefined') {
       });
       var qCard = document.createElement("div");
       qCard.className = "card";
-      qCard.innerHTML = "<h3>哪一段提到…</h3>";
+      qCard.innerHTML = "<h3>Which section mentions…</h3>";
       s.questions.forEach(function (q, qi) {
         var wrap = document.createElement("div");
         wrap.className = "gap-answer-row match-row";
@@ -604,15 +604,15 @@ if (typeof document !== 'undefined') {
   function rdQuestionLabel(i) {
     var s = rd.set;
     if (rd.type === "mc") return s.questions[i].q;
-    if (rd.type === "gap") return "第 " + (i + 1) + " 格";
+    if (rd.type === "gap") return "Gap " + (i + 1);
     return s.questions[i].q;
   }
   function rdAnswerText(i, idx) {
     var s = rd.set;
-    if (idx === undefined || idx === null) return "（未作答）";
+    if (idx === undefined || idx === null) return "(not answered)";
     if (rd.type === "mc") return LETTERS[idx] + ". " + s.questions[i].options[idx];
     if (rd.type === "gap") return LETTERS[idx] + ". " + s.options[idx];
-    return LETTERS[idx] + "（" + s.sections[idx].label + "）";
+    return LETTERS[idx] + " (" + s.sections[idx].label + ")";
   }
   function rdExplanation(i) {
     var s = rd.set;
@@ -624,7 +624,7 @@ if (typeof document !== 'undefined') {
     var n = rdCount(rd.type);
     var unanswered = 0;
     for (var i = 0; i < n; i++) if (rd.answers[i] === undefined || rd.answers[i] === null) unanswered++;
-    if (unanswered > 0 && !confirm("還有 " + unanswered + " 題未作答，確定要交卷嗎？")) return;
+    if (unanswered > 0 && !confirm(unanswered + " question(s) still unanswered. Submit anyway?")) return;
 
     var score = 0;
     var reviewHtml = "";
@@ -635,10 +635,10 @@ if (typeof document !== 'undefined') {
       recordResult(statKey, isCorrect);
       reviewHtml +=
         '<div class="review-item ' + (isCorrect ? "ok" : "bad") + '">' +
-        '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " 第 " + (j + 1) + " 題</div>" +
+        '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " Question " + (j + 1) + "</div>" +
         "<p>" + esc(rdQuestionLabel(j)) + "</p>" +
-        '<div class="review-ans"><strong>你的答案：</strong>' + esc(rdAnswerText(j, rd.answers[j])) + "</div>" +
-        '<div class="review-ans"><strong>正確答案：</strong>' + esc(rdAnswerText(j, rdCorrectAnswer(j))) + "</div>" +
+        '<div class="review-ans"><strong>Your answer: </strong>' + esc(rdAnswerText(j, rd.answers[j])) + "</div>" +
+        '<div class="review-ans"><strong>Correct answer: </strong>' + esc(rdAnswerText(j, rdCorrectAnswer(j))) + "</div>" +
         '<div class="expl">' + esc(rdExplanation(j)) + "</div>" +
         "</div>";
     }
@@ -646,8 +646,8 @@ if (typeof document !== 'undefined') {
     var v = verdictFor(pct);
     $("rd-quiz").classList.add("hidden");
     $("rd-summary").classList.remove("hidden");
-    $("rd-summary-title").textContent = RD_LABELS[rd.type] + " 模擬結果";
-    $("rd-score").textContent = score + " / " + n + "（" + pct + "%）";
+    $("rd-summary-title").textContent = RD_LABELS[rd.type] + " — Mock results";
+    $("rd-score").textContent = score + " / " + n + " (" + pct + "%)";
     $("rd-verdict").className = "verdict-text " + v.cls;
     $("rd-verdict").textContent = v.text;
     $("rd-review").innerHTML = reviewHtml;
@@ -668,7 +668,7 @@ if (typeof document !== 'undefined') {
     $("rd-submit").addEventListener("click", gradeReading);
     $("rd-retry").addEventListener("click", function () { startReading(rd.type); });
     $("rd-back").addEventListener("click", function () {
-      if (rd.answers.length > 0 && !confirm("尚未交卷，確定要放棄本次模擬考嗎？")) return;
+      if (rd.answers.length > 0 && !confirm("You haven't submitted yet. Abandon this mock exam?")) return;
       rdBackToPicker();
     });
     $("rd-home").addEventListener("click", rdBackToPicker);
@@ -705,7 +705,7 @@ if (typeof document !== 'undefined') {
     var guide = $("wr-guidance");
     if (guide) guide.textContent = CFG.wordGuide || "";
     // timer
-    var wrTimer = makeCountdown($("wr-timer"), function () { alert("時間到！"); });
+    var wrTimer = makeCountdown($("wr-timer"), function () { alert("Time's up!"); });
     var minInput = $("wr-minutes");
     minInput.value = CFG.timerMin;
     function resetWr() {
@@ -740,17 +740,17 @@ if (typeof document !== 'undefined') {
           bodyHtml += "<blockquote><strong>Text " + (i + 1) + ".</strong> " + esc(t) + "</blockquote>";
         });
       }
-      bodyHtml += "<h4>目標長度</h4><p>" + esc(p.length) + "</p>";
-      bodyHtml += "<h4>評分檢核表</h4><ul>";
+      bodyHtml += "<h4>Target length</h4><p>" + esc(p.length) + "</p>";
+      bodyHtml += "<h4>Marking checklist</h4><ul>";
       p.checklist.forEach(function (c) { bodyHtml += "<li>" + esc(c) + "</li>"; });
       bodyHtml += "</ul>";
       bodyHtml += '<h4>Model</h4><p class="model">' + esc(p.model) + "</p>";
-      bodyHtml += "<h4>草稿（自動儲存）</h4>";
+      bodyHtml += "<h4>Draft (auto-saved)</h4>";
       body.innerHTML = bodyHtml;
 
       var ta = document.createElement("textarea");
       ta.className = "wr-draft";
-      ta.placeholder = "在這裡打草稿…";
+      ta.placeholder = "Draft your answer here…";
       ta.value = (function () {
         try { return localStorage.getItem(K_DRAFT + p.id) || ""; } catch (e) { return ""; }
       })();
@@ -827,11 +827,11 @@ if (typeof document !== 'undefined') {
     var due = VOCAB.filter(function (c) { return leitnerIsDue(st[c.front], now); }).length;
     var statusEl = $("vb-status");
     if (due === 0) {
-      statusEl.innerHTML = "<p>🎉 今天沒有到期的卡片。</p>";
+      statusEl.innerHTML = "<p>🎉 No cards due today.</p>";
       $("vb-card-wrap").classList.add("hidden");
       return;
     }
-    statusEl.innerHTML = "<p>到期卡片：<strong>" + due + "</strong> / " + VOCAB.length + " 張</p>";
+    statusEl.innerHTML = "<p>Cards due: <strong>" + due + "</strong> / " + VOCAB.length + "</p>";
     if (vocabQueue.length === 0) buildVocabQueue();
     if (vocabQueue.length > 0) {
       $("vb-card-wrap").classList.remove("hidden");
@@ -843,7 +843,7 @@ if (typeof document !== 'undefined') {
     var c = vocabQueue[0];
     if (!c) {
       $("vb-card-wrap").classList.add("hidden");
-      $("vb-status").innerHTML = "<p>✅ 本回合複習完成！</p>";
+      $("vb-status").innerHTML = "<p>✅ Review session complete!</p>";
       return;
     }
     var st = getVocabState();
@@ -852,7 +852,7 @@ if (typeof document !== 'undefined') {
     $("vb-front").innerHTML =
       '<div class="word">' + esc(c.front) + "</div>" +
       '<div class="pos">' + esc(c.pos) + "</div>" +
-      '<div class="vb-boxtag">盒 ' + box + "</div>";
+      '<div class="vb-boxtag">Box ' + box + "</div>";
     $("vb-back").innerHTML =
       '<div class="def"><strong>Definition:</strong> ' + esc(c.def) + "</div>" +
       '<div class="ex">' + esc(c.example) + "</div>";
@@ -870,7 +870,7 @@ if (typeof document !== 'undefined') {
     var now = Date.now();
     var remaining = vocabQueue.length;
     if (remaining > 0) {
-      $("vb-status").innerHTML = "<p>本回合剩餘：<strong>" + remaining + "</strong> 張</p>";
+      $("vb-status").innerHTML = "<p>Remaining this session: <strong>" + remaining + "</strong></p>";
     }
   }
 
@@ -905,11 +905,11 @@ if (typeof document !== 'undefined') {
       var s = stats[p];
       var label = PART_LABELS[p];
       if (!s || !s.attempted) {
-        html += barRow(label, "尚未練習", 0, false);
+        html += barRow(label, "Not practised yet", 0, false);
       } else {
         var pct = Math.round(100 * s.correct / s.attempted);
         html += barRow(label,
-          "答題 " + s.attempted + " · 正確率 " + pct + "% · 上次 " + fmtDate(s.last),
+          s.attempted + " answered · " + pct + "% correct · last " + fmtDate(s.last),
           pct, pct >= 80);
       }
     });
@@ -918,26 +918,26 @@ if (typeof document !== 'undefined') {
       var s = stats["r" + t];
       var label = RD_LABELS[t];
       if (!s || !s.attempted) {
-        html += barRow(label, "尚未練習", 0, false);
+        html += barRow(label, "Not practised yet", 0, false);
       } else {
         var rp = Math.round(100 * s.correct / s.attempted);
         html += barRow(label,
-          "答題 " + s.attempted + " · 正確率 " + rp + "% · 上次 " + fmtDate(s.last),
+          s.attempted + " answered · " + rp + "% correct · last " + fmtDate(s.last),
           rp, rp >= 80);
       }
     });
 
     var hist = loadJSON(K_MOCK(), []);
     if (hist.length) {
-      html += '<h3 class="pg-mock-title">最近模擬考</h3><ul class="mock-history">';
+      html += '<h3 class="pg-mock-title">Recent mock exams</h3><ul class="mock-history">';
       hist.slice(-8).reverse().forEach(function (m) {
-        var label = m.mode === "full" ? "UoE 全卷"
-          : m.mode === "reading" ? "閱讀 · " + (RD_LABELS[m.part] || m.part).split("·")[0].trim()
+        var label = m.mode === "full" ? "UoE full mock"
+          : m.mode === "reading" ? "Reading · " + (RD_LABELS[m.part] || m.part).split("·")[0].trim()
           : (PART_LABELS[m.part] || m.part).split("·")[0].trim();
         var cls = m.pct >= 75 ? "ok" : (m.pct >= 60 ? "mid" : "bad");
         html += '<li><span class="mh-date">' + esc(fmtDate(m.date)) + "</span>" +
           '<span class="mh-label">' + esc(label) + "</span>" +
-          '<span class="mh-score ' + cls + '">' + m.score + "/" + m.max + "（" + m.pct + "%）</span></li>";
+          '<span class="mh-score ' + cls + '">' + m.score + "/" + m.max + " (" + m.pct + "%)</span></li>";
       });
       html += "</ul>";
     }
@@ -949,17 +949,17 @@ if (typeof document !== 'undefined') {
       var b = st[c.front].box;
       counts[b] = (counts[b] || 0) + 1;
     });
-    var vhtml = "<h3>字彙卡</h3>";
+    var vhtml = "<h3>Vocabulary</h3>";
     [1, 2, 3].forEach(function (b) {
       var pct = Math.round(100 * counts[b] / VOCAB.length);
-      vhtml += barRow("盒 " + b, counts[b] + " 張", pct, b === 3);
+      vhtml += barRow("Box " + b, counts[b] + " cards", pct, b === 3);
     });
     $("pg-vocab").innerHTML = vhtml;
   }
 
   function initProgress() {
     $("pg-clear").addEventListener("click", function () {
-      if (!confirm("確定要清除「本級數」的練習紀錄、字彙進度與草稿嗎？此動作無法復原。")) return;
+      if (!confirm("Clear all practice records, vocabulary progress and drafts for this level? This cannot be undone.")) return;
       try {
         var keys = [];
         for (var i = 0; i < localStorage.length; i++) {
@@ -976,7 +976,7 @@ if (typeof document !== 'undefined') {
       } catch (e) {}
       vocabQueue = [];
       renderProgress();
-      alert("已清除。");
+      alert("Cleared.");
     });
     renderProgress();
   }
@@ -984,12 +984,12 @@ if (typeof document !== 'undefined') {
   /* ================= §8.5 色系主題 ================= */
   var K_THEME = "cpe_theme";
   var THEMES = [
-    { id: "ink",     name: "墨黑",   bg: "#0d0d10", accent: "#e0a458" },
-    { id: "navy",    name: "深海藍", bg: "#0a1220", accent: "#d6b25e" },
-    { id: "forest",  name: "森林綠", bg: "#0c1410", accent: "#d8c69a" },
-    { id: "paper",   name: "暖米白", bg: "#f4efe4", accent: "#8a5a26" },
-    { id: "plum",    name: "玫瑰紫", bg: "#16101a", accent: "#e08ba1" },
-    { id: "celadon", name: "青瓷",   bg: "#0d1416", accent: "#62c4b8" }
+    { id: "ink",     name: "Ink Black",   bg: "#0d0d10", accent: "#e0a458" },
+    { id: "navy",    name: "Deep Navy",   bg: "#0a1220", accent: "#d6b25e" },
+    { id: "forest",  name: "Forest Green", bg: "#0c1410", accent: "#d8c69a" },
+    { id: "paper",   name: "Warm Paper",  bg: "#f4efe4", accent: "#8a5a26" },
+    { id: "plum",    name: "Rose Plum",   bg: "#16101a", accent: "#e08ba1" },
+    { id: "celadon", name: "Celadon",     bg: "#0d1416", accent: "#62c4b8" }
   ];
 
   function applyTheme(id) {

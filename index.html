@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-Hant">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <meta name="theme-color" content="#0d0d10">
-<title>CPE 備考 — C2 Proficiency 練習</title>
+<title>CPE Prep — C2 Proficiency Practice</title>
 <script>
 /* apply saved theme before first paint to avoid flash */
 (function () {
@@ -27,11 +27,11 @@
 <header class="app-header">
   <span class="brand-mark" id="level-badge" aria-hidden="true">C2</span>
   <div class="brand-text">
-    <h1 id="app-title">CPE 備考</h1>
+    <h1 id="app-title">CPE Prep</h1>
     <span class="subtitle" id="app-subtitle">Cambridge C2 Proficiency</span>
   </div>
-  <button id="level-btn" class="icon-btn level-btn" aria-label="切換級數" title="切換級數">C2</button>
-  <button id="theme-btn" class="icon-btn" aria-label="選擇色系" title="選擇色系">
+  <button id="level-btn" class="icon-btn level-btn" aria-label="Switch level" title="Switch level">C2</button>
+  <button id="theme-btn" class="icon-btn" aria-label="Choose theme" title="Choose theme">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
       <path d="M12 21a9 9 0 1 1 9-9c0 2.5-1.5 3.5-3 3.5h-2a2.5 2.5 0 0 0-2 4c.5.7 0 1.5-2 1.5z"/>
       <circle cx="7.5" cy="11.5" r="1" fill="currentColor" stroke="none"/>
@@ -47,27 +47,27 @@
   <section id="tab-uoe" class="tab-panel active">
     <div id="uoe-picker">
       <h2>Use of English</h2>
-      <p class="hint">模擬考模式：每次抽真實考試題數（Part 1–3 各 8 題、Part 4 6 題），全部作答後交卷評分。</p>
-      <button id="uoe-full-mock" class="primary-btn">全卷模擬 · Part 1–4 一次考完</button>
+      <p class="hint">Mock exam mode: each round draws a real exam's worth of questions (8 each for Parts 1–3, 6 for Part 4). Answer everything, then submit for scoring.</p>
+      <button id="uoe-full-mock" class="primary-btn">Full mock exam · Parts 1–4 in one sitting</button>
       <div class="mode-grid">
         <button class="mode-btn" data-part="part1">
-          <strong>Part 1</strong><span>Multiple-choice cloze<br>選擇題克漏字</span>
+          <strong>Part 1</strong><span>Multiple-choice cloze</span>
         </button>
         <button class="mode-btn" data-part="part2">
-          <strong>Part 2</strong><span>Open cloze<br>開放式克漏字</span>
+          <strong>Part 2</strong><span>Open cloze</span>
         </button>
         <button class="mode-btn" data-part="part3">
-          <strong>Part 3</strong><span>Word formation<br>構詞</span>
+          <strong>Part 3</strong><span>Word formation</span>
         </button>
         <button class="mode-btn" data-part="part4">
-          <strong>Part 4</strong><span>Key word transformations<br>關鍵詞改寫</span>
+          <strong>Part 4</strong><span>Key word transformations</span>
         </button>
       </div>
     </div>
 
     <div id="uoe-quiz" class="hidden">
       <div class="quiz-topbar">
-        <button id="uoe-back" class="ghost-btn">← 返回</button>
+        <button id="uoe-back" class="ghost-btn">← Back</button>
         <span id="uoe-progress"></span>
       </div>
       <div id="uoe-question" class="card"></div>
@@ -76,11 +76,11 @@
 
     <div id="uoe-summary" class="hidden">
       <div class="card center">
-        <h2 id="uoe-summary-title">模擬考結果</h2>
+        <h2 id="uoe-summary-title">Mock exam results</h2>
         <p id="uoe-score" class="big-score"></p>
         <p id="uoe-verdict" class="verdict-text"></p>
-        <button id="uoe-retry" class="primary-btn">再考一回</button>
-        <button id="uoe-home" class="ghost-btn">回模式選單</button>
+        <button id="uoe-retry" class="primary-btn">Take another</button>
+        <button id="uoe-home" class="ghost-btn">Back to menu</button>
       </div>
       <div id="uoe-review"></div>
     </div>
@@ -90,36 +90,36 @@
   <section id="tab-reading" class="tab-panel">
     <div id="rd-picker">
       <h2>Reading</h2>
-      <p class="hint">模擬考模式：每次抽一組完整題組，全部作答後交卷評分。</p>
+      <p class="hint">Mock exam mode: each round draws one complete task set. Answer everything, then submit for scoring.</p>
       <div class="mode-grid rd-grid">
         <button class="mode-btn" data-rtype="mc">
-          <strong>篇章選擇</strong><span>Multiple choice<br>長文 + 6 題四選一</span>
+          <strong>Multiple choice</strong><span>Long text + 6 four-option questions</span>
         </button>
         <button class="mode-btn" data-rtype="gap">
-          <strong>段落還原</strong><span>Gapped text<br>把抽走的段落放回原位</span>
+          <strong>Gapped text</strong><span>Put the removed paragraphs back in place</span>
         </button>
         <button class="mode-btn" data-rtype="match">
-          <strong>配對閱讀</strong><span>Multiple matching<br>10 敘述配對段落</span>
+          <strong>Multiple matching</strong><span>Match 10 statements to sections</span>
         </button>
       </div>
     </div>
 
     <div id="rd-quiz" class="hidden">
       <div class="quiz-topbar">
-        <button id="rd-back" class="ghost-btn">← 返回</button>
+        <button id="rd-back" class="ghost-btn">← Back</button>
         <span id="rd-progress"></span>
       </div>
       <div id="rd-area"></div>
-      <button id="rd-submit" class="primary-btn">交卷</button>
+      <button id="rd-submit" class="primary-btn">Submit</button>
     </div>
 
     <div id="rd-summary" class="hidden">
       <div class="card center">
-        <h2 id="rd-summary-title">模擬考結果</h2>
+        <h2 id="rd-summary-title">Mock exam results</h2>
         <p id="rd-score" class="big-score"></p>
         <p id="rd-verdict" class="verdict-text"></p>
-        <button id="rd-retry" class="primary-btn">再考一回</button>
-        <button id="rd-home" class="ghost-btn">回模式選單</button>
+        <button id="rd-retry" class="primary-btn">Take another</button>
+        <button id="rd-home" class="ghost-btn">Back to menu</button>
       </div>
       <div id="rd-review"></div>
     </div>
@@ -131,13 +131,13 @@
     <p class="hint" id="wr-guidance"></p>
     <div class="card timer-card">
       <div class="timer-row">
-        <label>分鐘：<input type="number" id="wr-minutes" value="45" min="1" max="120"></label>
+        <label>Minutes: <input type="number" id="wr-minutes" value="45" min="1" max="120"></label>
         <span id="wr-timer" class="timer-display">45:00</span>
       </div>
       <div class="timer-row">
-        <button id="wr-start" class="primary-btn small">開始</button>
-        <button id="wr-pause" class="ghost-btn small">暫停</button>
-        <button id="wr-reset" class="ghost-btn small">重設</button>
+        <button id="wr-start" class="primary-btn small">Start</button>
+        <button id="wr-pause" class="ghost-btn small">Pause</button>
+        <button id="wr-reset" class="ghost-btn small">Reset</button>
       </div>
     </div>
     <div id="writing-list"></div>
@@ -147,35 +147,35 @@
   <section id="tab-speaking" class="tab-panel">
     <h2>Speaking</h2>
     <div class="card center">
-      <p class="hint" id="sp-mode-hint">Part 3 Long turn — 抽一張題卡，講滿 2 分鐘</p>
-      <button id="sp-draw" class="primary-btn">抽一題</button>
+      <p class="hint" id="sp-mode-hint">Part 3 Long turn — draw a task card and speak for 2 minutes</p>
+      <button id="sp-draw" class="primary-btn">Draw a card</button>
     </div>
     <div id="sp-card" class="card hidden"></div>
     <div id="sp-timer-box" class="card center hidden">
       <span id="sp-timer" class="timer-display">2:00</span>
       <div class="timer-row">
-        <button id="sp-start" class="primary-btn small">開始計時</button>
-        <button id="sp-reset" class="ghost-btn small">重設</button>
+        <button id="sp-start" class="primary-btn small">Start timer</button>
+        <button id="sp-reset" class="ghost-btn small">Reset</button>
       </div>
     </div>
     <div id="sp-phrases" class="card hidden">
-      <h3>高分句型（討論標記與委婉語）</h3>
+      <h3>High-scoring phrases (discourse markers &amp; hedging)</h3>
       <ul id="sp-phrase-list"></ul>
     </div>
     <div class="card">
-      <h3>Part 1 &amp; 2 小提示</h3>
+      <h3>Part 1 &amp; 2 tips</h3>
       <ul class="tips">
-        <li><strong>Part 1（訪談）</strong>：不要只回答 yes/no，每題延伸 2–3 句；用具體例子支撐意見；展現詞彙廣度但保持自然。</li>
-        <li><strong>Part 2（合作討論）</strong>：主動邀請夥伴發言（"How do you see it?"）；不要壟斷也不要沉默；練習不同意但有禮（"I see it slightly differently…"）。</li>
-        <li>所有部分：語速穩定比快更重要；停頓時用填充語（"That's an interesting way of putting it…"）爭取思考時間。</li>
+        <li><strong>Part 1 (interview)</strong>: don't stop at yes/no — extend each answer by 2–3 sentences; back up opinions with concrete examples; show range of vocabulary while staying natural.</li>
+        <li><strong>Part 2 (collaborative task)</strong>: actively invite your partner to speak ("How do you see it?"); don't dominate or fall silent; practise disagreeing politely ("I see it slightly differently…").</li>
+        <li>All parts: a steady pace beats a fast one; use fillers ("That's an interesting way of putting it…") to buy thinking time when you pause.</li>
       </ul>
     </div>
   </section>
 
-  <!-- ===== Tab 4: 字彙卡 ===== -->
+  <!-- ===== Tab 4: Vocabulary ===== -->
   <section id="tab-vocab" class="tab-panel">
-    <h2>字彙卡</h2>
-    <p class="hint">Leitner 三盒間隔複習 — 盒 1 每天、盒 2 每 2 天、盒 3 每 5 天</p>
+    <h2>Vocabulary</h2>
+    <p class="hint">Leitner 3-box spaced repetition — Box 1 daily, Box 2 every 2 days, Box 3 every 5 days</p>
     <div id="vb-status" class="card center"></div>
     <div id="vb-card-wrap" class="hidden">
       <div id="vb-card" class="flashcard">
@@ -184,21 +184,21 @@
           <div class="flashcard-back" id="vb-back"></div>
         </div>
       </div>
-      <p class="hint center">點卡片翻面</p>
+      <p class="hint center">Tap the card to flip</p>
       <div class="timer-row center">
-        <button id="vb-no" class="danger-btn">不認得</button>
-        <button id="vb-yes" class="success-btn">認得</button>
+        <button id="vb-no" class="danger-btn">Don't know</button>
+        <button id="vb-yes" class="success-btn">Know it</button>
       </div>
     </div>
   </section>
 
-  <!-- ===== Tab 5: 進度 ===== -->
+  <!-- ===== Tab 5: Progress ===== -->
   <section id="tab-progress" class="tab-panel">
-    <h2>進度</h2>
+    <h2>Progress</h2>
     <div id="pg-uoe" class="card"></div>
     <div id="pg-vocab" class="card"></div>
     <div class="card center">
-      <button id="pg-clear" class="danger-btn">清除所有資料</button>
+      <button id="pg-clear" class="danger-btn">Clear all data</button>
     </div>
   </section>
 
@@ -219,34 +219,34 @@
     Speaking</button>
   <button class="tab-btn" data-tab="tab-vocab">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="6" width="13" height="15" rx="2"/><path d="M8 3h11a2 2 0 0 1 2 2v13"/></svg>
-    字彙卡</button>
+    Vocabulary</button>
   <button class="tab-btn" data-tab="tab-progress">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="12" y1="20" x2="12" y2="10"/><line x1="18" y1="20" x2="18" y2="4"/><line x1="6" y1="20" x2="6" y2="16"/></svg>
-    進度</button>
+    Progress</button>
 </nav>
 
-<div id="level-select" class="level-select hidden" role="dialog" aria-label="選擇級數">
+<div id="level-select" class="level-select hidden" role="dialog" aria-label="Choose level">
   <div class="level-select-inner">
-    <h2>選擇備考級數</h2>
-    <p class="hint">三個級數的進度各自獨立儲存，可隨時切換。</p>
+    <h2>Choose your exam level</h2>
+    <p class="hint">Progress is stored separately for each level — switch any time.</p>
     <div class="level-grid">
       <button class="mode-btn level-card" data-level="fce">
-        <strong>B2 First</strong><span>FCE · 中高級<br>日常與半正式情境的紮實英文基礎</span>
+        <strong>B2 First</strong><span>FCE · Upper-intermediate<br>A solid foundation for everyday and semi-formal English</span>
       </button>
       <button class="mode-btn level-card" data-level="cae">
-        <strong>C1 Advanced</strong><span>CAE · 高級<br>學術與職場所需的流利精準英文</span>
+        <strong>C1 Advanced</strong><span>CAE · Advanced<br>Fluent, precise English for academic and professional life</span>
       </button>
       <button class="mode-btn level-card" data-level="cpe">
-        <strong>C2 Proficiency</strong><span>CPE · 最高級<br>接近母語者的語感與修辭能力</span>
+        <strong>C2 Proficiency</strong><span>CPE · Mastery<br>Near-native command of nuance and rhetoric</span>
       </button>
     </div>
-    <button id="level-cancel" class="ghost-btn hidden">取消</button>
+    <button id="level-cancel" class="ghost-btn hidden">Cancel</button>
   </div>
 </div>
 
 <div id="theme-backdrop" class="sheet-backdrop hidden"></div>
-<div id="theme-sheet" class="theme-sheet hidden" role="dialog" aria-label="選擇色系">
-  <h3>選擇色系</h3>
+<div id="theme-sheet" class="theme-sheet hidden" role="dialog" aria-label="Choose theme">
+  <h3>Choose a theme</h3>
   <div id="theme-grid" class="theme-grid"></div>
 </div>
 

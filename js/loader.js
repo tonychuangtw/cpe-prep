@@ -12,30 +12,30 @@
   var LEVELS = {
     fce: {
       id: "fce", badge: "B2",
-      exam: "B2 First", title: "FCE 備考", subtitle: "Cambridge B2 First",
-      desc: "中高級。日常與半正式情境的聽說讀寫，適合建立紮實基礎。",
+      exam: "B2 First", title: "FCE Prep", subtitle: "Cambridge B2 First",
+      desc: "Upper-intermediate. Everyday and semi-formal English across all four skills — ideal for building a solid foundation.",
       timerMin: 40,
-      wordGuide: "本級 Essay 建議字數：140–190 字（Part 2 亦為 140–190 字）",
+      wordGuide: "Essay target length at this level: 140–190 words (Part 2 also 140–190 words)",
       p4min: 2, p4max: 5,
-      spSecs: 60, spLabel: "Part 2 Long turn — 抽一張題卡，講滿 1 分鐘"
+      spSecs: 60, spLabel: "Part 2 Long turn — draw a task card and speak for 1 minute"
     },
     cae: {
       id: "cae", badge: "C1",
-      exam: "C1 Advanced", title: "CAE 備考", subtitle: "Cambridge C1 Advanced",
-      desc: "高級。學術與職場所需的流利精準英文，大學入學常用門檻。",
+      exam: "C1 Advanced", title: "CAE Prep", subtitle: "Cambridge C1 Advanced",
+      desc: "Advanced. Fluent, precise English for academic and professional life — a common university entry requirement.",
       timerMin: 45,
-      wordGuide: "本級 Essay 建議字數：220–260 字（Part 2 亦為 220–260 字）",
+      wordGuide: "Essay target length at this level: 220–260 words (Part 2 also 220–260 words)",
       p4min: 3, p4max: 6,
-      spSecs: 60, spLabel: "Part 2 Long turn — 抽一張題卡，講滿 1 分鐘"
+      spSecs: 60, spLabel: "Part 2 Long turn — draw a task card and speak for 1 minute"
     },
     cpe: {
       id: "cpe", badge: "C2",
-      exam: "C2 Proficiency", title: "CPE 備考", subtitle: "Cambridge C2 Proficiency",
-      desc: "最高級。接近母語者的掌握度，細膩語感與修辭能力的試煉。",
+      exam: "C2 Proficiency", title: "CPE Prep", subtitle: "Cambridge C2 Proficiency",
+      desc: "Mastery. Near-native command of English — the ultimate test of nuance and rhetorical skill.",
       timerMin: 45,
-      wordGuide: "本級 Essay 建議字數：240–280 字（Part 2 為 280–320 字）",
+      wordGuide: "Essay target length at this level: 240–280 words (Part 2: 280–320 words)",
       p4min: 3, p4max: 8,
-      spSecs: 120, spLabel: "Part 3 Long turn — 抽一張題卡，講滿 2 分鐘"
+      spSecs: 120, spLabel: "Part 3 Long turn — draw a task card and speak for 2 minutes"
     }
   };
   window.LEVELS = LEVELS;
@@ -88,7 +88,7 @@
       if ((el = document.getElementById("app-title"))) el.textContent = cfg.title;
       if ((el = document.getElementById("app-subtitle"))) el.textContent = cfg.subtitle;
       if ((el = document.getElementById("level-btn"))) el.textContent = cfg.badge;
-      document.title = cfg.title + " — " + cfg.exam + " 練習";
+      document.title = cfg.title + " — " + cfg.exam + " Practice";
     } catch (e) {}
   }
 
