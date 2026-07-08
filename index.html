@@ -255,6 +255,29 @@
   <!-- ===== Tab 3: Speaking ===== -->
   <section id="tab-speaking" class="tab-panel">
     <h2>Speaking</h2>
+    <div class="card center" id="sp-int-card">
+      <h3>Part 1 · Interview simulator</h3>
+      <p class="hint">The examiner asks a question out loud — answer for about 45 seconds, then move on.</p>
+      <button id="sp-int-start" class="primary-btn">Start interview (4 questions)</button>
+    </div>
+    <div id="sp-int-run" class="card center hidden">
+      <p id="sp-int-progress" class="hint"></p>
+      <p id="sp-int-q" class="sp-int-q"></p>
+      <span id="sp-int-timer" class="timer-display">0:45</span>
+      <div class="timer-row">
+        <button id="sp-int-repeat" class="ghost-btn small">🔊 Repeat</button>
+        <button id="sp-int-next" class="primary-btn small">Next question</button>
+        <button id="sp-int-quit" class="ghost-btn small">End</button>
+      </div>
+    </div>
+    <div id="sp-int-eval" class="card hidden">
+      <h3>Self-evaluation</h3>
+      <p class="hint">Be honest — tick what you actually did:</p>
+      <div id="sp-int-eval-list"></div>
+      <div class="timer-row center">
+        <button id="sp-int-done" class="primary-btn small">Done</button>
+      </div>
+    </div>
     <div class="card center">
       <p class="hint" id="sp-mode-hint">Part 3 Long turn — draw a task card and speak for 2 minutes</p>
       <button id="sp-draw" class="primary-btn">Draw a card</button>

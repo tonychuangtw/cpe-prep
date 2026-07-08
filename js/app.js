@@ -162,7 +162,7 @@ if (typeof document !== 'undefined') {
         btn.classList.add("active");
         var panel = $(btn.dataset.tab);
         if (panel) panel.classList.add("active");
-        if (btn.dataset.tab !== "tab-listening") { try { lsStopAudio(); } catch (e) {} }
+        try { lsStopAudio(); } catch (e) {}
         if (btn.dataset.tab === "tab-progress") { try { renderProgress(); } catch (e) {} }
         if (btn.dataset.tab === "tab-vocab") { try { renderVocabStatus(); } catch (e) {} }
       });
@@ -1447,6 +1447,25 @@ if (typeof document !== 'undefined') {
       body.appendChild(ta);
       body.appendChild(wc);
 
+      var fb = document.createElement("button");
+      fb.className = "ghost-btn small wr-ai-btn";
+      fb.textContent = "📋 Copy for AI feedback";
+      fb.addEventListener("click", function () {
+        var essay = ta.value.trim();
+        if (!essay) { alert("Write your draft first, then copy it for feedback."); return; }
+        var msg = "Please grade this " + LEVEL.toUpperCase() + " Writing answer using the official Cambridge assessment scales " +
+          "(Content / Communicative Achievement / Organisation / Language, each 0\u20135). " +
+          "Give a band per criterion, an overall verdict, and 3 concrete improvements with rewritten examples.\n\n" +
+          "Task: " + p.title + " (Part " + p.part + " \u00b7 " + p.type + ")\n" +
+          p.task + "\nTarget length: " + p.length + "\n\n" +
+          "My answer (" + countWords(essay) + " words):\n" + essay;
+        var done = function () { fb.textContent = "\u2713 Copied — paste it to your AI chat"; setTimeout(function () { fb.textContent = "\ud83d\udccb Copy for AI feedback"; }, 3000); };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(msg).then(done, function () { fallbackCopy(msg); done(); });
+        } else { fallbackCopy(msg); done(); }
+      });
+      body.appendChild(fb);
+
       head.addEventListener("click", function () { body.classList.toggle("hidden"); });
       wrap.appendChild(head);
       wrap.appendChild(body);
@@ -1454,8 +1473,129 @@ if (typeof document !== 'undefined') {
     });
   }
 
+  function fallbackCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.style.position = "fixed";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    try { document.execCommand("copy"); } catch (e) {}
+    document.body.removeChild(ta);
+  }
+
   /* ================= §6 Speaking ================= */
+  /* Part 1 interview 題庫（各級通用的個人性問題） */
+  var SP_INTERVIEW = [
+    "Where are you from, and what do you like most about living there?",
+    "What do you enjoy doing in your free time?",
+    "Do you prefer spending time alone or with other people? Why?",
+    "What kind of music do you listen to, and has your taste changed over the years?",
+    "Tell me about a place you would like to visit one day.",
+    "What did you enjoy studying at school, and why?",
+    "How important is it for you to keep in touch with old friends?",
+    "Do you prefer reading books or watching films? Why?",
+    "What is your favourite time of year, and what makes it special?",
+    "How do you usually celebrate special occasions with your family?",
+    "What piece of technology could you not live without, and why?",
+    "Would you rather live in a big city or in the countryside? Why?",
+    "What is something new you have learned recently?",
+    "How do you like to stay healthy?",
+    "Tell me about a person who has influenced you.",
+    "Do you think you will still live in the same place in ten years' time?",
+    "What kind of food do you enjoy, and do you like cooking?",
+    "How do you usually plan your weekends?",
+    "What was the last thing that made you laugh a lot?",
+    "If you had more free time, how would you spend it?",
+    "Do you enjoy travelling? What do you get out of it?",
+    "How has the area where you live changed in recent years?",
+    "What ambitions do you have for the next few years?",
+    "Do you work better in the morning or in the evening? Why?"
+  ];
+  var SP_EVAL_ITEMS = [
+    "I extended every answer beyond yes/no (2–3 sentences)",
+    "I gave concrete examples or reasons",
+    "I kept going without long silences",
+    "I used a range of vocabulary, not just simple words",
+    "I sounded natural, not memorised"
+  ];
+
+  function initInterview() {
+    var run = { qs: [], idx: 0 };
+    var timer = makeCountdown($("sp-int-timer"), null);
+
+    function speakQ(text) {
+      if (!window.speechSynthesis) return;
+      speechSynthesis.cancel();
+      var u = new SpeechSynthesisUtterance(text);
+      var vs = lsVoices();
+      if (vs.a) u.voice = vs.a;
+      u.onend = function () { timer.set(45); timer.start(); };
+      speechSynthesis.speak(u);
+    }
+
+    function showQ() {
+      $("sp-int-progress").textContent = "Question " + (run.idx + 1) + " / " + run.qs.length;
+      $("sp-int-q").textContent = run.qs[run.idx];
+      $("sp-int-next").textContent = run.idx === run.qs.length - 1 ? "Finish" : "Next question";
+      timer.pause();
+      timer.set(45);
+      speakQ(run.qs[run.idx]);
+    }
+
+    function stopAll() {
+      try { if (window.speechSynthesis) speechSynthesis.cancel(); } catch (e) {}
+      timer.pause();
+    }
+
+    $("sp-int-start").addEventListener("click", function () {
+      run.qs = shuffle(SP_INTERVIEW).slice(0, 4);
+      run.idx = 0;
+      $("sp-int-card").classList.add("hidden");
+      $("sp-int-eval").classList.add("hidden");
+      $("sp-int-run").classList.remove("hidden");
+      showQ();
+    });
+    $("sp-int-repeat").addEventListener("click", function () { timer.pause(); speakQ(run.qs[run.idx]); });
+    $("sp-int-next").addEventListener("click", function () {
+      run.idx += 1;
+      if (run.idx >= run.qs.length) {
+        stopAll();
+        $("sp-int-run").classList.add("hidden");
+        var list = $("sp-int-eval-list");
+        list.innerHTML = "";
+        SP_EVAL_ITEMS.forEach(function (t) {
+          var lab = document.createElement("label");
+          lab.className = "sp-eval-item";
+          var cb = document.createElement("input");
+          cb.type = "checkbox";
+          lab.appendChild(cb);
+          lab.appendChild(document.createTextNode(" " + t));
+          list.appendChild(lab);
+        });
+        $("sp-int-eval").classList.remove("hidden");
+      } else {
+        showQ();
+      }
+    });
+    $("sp-int-quit").addEventListener("click", function () {
+      stopAll();
+      $("sp-int-run").classList.add("hidden");
+      $("sp-int-card").classList.remove("hidden");
+    });
+    $("sp-int-done").addEventListener("click", function () {
+      var boxes = $("sp-int-eval-list").querySelectorAll("input");
+      var ticked = 0;
+      boxes.forEach(function (b) { if (b.checked) ticked++; });
+      $("sp-int-eval").classList.add("hidden");
+      $("sp-int-card").classList.remove("hidden");
+      alert(ticked >= 4 ? "Strong interview — " + ticked + "/5. Keep that consistency!"
+        : "You ticked " + ticked + "/5. Pick one unticked habit and make it your focus next round.");
+    });
+  }
+
   function initSpeaking() {
+    initInterview();
     var hint = $("sp-mode-hint");
     if (hint && CFG.spLabel) hint.textContent = CFG.spLabel;
     var spTimer = makeCountdown($("sp-timer"), function () {
