@@ -225,12 +225,14 @@ if (typeof document !== 'undefined') {
 
   function renderQuestion() {
     var item = quiz.items[quiz.idx];
-    var q = item.q, part = item.part;
-    $("uoe-progress").textContent = PART_LABELS[part].split("·")[0].trim() +
+    $("uoe-progress").textContent = PART_LABELS[item.part].split("·")[0].trim() +
       "  Question " + (quiz.idx + 1) + " / " + quiz.items.length;
+    renderUoeItemInto(item, $("uoe-question"), $("uoe-answer-area"), submitAnswer);
+    addSkipButton($("uoe-answer-area"));
+  }
 
-    var qBox = $("uoe-question");
-    var aBox = $("uoe-answer-area");
+  function renderUoeItemInto(item, qBox, aBox, onAnswer) {
+    var q = item.q, part = item.part;
     aBox.innerHTML = "";
     /* retrigger entrance animation */
     qBox.classList.remove("q-anim");
@@ -244,25 +246,24 @@ if (typeof document !== 'undefined') {
         var b = document.createElement("button");
         b.className = "option-btn";
         b.innerHTML = "<strong>" + letters[i] + "</strong>&nbsp; " + esc(opt);
-        b.addEventListener("click", function () { submitAnswer(i); });
+        b.addEventListener("click", function () { onAnswer(i); });
         aBox.appendChild(b);
       });
     } else if (part === "part2" || part === "part3") {
       var html = "<p>" + esc(q.text) + "</p>";
       if (part === "part3") html += '<p>Stem word (change the form): <span class="stem-word">' + esc(q.stem) + "</span></p>";
       qBox.innerHTML = html;
-      buildTypedInput(aBox);
+      buildTypedInput(aBox, onAnswer);
     } else { // part4
       qBox.innerHTML =
         '<p class="original">' + esc(q.original) + "</p>" +
         '<p>Key word: <span class="kw">' + esc(q.keyword) + "</span> (must be used; " + CFG.p4min + "–" + CFG.p4max + " words in total)</p>" +
         "<p>" + esc(q.gapped) + "</p>";
-      buildTypedInput(aBox);
+      buildTypedInput(aBox, onAnswer);
     }
-    addSkipButton(aBox);
   }
 
-  function buildTypedInput(container) {
+  function buildTypedInput(container, onAnswer) {
     var input = document.createElement("input");
     input.type = "text";
     input.className = "answer-input";
@@ -277,7 +278,7 @@ if (typeof document !== 'undefined') {
       if (!input.value.trim()) return;
       input.disabled = true;
       btn.disabled = true;
-      submitAnswer(input.value);
+      onAnswer(input.value);
     };
     btn.addEventListener("click", submit);
     input.addEventListener("keydown", function (e) { if (e.key === "Enter") submit(); });
@@ -397,6 +398,12 @@ if (typeof document !== 'undefined') {
     $("uoe-verdict").className = "verdict-text " + v.cls;
     $("uoe-verdict").innerHTML = esc(v.text) + subHtml;
     $("uoe-review").innerHTML = reviewHtml;
+
+    var wrongCount = 0;
+    quiz.items.forEach(function (item, i) { if (!gradeItem(item, quiz.answers[i])) wrongCount++; });
+    var db = $("uoe-drill-btn");
+    db.classList.toggle("hidden", wrongCount === 0);
+    db.textContent = "Practice mistakes (" + wrongCount + ")";
     window.scrollTo(0, 0);
 
     saveMockRecord(quiz.mode, quiz.part, score, max, pct);
@@ -428,11 +435,180 @@ if (typeof document !== 'undefined') {
       backToPicker();
     });
     $("uoe-home").addEventListener("click", backToPicker);
+    $("uoe-drill-btn").addEventListener("click", startUoeDrill);
+    $("uoe-drill-quit").addEventListener("click", function () {
+      if (!confirm("Quit mistake practice and go back to the results?")) return;
+      $("uoe-drill").classList.add("hidden");
+      $("uoe-summary").classList.remove("hidden");
+    });
+    $("uoe-congrats-home").addEventListener("click", backToPicker);
   }
   function backToPicker() {
     $("uoe-quiz").classList.add("hidden");
     $("uoe-summary").classList.add("hidden");
+    $("uoe-drill").classList.add("hidden");
+    $("uoe-congrats").classList.add("hidden");
     $("uoe-picker").classList.remove("hidden");
+  }
+
+  /* ================= §4.7 Mistake drill ================= */
+  var drill = null;
+
+  function startDrillGeneric(cfg) {
+    drill = cfg;
+    drill.queue = cfg.items.slice();
+    drill.total = cfg.items.length;
+    drill.mastered = 0;
+    $(cfg.prefix + "-summary").classList.add("hidden");
+    $(cfg.prefix + "-drill").classList.remove("hidden");
+    renderDrillItem();
+  }
+
+  function renderDrillItem() {
+    var p = drill.prefix;
+    if (!drill.queue.length) {
+      $(p + "-drill").classList.add("hidden");
+      $(p + "-congrats").classList.remove("hidden");
+      $(p + "-congrats-text").textContent = "You have re-answered all " + drill.total +
+        " mistake" + (drill.total > 1 ? "s" : "") + " correctly. Great work — keep this momentum going!";
+      window.scrollTo(0, 0);
+      return;
+    }
+    $(p + "-drill-progress").textContent = "Mastered " + drill.mastered + " / " + drill.total +
+      " · " + drill.queue.length + " in queue";
+    $(p + "-drill-feedback").innerHTML = "";
+    drill.render(drill.queue[0], drillAnswered);
+    window.scrollTo(0, 0);
+  }
+
+  function drillAnswered(isCorrect, userText) {
+    var p = drill.prefix;
+    var item = drill.queue.shift();
+    if (isCorrect) drill.mastered++;
+    else drill.queue.push(item);
+    $(p + "-drill-area").querySelectorAll("button, input").forEach(function (el) { el.disabled = true; });
+    $(p + "-drill-progress").textContent = "Mastered " + drill.mastered + " / " + drill.total +
+      " · " + drill.queue.length + " in queue";
+
+    var fb = $(p + "-drill-feedback");
+    if (isCorrect) {
+      fb.innerHTML = '<div class="review-item ok"><div class="review-verdict">✓ Correct — mastered!</div></div>';
+    } else {
+      fb.innerHTML =
+        '<div class="review-item bad">' +
+        '<div class="review-verdict">✗ Not quite — this one goes back in the queue</div>' +
+        '<div class="review-ans"><strong>Your answer: </strong>' + esc(userText) + "</div>" +
+        '<div class="review-ans"><strong>Correct answer: </strong>' + esc(drill.correctText(item)) + "</div>" +
+        '<div class="expl">' + esc(drill.explText(item)) + "</div></div>";
+    }
+    var btn = document.createElement("button");
+    btn.className = "primary-btn";
+    btn.textContent = drill.queue.length ? "Next question" : "Finish";
+    btn.addEventListener("click", renderDrillItem);
+    fb.appendChild(btn);
+    btn.focus();
+  }
+
+  function startUoeDrill() {
+    var wrong = [];
+    quiz.items.forEach(function (item, i) {
+      if (!gradeItem(item, quiz.answers[i])) wrong.push(item);
+    });
+    if (!wrong.length) return;
+    startDrillGeneric({
+      prefix: "uoe",
+      items: wrong,
+      render: renderUoeDrillItem,
+      correctText: correctAnsText,
+      explText: function (item) { return item.q.explanation; }
+    });
+  }
+
+  function renderUoeDrillItem(item, done) {
+    renderUoeItemInto(item, $("uoe-drill-question"), $("uoe-drill-area"), function (val) {
+      done(gradeItem(item, val), userAnsText(item, val));
+    });
+  }
+
+  function startRdDrill() {
+    var wrong = [];
+    for (var i = 0; i < rdCount(rd.type); i++) {
+      if (rd.answers[i] !== rdCorrectAnswer(i)) wrong.push(i);
+    }
+    if (!wrong.length) return;
+    startDrillGeneric({
+      prefix: "rd",
+      items: wrong,
+      render: renderRdDrillItem,
+      correctText: function (i) { return rdAnswerText(i, rdCorrectAnswer(i)); },
+      explText: rdExplanation
+    });
+  }
+
+  function renderRdDrillItem(qi, done) {
+    var area = $("rd-drill-area");
+    area.innerHTML = "";
+    var s = rd.set;
+    function pick(idx) { done(idx === rdCorrectAnswer(qi), rdAnswerText(qi, idx)); }
+
+    if (rd.type === "mc") {
+      var passage = document.createElement("div");
+      passage.className = "card rd-passage";
+      passage.innerHTML = "<h3>" + esc(s.title) + "</h3>" +
+        s.text.split(/\n+/).map(function (t) { return "<p>" + esc(t) + "</p>"; }).join("");
+      area.appendChild(passage);
+      var q = s.questions[qi];
+      var card = document.createElement("div");
+      card.className = "card rd-q";
+      card.innerHTML = "<p><strong>" + (qi + 1) + ".</strong> " + esc(q.q) + "</p>";
+      q.options.forEach(function (opt, oi) {
+        var b = document.createElement("button");
+        b.className = "option-btn";
+        b.innerHTML = "<strong>" + LETTERS[oi] + "</strong>&nbsp; " + esc(opt);
+        b.addEventListener("click", function () { b.classList.add("selected"); pick(oi); });
+        card.appendChild(b);
+      });
+      area.appendChild(card);
+    } else if (rd.type === "gap") {
+      var n = s.answers.length;
+      var art = document.createElement("div");
+      art.className = "card rd-passage";
+      var html = "<h3>" + esc(s.title) + "</h3>";
+      s.segments.forEach(function (seg, i) {
+        html += "<p>" + esc(seg) + "</p>";
+        if (i < n) html += '<p class="gap-slot' + (i === qi ? " current" : "") + '">(' + (i + 1) + ") ____</p>";
+      });
+      art.innerHTML = html;
+      area.appendChild(art);
+
+      var optCard = document.createElement("div");
+      optCard.className = "card";
+      var ohtml = "<h3>Options (one is not needed)</h3>";
+      s.options.forEach(function (opt, oi) {
+        ohtml += '<p class="rd-opt"><strong>' + LETTERS[oi] + ".</strong> " + esc(opt) + "</p>";
+      });
+      optCard.innerHTML = ohtml;
+      area.appendChild(optCard);
+
+      var pickCard = document.createElement("div");
+      pickCard.className = "card";
+      pickCard.innerHTML = "<h3>Which option fills gap " + (qi + 1) + "?</h3>";
+      pickCard.appendChild(letterRow(s.options.length, pick));
+      area.appendChild(pickCard);
+    } else { // match
+      s.sections.forEach(function (sec) {
+        var card = document.createElement("div");
+        card.className = "card rd-passage";
+        card.innerHTML = "<h3>" + esc(sec.label) + "</h3><p>" + esc(sec.text) + "</p>";
+        area.appendChild(card);
+      });
+      var qCard = document.createElement("div");
+      qCard.className = "card";
+      qCard.innerHTML = "<h3>Which section mentions…</h3><p class='match-q'><strong>" +
+        (qi + 1) + ".</strong> " + esc(s.questions[qi].q) + "</p>";
+      qCard.appendChild(letterRow(s.sections.length, pick));
+      area.appendChild(qCard);
+    }
   }
 
   /* ================= §4.5 Reading 模擬考 ================= */
@@ -651,6 +827,11 @@ if (typeof document !== 'undefined') {
     $("rd-verdict").className = "verdict-text " + v.cls;
     $("rd-verdict").textContent = v.text;
     $("rd-review").innerHTML = reviewHtml;
+
+    var wrongCount = n - score;
+    var db = $("rd-drill-btn");
+    db.classList.toggle("hidden", wrongCount === 0);
+    db.textContent = "Practice mistakes (" + wrongCount + ")";
     window.scrollTo(0, 0);
     saveMockRecord("reading", rd.type, score, n, pct);
   }
@@ -658,6 +839,8 @@ if (typeof document !== 'undefined') {
   function rdBackToPicker() {
     $("rd-quiz").classList.add("hidden");
     $("rd-summary").classList.add("hidden");
+    $("rd-drill").classList.add("hidden");
+    $("rd-congrats").classList.add("hidden");
     $("rd-picker").classList.remove("hidden");
   }
 
@@ -672,6 +855,13 @@ if (typeof document !== 'undefined') {
       rdBackToPicker();
     });
     $("rd-home").addEventListener("click", rdBackToPicker);
+    $("rd-drill-btn").addEventListener("click", startRdDrill);
+    $("rd-drill-quit").addEventListener("click", function () {
+      if (!confirm("Quit mistake practice and go back to the results?")) return;
+      $("rd-drill").classList.add("hidden");
+      $("rd-summary").classList.remove("hidden");
+    });
+    $("rd-congrats-home").addEventListener("click", rdBackToPicker);
   }
 
   /* ================= §5 Writing ================= */

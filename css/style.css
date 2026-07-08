@@ -436,7 +436,17 @@ button { font-family: inherit; }
   background: var(--accent-soft); border-radius: var(--radius-s);
   padding: 6px 10px; display: inline-block;
 }
+.rd-passage .gap-slot.current {
+  outline: 2px solid var(--accent);
+  animation: pulse-gap 1.2s ease-in-out infinite alternate;
+}
+@keyframes pulse-gap { from { opacity: 1; } to { opacity: 0.55; } }
 .rd-q p { margin: 4px 0 10px; }
+
+/* ---- Mistake drill / congrats ---- */
+.congrats-card { padding-top: 34px; padding-bottom: 34px; }
+.congrats-emoji { font-size: 3.2rem; line-height: 1; margin-bottom: 12px; }
+.congrats-card h2 { margin-bottom: 8px; }
 .rd-opt { font-family: var(--font-serif); font-size: 0.94rem; line-height: 1.65; }
 .rd-opt strong { color: var(--accent); font-family: var(--font-ui); }
 .option-btn.selected { border-color: var(--accent); background: var(--accent-soft); }
