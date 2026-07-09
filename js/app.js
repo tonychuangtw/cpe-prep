@@ -466,6 +466,20 @@ if (typeof document !== 'undefined') {
     renderDrillItem();
   }
 
+  function dropConfetti(container) {
+    var card = container.querySelector(".congrats-card") || container;
+    var colors = ["#e0a458", "#4ade80", "#f87171", "#7aa8ff", "#e879f9", "#facc15"];
+    for (var i = 0; i < 28; i++) {
+      var s = document.createElement("span");
+      s.className = "confetti-piece";
+      s.style.left = (Math.random() * 100) + "%";
+      s.style.background = colors[i % colors.length];
+      s.style.animationDelay = (Math.random() * 0.6).toFixed(2) + "s";
+      card.appendChild(s);
+      (function (el) { setTimeout(function () { el.remove(); }, 3600); })(s);
+    }
+  }
+
   function renderDrillItem() {
     var p = drill.prefix;
     if (!drill.queue.length) {
@@ -473,6 +487,7 @@ if (typeof document !== 'undefined') {
       $(p + "-congrats").classList.remove("hidden");
       $(p + "-congrats-text").textContent = "You have re-answered all " + drill.total +
         " mistake" + (drill.total > 1 ? "s" : "") + " correctly. Great work — keep this momentum going!";
+      dropConfetti($(p + "-congrats"));
       window.scrollTo(0, 0);
       return;
     }
