@@ -58,26 +58,27 @@ Object.keys(LEVEL_SPECS).forEach(level => {
   const expectedBanks = [];
   ["p1", "p2", "p3", "p4"].forEach(p => { for (let w = 1; w <= 5; w++) expectedBanks.push(`${p}-w${w}.js`); });
   for (let w = 1; w <= 6; w++) expectedBanks.push(`vocab-w${w}.js`);
-  expectedBanks.push("writing-x.js", "speaking-x.js");
+  expectedBanks.push("writing-x.js", "speaking-x.js", "ielts-writing-x.js");
   ["reading-mc", "reading-gap", "reading-match", "listening"].forEach(p => {
     for (let w = 1; w <= 2; w++) expectedBanks.push(`${p}-w${w}.js`);
   });
+  expectedBanks.push("reading-tfng-w1.js", "reading-head-w1.js");
   const bankFiles = fs.readdirSync(banksDir).sort();
   expectedBanks.forEach(f => check(L + "bank file exists: " + f, bankFiles.includes(f)));
 
-  const READING = { mc: [], gap: [], match: [] };
+  const READING = { mc: [], gap: [], match: [], tfng: [], head: [] };
   let LISTENING = [];
   bankFiles.forEach(f => {
     const items = require(path.join(banksDir, f));
     const m = f.match(/^(p[1-4])-w\d+\.js$/);
-    const r = f.match(/^reading-(mc|gap|match)-w\d+\.js$/);
+    const r = f.match(/^reading-(mc|gap|match|tfng|head)-w\d+\.js$/);
     if (m) {
       const key = m[1].replace("p", "part");
       QUESTIONS[key] = QUESTIONS[key].concat(items);
     } else if (r) { READING[r[1]] = READING[r[1]].concat(items); }
     else if (f.startsWith("listening-")) { LISTENING = LISTENING.concat(items); }
     else if (f.startsWith("vocab-")) { VOCAB = VOCAB.concat(items); }
-    else if (f === "writing-x.js") { WRITING = WRITING.concat(items); }
+    else if (f === "writing-x.js" || f === "ielts-writing-x.js") { WRITING = WRITING.concat(items); }
     else if (f === "speaking-x.js") { SPEAKING = SPEAKING.concat(items); }
     bankCounts[f] = items.length;
   });
@@ -200,6 +201,45 @@ Object.keys(LEVEL_SPECS).forEach(level => {
     });
   });
 
+  /* ---------- IELTS-style reading (T/F/NG + Matching headings) ---------- */
+  check(L + "reading tfng has >= 2 sets", READING.tfng.length >= 2);
+  READING.tfng.forEach((s, i) => {
+    check(L + `rtfng[${i}] id/title/text`, !!s.id && !!s.title && typeof s.text === "string");
+    check(L + `rtfng[${i}] text >= 250 words`, wordCount(s.text) >= 250);
+    check(L + `rtfng[${i}] 6-8 questions`, Array.isArray(s.questions) && s.questions.length >= 6 && s.questions.length <= 8);
+    (s.questions || []).forEach((q, j) => {
+      check(L + `rtfng[${i}].q[${j}] options are T/F/NG`,
+        Array.isArray(q.options) && q.options.join("|") === "True|False|Not Given");
+      check(L + `rtfng[${i}].q[${j}] answer valid`, Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 3);
+      check(L + `rtfng[${i}].q[${j}] explanation`, typeof q.explanation === "string" && q.explanation.length > 10);
+    });
+    check(L + `rtfng[${i}] uses all three verdicts`, new Set((s.questions || []).map(q => q.answer)).size === 3);
+  });
+
+  check(L + "reading head has >= 2 sets", READING.head.length >= 2);
+  READING.head.forEach((s, i) => {
+    check(L + `rhead[${i}] id/title`, !!s.id && !!s.title);
+    check(L + `rhead[${i}] 5 sections with label+text >= 50 words`,
+      Array.isArray(s.sections) && s.sections.length === 5 &&
+      s.sections.every(sec => !!sec.label && wordCount(sec.text) >= 50));
+    check(L + `rhead[${i}] 8 unique heading options`,
+      Array.isArray(s.options) && s.options.length === 8 && new Set(s.options).size === 8);
+    check(L + `rhead[${i}] 5 questions`, Array.isArray(s.questions) && s.questions.length === 5);
+    check(L + `rhead[${i}] answers distinct valid indices`,
+      Array.isArray(s.questions) && new Set(s.questions.map(q => q.answer)).size === s.questions.length &&
+      s.questions.every(q => Number.isInteger(q.answer) && q.answer >= 0 && q.answer < 8));
+    (s.questions || []).forEach((q, j) => {
+      check(L + `rhead[${i}].q[${j}] explanation`, typeof q.explanation === "string" && q.explanation.length > 10);
+    });
+  });
+
+  /* ---------- IELTS Writing Task 1 ---------- */
+  const IW = WRITING.filter(w => w.part === "IELTS Task 1");
+  check(L + "ielts writing has >= 3 prompts", IW.length >= 3);
+  IW.forEach((w, i) => {
+    check(L + `iw[${i}] task embeds figures`, /\d/.test(w.task));
+  });
+
   /* ---------- Listening (scripts for future TTS) ---------- */
   check(L + `listening has >= ${R.minLis} sets`, LISTENING.length >= R.minLis);
   LISTENING.forEach((s, i) => {
@@ -214,7 +254,7 @@ Object.keys(LEVEL_SPECS).forEach(level => {
   });
 
   /* reading/listening ids + titles unique per level */
-  const ridAll = [].concat(READING.mc, READING.gap, READING.match, LISTENING);
+  const ridAll = [].concat(READING.mc, READING.gap, READING.match, READING.tfng, READING.head, LISTENING);
   check(L + "reading/listening ids unique", new Set(ridAll.map(s => s.id)).size === ridAll.length);
   check(L + "reading/listening titles unique", new Set(ridAll.map(s => (s.title || "").toLowerCase())).size === ridAll.length);
 
@@ -240,6 +280,7 @@ Object.keys(LEVEL_SPECS).forEach(level => {
     p3: QUESTIONS.part3.length, p4: QUESTIONS.part4.length,
     writing: WRITING.length, speaking: SPEAKING.length, vocab: VOCAB.length,
     rmc: READING.mc.length, rgap: READING.gap.length, rmatch: READING.match.length,
+    rtfng: READING.tfng.length, rhead: READING.head.length,
     lis: LISTENING.length
   };
 });
@@ -281,7 +322,7 @@ check("shuffle does not mutate input", orig.join() === "1,2,3,4,5");
 /* ---------- report ---------- */
 Object.keys(totals).forEach(level => {
   const t = totals[level];
-  console.log(`[${level}] totals: p1=${t.p1} p2=${t.p2} p3=${t.p3} p4=${t.p4} writing=${t.writing} speaking=${t.speaking} vocab=${t.vocab} rmc=${t.rmc} rgap=${t.rgap} rmatch=${t.rmatch} lis=${t.lis}`);
+  console.log(`[${level}] totals: p1=${t.p1} p2=${t.p2} p3=${t.p3} p4=${t.p4} writing=${t.writing} speaking=${t.speaking} vocab=${t.vocab} rmc=${t.rmc} rgap=${t.rgap} rmatch=${t.rmatch} rtfng=${t.rtfng} rhead=${t.rhead} lis=${t.lis}`);
 });
 console.log(`\n${passed} passed, ${failed} failed`);
 process.exit(failed ? 1 : 0);

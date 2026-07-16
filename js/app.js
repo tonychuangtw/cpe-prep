@@ -568,7 +568,7 @@ if (typeof document !== 'undefined') {
     var s = rd.set;
     function pick(idx) { done(idx === rdCorrectAnswer(qi), rdAnswerText(qi, idx)); }
 
-    if (rd.type === "mc") {
+    if (rd.type === "mc" || rd.type === "tfng") {
       var passage = document.createElement("div");
       passage.className = "card rd-passage";
       passage.innerHTML = "<h3>" + esc(s.title) + "</h3>" +
@@ -612,6 +612,27 @@ if (typeof document !== 'undefined') {
       pickCard.innerHTML = "<h3>Which option fills gap " + (qi + 1) + "?</h3>";
       pickCard.appendChild(letterRow(s.options.length, pick));
       area.appendChild(pickCard);
+    } else if (rd.type === "head") {
+      s.sections.forEach(function (sec) {
+        var card = document.createElement("div");
+        card.className = "card rd-passage";
+        card.innerHTML = "<h3>Paragraph " + esc(sec.label) + "</h3><p>" + esc(sec.text) + "</p>";
+        area.appendChild(card);
+      });
+      var hCard = document.createElement("div");
+      var hhtml = "<h3>List of headings</h3>";
+      s.options.forEach(function (opt, oi) {
+        hhtml += '<p class="rd-opt"><strong>' + LETTERS[oi] + ".</strong> " + esc(opt) + "</p>";
+      });
+      hCard.className = "card";
+      hCard.innerHTML = hhtml;
+      area.appendChild(hCard);
+      var hqCard = document.createElement("div");
+      hqCard.className = "card";
+      hqCard.innerHTML = "<h3>Best heading for…</h3><p class='match-q'><strong>" +
+        (qi + 1) + ".</strong> " + esc(s.questions[qi].q) + "</p>";
+      hqCard.appendChild(letterRow(s.options.length, pick));
+      area.appendChild(hqCard);
     } else { // match
       s.sections.forEach(function (sec) {
         var card = document.createElement("div");
@@ -632,7 +653,9 @@ if (typeof document !== 'undefined') {
   var RD_LABELS = {
     mc: "Multiple choice",
     gap: "Gapped text",
-    match: "Multiple matching"
+    match: "Multiple matching",
+    tfng: "True / False / Not Given (IELTS)",
+    head: "Matching headings (IELTS)"
   };
   var LETTERS = ["A", "B", "C", "D", "E", "F", "G", "H"];
 
@@ -698,7 +721,7 @@ if (typeof document !== 'undefined') {
     head.innerHTML = "<h3>" + esc(s.title) + "</h3><p class='hint'>" + esc(RD_LABELS[rd.type]) + "</p>";
     area.appendChild(head);
 
-    if (rd.type === "mc") {
+    if (rd.type === "mc" || rd.type === "tfng") {
       var passage = document.createElement("div");
       passage.className = "card rd-passage";
       passage.innerHTML = s.text.split(/\n+/).map(function (p) { return "<p>" + esc(p) + "</p>"; }).join("");
@@ -761,6 +784,38 @@ if (typeof document !== 'undefined') {
         })(gi);
       }
       area.appendChild(pickCard);
+    } else if (rd.type === "head") {
+      s.sections.forEach(function (sec) {
+        var card = document.createElement("div");
+        card.className = "card rd-passage";
+        card.innerHTML = "<h3>Paragraph " + esc(sec.label) + "</h3><p>" + esc(sec.text) + "</p>";
+        area.appendChild(card);
+      });
+      var hCard = document.createElement("div");
+      hCard.className = "card";
+      var hhtml = "<h3>List of headings (" + (s.options.length - s.questions.length) + " are not needed)</h3>";
+      s.options.forEach(function (opt, oi) {
+        hhtml += '<p class="rd-opt"><strong>' + LETTERS[oi] + ".</strong> " + esc(opt) + "</p>";
+      });
+      hCard.innerHTML = hhtml;
+      area.appendChild(hCard);
+      var hqCard = document.createElement("div");
+      hqCard.className = "card";
+      hqCard.innerHTML = "<h3>Choose the best heading for each paragraph</h3>";
+      s.questions.forEach(function (q, qi) {
+        var wrap = document.createElement("div");
+        wrap.className = "gap-answer-row match-row";
+        var lab = document.createElement("p");
+        lab.className = "match-q";
+        lab.innerHTML = "<strong>" + (qi + 1) + ".</strong> " + esc(q.q);
+        wrap.appendChild(lab);
+        wrap.appendChild(letterRow(s.options.length, function (idx) {
+          rd.answers[qi] = idx;
+          updateRdProgress();
+        }));
+        hqCard.appendChild(wrap);
+      });
+      area.appendChild(hqCard);
     } else { // match
       s.sections.forEach(function (sec) {
         var card = document.createElement("div");
@@ -803,8 +858,8 @@ if (typeof document !== 'undefined') {
   function rdAnswerText(i, idx) {
     var s = rd.set;
     if (idx === undefined || idx === null) return "(not answered)";
-    if (rd.type === "mc") return LETTERS[idx] + ". " + s.questions[i].options[idx];
-    if (rd.type === "gap") return LETTERS[idx] + ". " + s.options[idx];
+    if (rd.type === "mc" || rd.type === "tfng") return LETTERS[idx] + ". " + s.questions[i].options[idx];
+    if (rd.type === "gap" || rd.type === "head") return LETTERS[idx] + ". " + s.options[idx];
     return LETTERS[idx] + " (" + s.sections[idx].label + ")";
   }
   function rdExplanation(i) {
@@ -831,6 +886,11 @@ if (typeof document !== 'undefined') {
           var s0 = rd.set;
           if (rd.type === "mc") {
             mbAdd("rmc", { title: s0.title, text: s0.text, q: s0.questions[j] });
+          } else if (rd.type === "tfng") {
+            mbAdd("rtfng", { title: s0.title, text: s0.text, q: s0.questions[j] });
+          } else if (rd.type === "head") {
+            mbAdd("rhead", { title: s0.title, sections: s0.sections, options: s0.options,
+              q: s0.questions[j].q, answer: s0.questions[j].answer, explanation: s0.questions[j].explanation });
           } else if (rd.type === "gap") {
             mbAdd("rgap", { title: s0.title, segments: s0.segments, options: s0.options,
               gapCount: s0.answers.length, gapIndex: j, answer: s0.answers[j], explanation: s0.explanations[j] });
@@ -1169,8 +1229,10 @@ if (typeof document !== 'undefined') {
   function mbKey(kind, payload) {
     if (kind === "uoe") return "uoe|" + payload.part + "|" + (payload.q.text || payload.q.original || "");
     if (kind === "rmc") return "rmc|" + payload.title + "|" + payload.q.q;
+    if (kind === "rtfng") return "rtfng|" + payload.title + "|" + payload.q.q;
     if (kind === "rgap") return "rgap|" + payload.title + "|" + payload.gapIndex;
     if (kind === "rmatch") return "rmatch|" + payload.title + "|" + payload.q;
+    if (kind === "rhead") return "rhead|" + payload.title + "|" + payload.q;
     return "lis|" + payload.title + "|" + payload.q.q;
   }
 
@@ -1220,14 +1282,14 @@ if (typeof document !== 'undefined') {
   function mbCorrectText(e) {
     var p = e.payload;
     if (e.kind === "uoe") return correctAnsText({ part: p.part, q: p.q });
-    if (e.kind === "rmc" || e.kind === "lis") return LETTERS[p.q.answer] + ". " + p.q.options[p.q.answer];
-    if (e.kind === "rgap") return LETTERS[p.answer] + ". " + p.options[p.answer];
+    if (e.kind === "rmc" || e.kind === "rtfng" || e.kind === "lis") return LETTERS[p.q.answer] + ". " + p.q.options[p.q.answer];
+    if (e.kind === "rgap" || e.kind === "rhead") return LETTERS[p.answer] + ". " + p.options[p.answer];
     return LETTERS[p.answer] + " (" + p.sections[p.answer].label + ")";
   }
 
   function mbExplText(e) {
     var p = e.payload;
-    if (e.kind === "rgap" || e.kind === "rmatch") return p.explanation;
+    if (e.kind === "rgap" || e.kind === "rmatch" || e.kind === "rhead") return p.explanation;
     return p.q.explanation;
   }
 
@@ -1270,7 +1332,7 @@ if (typeof document !== 'undefined') {
       renderUoeItemInto(item, qBox, aBox, function (val) {
         answered(gradeItem(item, val), userAnsText(item, val));
       });
-    } else if (e.kind === "rmc") {
+    } else if (e.kind === "rmc" || e.kind === "rtfng") {
       var passage = document.createElement("div");
       passage.className = "card rd-passage";
       passage.innerHTML = "<h3>" + esc(p.title) + "</h3>" +
@@ -1317,6 +1379,28 @@ if (typeof document !== 'undefined') {
         answered(idx === p.answer, LETTERS[idx] + ". " + p.options[idx]);
       }));
       area.appendChild(pickCard);
+    } else if (e.kind === "rhead") {
+      p.sections.forEach(function (sec) {
+        var hc = document.createElement("div");
+        hc.className = "card rd-passage";
+        hc.innerHTML = "<h3>Paragraph " + esc(sec.label) + "</h3><p>" + esc(sec.text) + "</p>";
+        area.appendChild(hc);
+      });
+      var hoCard = document.createElement("div");
+      hoCard.className = "card";
+      var hohtml = "<h3>List of headings</h3>";
+      p.options.forEach(function (opt, oi) {
+        hohtml += '<p class="rd-opt"><strong>' + LETTERS[oi] + ".</strong> " + esc(opt) + "</p>";
+      });
+      hoCard.innerHTML = hohtml;
+      area.appendChild(hoCard);
+      var hqCard = document.createElement("div");
+      hqCard.className = "card";
+      hqCard.innerHTML = "<h3>Best heading for…</h3><p class='match-q'>" + esc(p.q) + "</p>";
+      hqCard.appendChild(letterRow(p.options.length, function (idx) {
+        answered(idx === p.answer, LETTERS[idx] + ". " + p.options[idx]);
+      }));
+      area.appendChild(hqCard);
     } else if (e.kind === "rmatch") {
       p.sections.forEach(function (sec) {
         var sc = document.createElement("div");
@@ -1426,7 +1510,7 @@ if (typeof document !== 'undefined') {
       var head = document.createElement("button");
       head.className = "wr-head";
       head.innerHTML = "<span>" + esc(p.title) + "</span>" +
-        '<span class="badge">Part ' + p.part + " · " + esc(p.type) + "</span>";
+        '<span class="badge">' + (typeof p.part === "number" ? "Part " + p.part : esc(String(p.part))) + " · " + esc(p.type) + "</span>";
 
       var body = document.createElement("div");
       body.className = "wr-body hidden";
@@ -1468,10 +1552,14 @@ if (typeof document !== 'undefined') {
       fb.addEventListener("click", function () {
         var essay = ta.value.trim();
         if (!essay) { alert("Write your draft first, then copy it for feedback."); return; }
-        var msg = "Please grade this " + LEVEL.toUpperCase() + " Writing answer using the official Cambridge assessment scales " +
-          "(Content / Communicative Achievement / Organisation / Language, each 0\u20135). " +
+        var isIelts = typeof p.part !== "number";
+        var msg = (isIelts
+          ? "Please grade this IELTS Writing Task 1 answer using the official IELTS band descriptors " +
+            "(Task Achievement / Coherence & Cohesion / Lexical Resource / Grammatical Range & Accuracy, band 0\u20139). "
+          : "Please grade this " + LEVEL.toUpperCase() + " Writing answer using the official Cambridge assessment scales " +
+            "(Content / Communicative Achievement / Organisation / Language, each 0\u20135). ") +
           "Give a band per criterion, an overall verdict, and 3 concrete improvements with rewritten examples.\n\n" +
-          "Task: " + p.title + " (Part " + p.part + " \u00b7 " + p.type + ")\n" +
+          "Task: " + p.title + " (" + (isIelts ? String(p.part) : "Part " + p.part) + " \u00b7 " + p.type + ")\n" +
           p.task + "\nTarget length: " + p.length + "\n\n" +
           "My answer (" + countWords(essay) + " words):\n" + essay;
         var done = function () { fb.textContent = "\u2713 Copied — paste it to your AI chat"; setTimeout(function () { fb.textContent = "\ud83d\udccb Copy for AI feedback"; }, 3000); };
@@ -1758,6 +1846,12 @@ if (typeof document !== 'undefined') {
     { id: "rmatch", stat: "rmatch", paper: "reading", label: "Reading · Multiple matching",
       hist: function (m) { return m.mode === "reading" && m.part === "match"; },
       mb: function (e) { return e.kind === "rmatch"; } },
+    { id: "rtfng", stat: "rtfng", paper: "reading", label: "Reading · T/F/Not Given (IELTS)",
+      hist: function (m) { return m.mode === "reading" && m.part === "tfng"; },
+      mb: function (e) { return e.kind === "rtfng"; } },
+    { id: "rhead", stat: "rhead", paper: "reading", label: "Reading · Matching headings (IELTS)",
+      hist: function (m) { return m.mode === "reading" && m.part === "head"; },
+      mb: function (e) { return e.kind === "rhead"; } },
     { id: "lis", stat: "lis", paper: "listening", label: "Listening",
       hist: function (m) { return m.mode === "listening"; },
       mb: function (e) { return e.kind === "lis"; } }

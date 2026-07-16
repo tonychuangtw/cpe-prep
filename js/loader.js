@@ -12,7 +12,8 @@
   var LEVELS = {
     fce: {
       id: "fce", badge: "B2",
-      exam: "B2 First", title: "FCE Prep", subtitle: "Cambridge B2 First",
+      exam: "B2 First", title: "FCE Prep", subtitle: "Cambridge B2 First · ≈ IELTS 5.5–6.5",
+      ielts: "5.5–6.5",
       desc: "Upper-intermediate. Everyday and semi-formal English across all four skills — ideal for building a solid foundation.",
       timerMin: 40,
       wordGuide: "Essay target length at this level: 140–190 words (Part 2 also 140–190 words)",
@@ -21,7 +22,8 @@
     },
     cae: {
       id: "cae", badge: "C1",
-      exam: "C1 Advanced", title: "CAE Prep", subtitle: "Cambridge C1 Advanced",
+      exam: "C1 Advanced", title: "CAE Prep", subtitle: "Cambridge C1 Advanced · ≈ IELTS 6.5–8.0",
+      ielts: "6.5–8.0",
       desc: "Advanced. Fluent, precise English for academic and professional life — a common university entry requirement.",
       timerMin: 45,
       wordGuide: "Essay target length at this level: 220–260 words (Part 2 also 220–260 words)",
@@ -30,7 +32,8 @@
     },
     cpe: {
       id: "cpe", badge: "C2",
-      exam: "C2 Proficiency", title: "CPE Prep", subtitle: "Cambridge C2 Proficiency",
+      exam: "C2 Proficiency", title: "CPE Prep", subtitle: "Cambridge C2 Proficiency · ≈ IELTS 8.0–9.0",
+      ielts: "8.0–9.0",
       desc: "Mastery. Near-native command of English — the ultimate test of nuance and rhetorical skill.",
       timerMin: 45,
       wordGuide: "Essay target length at this level: 240–280 words (Part 2: 280–320 words)",
@@ -49,10 +52,11 @@
     "reading-mc-w1.js", "reading-mc-w2.js", "reading-mc-w3.js", "reading-mc-w4.js",
     "reading-gap-w1.js", "reading-gap-w2.js", "reading-gap-w3.js", "reading-gap-w4.js",
     "reading-match-w1.js", "reading-match-w2.js", "reading-match-w3.js", "reading-match-w4.js",
+    "reading-tfng-w1.js", "reading-head-w1.js",
     "listening-w1.js", "listening-w2.js", "listening-w3.js", "listening-w4.js",
     "speaking-x.js",
     "vocab-w1.js", "vocab-w2.js", "vocab-w3.js", "vocab-w4.js", "vocab-w5.js", "vocab-w6.js",
-    "writing-x.js"
+    "writing-x.js", "ielts-writing-x.js"
   ];
 
   function getSavedLevel() {
