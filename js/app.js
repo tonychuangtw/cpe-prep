@@ -183,7 +183,48 @@ if (typeof document !== 'undefined') {
   var K_MOCK = function () { return LEVEL + ".mock_history"; };
 
   /* mode: 'single' = 單一 part；'full' = P1–P4 全卷 */
-  var quiz = { mode: "single", part: null, items: [], idx: 0, answers: [] };
+  var quiz = { mode: "single", part: null, items: [], idx: 0, answers: [], times: [], guessed: [], qStart: 0 };
+
+  /* ---- 每日活動 / rolling 精熟度 / streak 儲存 ---- */
+  var K_ROLL = function () { return LEVEL + ".roll"; };
+  var K_ACT = function () { return LEVEL + ".activity"; };
+  var K_STREAK = function () { return LEVEL + ".streak"; };
+  var ROLL_WINDOW = 30;
+
+  function todayStr(ms) {
+    var d = ms ? new Date(ms) : new Date();
+    var m = d.getMonth() + 1, day = d.getDate();
+    return d.getFullYear() + "-" + (m < 10 ? "0" : "") + m + "-" + (day < 10 ? "0" : "") + day;
+  }
+
+  function rollPush(key, isCorrect) {
+    var roll = loadJSON(K_ROLL(), {});
+    if (!roll[key]) roll[key] = [];
+    roll[key].push(isCorrect ? 1 : 0);
+    if (roll[key].length > ROLL_WINDOW) roll[key] = roll[key].slice(-ROLL_WINDOW);
+    saveJSON(K_ROLL(), roll);
+  }
+  /* 近 30 題精熟度：{n, acc}；精熟 = n>=30 且 acc>=90 */
+  function masteryOf(key) {
+    var arr = loadJSON(K_ROLL(), {})[key] || [];
+    var ok = arr.reduce(function (a, b) { return a + b; }, 0);
+    return { n: arr.length, acc: arr.length ? Math.round(100 * ok / arr.length) : 0 };
+  }
+  function isMastered(key) {
+    var m = masteryOf(key);
+    return m.n >= ROLL_WINDOW && m.acc >= 90;
+  }
+
+  /* field: "a"=answered, "c"=correct, "v"=vocab review */
+  function actBump(field, n) {
+    var act = loadJSON(K_ACT(), {});
+    var d = todayStr();
+    if (!act[d]) act[d] = { a: 0, c: 0, v: 0 };
+    act[d][field] = (act[d][field] || 0) + (n || 1);
+    var days = Object.keys(act).sort();
+    while (days.length > 60) { delete act[days.shift()]; }
+    saveJSON(K_ACT(), act);
+  }
 
   function recordResult(part, isCorrect) {
     var stats = loadJSON(K_STATS, {});
@@ -192,6 +233,11 @@ if (typeof document !== 'undefined') {
     if (isCorrect) stats[part].correct += 1;
     stats[part].last = Date.now();
     saveJSON(K_STATS, stats);
+    try {
+      rollPush(part, isCorrect);
+      actBump("a");
+      if (isCorrect) actBump("c");
+    } catch (e) {}
   }
 
   function drawItems(part) {
@@ -218,6 +264,8 @@ if (typeof document !== 'undefined') {
   function beginExam() {
     quiz.idx = 0;
     quiz.answers = [];
+    quiz.times = [];
+    quiz.guessed = [];
     $("uoe-picker").classList.add("hidden");
     $("uoe-summary").classList.add("hidden");
     $("uoe-quiz").classList.remove("hidden");
@@ -229,7 +277,21 @@ if (typeof document !== 'undefined') {
     $("uoe-progress").textContent = PART_LABELS[item.part].split("·")[0].trim() +
       "  Question " + (quiz.idx + 1) + " / " + quiz.items.length;
     renderUoeItemInto(item, $("uoe-question"), $("uoe-answer-area"), submitAnswer);
+    addGuessToggle($("uoe-answer-area"));
     addSkipButton($("uoe-answer-area"));
+    quiz.qStart = Date.now();
+  }
+
+  /* 信心標記：按下 = 這題是猜的；猜對也會進錯題本（抓「假會」） */
+  function addGuessToggle(container) {
+    var g = document.createElement("button");
+    g.className = "ghost-btn guess-btn";
+    g.textContent = "🤔 I'm guessing";
+    g.addEventListener("click", function () {
+      quiz.guessed[quiz.idx] = !quiz.guessed[quiz.idx];
+      g.classList.toggle("selected", !!quiz.guessed[quiz.idx]);
+    });
+    container.appendChild(g);
   }
 
   function renderUoeItemInto(item, qBox, aBox, onAnswer) {
@@ -299,6 +361,7 @@ if (typeof document !== 'undefined') {
   /* 考試中不給回饋：記錄作答後直接下一題，最後才評分 */
   function submitAnswer(val) {
     quiz.answers.push(val);
+    quiz.times[quiz.idx] = Math.round((Date.now() - quiz.qStart) / 1000);
     quiz.idx += 1;
     if (quiz.idx >= quiz.items.length) {
       gradeExam();
@@ -348,7 +411,7 @@ if (typeof document !== 'undefined') {
       max += pts;
       if (isCorrect) score += pts;
       recordResult(item.part, isCorrect);
-      if (!isCorrect) { try { mbAdd("uoe", { part: item.part, q: item.q }); } catch (e) {} }
+      if (!isCorrect || quiz.guessed[i]) { try { mbAdd("uoe", { part: item.part, q: item.q }); } catch (e) {} }
       if (!byPart[item.part]) byPart[item.part] = { score: 0, max: 0 };
       byPart[item.part].max += pts;
       if (isCorrect) byPart[item.part].score += pts;
@@ -369,6 +432,7 @@ if (typeof document !== 'undefined') {
       reviewHtml +=
         '<div class="review-item ' + (isCorrect ? "ok" : "bad") + '">' +
         '<div class="review-verdict">' + (isCorrect ? "✓" : "✗") + " Question " + (i + 1) +
+        (quiz.guessed[i] ? ' <span class="guess-tag">🤔 guessed' + (isCorrect ? " — sent to mistake book" : "") + "</span>" : "") +
         (pts > 1 ? '<span class="pts">' + (isCorrect ? pts : 0) + "/" + pts + " pts</span>" : "") + "</div>" +
         stemHtml +
         '<div class="review-ans"><strong>Your answer: </strong>' + esc(userAnsText(item, quiz.answers[i])) + "</div>" +
@@ -408,16 +472,59 @@ if (typeof document !== 'undefined') {
     db.textContent = "Practice mistakes (" + wrongCount + ")";
     window.scrollTo(0, 0);
 
-    saveMockRecord(quiz.mode, quiz.part, score, max, pct);
+    var totalSecs = quiz.times.reduce(function (a, b) { return a + (b || 0); }, 0);
+    renderPaceReport();
+    saveMockRecord(quiz.mode, quiz.part, score, max, pct, totalSecs);
   }
 
-  function saveMockRecord(mode, part, score, max, pct) {
+  /* ---- 考試節奏：每題耗時 vs 建議配速 ---- */
+  var TIME_TARGET = { part1: 45, part2: 60, part3: 60, part4: 90 };
+
+  function fmtSecs(s) {
+    var m = Math.floor(s / 60), r = s % 60;
+    return m ? m + "m " + (r < 10 ? "0" : "") + r + "s" : r + "s";
+  }
+
+  function renderPaceReport() {
+    var el = $("uoe-pace");
+    if (!el) return;
+    var byPart = {};
+    quiz.items.forEach(function (item, i) {
+      if (!byPart[item.part]) byPart[item.part] = { secs: 0, n: 0 };
+      byPart[item.part].secs += quiz.times[i] || 0;
+      byPart[item.part].n += 1;
+    });
+    var total = quiz.times.reduce(function (a, b) { return a + (b || 0); }, 0);
+    var target = quiz.items.reduce(function (a, item) { return a + TIME_TARGET[item.part]; }, 0);
+    var html = "<h3>Pacing</h3><p>Total time: <strong>" + fmtSecs(total) + "</strong> · recommended ≤ " + fmtSecs(target) +
+      (total <= target ? ' <span class="ok">✓ on pace</span>' : ' <span class="bad">⚠ over pace</span>') + "</p>";
+    PARTS.forEach(function (p) {
+      var s = byPart[p];
+      if (!s) return;
+      var avg = Math.round(s.secs / s.n), tgt = TIME_TARGET[p];
+      html += barRow(PART_LABELS[p].split("·")[0].trim() + (avg > tgt ? " ⚠" : ""),
+        "avg " + avg + "s/question · target " + tgt + "s",
+        Math.min(100, Math.round(100 * avg / (tgt * 2))), avg <= tgt);
+    });
+    var slow = quiz.items.map(function (item, i) { return { i: i, secs: quiz.times[i] || 0 }; })
+      .sort(function (a, b) { return b.secs - a.secs; }).slice(0, 3).filter(function (x) { return x.secs > 0; });
+    if (slow.length) {
+      html += "<p class='hint'>Slowest: " + slow.map(function (x) {
+        return "Q" + (x.i + 1) + " (" + fmtSecs(x.secs) + ")";
+      }).join(" · ") + "</p>";
+    }
+    el.innerHTML = html;
+    el.classList.remove("hidden");
+  }
+
+  function saveMockRecord(mode, part, score, max, pct, secs) {
     var hist = loadJSON(K_MOCK(), []);
     hist.push({
       date: Date.now(),
       mode: mode,
       part: part,
-      score: score, max: max, pct: pct
+      score: score, max: max, pct: pct,
+      secs: secs || 0
     });
     if (hist.length > 50) hist = hist.slice(hist.length - 50);
     saveJSON(K_MOCK(), hist);
@@ -677,6 +784,7 @@ if (typeof document !== 'undefined') {
     rd.type = type;
     rd.set = pool[Math.floor(Math.random() * pool.length)];
     rd.answers = [];
+    rd.t0 = Date.now();
     $("rd-picker").classList.add("hidden");
     $("rd-summary").classList.add("hidden");
     $("rd-quiz").classList.remove("hidden");
@@ -916,7 +1024,10 @@ if (typeof document !== 'undefined') {
     $("rd-summary-title").textContent = RD_LABELS[rd.type] + " — Mock results";
     $("rd-score").textContent = score + " / " + n + " (" + pct + "%)";
     $("rd-verdict").className = "verdict-text " + v.cls;
-    $("rd-verdict").textContent = v.text;
+    var rdSecs = rd.t0 ? Math.round((Date.now() - rd.t0) / 1000) : 0;
+    var rdTarget = n * 90;
+    $("rd-verdict").textContent = v.text +
+      (rdSecs ? "  ·  ⏱ " + fmtSecs(rdSecs) + (rdSecs <= rdTarget ? " (on pace)" : " (over the ~" + fmtSecs(rdTarget) + " target)") : "");
     $("rd-review").innerHTML = reviewHtml;
 
     var wrongCount = n - score;
@@ -924,7 +1035,7 @@ if (typeof document !== 'undefined') {
     db.classList.toggle("hidden", wrongCount === 0);
     db.textContent = "Practice mistakes (" + wrongCount + ")";
     window.scrollTo(0, 0);
-    saveMockRecord("reading", rd.type, score, n, pct);
+    saveMockRecord("reading", rd.type, score, n, pct, rdSecs);
   }
 
   function rdBackToPicker() {
@@ -1731,6 +1842,7 @@ if (typeof document !== 'undefined') {
 
   /* ================= §7 字彙卡 (Leitner) ================= */
   var vocabQueue = [];
+  var vbMode = "flip"; // "flip" 自評翻卡 | "type" 拼寫主動回憶
 
   function getVocabState() {
     var st = loadJSON(K_VOCAB, {});
@@ -1759,8 +1871,83 @@ if (typeof document !== 'undefined') {
     statusEl.innerHTML = "<p>Cards due: <strong>" + due + "</strong> / " + VOCAB.length + "</p>";
     if (vocabQueue.length === 0) buildVocabQueue();
     if (vocabQueue.length > 0) {
-      $("vb-card-wrap").classList.remove("hidden");
-      showVocabCard();
+      if (vbMode === "type") {
+        $("vb-card-wrap").classList.add("hidden");
+        $("vb-type-wrap").classList.remove("hidden");
+        showVocabTypeCard();
+      } else {
+        $("vb-type-wrap").classList.add("hidden");
+        $("vb-card-wrap").classList.remove("hidden");
+        showVocabCard();
+      }
+    }
+  }
+
+  /* 拼寫模式：定義+中文+例句挖空 → 使用者拼出單字，結果直接餵 Leitner */
+  function clozeExample(example, front) {
+    try {
+      var re = new RegExp(front.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+"), "i");
+      if (re.test(example)) return example.replace(re, "______");
+    } catch (e) {}
+    return null;
+  }
+
+  function showVocabTypeCard() {
+    var c = vocabQueue[0];
+    var wrap = $("vb-type-wrap");
+    if (!c) {
+      wrap.classList.add("hidden");
+      $("vb-status").innerHTML = "<p>✅ Review session complete!</p>";
+      return;
+    }
+    var st = getVocabState();
+    var cloze = clozeExample(c.example, c.front);
+    $("vb-type-q").innerHTML =
+      '<div class="vb-boxtag">Box ' + st[c.front].box + "</div>" +
+      '<div class="def"><strong>' + esc(c.pos) + "</strong> — " + esc(c.def) + "</div>" +
+      '<div class="zh">' + esc(c.zh) + "</div>" +
+      (cloze ? '<div class="ex">' + esc(cloze) + "</div>" : "") +
+      '<div class="hint">First letter: <strong>' + esc(c.front.charAt(0)) + "</strong> · " + c.front.length + " letters</div>";
+    var input = $("vb-type-input");
+    input.value = "";
+    input.disabled = false;
+    $("vb-type-submit").disabled = false;
+    $("vb-type-feedback").innerHTML = "";
+    $("vb-type-next").classList.add("hidden");
+    input.focus();
+  }
+
+  function submitVocabType() {
+    var c = vocabQueue[0];
+    if (!c) return;
+    var input = $("vb-type-input");
+    var val = input.value.trim();
+    if (!val) return;
+    var ok = normalizeAnswer(val) === normalizeAnswer(c.front);
+    input.disabled = true;
+    $("vb-type-submit").disabled = true;
+    $("vb-type-feedback").innerHTML = ok
+      ? '<p class="verdict-text ok">✓ Correct — <strong>' + esc(c.front) + "</strong></p>"
+      : '<p class="verdict-text bad">✗ It was <strong>' + esc(c.front) + "</strong></p><p class='ex'>" + esc(c.example) + "</p>";
+    $("vb-type-next").classList.remove("hidden");
+    $("vb-type-next").dataset.ok = ok ? "1" : "0";
+  }
+
+  function nextVocabType() {
+    var ok = $("vb-type-next").dataset.ok === "1";
+    var c = vocabQueue.shift();
+    if (c) {
+      var st = getVocabState();
+      st[c.front] = leitnerReview(st[c.front], ok, Date.now());
+      saveJSON(K_VOCAB, st);
+      try { actBump("v"); } catch (e) {}
+    }
+    if (vocabQueue.length > 0) {
+      $("vb-status").innerHTML = "<p>Remaining this session: <strong>" + vocabQueue.length + "</strong></p>";
+      showVocabTypeCard();
+    } else {
+      $("vb-type-wrap").classList.add("hidden");
+      $("vb-status").innerHTML = "<p>✅ Review session complete!</p>";
     }
   }
 
@@ -1789,6 +1976,7 @@ if (typeof document !== 'undefined') {
     var st = getVocabState();
     st[c.front] = leitnerReview(st[c.front], known, Date.now());
     saveJSON(K_VOCAB, st);
+    try { actBump("v"); } catch (e) {}
     showVocabCard();
     // update due count text
     var st2 = getVocabState();
@@ -1805,6 +1993,21 @@ if (typeof document !== 'undefined') {
     });
     $("vb-yes").addEventListener("click", function () { reviewVocab(true); });
     $("vb-no").addEventListener("click", function () { reviewVocab(false); });
+    document.querySelectorAll("[data-vbmode]").forEach(function (b) {
+      b.addEventListener("click", function () {
+        vbMode = b.dataset.vbmode;
+        document.querySelectorAll("[data-vbmode]").forEach(function (x) {
+          x.classList.toggle("selected", x === b);
+        });
+        renderVocabStatus();
+      });
+    });
+    $("vb-type-submit").addEventListener("click", submitVocabType);
+    $("vb-type-input").addEventListener("keydown", function (e) {
+      if (e.key !== "Enter") return;
+      if ($("vb-type-next").classList.contains("hidden")) submitVocabType(); else nextVocabType();
+    });
+    $("vb-type-next").addEventListener("click", nextVocabType);
     renderVocabStatus();
   }
 
@@ -1952,9 +2155,165 @@ if (typeof document !== 'undefined') {
     if (rb) rb.addEventListener("click", startMbDrill);
   }
 
+  /* ---------- §8.2 每日任務 + streak + 週報 + 精熟度 ---------- */
+  function switchTab(tabId) {
+    var btn = document.querySelector('.tab-btn[data-tab="' + tabId + '"]');
+    if (btn) btn.click();
+    window.scrollTo(0, 0);
+  }
+
+  /* 弱項 = 有作答紀錄的 WK_AREAS 中 rolling 正確率最低者；沒紀錄的排最前（該去練） */
+  function weakestArea() {
+    var stats = loadJSON(K_STATS, {});
+    var best = null;
+    WK_AREAS.forEach(function (a) {
+      var s = stats[a.stat];
+      var m = masteryOf(a.stat);
+      var acc = m.n ? m.acc : (s && s.attempted ? Math.round(100 * s.correct / s.attempted) : -1);
+      if (best === null || acc < best.acc) best = { area: a, acc: acc };
+    });
+    return best;
+  }
+
+  function startWeakArea(a) {
+    if (a.paper === "uoe") { switchTab("tab-uoe"); startMock(a.stat); }
+    else if (a.paper === "reading") { switchTab("tab-reading"); startReading(a.id.slice(1)); }
+    else { switchTab("tab-listening"); var b = document.querySelector("#ls-picker .mode-btn[data-lkind]"); if (b) b.click(); }
+  }
+
+  function dailyState() {
+    var today = todayStr();
+    var act = loadJSON(K_ACT(), {})[today] || { a: 0, c: 0, v: 0 };
+    var mbDue = mbDueEntries().length;
+    var st = getVocabState();
+    var now = Date.now();
+    var vocabDue = VOCAB.filter(function (c) { return leitnerIsDue(st[c.front], now); }).length;
+    var mockToday = loadJSON(K_MOCK(), []).some(function (m) { return todayStr(m.date) === today; });
+    return {
+      mb: { due: mbDue, done: mbDue === 0 },
+      weak: { done: mockToday },
+      vocab: { due: vocabDue, done: vocabDue === 0 || act.v >= 20, reviewed: act.v }
+    };
+  }
+
+  function checkStreak(allDone) {
+    var s = loadJSON(K_STREAK(), { current: 0, best: 0, lastDone: null });
+    if (!allDone || s.lastDone === todayStr()) return s;
+    var yesterday = todayStr(Date.now() - DAY_MS);
+    s.current = (s.lastDone === yesterday) ? s.current + 1 : 1;
+    s.best = Math.max(s.best, s.current);
+    s.lastDone = todayStr();
+    saveJSON(K_STREAK(), s);
+    return s;
+  }
+
+  function dailyRow(done, label, sub, btnId, btnText) {
+    return '<div class="daily-row' + (done ? " done" : "") + '">' +
+      '<span class="daily-check">' + (done ? "✅" : "⬜") + "</span>" +
+      '<span class="daily-label">' + label + '<span class="sub">' + esc(sub) + "</span></span>" +
+      (done || !btnId ? "" : '<button id="' + btnId + '" class="ghost-btn small">' + esc(btnText) + "</button>") +
+      "</div>";
+  }
+
+  function renderDaily() {
+    var el = $("pg-daily");
+    if (!el) return;
+    var d = dailyState();
+    var allDone = d.mb.done && d.weak.done && d.vocab.done;
+    var s = checkStreak(allDone);
+    var wk = weakestArea();
+
+    var html = "<h3>Today's session" +
+      '<span class="streak-tag">🔥 ' + s.current + " day" + (s.current === 1 ? "" : "s") +
+      (s.best > s.current ? " · best " + s.best : "") + "</span></h3>";
+    html += dailyRow(d.mb.done, "Clear due mistakes",
+      d.mb.done ? "Nothing due — book is clear" : d.mb.due + " item" + (d.mb.due > 1 ? "s" : "") + " due for spaced review",
+      "daily-mb", "Review");
+    html += dailyRow(d.weak.done, "One targeted mock",
+      wk && wk.acc >= 0 ? "Weakest area: " + wk.area.label + " (" + wk.acc + "%)" : (wk ? "Not yet practised: " + wk.area.label : ""),
+      "daily-weak", "Start");
+    html += dailyRow(d.vocab.done, "Vocabulary review",
+      d.vocab.done ? "Done for today" : d.vocab.due + " cards due (20 reviews count as done)" + (d.vocab.reviewed ? " · " + d.vocab.reviewed + " reviewed" : ""),
+      "daily-vocab", "Review");
+    html += allDone
+      ? "<p class='verdict-text ok daily-done-msg'>🎉 All done today — streak safe!</p>"
+      : "<p class='hint'>Finish all three to keep your streak. ~15 minutes total.</p>";
+    el.innerHTML = html;
+
+    var b;
+    if ((b = $("daily-mb"))) b.addEventListener("click", startMbDrill);
+    if ((b = $("daily-weak")) && wk) b.addEventListener("click", function () { startWeakArea(wk.area); });
+    if ((b = $("daily-vocab"))) b.addEventListener("click", function () { switchTab("tab-vocab"); });
+  }
+
+  function renderMastery() {
+    var el = $("pg-mastery");
+    if (!el) return;
+    var html = "<h3>Mastery <span class='hint-inline'>(last " + ROLL_WINDOW + " answers · 90% to master)</span></h3>";
+    var any = false;
+    var masteredCount = 0;
+    WK_AREAS.forEach(function (a) {
+      var m = masteryOf(a.stat);
+      if (!m.n) return;
+      any = true;
+      var mastered = isMastered(a.stat);
+      if (mastered) masteredCount++;
+      var sub = mastered ? "🏆 Mastered" :
+        m.n < ROLL_WINDOW ? m.acc + "% · " + m.n + "/" + ROLL_WINDOW + " answers — keep going"
+        : m.acc + "% · need 90%";
+      html += barRow((mastered ? "🏆 " : "") + a.label, sub, m.acc, mastered);
+    });
+    if (!any) {
+      html += "<p class='hint'>Answer questions in mocks to start building mastery per task type.</p>";
+    } else {
+      html += "<p class='hint'>" + masteredCount + " / " + WK_AREAS.length + " task types mastered.</p>";
+    }
+    el.innerHTML = html;
+  }
+
+  function renderWeekReport() {
+    var el = $("pg-week");
+    if (!el) return;
+    var act = loadJSON(K_ACT(), {});
+    var s = loadJSON(K_STREAK(), { current: 0, best: 0 });
+    var days = [];
+    for (var i = 6; i >= 0; i--) days.push(todayStr(Date.now() - i * DAY_MS));
+    var tot = { a: 0, c: 0, v: 0 }, active = 0;
+    var maxA = 1;
+    days.forEach(function (d) {
+      var x = act[d];
+      if (x) {
+        tot.a += x.a || 0; tot.c += x.c || 0; tot.v += x.v || 0;
+        if ((x.a || 0) + (x.v || 0) > 0) active++;
+        maxA = Math.max(maxA, (x.a || 0) + (x.v || 0));
+      }
+    });
+    var acc = tot.a ? Math.round(100 * tot.c / tot.a) : 0;
+    var html = "<h3>Last 7 days</h3>" +
+      '<div class="week-stats">' +
+      "<span><strong>" + tot.a + "</strong> questions</span>" +
+      "<span><strong>" + (tot.a ? acc + "%" : "—") + "</strong> accuracy</span>" +
+      "<span><strong>" + tot.v + "</strong> vocab reviews</span>" +
+      "<span><strong>" + active + "/7</strong> active days</span>" +
+      "</div>" +
+      '<div class="week-chart">';
+    days.forEach(function (d) {
+      var x = act[d] || { a: 0, v: 0 };
+      var n = (x.a || 0) + (x.v || 0);
+      var h = Math.round(100 * n / maxA);
+      html += '<div class="week-col"><div class="week-bar" style="height:' + Math.max(h, n ? 8 : 2) + '%"></div>' +
+        '<span class="week-day">' + d.slice(8) + "</span></div>";
+    });
+    html += "</div>";
+    el.innerHTML = html;
+  }
+
   function renderProgress() {
+    try { renderDaily(); } catch (e) {}
     renderMistakeCard();
     try { renderWeakness(); } catch (e) {}
+    try { renderMastery(); } catch (e) {}
+    try { renderWeekReport(); } catch (e) {}
     var stats = loadJSON(K_STATS, {});
     var html = "<h3>Use of English</h3>";
     ["part1", "part2", "part3", "part4"].forEach(function (p) {

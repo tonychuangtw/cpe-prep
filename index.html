@@ -83,6 +83,7 @@
         <button id="uoe-retry" class="primary-btn">Take another</button>
         <button id="uoe-home" class="ghost-btn">Back to menu</button>
       </div>
+      <div id="uoe-pace" class="card hidden"></div>
       <div id="uoe-review"></div>
     </div>
 
@@ -314,7 +315,20 @@
   <section id="tab-vocab" class="tab-panel">
     <h2>Vocabulary</h2>
     <p class="hint">Leitner 3-box spaced repetition — Box 1 daily, Box 2 every 2 days, Box 3 every 5 days</p>
+    <div class="vb-mode-row">
+      <button class="ghost-btn small selected" data-vbmode="flip">🃏 Flashcards</button>
+      <button class="ghost-btn small" data-vbmode="type">⌨️ Type it (active recall)</button>
+    </div>
     <div id="vb-status" class="card center"></div>
+    <div id="vb-type-wrap" class="hidden">
+      <div id="vb-type-q" class="card"></div>
+      <div class="vb-type-row">
+        <input id="vb-type-input" class="answer-input" type="text" autocapitalize="off" autocomplete="off" spellcheck="false" placeholder="Type the word…">
+        <button id="vb-type-submit" class="primary-btn">Check</button>
+      </div>
+      <div id="vb-type-feedback"></div>
+      <button id="vb-type-next" class="primary-btn hidden">Next card</button>
+    </div>
     <div id="vb-card-wrap" class="hidden">
       <div id="vb-card" class="flashcard">
         <div class="flashcard-inner">
@@ -334,8 +348,11 @@
   <section id="tab-progress" class="tab-panel">
     <div id="mb-summary">
       <h2>Progress</h2>
+      <div id="pg-daily" class="card"></div>
       <div id="pg-mistakes" class="card center"></div>
       <div id="pg-weakness" class="card"></div>
+      <div id="pg-mastery" class="card"></div>
+      <div id="pg-week" class="card"></div>
       <div id="pg-uoe" class="card"></div>
       <div id="pg-vocab" class="card"></div>
       <div class="card center">
