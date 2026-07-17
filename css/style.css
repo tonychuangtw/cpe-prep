@@ -781,3 +781,45 @@ input[type="number"]:focus {
 #vb-type-q .zh { margin-top: 6px; opacity: 0.85; }
 #vb-type-q .ex { margin-top: 8px; font-style: italic; opacity: 0.9; }
 #vb-type-next { margin-top: 10px; }
+
+/* ---- IELTS Task 1 charts ---- */
+.chart-wrap {
+  margin: 12px auto;
+  padding: 12px 10px;
+  max-width: 620px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-s);
+}
+.chart-wrap .task-chart {
+  display: block;
+  width: 100%;
+  height: auto;
+  color: var(--text);
+}
+.chart-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+  color: var(--text);
+}
+.chart-table caption {
+  font-weight: 600;
+  padding-bottom: 8px;
+  color: var(--text);
+}
+.chart-table th,
+.chart-table td {
+  border: 1px solid var(--border-strong);
+  padding: 6px 8px;
+  text-align: center;
+}
+.chart-table thead th { background: var(--surface-hi); }
+.chart-table tbody th { background: var(--surface-hi); font-weight: 600; }
+.chart-note {
+  margin: 8px 0 0;
+  font-size: 0.82rem;
+  font-style: italic;
+  color: var(--text2);
+  text-align: center;
+}

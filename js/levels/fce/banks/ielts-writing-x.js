@@ -7,7 +7,19 @@
       type: "Report",
       title: "IELTS Task 1 — Cinema visits line graph",
       length: "at least 150 words · about 20 minutes",
-      task: "The graph shows how often three age groups in one country went to the cinema between 2000 and 2020. Visits by 15-24 year-olds rose steadily from 15% (going at least once a month) in 2000 to 43% in 2020. Visits by people over 50 fell from 22% to 11% over the same period. The 25-49 group stayed roughly stable, moving between 28% and 32%. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      task: "The graph below shows how often three age groups in one country went to the cinema between 2000 and 2020, measured as the percentage of each group going at least once a month. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      chart: {
+        type: "line",
+        title: "Cinema-goers attending at least once a month, by age group",
+        yUnit: "%",
+        yMax: 50,
+        xLabels: ["2000", "2005", "2010", "2015", "2020"],
+        series: [
+          { name: "15\u201324", values: [15, 22, 29, 36, 43] },
+          { name: "25\u201349", values: [28, 31, 32, 30, 29] },
+          { name: "Over 50", values: [22, 19, 16, 13, 11] }
+        ]
+      },
       checklist: [
         "Task Achievement: give a clear overview (young people up, older people down, middle stable) and support it with key figures",
         "Coherence & Cohesion: group the data logically — rising vs falling — and link ideas with while, whereas, in contrast",
@@ -22,7 +34,19 @@
       type: "Report",
       title: "IELTS Task 1 — Household spending table",
       length: "at least 150 words · about 20 minutes",
-      task: "The table compares average monthly household spending in two countries, A and B. Housing: Country A $950, Country B $520. Food: A $420, B $460. Transport: A $310, B $140. Entertainment: A $180, B $95. Education: A $120, B $210. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      task: "The table below compares average monthly household spending in two countries, A and B. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      chart: {
+        type: "table",
+        title: "Average monthly household spending (US$)",
+        columns: ["Category", "Country A", "Country B"],
+        rows: [
+          ["Housing", "$950", "$520"],
+          ["Food", "$420", "$460"],
+          ["Transport", "$310", "$140"],
+          ["Entertainment", "$180", "$95"],
+          ["Education", "$120", "$210"]
+        ]
+      },
       checklist: [
         "Task Achievement: overview first (A spends more in most categories; B spends more on food and education), then key numbers",
         "Coherence & Cohesion: organise by country or by category — pick one and stay consistent",

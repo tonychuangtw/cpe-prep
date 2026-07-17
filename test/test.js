@@ -4,6 +4,7 @@
 const path = require("path");
 const fs = require("fs");
 const logic = require(path.join(__dirname, "..", "js", "app.js"));
+const chart = require(path.join(__dirname, "..", "js", "chart.js"));
 
 let passed = 0, failed = 0;
 function check(name, cond) {
@@ -237,7 +238,38 @@ Object.keys(LEVEL_SPECS).forEach(level => {
   const IW = WRITING.filter(w => w.part === "IELTS Task 1");
   check(L + "ielts writing has >= 3 prompts", IW.length >= 3);
   IW.forEach((w, i) => {
-    check(L + `iw[${i}] task embeds figures`, /\d/.test(w.task));
+    // Tasks that reference a graph/chart/table must carry chart data (rendered as a visual);
+    // process-diagram tasks describe their stages in the text instead.
+    const refsChartable = /\b(graph|chart|charts|table)\b/i.test(w.task);
+    if (refsChartable) {
+      check(L + `iw[${i}] graph/chart/table task has chart data`, !!w.chart && !!w.chart.type);
+      const svg = chart.renderChart(w.chart);
+      check(L + `iw[${i}] chart renders non-empty markup`, typeof svg === "string" && svg.length > 100);
+      check(L + `iw[${i}] task text no longer enumerates figures`, !/%/.test(w.task));
+    } else {
+      check(L + `iw[${i}] non-chart task embeds figures in text`, /\d/.test(w.task));
+    }
+    if (w.chart) {
+      const c = w.chart;
+      if (c.type === "line") {
+        check(L + `iw[${i}] line series lengths match xLabels`,
+          c.series.every(s => s.values.length === c.xLabels.length && s.values.every(v => typeof v === "number")));
+      }
+      if (c.type === "bar") {
+        check(L + `iw[${i}] bar series lengths match categories`,
+          c.series.every(s => s.values.length === c.categories.length && s.values.every(v => typeof v === "number")));
+      }
+      if (c.type === "pie") {
+        c.pies.forEach((p, pi) => {
+          const sum = p.slices.reduce((a, s) => a + s.value, 0);
+          check(L + `iw[${i}] pie[${pi}] slices sum to ~100% (${sum})`, sum >= 98 && sum <= 102);
+        });
+      }
+      if (c.type === "table") {
+        check(L + `iw[${i}] table rows match columns`,
+          c.rows.length >= 2 && c.rows.every(r => r.length === c.columns.length));
+      }
+    }
   });
 
   /* ---------- Listening (scripts for future TTS) ---------- */
@@ -312,6 +344,67 @@ check("review known promotes box", logic.leitnerReview({ box: 1, last: 0 }, true
 check("review known caps at box 3", logic.leitnerReview({ box: 3, last: 0 }, true, now).box === 3);
 check("review unknown demotes to box 1", logic.leitnerReview({ box: 3, last: 0 }, false, now).box === 1);
 check("review sets last timestamp", logic.leitnerReview({ box: 1, last: 0 }, true, now).last === now);
+
+/* ---------- chart.js SVG rendering ---------- */
+(function () {
+  const line = chart.renderLine({
+    type: "line", title: "Test line", yUnit: "%",
+    xLabels: ["2000", "2010", "2020"],
+    series: [
+      { name: "Alpha", values: [10, 20, 30] },
+      { name: "Beta", values: [40, 35, 25] }
+    ]
+  });
+  check("line: emits svg root", line.startsWith("<svg") && line.endsWith("</svg>"));
+  check("line: has viewBox + aria label", /viewBox="0 0 720 \d+"/.test(line) && line.includes('aria-label="Test line"'));
+  check("line: contains both series names", line.includes("Alpha") && line.includes("Beta"));
+  check("line: contains all x labels", ["2000", "2010", "2020"].every(x => line.includes(">" + x + "<")));
+  check("line: one polyline per series", (line.match(/<polyline /g) || []).length === 2);
+  check("line: distinct series colors", (() => {
+    const m = line.match(/stroke="(#[0-9a-f]{6})"/g) || [];
+    return new Set(m).size === 2;
+  })());
+  check("line: light-theme-safe text via currentColor", line.includes('fill="currentColor"'));
+
+  const bar = chart.renderBar({
+    type: "bar", title: "Test bar", yUnit: "%",
+    categories: ["Cat one", "Cat two", "Cat three"],
+    series: [
+      { name: "2005", values: [62, 18, 9] },
+      { name: "2020", values: [48, 29, 15] }
+    ]
+  });
+  check("bar: emits svg root", bar.startsWith("<svg") && bar.endsWith("</svg>"));
+  check("bar: 6 bars for 3 cats x 2 series", (bar.match(/<rect /g) || []).length >= 6);
+  check("bar: legend shows both years", bar.includes(">2005<") && bar.includes(">2020<"));
+  check("bar: value labels present", bar.includes(">62<") && bar.includes(">29<"));
+
+  const pie = chart.renderPie({
+    type: "pie", title: "Test pies",
+    pies: [
+      { label: "1990", slices: [{ name: "A", value: 58 }, { name: "B", value: 23 }, { name: "C", value: 12 }, { name: "D", value: 7 }] },
+      { label: "2015", slices: [{ name: "A", value: 41 }, { name: "B", value: 20 }, { name: "C", value: 26 }, { name: "D", value: 13 }] }
+    ],
+    note: "Total doubled."
+  });
+  check("pie: emits svg root", pie.startsWith("<svg") && pie.endsWith("</svg>"));
+  check("pie: 8 slices across two pies", (pie.match(/<path /g) || []).length === 8);
+  check("pie: percentage labels on slices", pie.includes(">58%<") && pie.includes(">41%<") && pie.includes(">7%<"));
+  check("pie: per-pie year labels", pie.includes(">1990<") && pie.includes(">2015<"));
+  check("pie: note rendered", pie.includes("Total doubled."));
+
+  const tbl = chart.renderTable({
+    type: "table", title: "Test table",
+    columns: ["Museum", "2010", "2022"],
+    rows: [["A", "75%", "40%"], ["B", "80%", "78%"]]
+  });
+  check("table: emits table markup", tbl.startsWith('<table class="chart-table">') && tbl.includes("</table>"));
+  check("table: header + row cells present", tbl.includes("<th>Museum</th>") && tbl.includes("<td>78%</td>"));
+
+  check("renderChart dispatches by type", chart.renderChart({ type: "line", xLabels: ["a"], series: [{ name: "s", values: [1] }] }).startsWith("<svg"));
+  check("renderChart empty on unknown type", chart.renderChart({ type: "nope" }) === "" && chart.renderChart(null) === "");
+  check("chart escapes XML in labels", chart.renderLine({ xLabels: ["A&B"], series: [{ name: '<x>"q"', values: [5] }] }).includes("&amp;B"));
+})();
 
 /* ---------- shuffle ---------- */
 const orig = [1, 2, 3, 4, 5];

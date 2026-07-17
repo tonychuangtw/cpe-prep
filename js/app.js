@@ -1632,6 +1632,9 @@ if (typeof document !== 'undefined') {
           bodyHtml += "<blockquote><strong>Text " + (i + 1) + ".</strong> " + esc(t) + "</blockquote>";
         });
       }
+      if (p.chart && typeof window !== "undefined" && typeof window.renderChart === "function") {
+        try { bodyHtml += '<div class="chart-wrap">' + window.renderChart(p.chart) + "</div>"; } catch (e) {}
+      }
       bodyHtml += "<h4>Target length</h4><p>" + esc(p.length) + "</p>";
       bodyHtml += "<h4>Marking checklist</h4><ul>";
       p.checklist.forEach(function (c) { bodyHtml += "<li>" + esc(c) + "</li>"; });
@@ -1671,7 +1674,9 @@ if (typeof document !== 'undefined') {
             "(Content / Communicative Achievement / Organisation / Language, each 0\u20135). ") +
           "Give a band per criterion, an overall verdict, and 3 concrete improvements with rewritten examples.\n\n" +
           "Task: " + p.title + " (" + (isIelts ? String(p.part) : "Part " + p.part) + " \u00b7 " + p.type + ")\n" +
-          p.task + "\nTarget length: " + p.length + "\n\n" +
+          p.task +
+          (p.chart ? "\nThe visual (shown to me as a chart) contains this data: " + JSON.stringify(p.chart) : "") +
+          "\nTarget length: " + p.length + "\n\n" +
           "My answer (" + countWords(essay) + " words):\n" + essay;
         var done = function () { fb.textContent = "\u2713 Copied — paste it to your AI chat"; setTimeout(function () { fb.textContent = "\ud83d\udccb Copy for AI feedback"; }, 3000); };
         if (navigator.clipboard && navigator.clipboard.writeText) {

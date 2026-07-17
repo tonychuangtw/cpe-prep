@@ -7,7 +7,25 @@
       type: "Report",
       title: "IELTS Task 1 — Urban commuting modes, three cities",
       length: "at least 150 words · about 20 minutes",
-      task: "The graph shows the percentage of commuters using cars, public transport and bicycles in three cities between 2000 and 2020. City X: car use fell from 64% to 38%, public transport rose from 28% to 43%, cycling from 8% to 19%. City Y: car use stayed near 70% throughout, public transport around 25%, cycling under 5%. City Z: car use fell modestly from 55% to 47%, public transport rose from 30% to 36%, cycling from 15% to 17%. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      task: "The graph below shows the percentage of commuters using cars, public transport and bicycles in three cities between 2000 and 2020. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      chart: {
+        type: "line",
+        title: "Commuting modes in three cities, 2000\u20132020",
+        yUnit: "%",
+        yMax: 80,
+        xLabels: ["2000", "2010", "2020"],
+        series: [
+          { name: "X \u2014 car", values: [64, 52, 38] },
+          { name: "X \u2014 public transport", values: [28, 35, 43] },
+          { name: "X \u2014 bicycle", values: [8, 13, 19] },
+          { name: "Y \u2014 car", values: [70, 71, 69] },
+          { name: "Y \u2014 public transport", values: [25, 24, 26] },
+          { name: "Y \u2014 bicycle", values: [4, 4, 5] },
+          { name: "Z \u2014 car", values: [55, 51, 47] },
+          { name: "Z \u2014 public transport", values: [30, 33, 36] },
+          { name: "Z \u2014 bicycle", values: [15, 16, 17] }
+        ]
+      },
       checklist: [
         "Task Achievement: overview contrasting the three trajectories (X transformed, Z drifted, Y static) — nine data series demand ruthless selection",
         "Coherence & Cohesion: organise by city, ordered by degree of change; avoid mechanical repetition of the same sentence frame",
@@ -22,7 +40,18 @@
       type: "Report",
       title: "IELTS Task 1 — Museum funding and attendance table",
       length: "at least 150 words · about 20 minutes",
-      task: "The table shows four museums' public funding (as % of income) and annual attendance in 2010 and 2022. Museum A: funding 75% → 40%, attendance 1.2m → 1.9m. Museum B: funding 80% → 78%, attendance 0.9m → 0.8m. Museum C: funding 45% → 20%, attendance 2.1m → 3.4m. Museum D: funding 60% → 55%, attendance 1.5m → 1.4m. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      task: "The table below shows four museums' public funding (as a percentage of income) and their annual attendance in 2010 and 2022. Summarise the information by selecting and reporting the main features, and make comparisons where relevant.",
+      chart: {
+        type: "table",
+        title: "Public funding and annual attendance, 2010 and 2022",
+        columns: ["Museum", "Funding 2010", "Funding 2022", "Attendance 2010", "Attendance 2022"],
+        rows: [
+          ["Museum A", "75%", "40%", "1.2m", "1.9m"],
+          ["Museum B", "80%", "78%", "0.9m", "0.8m"],
+          ["Museum C", "45%", "20%", "2.1m", "3.4m"],
+          ["Museum D", "60%", "55%", "1.5m", "1.4m"]
+        ]
+      },
       checklist: [
         "Task Achievement: the salient pattern is the inverse relationship — museums whose public funding fell most grew attendance most; the overview should surface it without claiming causation",
         "Coherence & Cohesion: pair the museums (A and C vs B and D) rather than plodding through all four in turn",
