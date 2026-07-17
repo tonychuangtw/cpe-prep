@@ -1897,6 +1897,12 @@ if (typeof document !== 'undefined') {
     return null;
   }
 
+  function typeHintCount(front) {
+    var words = front.trim().split(/\s+/);
+    if (words.length === 1) return front.length + " letters";
+    return words.length + " words (" + words.map(function (w) { return w.length; }).join(" + ") + " letters)";
+  }
+
   function showVocabTypeCard() {
     var c = vocabQueue[0];
     var wrap = $("vb-type-wrap");
@@ -1911,7 +1917,7 @@ if (typeof document !== 'undefined') {
       '<div class="vb-boxtag">Box ' + st[c.front].box + "</div>" +
       '<div class="def"><strong>' + esc(c.pos) + "</strong> — " + esc(c.def) + "</div>" +
       (cloze ? '<div class="ex">' + esc(cloze) + "</div>" : "") +
-      '<div class="hint">First letter: <strong>' + esc(c.front.charAt(0)) + "</strong> · " + c.front.length + " letters</div>";
+      '<div class="hint">First letter: <strong>' + esc(c.front.charAt(0)) + "</strong> · " + typeHintCount(c.front) + "</div>";
     var input = $("vb-type-input");
     input.value = "";
     input.disabled = false;
