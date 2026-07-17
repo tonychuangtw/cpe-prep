@@ -1888,7 +1888,7 @@ if (typeof document !== 'undefined') {
     }
   }
 
-  /* 拼寫模式：定義+中文+例句挖空 → 使用者拼出單字，結果直接餵 Leitner */
+  /* 拼寫模式：定義+例句挖空 → 使用者拼出單字，結果直接餵 Leitner */
   function clozeExample(example, front) {
     try {
       var re = new RegExp(front.replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+"), "i");
@@ -1910,7 +1910,6 @@ if (typeof document !== 'undefined') {
     $("vb-type-q").innerHTML =
       '<div class="vb-boxtag">Box ' + st[c.front].box + "</div>" +
       '<div class="def"><strong>' + esc(c.pos) + "</strong> — " + esc(c.def) + "</div>" +
-      '<div class="zh">' + esc(c.zh) + "</div>" +
       (cloze ? '<div class="ex">' + esc(cloze) + "</div>" : "") +
       '<div class="hint">First letter: <strong>' + esc(c.front.charAt(0)) + "</strong> · " + c.front.length + " letters</div>";
     var input = $("vb-type-input");
